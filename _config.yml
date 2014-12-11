@@ -28,11 +28,11 @@ kramdown:
 owner:
   name: Donne Martin
   avatar: bio-photo.jpg
-  bio: "Describe your self."
+  bio: "Cloud, Mobile, and Data Geek"
   email:
   disqus-shortname:
   twitter: donne_martin
-  facebook: #username
+  facebook: donne.martin.7
   google:
     plus: #username
     analytics:
@@ -40,9 +40,9 @@ owner:
     ad-client:
     ad-slot:
   bing-verify:
-  github: #username
+  github: donnemartin
   stackoverflow: #http://stackoverflow.com/users/123456/username
-  linkedin: #username
+  linkedin: donnemartin
   instagram: #username
   lastfm: #username
   tumblr: #username
@@ -50,7 +50,7 @@ owner:
   foursquare: #username
   steam: #username
   dribbble: #username
-  youtube: #username
+  youtube: donne51097
   soundcloud: #username
 
 include: [".htaccess"]
