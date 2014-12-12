@@ -1,6 +1,6 @@
 # Site wide configuration
 
-title:            Donne Martin's Tech Blog
+title:            Donne Martin
 locale:           en_US
 url:              http://donnemartin.github.io
 
@@ -28,7 +28,7 @@ kramdown:
 owner:
   name: Donne Martin
   avatar: profile.png
-  bio: "Cloud, Mobile, Data Geek"
+  bio: "Exploring Cloud, Mobile, and Data"
   email:
   disqus-shortname:
   twitter: donne_martin
