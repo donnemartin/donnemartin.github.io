@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About Me
-tags: [about, Jekyll, theme, responsive]
+tags: [about]
 modified: 2014-12-11
 comments: true
 image:
