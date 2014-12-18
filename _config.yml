@@ -3,6 +3,7 @@
 title:            Donne Martin
 locale:           en_US
 url:              http://donnemartin.github.io
+#url:              http://localhost:4000
 
 
 # Jekyll configuration
@@ -29,7 +30,7 @@ owner:
   name: Donne Martin
   avatar: profile.png
   bio: "Exploring Cloud, Mobile, and Data"
-  email:
+  email: donne.martin@gmail.com
   disqus-shortname:
   twitter: donne_martin
   facebook: #username
