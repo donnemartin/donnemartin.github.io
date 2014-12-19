@@ -13,10 +13,10 @@ image:
 </p>
 
 <p align="center">
-    <strong><em>The views expressed in this blog are my personal views and not the views/thoughts of my employer</em></strong>
+    <strong><em>The views expressed in this blog are my personal views and are not the views of my employer</em></strong>
 </p>
 
-"I are an Engineer" at heart. I’m the kid who tirelessly built lego cities and souped up lego rides for my lego army to conquer. I've since moved on to a new sandbox built on cloud computing (Amazon Web Services), data analysis (Hadoop, Python, Tableau), and mobile apps (Android, Glass, Augmented Reality, iOS).
+"I are an Engineer" at heart. I’m the kid who tirelessly built lego cities and souped up lego rides for my lego army to conquer. I've since moved on to a new sandbox built on cloud computing (Amazon Web Services), data analysis (Hadoop, Python, R, Tableau), and mobile apps (Android, Glass, Augmented Reality, iOS).
 
 As the Cloud and Mobile Technologies Manager at Nemetschek Vectorworks, I spearhead the company’s efforts to expand its traditional CAD desktop application to include Software as a Service and mobile solutions.
 
