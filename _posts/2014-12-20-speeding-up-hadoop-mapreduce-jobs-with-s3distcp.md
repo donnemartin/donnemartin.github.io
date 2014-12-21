@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Speeding Up MapReduce Jobs with S3DistCp"
+title: "Speeding Up Hadoop MapReduce Jobs with S3DistCp"
 excerpt: "Input file size has a significant impact on the job length, due to the mapper setup time."
 tags: [Cloud, Data]
 comments: true
 ---
 
-When optimizing MapReduce jobs on AWS Elastic Map Reduce, you often tweak the EC2 instance type and number of instances to obtain the optimal number of mappers.  More data = more splits = more mappers.  [EC2 instances vary](http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/TaskConfiguration.html) in the number of mappers they can support in parallel--for example an m1.XL can process 6-8 mappers in parallel, whereas an m1.small can only run up to 2 mappers in parallel.
+When optimizing Hadoop MapReduce jobs on AWS Elastic Map Reduce, you often tweak the EC2 instance type and number of instances to obtain the optimal number of mappers.  More data = more splits = more mappers.  [EC2 instances vary](http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/TaskConfiguration.html) in the number of mappers they can support in parallel--for example an m1.XL can process 6-8 mappers in parallel, whereas an m1.small can only run up to 2 mappers in parallel.
 
 Input file size can also have a significant impact on the job length, due to the mapper setup time.
 
