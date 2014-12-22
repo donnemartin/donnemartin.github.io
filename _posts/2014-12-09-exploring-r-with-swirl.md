@@ -12,7 +12,7 @@ Coming from a Python data analysis background with SciPy, I have always been cur
 
 I decided to check out R and found a handy R package [swirl](http://swirlstats.com/). Swirl "teaches you R programming and data science interactively, at your own pace, and right in the R console".
 
-##### Installing swirl (from CRAN)
+##### Installing Swirl from CRAN
 
 The easiest way to install and run swirl is by typing the following commands in the R console:
 
