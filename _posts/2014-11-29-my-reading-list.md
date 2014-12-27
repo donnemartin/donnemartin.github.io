@@ -6,7 +6,7 @@ tags: [Reading List]
 comments: true
 ---
 
-I've started populating my <a href="http://donnemartin.com/reading-list/">Reading List</a>!  Updates will trickle in over the coming weeks.
+I've started populating my <a href="http://donnemartin.com/reading-list/" target="_blank">Reading List</a>!  Updates will trickle in over the coming weeks.
 
 I'm an avid reader, consuming 1-2 books each month in addition to tech articles, tutorials, and university course materials.
 
