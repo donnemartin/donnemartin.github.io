@@ -10,7 +10,7 @@ Before I discovered [S3cmd](http://s3tools.org/s3cmd), I had been using the [S3 
 
 ##### S3cmd
 
-I've found S3cmd to be a great command line tool for interacting with S3 on AWS.  S3cmd is written in Python, is open source, and is free even for commercial use.  It offers more advanced features than those found in the [AWS CLI](http://aws.amazon.com/cli/)
+I've found S3cmd to be a great command line tool for interacting with S3 on AWS.  S3cmd is written in Python, is open source, and is free even for commercial use.  It offers more advanced features than those found in the [AWS CLI](http://aws.amazon.com/cli/).
 
 ##### Configuring S3cmd
 
