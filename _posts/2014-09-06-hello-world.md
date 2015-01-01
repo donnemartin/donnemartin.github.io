@@ -4,11 +4,11 @@ title: "Hello World"
 excerpt: "An Introduction to Donne Martin's Tech Blog."
 tags: [Android]
 comments: true
+image:
+  feature: HelloWordCloud_cover.png
 ---
 
-![alt text](https://raw.githubusercontent.com/donnemartin/donnemartin.github.io/master/images/HelloWordCloud.png)
-
-##### An Introduction to Donne Martin's Tech Blog
+## An Introduction to Donne Martin's Tech Blog
 
 {% highlight python %}
 print 'Hello, World!'
@@ -21,4 +21,3 @@ Generally, I'll be sharing with my experiences with:
 * Mobile development (Android, iOS)
 
 Occasionally, I will also be posting miscellaneous projects and other topics of interest.
-
