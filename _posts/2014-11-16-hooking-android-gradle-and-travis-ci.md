@@ -4,11 +4,13 @@ title: "Hooking Up Android Gradle and Travis CI"
 excerpt: "I’ve recently started using Gradle as the build system for my Android projects.  Travis CI is a very popular continuous integration tool for open source projects."
 tags: [Android]
 comments: true
+image:
+  feature: travis-logo_cover.png
 ---
 
 I’ve recently started using [Gradle](http://www.gradle.org/) as the build system for my Android projects.  [Travis CI](https://travis-ci.org/) is a very popular continuous integration tool for open source projects.
 
-##### Hooking Up Travis CI to GitHub
+### Hooking Up Travis CI to GitHub
 
 To hook up Travis CI with Github, simply sign in using your GitHub account. Next, select which repos you want to hook up:
 
@@ -48,7 +50,7 @@ android:
 
 Depending on the load, Travis CI will then kick off a build and email you the results.
 
-##### Hooking Up Android Gradle to Travis CI
+### Hooking Up Android Gradle to Travis CI
 
 I found Travis CI to be difficult to integrate with Android Gradle from scratch, as the support is still in beta and there is a lack of documentation:
 
@@ -70,13 +72,13 @@ chmod +x grailsw
 
 Ultimately, a blank slate configuration of Android Gradle with Travis CI (in its current beta Android integration) proved to be quite a difficult task.  I decided to take a step back and evaluate other options.
 
-##### android-tdd-playground
+### android-tdd-playground
 
 [android-tdd-playground](https://github.com/donnemartin/android-tdd-playground) is a good starting point to enable your projects to use Gradle, Travis CI, and even the Android Testing Framework. I simply forked the project and started moving over components from my [Flickr Android app](https://github.com/donnemartin/photogallery) to the "playground" and customized as needed.
 
 I recommend taking this approach when first starting with Travis CI, as it streamlines the integration and allows you to focus on your app.
 
-##### Travis CI Badge:
+### Travis CI Badge:
 
 <p align="center">
   <img src="http://donnemartin.com/wp-content/uploads/2014/10/Screen-Shot-2014-10-03-at-7.48.37-PM.png">
