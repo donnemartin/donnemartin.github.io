@@ -4,6 +4,8 @@ title: "My Reading List"
 excerpt: "I've started populating my Reading List.  Updates will trickle in over the coming weeks."
 tags: [Reading List]
 comments: true
+image:
+  feature: steambw.jpg
 ---
 
 I've started populating my <a href="http://donnemartin.com/reading-list/" target="_blank">Reading List</a>!  Updates will trickle in over the coming weeks.
@@ -18,6 +20,4 @@ Reading helps me:
 * Expand my creativity by thinking outside of my comfort zone with new ideas, theories, and beliefs
 * View the world through the brightest minds and teachers of current and previous generations
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/donnemartin/donnemartin.github.io/master/images/war.jpg">
-</p>
+![alt text](https://raw.githubusercontent.com/donnemartin/donnemartin.github.io/master/images/artofwar.jpg)
