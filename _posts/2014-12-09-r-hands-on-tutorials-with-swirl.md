@@ -1,9 +1,11 @@
 ---
 layout: post
-title: "Exploring R with Swirl"
+title: "R Hands-On Tutorials with Swirl"
 excerpt: "Exploring R with the R package Swirl, which lets you learn right from the R console."
 tags: [Data]
 comments: true
+image:
+  feature: Rlogo-1_cover.png
 ---
 
 Coming from a Python data analysis background with SciPy, I have always been curious about R.
