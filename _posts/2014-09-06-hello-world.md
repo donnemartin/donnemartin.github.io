@@ -2,7 +2,7 @@
 layout: post
 title: "Hello World"
 excerpt: "An Introduction to Donne Martin's Tech Blog."
-tags: [Android]
+tags: [Cloud, Data, Mobile]
 comments: true
 image:
   feature: HelloWordCloud_cover.png
