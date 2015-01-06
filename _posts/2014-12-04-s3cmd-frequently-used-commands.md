@@ -4,15 +4,17 @@ title: "S3cmd: Frequently Used Commands"
 excerpt: "I’ve found S3cmd to be a great tool for interacting with S3 on AWS.  S3cmd is written in Python, is open source, and is free even for commercial use."
 tags: [Cloud, Data]
 comments: true
+image:
+  feature: Terminal2_cover.png
 ---
 
 Before I discovered [S3cmd](http://s3tools.org/s3cmd), I had been using the [S3 console](http://aws.amazon.com/console/) to do basic operations and [boto](https://boto.readthedocs.org/en/latest/) to do more of the heavy lifting.  However, sometimes I just want to hack away at a command line to do my work.
 
-##### S3cmd
+## S3cmd
 
 I've found S3cmd to be a great command line tool for interacting with S3 on AWS.  S3cmd is written in Python, is open source, and is free even for commercial use.  It offers more advanced features than those found in the [AWS CLI](http://aws.amazon.com/cli/).
 
-##### Configuring S3cmd
+## Configuring S3cmd
 
 Running the following command will prompt you to enter your AWS access and AWS secret keys. To follow security best practices, make sure you are using an IAM account as opposed to using the root account.
 
@@ -22,7 +24,7 @@ s3cmd --configure
 
 I also suggest enabling GPG encryption which will encrypt your data at rest, and enabling HTTPS to encrypt your data in transit.
 
-##### Frequently Used Commands
+## Frequently Used Commands
 
 {% highlight bash %}
 # List all buckets
