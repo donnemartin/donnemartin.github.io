@@ -2,7 +2,7 @@
 layout: post
 title: "My Reading List"
 excerpt: "I've started populating my Reading List.  Updates will trickle in over the coming weeks."
-tags: [Reading List]
+tags: [Cloud, Data, Mobile]
 comments: true
 image:
   feature: steambw.jpg
@@ -19,5 +19,3 @@ Reading helps me:
 * Challenge and stretch my self discipline
 * Expand my creativity by thinking outside of my comfort zone with new ideas, theories, and beliefs
 * View the world through the brightest minds and teachers of current and previous generations
-
-![alt text](https://raw.githubusercontent.com/donnemartin/donnemartin.github.io/master/images/artofwar.jpg)
