@@ -10,11 +10,11 @@ image:
 
 Coming from a Python data analysis background with SciPy, I have always been curious about R.
 
-##### Swirl
+## Swirl
 
 I decided to check out R and found a handy R package [swirl](http://swirlstats.com/). Swirl "teaches you R programming and data science interactively, at your own pace, and right in the R console".
 
-##### Installing Swirl from CRAN
+## Installing Swirl from CRAN
 
 The easiest way to install and run swirl is by typing the following commands in the R console:
 
@@ -24,7 +24,7 @@ library(swirl)
 swirl()
 {% endhighlight %}
 
-##### Lessons
+## Lessons
 
 Swirl comes with interactive lessons for the following R topics:
 
@@ -43,26 +43,26 @@ Swirl comes with interactive lessons for the following R topics:
 
 You can also install the lessons described below from their [GitHub repo](https://github.com/swirldev/swirl_courses).
 
-##### Beginner Lessons
+## Beginner Lessons
 
 - **R Programming**: The basics of programming in R
 - **Data Analysis**: Basic ideas in statistics and data visualization
 - **Mathematical Biostatistics Boot Camp**: One- and two-sample t-tests, power, and sample size
 - **Open Intro**: A very basic introduction to statistics, data analysis, and data visualization
 
-##### Intermediate Lessons
+## Intermediate Lessons
 
 - **Regression Models**: The basics of regression modeling in R
 - **Getting and Cleaning Data**: dplyr, tidyr, lubridate
 
-##### Advanced Lessons
+## Advanced Lessons
 
 - **Statistical Inference**: Introduces the student to basic concepts of statistical inference
 including probability, hypothesis testing, confidence intervals and
 p-values. It concludes with an initiation to topics of particular
 relevance to big data, issues of multiple testing and resampling.
 
-##### Installing Additional Lessons
+## Installing Additional Lessons
 
 {% highlight r %}
 library(swirl)
@@ -70,7 +70,7 @@ install_from_swirl("Course Name Here")
 swirl()
 {% endhighlight %}
 
-##### Swirl in R Studio
+## Swirl in R Studio
 
 Below is an output of the "Dates and Times" lesson:
 
