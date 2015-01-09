@@ -5,7 +5,7 @@ excerpt: "I’ve found S3cmd to be a great tool for interacting with S3 on AWS. 
 tags: [Cloud, Data]
 comments: true
 image:
-  feature: Terminal2_cover.png
+  feature: terminal2_cover.png
 ---
 
 Before I discovered [S3cmd](http://s3tools.org/s3cmd), I had been using the [S3 console](http://aws.amazon.com/console/) to do basic operations and [boto](https://boto.readthedocs.org/en/latest/) to do more of the heavy lifting.  However, sometimes I just want to hack away at a command line to do my work.
