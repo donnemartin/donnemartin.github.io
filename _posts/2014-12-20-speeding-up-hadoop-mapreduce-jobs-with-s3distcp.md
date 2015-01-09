@@ -4,13 +4,15 @@ title: "Speeding Up Hadoop MapReduce Jobs with S3DistCp"
 excerpt: "Input file size has a significant impact on the job length, due to the mapper setup time."
 tags: [Cloud, Data]
 comments: true
+image:
+  feature: hadoop_emr_cover.png
 ---
 
 When optimizing Hadoop MapReduce jobs on AWS Elastic Map Reduce, you often tweak the EC2 instance type and number of instances to obtain the optimal number of mappers.  More data = more splits = more mappers.  [EC2 instances vary](http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/TaskConfiguration.html) in the number of mappers they can support in parallel--for example an m1.XL can process 6-8 mappers in parallel, whereas an m1.small can only run up to 2 mappers in parallel.
 
 Input file size can also have a significant impact on the job length, due to the mapper setup time.
 
-##### Mapper Setup Time
+## Mapper Setup Time
 
 The following stats demonstrate why small files are so problematic with Hadoop:
 
@@ -19,7 +21,7 @@ The following stats demonstrate why small files are so problematic with Hadoop:
 * 10,000 mappers * 2 seconds = 5 hours of mapper CPU setup time
 * 100,000 mappers * 2 seconds = 55 hours of mapper CPU setup time
 
-##### Optimal Input File Size
+## Optimal Input File Size
 
 Due to the relatively lengthy setup time for mappers, you generally want a mapper and its associated JVM to stay for as long as possible.  Ideally, each mapper should have a minimum life span of at least 60 seconds.  Since a single mapper can get 10 MB to 15 MB per second speed to Amazon S3, the ideal file size is 60 sec * 15 MB which is roughly 1 GB.
 
@@ -27,7 +29,7 @@ Thus, **Amazon recommends input files to be between 1GB to 2GB**.  Unfortunately
 
 How do you merge your files to fall within this 1 GB to 2 GB sweet spot?
 
-##### DistCp and S3DistCp
+## DistCp and S3DistCp
 
 [Apache DistCp](http://hadoop.apache.org/docs/r1.2.1/distcp.html) is an open-source tool that uses MapReduce under the hood to copy large amounts of data.
 
@@ -35,7 +37,7 @@ How do you merge your files to fall within this 1 GB to 2 GB sweet spot?
 
 S3DistCp can be used with the [EMR CLI](http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-cli-install.html)
 
-##### S3DistCp Code
+## S3DistCp Code
 
 The EMR command line below executes the following:
 
@@ -53,7 +55,7 @@ The EMR command line below executes the following:
 
 {% endhighlight %}
 
-##### A Note on Compression
+## A Note on Compression
 
 For further optimization, compression can be helpful to save on AWS storage and bandwidth costs, to speed up the S3 to/from EMR transfer, and to reduce disk I/O.  Note that compressed files are not easy to split for Hadoop.  For example, Hadoop uses a single mapper per GZIP file, as it does not know about file boundaries.
 
