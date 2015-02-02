@@ -5,7 +5,7 @@ excerpt: "Exploring R with the R package Swirl, which lets you learn right from 
 tags: [Data]
 comments: true
 image:
-  feature: Rlogo-1_cover.png
+  feature: swirl_featured.png
 ---
 
 Coming from a Python data analysis background with SciPy, I have always been curious about R.
