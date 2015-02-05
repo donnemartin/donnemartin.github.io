@@ -32,7 +32,7 @@ Splunk has an interesting [licensing model](http://www.splunk.com/view/pricing/S
 
 [Splunk Storm](http://docs.splunk.com/Documentation/Storm/Storm/User/StormFreeFAQ) is a free version of Splunk Cloud that allows for 20 GB of storage and 30 days of data retention.  You can have five project members and three projects.
 
-[Splunk Cloud](http://www.splunk.com/view/cloud/SP-CAAAG58) is a hosted solution of Splunk Enterprise without the restrictions of Splunk Storm.  Splunk Cloud includes 90 days of storage, is built for 10x data bursting, and boasts a 100% uptime SLA.
+[Splunk Cloud](http://www.splunk.com/view/cloud/SP-CAAAG58) is a hosted solution of Splunk Enterprise without the restrictions of Splunk Storm. Splunk Cloud includes 5 GB daily indexing, 90 days of storage, and a 100% uptime SLA.
 
 [Product Comparison Matrix](http://www.splunk.com/view/SP-CAAAE8W)
 
