@@ -45,6 +45,18 @@ s3cmd put --recursive my-local-folder-path/ s3://my-bucket-name/mydir/
 # Download a file
 s3cmd get s3://my-bucket-name/myfile.txt myfile.txt
 
+# Recursively download files that start with myfile
+s3cmd --recursive get s3://my-bucket-name/myfile
+
+# Delete a file
+s3cmd del s3://my-bucket-name/myfile.txt
+
+# Delete a bucket
+s3cmd del --recursive s3://my-bucket-name/
+
+# Create a bucket
+s3cmd mb s3://my-bucket-name
+
 # List bucket disk usage (human readable)
 s3cmd du -H s3://my-bucket-name/
 
@@ -58,5 +70,5 @@ s3cmd sync s3://my-bucket-name/ my-local-folder-path/
 s3cmd --dry-run sync s3://my-bucket-name/ my-local-folder-path/
 
 # Apply a standard shell wildcard include to sync s3 bucket (source) to local (destination)
-s3cmd --include '2014-05-01*' sync s3://my-bucket-name/ my-local-folder-path/
+s3cmd --include '2014-05-01*' sync s3://my-bucket-name/ my-local-folder-path/
 {% endhighlight %}
