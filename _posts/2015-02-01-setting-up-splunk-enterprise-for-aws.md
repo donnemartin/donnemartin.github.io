@@ -26,11 +26,11 @@ Splunk has an interesting [licensing model](http://www.splunk.com/view/pricing/S
   <img src="https://raw.githubusercontent.com/donnemartin/donnemartin.github.io/master/images/splunk_license.png">
 </p>
 
-[Splunk Free](http://docs.splunk.com/Documentation/Splunk/latest/Admin/MoreaboutSplunkFree) allows you to index 500 MB per day.
-
 [Splunk Enterprise](http://www.splunk.com/view/cloud/SP-CAAAGE8#aws) is a "bring your own license" model and requires you to host the server(s).
 
-[Splunk Storm](http://docs.splunk.com/Documentation/Storm/Storm/User/StormFreeFAQ) is a free version of Splunk Cloud that allows for 20 GB of storage and 30 days of data retention.  You can have five project members and three projects.
+[Splunk Free](http://docs.splunk.com/Documentation/Splunk/latest/Admin/MoreaboutSplunkFree) is similar to Splunk Enterprise and allows you to index 500 MB per day.
+
+[Splunk Storm](http://docs.splunk.com/Documentation/Storm/Storm/User/StormFreeFAQ) is a free version of Splunk Cloud that allows for 20 GB of storage and 30 days of data retention.  You can have five project members and three projects.  It was recently [announced](http://www.splunk.com/en_us/products/eol/storm-eol.html) that Splunk Storm will no longer be supported.
 
 [Splunk Cloud](http://www.splunk.com/view/cloud/SP-CAAAG58) is a hosted solution of Splunk Enterprise without the restrictions of Splunk Storm. Splunk Cloud includes 5 GB daily indexing, 90 days of storage, and a 100% uptime SLA.
 
@@ -47,11 +47,11 @@ If hosting Splunk Enterprise on AWS, you must factor in the cost of compute, sto
 
 Just factoring in the Splunk Enterprise license, compute costs, and EBS costs (no bandwidth, server administration, etc) totals $4804.  Splunk Enterprise seems like a fair choice if just starting out with Splunk with low daily index volumes.  Splunk Cloud becomes more appealing for larger workloads (up to 5 GB daily included) or for those who wish to have more of a turnkey solution.
 
-It's also important to note that Splunk slashed prices for its cloud offering by 33% in August of 2014 in response to price cuts from Amazon. Note Amazon has dropped prices over 40 times over the last six years.
+Splunk slashed prices for its cloud offering by 33% in August of 2014 in response to price cuts from Amazon.  Amazon has dropped prices over 40 times over the last six years.
 
 ## Getting Started: Splunk on the AWS Market Place
 
-The easiest way to get started with Splunk on AWS is to spin up a Splunk instance from the [AWS Market Place](https://aws.amazon.com/marketplace).  There are no additional charges per hour other than what you would pay Amazon for compute.
+The easiest way to get started with Splunk Enterprise on AWS is to spin up a Splunk instance from the [AWS Market Place](https://aws.amazon.com/marketplace).  There are no additional charges per hour other than what you would pay Amazon for compute.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/donnemartin/donnemartin.github.io/master/images/splunk_market.png">
