@@ -12,7 +12,7 @@ image:
   <img src="https://avatars1.githubusercontent.com/u/5458997">
 </p>
 
-"I are an Engineer". I’m the kid who tirelessly built lego cities and souped up lego rides for my lego army to conquer. I've since moved on to a new sandbox built on cloud computing (Amazon Web Services), data analysis (Hadoop, Python, R, Tableau), and mobile apps (Android).
+"I are an Engineer". I’m the kid who tirelessly built lego cities and souped up lego rides for my lego army to conquer. I've since moved on to a new sandbox built on cloud computing (Amazon Web Services), data analysis (Hadoop, Spark, Python, R, Tableau), and mobile apps (Android).
 
 As the Cloud and Mobile Technologies Manager at Nemetschek Vectorworks, I spearhead the company’s efforts to expand its traditional CAD desktop application to include Software as a Service and mobile solutions.
 
