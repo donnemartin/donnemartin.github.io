@@ -21,6 +21,8 @@ The following stats demonstrate why small files are so problematic with Hadoop:
 * 10,000 mappers * 2 seconds = 5 hours of mapper CPU setup time
 * 100,000 mappers * 2 seconds = 55 hours of mapper CPU setup time
 
+As an aside, Spark does not start a new JVM for each mapper task, it uses a JVM for each executor.  Executors can run multiple tasks and stay up for the life of an application.
+
 ## Optimal Input File Size
 
 Due to the relatively lengthy setup time for mappers, you generally want a mapper and its associated JVM to stay for as long as possible.  Ideally, each mapper should have a minimum life span of at least 60 seconds.  Since a single mapper can get 10 MB to 15 MB per second speed to Amazon S3, the ideal file size is 60 sec * 15 MB which is roughly 1 GB.
@@ -33,7 +35,7 @@ How do you merge your files to fall within this 1 GB to 2 GB sweet spot?
 
 [Apache DistCp](http://hadoop.apache.org/docs/r1.2.1/distcp.html) is an open-source tool that uses MapReduce under the hood to copy large amounts of data.
 
-[S3DistCp](http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_s3distcp.html) is an extension of DistCp that is optimized to work with Amazon S3.  S3DistCp can also be used to combine smaller files and aggregate them together, taking in a pattern and target file to combine smaller input files to larger ones.  S3DistCp can also be used to transfer large volumes of data from S3 to your Hadoop cluster.
+[S3DistCp](http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_s3distcp.html) is an extension of DistCp that is optimized to work with Amazon S3.  S3DistCp is useful for combining smaller files and aggregate them together, taking in a pattern and target file to combine smaller input files to larger ones.  S3DistCp can also be used to transfer large volumes of data from S3 to your Hadoop cluster.
 
 S3DistCp can be used with the [EMR CLI](http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-cli-install.html)
 
