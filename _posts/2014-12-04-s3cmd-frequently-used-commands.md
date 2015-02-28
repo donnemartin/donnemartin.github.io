@@ -22,7 +22,7 @@ Running the following command will prompt you to enter your AWS access and AWS s
 s3cmd --configure
 {% endhighlight %}
 
-I also suggest enabling GPG encryption which will encrypt your data at rest, and enabling HTTPS to encrypt your data in transit.
+I also suggest enabling GPG encryption which will encrypt your data at rest, and enabling HTTPS to encrypt your data in transit.  Note this might impact performance.
 
 ## Frequently Used Commands
 
