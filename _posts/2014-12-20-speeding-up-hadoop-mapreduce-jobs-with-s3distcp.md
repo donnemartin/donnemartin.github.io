@@ -10,7 +10,7 @@ image:
 
 When optimizing Hadoop MapReduce jobs on AWS Elastic Map Reduce, you often tweak the EC2 instance type and number of instances to obtain the optimal number of mappers.  More data = more splits = more mappers.  [EC2 instances vary](http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/TaskConfiguration.html) in the number of mappers they can support in parallel--for example an m1.XL can process 6-8 mappers in parallel, whereas an m1.small can only run up to 2 mappers in parallel.
 
-Input file size can also have a significant impact on the job length, due to the mapper setup time.
+Input file size can also have a significant impact on the job length, due to slow disk seek times and mapper setup times.
 
 ## Mapper Setup Time
 
