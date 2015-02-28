@@ -18,6 +18,14 @@ I recently hooked up Splunk with AWS to search, monitor, and analyze log files. 
 * Provide access to previously untapped data
 * Promote transparency
 
+## Competitors
+
+* [ELK: ElasticSearch, LogStash, Kibana](http://www.elasticsearch.org/overview/elkdownloads/)
+* [Fluentd](http://docs.fluentd.org/articles/free-alternative-to-splunk-by-fluentd)
+* [Sumo Logic](https://www.sumologic.com/)
+
+Here's a good article comparing [Splunk vs ELK](http://riskfocus.com/splunk-vs-elk-part-1-cost/) and a [Quora post](http://www.quora.com/What-are-the-best-free-alternatives-to-Splunk) detailing free alternatives to Splunk.
+
 ## Product Overview: Splunk Free, Enterprise, Storm, Cloud
 
 Splunk has an interesting [licensing model](http://www.splunk.com/view/pricing/SP-CAAADFV) where the cost per GB of daily indexing decreases the more you index.  For example, indexing 1 GB per day would cost $1800 (1 GB x $1800), whereas indexing 10 GB per day would cost $10000 (10 GB x $1000).
