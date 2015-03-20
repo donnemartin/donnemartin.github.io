@@ -53,7 +53,7 @@ If hosting Splunk Enterprise on AWS, you must factor in the cost of compute, sto
 
 *4 EC2 Compute Units and 7 GB of RAM is recommended for daily indexing of < 20 GB according to [Splunk Answers](http://blogs.splunk.com/2012/03/07/splunk-and-aws-sizing-revisited/)
 
-Just factoring in the Splunk Enterprise license, compute costs, and EBS costs (no bandwidth, server administration, etc) totals $4804.  Splunk Enterprise seems like a fair choice if just starting out with Splunk with low daily index volumes.  Splunk Cloud becomes more appealing for larger workloads (up to 5 GB daily included) or for those who wish to have more of a turnkey solution.
+Just factoring in the Splunk Enterprise license, compute costs, and EBS costs (no bandwidth, server administration, etc) totals $4804.  Splunk Enterprise seems like a fair choice if just starting out with Splunk with low daily index volumes.  Splunk Cloud becomes more appealing for larger workloads (up to 5 GB daily included) or for those who wish to have more of a turnkey solution.  Splunk Cloud also runs a c3.4xlarge which has 16 EC2 Compute Units and 30 GB of RAM.
 
 Splunk slashed prices for its cloud offering by 33% in August of 2014 in response to price cuts from Amazon.  Amazon has dropped prices over 40 times over the last six years.
 
