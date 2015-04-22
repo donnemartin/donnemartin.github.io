@@ -43,7 +43,7 @@ I appreciate that Tableau seems to be moving away from modal dialogs that block 
 <p align="center"><b>Calculation Editor</b></p>
 <p align="center"><img src="http://donnemartin.com/wp-content/uploads/2015/03/Tableau_calc.png" alt="" /></p>
 
-Tooltips now update quickly as your mouse moves.  Previously I had to pause mouse movement for Tableau to update the tooltip.  In some situations I would sometimes have to move the mouse complete out of a viz then move it back for the tooltip to update--try doing a few of these in board room presentations and it gets old quickly.  Another handy improvement is a tooltip shown when you hover over a tab name:
+Tooltips now update quickly as your mouse moves.  Previously I had to pause mouse movement for Tableau to update the tooltip.  In some situations I would sometimes have to move the mouse completely out of a viz then move it back for the tooltip to update.  Another handy improvement is a tooltip shown when you hover over a tab name:
 
 <p align="center"><img src="http://donnemartin.com/wp-content/uploads/2015/03/Tableau_tooltip.png" alt="" /></p>
 
