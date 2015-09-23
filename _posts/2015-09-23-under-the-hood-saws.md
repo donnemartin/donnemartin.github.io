@@ -8,7 +8,7 @@ comments: true
 
 ## What's SAWS?
 
-https://github.com/donnemartin/saws
+[](https://github.com/donnemartin/saws)
 
 ![](https://camo.githubusercontent.com/2af72023269b0b320adf4ec55576435f5c8b79c4/687474703a2f2f692e696d6775722e636f6d2f767a43357a6d412e676966)
 
@@ -32,13 +32,13 @@ Python-powered official AWS command line.  Does the heavy lifting communicating 
 
 Check out [completer.py](https://github.com/donnemartin/saws/blob/master/saws/completer.py) for more details on how `awscli` is used.
 
-https://github.com/aws/aws-cli
+[](https://github.com/aws/aws-cli)
 
 ### Python-Prompt Toolkit
 
 Framework that simplifies the creation of interactive command lines.  Used throughout the `SAWS` source code.
 
-https://github.com/jonathanslenders/python-prompt-toolkit
+[](https://github.com/jonathanslenders/python-prompt-toolkit)
 
 ### Pygments
 
@@ -139,7 +139,7 @@ The [.travis.yml](https://github.com/donnemartin/saws/blob/master/.travis.yml) f
 
 Here's a handy article to learn more about how to build and upload your Sphinx docs to PyPi:
 
-https://pythonhosted.org/an_example_pypi_project/buildanduploadsphinx.html
+[](https://pythonhosted.org/an_example_pypi_project/buildanduploadsphinx.html)
 
 Run the following to build the docs:
 
@@ -165,7 +165,7 @@ http://peterdowns.com/posts/first-time-with-pypi.html
 
 Git extensions that provide high-level repository operations for the popular [git branching model](http://nvie.com/img/git-model@2x.png):
 
-https://github.com/nvie/gitflow
+[](https://github.com/nvie/gitflow)
 
 ### Misc
 
