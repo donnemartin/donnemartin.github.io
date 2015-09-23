@@ -34,11 +34,15 @@ Check out [completer.py](https://github.com/donnemartin/saws/blob/master/saws/co
 
 ### Python-Prompt Toolkit
 
-[Python-prompt-toolkit](https://github.com/jonathanslenders/python-prompt-toolkit) simplifies the creation of interactive command lines.  Used throughout the `SAWS` source code.
+[Python-prompt-toolkit](https://github.com/jonathanslenders/python-prompt-toolkit) simplifies the creation of interactive command lines.
+
+Used throughout the `SAWS` source code.
 
 ### Pygments
 
-[Pygments](http://pygments.org/) is a syntax highlighter for `SAWS` commands and output.  Check out [lexer.py](https://github.com/donnemartin/saws/blob/master/saws/lexer.py) for more details on how `pygments` is used.
+[Pygments](http://pygments.org/) is a syntax highlighter for `SAWS` commands and output.
+
+Check out [lexer.py](https://github.com/donnemartin/saws/blob/master/saws/lexer.py) for more details on how `pygments` is used.
 
 ### Unit Tests
 
@@ -159,7 +163,7 @@ http://peterdowns.com/posts/first-time-with-pypi.html
 
 Git extensions that provide high-level repository operations for the popular [git branching model](http://nvie.com/img/git-model@2x.png):
 
-[](https://github.com/nvie/gitflow)
+https://github.com/nvie/gitflow
 
 ### Misc
 
