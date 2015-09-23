@@ -8,7 +8,7 @@ comments: true
 
 ## What's SAWS?
 
-[](https://github.com/donnemartin/saws)
+[SAWS: GitHub Repo](https://github.com/donnemartin/saws)
 
 ![](https://camo.githubusercontent.com/2af72023269b0b320adf4ec55576435f5c8b79c4/687474703a2f2f692e696d6775722e636f6d2f767a43357a6d412e676966)
 
@@ -28,23 +28,17 @@ First off, I'm am **not** an expert in Python or open source, but I do enjoy con
 
 ### AWS CLI
 
-Python-powered official AWS command line.  Does the heavy lifting communicating with AWS and feeds completions to `SAWS`.  The AWS CLI uses [boto](https://github.com/boto/boto), the official Python SDK for AWS.
+Python-powered official [AWS CLI](https://github.com/aws/aws-cli).  Does the heavy lifting communicating with AWS and feeds completions to `SAWS`.  The AWS CLI uses [boto](https://github.com/boto/boto), the official Python SDK for AWS.
 
 Check out [completer.py](https://github.com/donnemartin/saws/blob/master/saws/completer.py) for more details on how `awscli` is used.
 
-[](https://github.com/aws/aws-cli)
-
 ### Python-Prompt Toolkit
 
-Framework that simplifies the creation of interactive command lines.  Used throughout the `SAWS` source code.
-
-[](https://github.com/jonathanslenders/python-prompt-toolkit)
+[Python-prompt-toolkit](https://github.com/jonathanslenders/python-prompt-toolkit) simplifies the creation of interactive command lines.  Used throughout the `SAWS` source code.
 
 ### Pygments
 
-Syntax highlighter for `SAWS` commands and output.  Check out [lexer.py](https://github.com/donnemartin/saws/blob/master/saws/lexer.py) for more details on how `pygments` is used.
-
-http://pygments.org/
+[Pygments](http://pygments.org/) is a syntax highlighter for `SAWS` commands and output.  Check out [lexer.py](https://github.com/donnemartin/saws/blob/master/saws/lexer.py) for more details on how `pygments` is used.
 
 ### Unit Tests
 
