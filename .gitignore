@@ -7,3 +7,54 @@ codekit-config.json
 node_modules
 _asset_bundler_cache
 images/scratch/
+
+*.py[cod]
+
+# C extensions
+*.so
+
+# Packages
+*.egg
+*.egg-info
+dist
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+lib64
+__pycache__
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+
+# Translations
+*.mo
+
+# Sphinx documentation
+docs/build/
+
+# Mr Developer
+.mr.developer.cfg
+.project
+.pydevproject
+
+.idea/
+*.pyc
+*.egg-info/
+*env/
+.tox/
+dist/
+.DS_Store
+
+scratch/
+output/
+pelican.pid
+srv.pid
