@@ -38,6 +38,6 @@ RELATIVE_URLS = True
 # THEME = 'pelican-bootstrap3'
 # BOOTSTRAP_THEME = 'readable'
 
-THEME = 'startbootstrap-agency-1.0.6'
+THEME = 'startbootstrap-agency'
 BOOTSTRAP_THEME = ''
 
