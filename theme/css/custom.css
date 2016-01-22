@@ -1,42 +1,3 @@
-/* MARKETING CONTENT
--------------------------------------------------- */
-
-/* Pad the edges of the mobile views a bit */
-.marketing {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-/* Center align the text within the three columns below the carousel */
-.marketing .col-lg-4 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.marketing h2 {
-  font-weight: normal;
-}
-.marketing .col-md-4 h2 {
-    font-size: 28px;
-}
-.marketing .col-lg-4 p {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.marketing .col-md-4 .img-square{
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-
-.marketing .col-md-4 .btn{
-  margin-bottom: 30px;
-}
-
-.marketing-divider {
-  margin-top: 40px;
-  margin-bottom: 80px; /* Space out the Bootstrap <hr> more */
-}
-
 /* Featurettes
 ------------------------- */
 
@@ -59,34 +20,10 @@
   margin-left: 40px;
 }
 
-/* Thin out the marketing headings */
+/* Thin out the featurette headings */
 .featurette-heading {
   font-size: 30px;
   font-weight: 300;
   line-height: 1;
   letter-spacing: -1px;
-}
-
-/* RESPONSIVE CSS
--------------------------------------------------- */
-
-@media (min-width: 768px) {
-
-  /* Remve the edge padding needed for mobile */
-  .marketing {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-}
-
-.container-non-responsive {
-  /* Margin/padding copied from Bootstrap */
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-
-  /* Set width to your desired site width */
-  width: 650px;
 }
