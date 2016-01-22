@@ -55,6 +55,5 @@ dist/
 .DS_Store
 
 scratch/
-output/
 pelican.pid
 srv.pid
