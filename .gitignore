@@ -52,7 +52,7 @@ docs/build/
 *env/
 .tox/
 dist/
-.DS_Store
+*/.DS_Store
 
 scratch/
 pelican.pid
