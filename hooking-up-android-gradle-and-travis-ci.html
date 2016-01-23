@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Donne Martin</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="./theme/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="./theme/css/agency.css" rel="stylesheet">
+    <link href="./theme/css/custom.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="./theme/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond../theme/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body id="page-top" class="index">
+
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color: #000">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href=".">Donne Martin</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./#likes">Likes</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./#portfolio">GitHub</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./archives">Blog</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>    <div class="container">
+            <section id="content">
+                <article>
+                    <h1>
+                        <a href="./hooking-up-android-gradle-and-travis-ci.html"
+                           rel="bookmark"
+                           title="Permalink to Hooking Up Android Gradle and Travis CI">
+                            Hooking Up Android Gradle and Travis CI
+                        </a>
+                    </h1>
+                    <i><time datetime="2014-11-16T00:00:00-05:00"> Sun 16 November 2014</time></i>
+                    <div class="entry-content">
+                        <div class="panel">
+                        <br/>
+                        </div>
+                        <div class="container">
+                            <br/>
+                            <img class="img-responsive" src="https://raw.githubusercontent.com/donnemartin/donnemartin.github.io/master/images/posts/travis-logo_cover.png">
+                        </div>
+                        <hr class="featurette-divider">
+                        <p>I’ve recently started using <a href="http://www.gradle.org/">Gradle</a> as the build system for my Android projects.  <a href="https://travis-ci.org/">Travis CI</a> is a very popular continuous integration tool for open source projects.</p>
+<h2>Hooking Up Travis CI to GitHub</h2>
+<p>To hook up Travis CI with Github, simply sign in using your GitHub account. Next, select which repos you want to hook up:</p>
+<p align="center">
+  <img src="http://donnemartin.net/wp-content/uploads/2014/10/Screen-Shot-2014-10-04-at-4.21.59-AM.png" class="img-responsive">
+</p>
+
+<p>Finally, add a .travis.yml file, such as the sample provided below, then push to kick off a build:</p>
+<div class="highlight"><pre><span class="n">android</span><span class="o">:</span>
+  <span class="n">components</span><span class="o">:</span>
+    <span class="err">#</span> <span class="n">Uncomment</span> <span class="n">the</span> <span class="n">lines</span> <span class="n">below</span> <span class="k">if</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span>
+    <span class="err">#</span> <span class="n">use</span> <span class="n">the</span> <span class="n">latest</span> <span class="n">revision</span> <span class="n">of</span> <span class="n">Android</span> <span class="n">SDK</span> <span class="n">Tools</span>
+    <span class="err">#</span> <span class="o">-</span> <span class="n">platform</span><span class="o">-</span><span class="n">tools</span>
+    <span class="err">#</span> <span class="o">-</span> <span class="n">tools</span>
+
+    <span class="err">#</span> <span class="n">The</span> <span class="n">BuildTools</span> <span class="n">version</span> <span class="n">used</span> <span class="n">by</span> <span class="n">your</span> <span class="n">project</span>
+    <span class="o">-</span> <span class="n">build</span><span class="o">-</span><span class="n">tools</span><span class="o">-</span><span class="mf">19.1</span><span class="o">.</span><span class="mi">0</span>
+
+    <span class="err">#</span> <span class="n">The</span> <span class="n">SDK</span> <span class="n">version</span> <span class="n">used</span> <span class="n">to</span> <span class="n">compile</span> <span class="n">your</span> <span class="n">project</span>
+    <span class="o">-</span> <span class="n">android</span><span class="o">-</span><span class="mi">19</span>
+
+    <span class="err">#</span> <span class="n">Additional</span> <span class="n">components</span>
+    <span class="o">-</span> <span class="n">extra</span><span class="o">-</span><span class="n">google</span><span class="o">-</span><span class="n">google_play_services</span>
+    <span class="o">-</span> <span class="n">extra</span><span class="o">-</span><span class="n">google</span><span class="o">-</span><span class="n">m2repository</span>
+    <span class="o">-</span> <span class="n">extra</span><span class="o">-</span><span class="n">android</span><span class="o">-</span><span class="n">m2repository</span>
+    <span class="o">-</span> <span class="n">addon</span><span class="o">-</span><span class="n">google_apis</span><span class="o">-</span><span class="n">google</span><span class="o">-</span><span class="mi">19</span>
+
+    <span class="err">#</span> <span class="n">Specify</span> <span class="n">at</span> <span class="n">least</span> <span class="n">one</span> <span class="n">system</span> <span class="n">image</span><span class="o">,</span>
+    <span class="err">#</span> <span class="k">if</span> <span class="n">you</span> <span class="n">need</span> <span class="n">to</span> <span class="n">run</span> <span class="n">emulator</span><span class="o">(</span><span class="n">s</span><span class="o">)</span> <span class="n">during</span> <span class="n">your</span> <span class="n">tests</span>
+    <span class="o">-</span> <span class="n">sys</span><span class="o">-</span><span class="n">img</span><span class="o">-</span><span class="n">armeabi</span><span class="o">-</span><span class="n">v7a</span><span class="o">-</span><span class="n">android</span><span class="o">-</span><span class="mi">19</span>
+    <span class="o">-</span> <span class="n">sys</span><span class="o">-</span><span class="n">img</span><span class="o">-</span><span class="n">x86</span><span class="o">-</span><span class="n">android</span><span class="o">-</span><span class="mi">17</span>
+</pre></div>
+
+
+<p>Depending on the load, Travis CI will then kick off a build and email you the results.</p>
+<h2>Hooking Up Android Gradle to Travis CI</h2>
+<p>I found Travis CI to be difficult to integrate with Android Gradle from scratch, as the support is still in beta and there is a lack of documentation:</p>
+<p align="center">
+  <img src="http://donnemartin.net/wp-content/uploads/2014/10/Screen-Shot-2014-10-03-at-7.45.20-PM-1024x263.png" class="img-responsive">
+</p>
+
+<p>For example, I ran into the following cryptic issue:</p>
+<p align="center">
+  <img src="http://donnemartin.net/wp-content/uploads/2014/10/Screen-Shot-2014-10-03-at-7.48.37-PM.png" class="img-responsive">
+</p>
+
+<p>Which I fixed by adding the following to my .travis.yml:</p>
+<div class="highlight"><pre>chmod +x grailsw
+</pre></div>
+
+
+<p>Ultimately, a blank slate configuration of Android Gradle with Travis CI (in its current beta Android integration) proved to be quite a difficult task.  I decided to take a step back and evaluate other options.</p>
+<h2>android-tdd-playground</h2>
+<p><a href="https://github.com/donnemartin/android-tdd-playground">android-tdd-playground</a> is a good starting point to enable your projects to use Gradle, Travis CI, and even the Android Testing Framework. I simply forked the project and started moving over components from my <a href="https://github.com/donnemartin/photogallery">Flickr Android app</a> to the "playground" and customized as needed.</p>
+<p>I recommend taking this approach when first starting with Travis CI, as it streamlines the integration and allows you to focus on your app.</p>
+<h2>Travis CI Badge:</h2>
+<p align="center">
+  <img src="http://donnemartin.net/wp-content/uploads/2014/10/Screen-Shot-2014-10-03-at-7.48.37-PM.png" class="img-responsive">
+</p>
+
+<p>The Travis CI badge gives visual feedback of the state of the last build.  Adding the Travis CI build results is just one line of code to your README markdown: <a href="https://travis-ci.org/donnemartin/photogallery"><img alt="Build Status" src="https://travis-ci.org/donnemartin/photogallery.svg?branch=master" /></a></p>
+<p align="center">
+  <img src="http://donnemartin.net/wp-content/uploads/2014/10/Screen-Shot-2014-10-04-at-4.39.06-AM.png" class="img-responsive">
+</p>
+                    </div>
+                    <hr class="featurette-divider">
+                    <!-- /.entry-content -->
+                </article>
+            </section>
+
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; Donne Martin 2016</span>
+                </div>
+            </div>
+        </div>
+    </footer>    <!-- jQuery -->
+    <script src="./theme/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="./theme/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="./theme/js/classie.js"></script>
+    <script src="./theme/js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="./theme/js/jqBootstrapValidation.js"></script>
+    <script src="./theme/js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="./theme/js/agency.js"></script>
+</body>
+
+</html>
