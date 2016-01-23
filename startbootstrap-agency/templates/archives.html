@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'includes/header.html' %}
+
+<body id="page-top" class="index">
+
+    {% include 'includes/nav-blog.html' %}
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="images/header-bg-blog.jpg" style="width:100%" class="img-responsive">
+          <div class="container">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.carousel -->
+
+    <div class="container">
+        {% block content %}
+            <section id="content">
+                <article>
+                    {% if articles %}
+                        {% for article in (articles_page.object_list if articles_page else articles) %}
+                            <article>
+                                <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
+                                {% if DISPLAY_ARTICLE_INFO_ON_INDEX %}
+                                    <div class="well well-sm">
+                                        {% include "includes/article_info.html" %}
+                                    </div>
+                                {% endif %}
+                                <div class="summary">{{ article.summary }}
+                                    {% include 'includes/comment_count.html' %}
+                                    <span class="published">
+                                        <i><time datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }}</time></i>
+                                        <br/><br/>
+                                    </span>
+                                </div>
+                            </article>
+                            <hr/>
+                        {% endfor %}
+                    {% endif %}
+                    {% include 'includes/pagination.html' %}
+                    <!-- /.entry-content -->
+                </article>
+            </section>
+
+        {% endblock %}
+    </div>
+    {% include 'includes/footer.html' %}
+    {% include 'includes/script_imports.html' %}
+
+</body>
+
+</html>
