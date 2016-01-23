@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Donne Martin</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="./theme/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="./theme/css/agency.css" rel="stylesheet">
+    <link href="./theme/css/custom.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="./theme/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond../theme/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body id="page-top" class="index">
+
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color: #000">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href=".">Donne Martin</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./#likes">Likes</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./#portfolio">GitHub</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./archives">Blog</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>    <div class="container">
+            <section id="content">
+                <article>
+                    <h1>
+                        <a href="./speeding-up-hadoop-mapreduce-jobs-with-s3distcp.html"
+                           rel="bookmark"
+                           title="Permalink to Speeding Up Hadoop MapReduce Jobs with S3DistCp">
+                            Speeding Up Hadoop MapReduce Jobs with S3DistCp
+                        </a>
+                    </h1>
+                    <i><time datetime="2014-12-20T00:00:00-05:00"> Sat 20 December 2014</time></i>
+                    <div class="entry-content">
+                        <div class="panel">
+                        <br/>
+                        </div>
+                        <div class="container">
+                            <br/>
+                            <img class="img-responsive" src="https://raw.githubusercontent.com/donnemartin/donnemartin.github.io/master/images/posts/hadoop_emr_cover.png">
+                        </div>
+                        <hr class="featurette-divider">
+                        <p>When optimizing Hadoop MapReduce jobs on AWS Elastic Map Reduce, you often tweak the EC2 instance type and number of instances to obtain the optimal number of mappers.  More data = more splits = more mappers.  <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/TaskConfiguration.html">EC2 instances vary</a> in the number of mappers they can support in parallel--for example an m1.XL can process 6-8 mappers in parallel, whereas an m1.small can only run up to 2 mappers in parallel.</p>
+<p>Input file size can also have a significant impact on the job length, due to slow disk seek speeds and mapper setup times.</p>
+<h2>Mapper Setup Time</h2>
+<p>The following stats demonstrate why small files are so problematic with Hadoop:</p>
+<ul>
+<li>Each mapper is a single Java Virtual Machine (JVM) which needs CPU and memory resources</li>
+<li>Mappers take 2 seconds to spawn up and be ready for processing</li>
+<li>10,000 mappers * 2 seconds = 5 hours of mapper CPU setup time</li>
+<li>100,000 mappers * 2 seconds = 55 hours of mapper CPU setup time</li>
+</ul>
+<p>As an aside, Spark does not start a new JVM for each mapper task, it uses a JVM for each executor.  Executors can run multiple tasks and stay up for the life of an application.</p>
+<h2>Optimal Input File Size</h2>
+<p>Due to the relatively lengthy setup time for mappers, you generally want a mapper and its associated JVM to stay for as long as possible.  Ideally, each mapper should have a minimum life span of at least 60 seconds.  Since a single mapper can get 10 MB to 15 MB per second speed to Amazon S3, the ideal file size is 60 sec * 15 MB which is roughly 1 GB.</p>
+<p>Thus, <strong>Amazon recommends input files to be between 1GB to 2GB</strong>.  Unfortunately, many log files are typically nowhere near this range.</p>
+<p>How do you merge your files to fall within this 1 GB to 2 GB sweet spot?</p>
+<h2>DistCp and S3DistCp</h2>
+<p><a href="http://hadoop.apache.org/docs/r1.2.1/distcp.html">Apache DistCp</a> is an open-source tool that uses MapReduce under the hood to copy large amounts of data.</p>
+<p><a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_s3distcp.html">S3DistCp</a> is an extension of DistCp that is optimized to work with Amazon S3.  S3DistCp is useful for combining smaller files and aggregate them together, taking in a pattern and target file to combine smaller input files to larger ones.  S3DistCp can also be used to transfer large volumes of data from S3 to your Hadoop cluster.</p>
+<p>S3DistCp can be used with the <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-cli-install.html">EMR CLI</a></p>
+<h2>S3DistCp Code</h2>
+<p>The EMR command line below executes the following:</p>
+<ul>
+<li>Create a master node and slave nodes of type m1.small</li>
+<li>Runs S3DistCp on the source bucket location and concatenates files that match the date regular expression, resulting in files that are roughly 1024 MB or 1 GB</li>
+<li>Places the results in the destination bucket</li>
+</ul>
+<div class="highlight"><pre>./elastic-mapreduce --create --instance-group master --instance-count 1 \
+--instance-type m1.small --instance-group core --instance-count 4 \
+--instance-type m1.small --jar /home/hadoop/lib/emr-s3distcp-1.0.jar \
+--args &quot;--src,s3://my-bucket-source/,--groupBy,.*([0-9]{4}-01).*,\
+--dest,s3://my-bucket-dest/,--targetSize,1024&quot;
+</pre></div>
+
+
+<h2>A Note on Compression</h2>
+<p>For further optimization, compression can be helpful to save on AWS storage and bandwidth costs, to speed up the S3 to/from EMR transfer, and to reduce disk I/O.  Note that compressed files are not easy to split for Hadoop.  For example, Hadoop uses a single mapper per GZIP file, as it does not know about file boundaries.</p>
+<p>What type of compression should you use?</p>
+<ul>
+<li>Time sensitive job: Snappy or LZO</li>
+<li>Large amounts of data: GZIP</li>
+<li>General purpose: GZIP, as it's supported by most platforms</li>
+</ul>
+<p>You can specify the compression codec (gzip, lzo, snappy, or none) to use for copied files with S3DistCp with --outputCodec.  If no value is specified, files are copied with no compression change.  The code below sets the compression to lzo:</p>
+<div class="highlight"><pre>--outputCodec,lzo
+</pre></div>
+                    </div>
+                    <hr class="featurette-divider">
+                    <!-- /.entry-content -->
+                </article>
+            </section>
+
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; Donne Martin 2016</span>
+                </div>
+            </div>
+        </div>
+    </footer>    <!-- jQuery -->
+    <script src="./theme/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="./theme/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="./theme/js/classie.js"></script>
+    <script src="./theme/js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="./theme/js/jqBootstrapValidation.js"></script>
+    <script src="./theme/js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="./theme/js/agency.js"></script>
+</body>
+
+</html>
