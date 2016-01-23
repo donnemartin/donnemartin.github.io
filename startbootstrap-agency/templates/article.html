@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'includes/header.html' %}
+
+<body id="page-top" class="index">
+
+    {% include 'includes/nav-solid.html' %}
+    <div class="container">
+        {% block content %}
+            <section id="content">
+                <article>
+                    <h1>
+                        <a href="{{ SITEURL }}/{{ article.url }}"
+                           rel="bookmark"
+                           title="Permalink to {{ article.title|striptags }}">
+                            {{ article.title }}
+                        </a>
+                    </h1>
+                    <i><time datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }}</time></i>
+                    <div class="entry-content">
+                        <div class="panel">
+                        <br/>
+                        </div>
+                        <div class="container">
+                            <br/>
+                            <img class="img-responsive" src="{{ article.coverimage }}">
+                        </div>
+                        <hr class="featurette-divider">
+                        {{ article.content }}
+                    </div>
+                    <hr class="featurette-divider">
+                    <!-- /.entry-content -->
+                </article>
+            </section>
+
+        {% endblock %}
+    </div>
+    {% include 'includes/footer.html' %}
+    {% include 'includes/script_imports.html' %}
+
+</body>
+
+</html>
