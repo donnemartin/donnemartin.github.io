@@ -1,0 +1,8 @@
+{% if article.tags %}
+<span> - </span>
+{% for tag in article.tags %}
+	<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+    {% if not loop.last %}
+    {% endif %}
+{% endfor %}
+{% endif %}
