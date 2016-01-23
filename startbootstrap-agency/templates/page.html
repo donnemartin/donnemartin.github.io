@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'includes/header.html' %}
+
+<body id="page-top" class="index">
+
+    {% include 'includes/nav-solid.html' %}
+    <div class="container">
+        {% block content %}
+            <section id="content" class="body">
+                {% import 'includes/translations.html' as translations with context %}
+                {{ translations.translations_for(page) }}
+                {% if PDF_PROCESSOR %}
+                    <a href="{{ SITEURL }}/pdf/{{ page.slug }}.pdf">
+                        get the pdf
+                    </a>
+                {% endif %}
+                <div class="entry-content">
+                    {{ page.content }}
+                    {% if page.comments == 'enabled' %}
+                        {% include 'includes/comments.html' %}
+                    {% endif %}
+                </div>
+            </section>
+        {% endblock %}
+    </div>
+    {% include 'includes/footer.html' %}
+    {% include 'includes/script_imports.html' %}
+
+</body>
+
+</html>
+
+
+
