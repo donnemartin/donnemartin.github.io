@@ -71,3 +71,12 @@
   }
 
 }
+
+.blog-landing-container {
+    margin-top: 20px;
+}
+
+.blog-landing-link {
+    color: #fff;
+    font-weight: bold;
+}
