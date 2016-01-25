@@ -8,7 +8,7 @@
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
   z-index: 1;
-  padding-bottom: 50px;
+  padding-bottom: 150px;
 }
 
 /* Declare heights because of positioning of img element */
