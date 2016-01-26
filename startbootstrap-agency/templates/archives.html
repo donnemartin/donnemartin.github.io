@@ -7,25 +7,21 @@
 
     {% include 'includes/nav-blog.html' %}
 
-    <!-- Carousel
-    ================================================== -->
-    <div id="myCarousel" class="carousel slide">
-      <div class="carousel-inner">
-        <div class="item active">
-          <img src="images/header-bg-blog.jpg" style="width:100%" class="img-responsive">
-          <div class="container">
-            <div class="carousel-caption">
-                <h1>Blog</h1>
+    <header class="blog">
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">Cloud, Data, Mobile</div>
+                <div class="intro-heading">Blog</div>
+                <a href="#blog" class="page-scroll btn btn-xl">Read</a>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-    <!-- /.carousel -->
+    </header>
+
+    <span class="container" id="blog"></span>
 
     <div class="container">
         {% block content %}
-            <section id="content">
+            <section id="content" class="section-top-padding">
                 <article>
                     {% if articles %}
                         {% for article in (articles_page.object_list if articles_page else articles) %}
