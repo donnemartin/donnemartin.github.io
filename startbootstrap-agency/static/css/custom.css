@@ -41,6 +41,12 @@
     padding: 20px 0px 0px 0px;
 }
 
+@media (min-width:768px) {
+  .article-top-padding {
+    padding: 50px 0px 0px 0px;
+  }
+}
+
 .blog {
     background-image: url(../../images/header-bg-blog.jpg);
 }
