@@ -18,7 +18,9 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
+
 HIDE_SIDEBAR = True
+PYGMENTS_STYLE = 'monokai'
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
