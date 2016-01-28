@@ -1,68 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
-
-{% include 'includes/header.html' %}
-
-<body id="page-top" class="index">
-
-    {% include 'includes/nav-blog.html' %}
-
-    <header class="blog">
-        <div class="container">
-            <div class="intro-text">
-                <div class="intro-lead-in">Cloud, Data, Mobile</div>
-                <div class="intro-heading">Blog</div>
-                <a href="#blog" class="page-scroll btn btn-xl">Read</a>
+{% if USE_OPEN_GRAPH is not defined %}
+    {% set USE_OPEN_GRAPH = True %}
+{% endif %}
+<html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock %}"{% if USE_OPEN_GRAPH %} prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml"{% endif %}>
+    {% include 'includes/header.html' %}
+    <body id="page-top" class="index">
+        {% include 'includes/nav-blog.html' %}
+        <header class="blog">
+            <div class="container">
+                <div class="intro-text">
+                    <div class="intro-lead-in">Cloud, Data, Mobile</div>
+                    <div class="intro-heading">Blog</div>
+                    <a href="#blog" class="page-scroll btn btn-xl">Read</a>
+                </div>
             </div>
-        </div>
-    </header>
-
-    <span class="container" id="blog"></span>
-
-    <div class="container">
-        {% block content %}
-            <section id="content" class="section-top-padding">
-                <article>
-                    {% if articles %}
-                        {% for article in (articles_page.object_list if articles_page else articles) %}
-                            <article>
-                                <br/>
-                                <div class="container marketing">
-                                  <div class="row">
-                                    <div class="col-md-3 text-center">
-                                        <img class="img-square img-responsive" src="{{ article.thumbnail }}">
-                                    </div>
-                                    <div class="col-md-9">
-                                        <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
-                                        {% if DISPLAY_ARTICLE_INFO_ON_INDEX %}
-                                            <div class="well well-sm">
-                                                {% include "includes/article_info.html" %}
+        </header>
+        <span class="container" id="blog"></span>
+        <div class="container">
+            {% block content %}
+                <section id="content" class="section-top-padding">
+                    <article>
+                        {% if articles %}
+                            {% for article in (articles_page.object_list if articles_page else articles) %}
+                                <article>
+                                    <br/>
+                                    <div class="container marketing">
+                                      <div class="row">
+                                        <div class="col-md-3 text-center">
+                                            <img class="img-square img-responsive" src="{{ article.thumbnail }}">
+                                        </div>
+                                        <div class="col-md-9">
+                                            <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
+                                            {% if DISPLAY_ARTICLE_INFO_ON_INDEX %}
+                                                <div class="well well-sm">
+                                                    {% include "includes/article_info.html" %}
+                                                </div>
+                                            {% endif %}
+                                            <div class="summary">{{ article.summary }}
+                                                {% include 'includes/comment_count.html' %}
+                                                <span class="published">
+                                                    <i><time datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }}</time></i>
+                                                    <br/><br/>
+                                                </span>
                                             </div>
-                                        {% endif %}
-                                        <div class="summary">{{ article.summary }}
-                                            {% include 'includes/comment_count.html' %}
-                                            <span class="published">
-                                                <i><time datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }}</time></i>
-                                                <br/><br/>
-                                            </span>
                                         </div>
                                     </div>
-                                </div>
-                                <br/>
-                            </article>
-                            <hr/>
-                        {% endfor %}
-                    {% endif %}
-                    {% include 'includes/pagination.html' %}
-                    <!-- /.entry-content -->
-                </article>
-            </section>
-
-        {% endblock %}
-    </div>
-    {% include 'includes/footer.html' %}
-    {% include 'includes/script_imports.html' %}
-
-</body>
-
+                                    <br/>
+                                </article>
+                                <hr/>
+                            {% endfor %}
+                        {% endif %}
+                        {% include 'includes/pagination.html' %}
+                        <!-- /.entry-content -->
+                    </article>
+                </section>
+            {% endblock %}
+        </div>
+        {% include 'includes/body_includes.html' %}
+    </body>
 </html>
