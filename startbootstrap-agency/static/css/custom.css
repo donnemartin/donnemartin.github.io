@@ -41,10 +41,14 @@
     padding: 20px 0px 0px 0px;
 }
 
-@media (min-width:768px) {
-  .article-top-padding {
+.article-top-padding {
     padding: 50px 0px 0px 0px;
-  }
+}
+
+@media (min-width:768px) {
+    .article-top-padding {
+        padding: 120px 0px 0px 0px;
+    }
 }
 
 .blog {
