@@ -1,18 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-
-    <meta charset="utf-8">
+    <title>Donne Martin</title>
+    <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Donne Martin</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="./theme/css/bootstrap.min.css" rel="stylesheet">
+
+
+        <meta name="author" content="Donne Martin" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Donne Martin" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Donne Martin"/>
+        <meta property="og:url" content="."/>
+        <meta property="og:description" content="Donne Martin"/>
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="./theme/css/bootstrap.min.css" type="text/css"/>
+
+    <link href="./theme/css/pygments/monokai.css" rel="stylesheet">
+
+
+
+
 
     <!-- Custom CSS -->
     <link href="./theme/css/agency.css" rel="stylesheet">
@@ -32,9 +49,15 @@
         <script src="https://oss.maxcdn.com/libs/respond../theme/js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-</head>
-<body id="page-top" class="index">
+</head><body id="page-top" class="index">
 
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
     <nav class="navbar navbar-default navbar-fixed-top" style="background-color: #000">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -74,27 +97,26 @@
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
-    </nav>    <div class="container">
-            <section id="content" class="section-top-padding">
-                <article>
-                    <h1>
-                        <a href="./s3cmd-frequently-used-commands.html"
-                           rel="bookmark"
-                           title="Permalink to S3cmd: Frequently Used Commands">
-                            S3cmd: Frequently Used Commands
-                        </a>
-                    </h1>
-                    <i><time datetime="2014-12-04T00:00:00-05:00"> Thu 04 December 2014</time></i>
-                    <div class="entry-content">
-                        <div class="panel">
-                        <br/>
-                        </div>
-                        <div class="container">
-                            <br/>
-                            <img class="img-responsive" src="https://raw.githubusercontent.com/donnemartin/donnemartin.github.io/master/images/posts/terminal2_cover.png">
-                        </div>
-                        <hr class="featurette-divider">
-                        <p>Before I discovered <a href="http://s3tools.org/s3cmd">S3cmd</a>, I had been using the <a href="http://aws.amazon.com/console/">S3 console</a> to do basic operations and <a href="https://boto.readthedocs.org/en/latest/">boto</a> to do more of the heavy lifting.  However, sometimes I just want to hack away at a command line to do my work.</p>
+    </nav>    <section id="content" class="section-top-padding">
+        <article class="article-top-padding">
+            <h1>
+                <a href="./s3cmd-frequently-used-commands.html"
+                   rel="bookmark"
+                   title="Permalink to S3cmd: Frequently Used Commands">
+                    S3cmd: Frequently Used Commands
+                </a>
+            </h1>
+            <i><time datetime="2014-12-04T00:00:00-05:00"> Thu 04 December 2014</time></i>
+            <div class="entry-content">
+                <div class="panel">
+                <br/>
+                </div>
+                <div class="container">
+                    <br/>
+                    <img class="img-responsive" src="https://raw.githubusercontent.com/donnemartin/donnemartin.github.io/master/images/posts/terminal2_cover.png">
+                </div>
+                <hr class="featurette-divider">
+                <p>Before I discovered <a href="http://s3tools.org/s3cmd">S3cmd</a>, I had been using the <a href="http://aws.amazon.com/console/">S3 console</a> to do basic operations and <a href="https://boto.readthedocs.org/en/latest/">boto</a> to do more of the heavy lifting.  However, sometimes I just want to hack away at a command line to do my work.</p>
 <h2>S3cmd</h2>
 <p>I've found S3cmd to be a great command line tool for interacting with S3 on AWS.  S3cmd is written in Python, is open source, and is free even for commercial use.  It offers more advanced features than those found in the <a href="http://aws.amazon.com/cli/">AWS CLI</a>.</p>
 <h2>Configuring S3cmd</h2>
@@ -150,13 +172,15 @@ s3cmd --dry-run sync s3://my-bucket-name/ my-local-folder-path/
 # Apply a standard shell wildcard include to sync s3 bucket (source) to local (destination)
 s3cmd --include &#39;2014-05-01*&#39; sync s3://my-bucket-name/ my-local-folder-path/
 </pre></div>
-                    </div>
-                    <hr class="featurette-divider">
-                    <!-- /.entry-content -->
-                </article>
-            </section>
+            </div>
+            <hr class="featurette-divider">
+            <!-- /.entry-content -->
+        </article>
+    </section>
 
+        </div>
     </div>
+</div>
     <footer>
         <div class="container">
             <div class="row">
@@ -165,23 +189,24 @@ s3cmd --include &#39;2014-05-01*&#39; sync s3://my-bucket-name/ my-local-fold
                 </div>
             </div>
         </div>
-    </footer>    <!-- jQuery -->
-    <script src="./theme/js/jquery.js"></script>
+    </footer>
+<script src="./theme/js/jquery.min.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="./theme/js/bootstrap.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="./theme/js/bootstrap.min.js"></script>
 
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="./theme/js/classie.js"></script>
-    <script src="./theme/js/cbpAnimatedHeader.js"></script>
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="./theme/js/respond.min.js"></script>
 
-    <!-- Contact Form JavaScript -->
-    <script src="./theme/js/jqBootstrapValidation.js"></script>
-    <script src="./theme/js/contact_me.js"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="./theme/js/agency.js"></script>
+<!-- Plugin JavaScript -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="./theme/js/classie.js"></script>
+<script src="./theme/js/cbpAnimatedHeader.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="./theme/js/agency.js"></script>
+
+
 </body>
-
 </html>
