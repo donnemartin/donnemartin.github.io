@@ -1,18 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-
-    <meta charset="utf-8">
+    <title>Donne Martin</title>
+    <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Donne Martin</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="./theme/css/bootstrap.min.css" rel="stylesheet">
+
+
+        <meta name="author" content="Donne Martin" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Donne Martin" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Donne Martin"/>
+        <meta property="og:url" content="."/>
+        <meta property="og:description" content="Donne Martin"/>
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="./theme/css/bootstrap.min.css" type="text/css"/>
+
+    <link href="./theme/css/pygments/monokai.css" rel="stylesheet">
+
+
+
+
 
     <!-- Custom CSS -->
     <link href="./theme/css/agency.css" rel="stylesheet">
@@ -32,9 +49,15 @@
         <script src="https://oss.maxcdn.com/libs/respond../theme/js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-</head>
-<body id="page-top" class="index">
+</head><body id="page-top" class="index">
 
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
     <nav class="navbar navbar-default navbar-fixed-top" style="background-color: #000">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -74,27 +97,26 @@
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
-    </nav>    <div class="container">
-            <section id="content" class="section-top-padding">
-                <article>
-                    <h1>
-                        <a href="./python-hadoop-mapreduce-analyzing-aws-s3-bucket-logs-with-mrjob.html"
-                           rel="bookmark"
-                           title="Permalink to Python Hadoop MapReduce: Analyzing AWS S3 Bucket Logs with mrjob">
-                            Python Hadoop MapReduce: Analyzing AWS S3 Bucket Logs with mrjob
-                        </a>
-                    </h1>
-                    <i><time datetime="2015-05-17T00:00:00-04:00"> Sun 17 May 2015</time></i>
-                    <div class="entry-content">
-                        <div class="panel">
-                        <br/>
-                        </div>
-                        <div class="container">
-                            <br/>
-                            <img class="img-responsive" src="https://raw.githubusercontent.com/donnemartin/donnemartin.github.io/master/images/posts/mrjob_cover.png">
-                        </div>
-                        <hr class="featurette-divider">
-                        <h2>Introduction</h2>
+    </nav>    <section id="content" class="section-top-padding">
+        <article class="article-top-padding">
+            <h1>
+                <a href="./python-hadoop-mapreduce-analyzing-aws-s3-bucket-logs-with-mrjob.html"
+                   rel="bookmark"
+                   title="Permalink to Python Hadoop MapReduce: Analyzing AWS S3 Bucket Logs with mrjob">
+                    Python Hadoop MapReduce: Analyzing AWS S3 Bucket Logs with mrjob
+                </a>
+            </h1>
+            <i><time datetime="2015-05-17T00:00:00-04:00"> Sun 17 May 2015</time></i>
+            <div class="entry-content">
+                <div class="panel">
+                <br/>
+                </div>
+                <div class="container">
+                    <br/>
+                    <img class="img-responsive" src="https://raw.githubusercontent.com/donnemartin/donnemartin.github.io/master/images/posts/mrjob_cover.png">
+                </div>
+                <hr class="featurette-divider">
+                <h2>Introduction</h2>
 <p>mrjob lets you write MapReduce jobs in Python 2.5+ and run them on several platforms. You can:</p>
 <p>Write multi-step MapReduce jobs in pure Python
 Test on your local machine
@@ -384,13 +406,15 @@ Run in the cloud using Amazon Elastic MapReduce (EMR)</p>
     <span class="o">-</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="kd">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">python</span><span class="o">-</span><span class="n">pip</span>
     <span class="o">-</span> <span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">simplejson</span>
 </pre></div>
-                    </div>
-                    <hr class="featurette-divider">
-                    <!-- /.entry-content -->
-                </article>
-            </section>
+            </div>
+            <hr class="featurette-divider">
+            <!-- /.entry-content -->
+        </article>
+    </section>
 
+        </div>
     </div>
+</div>
     <footer>
         <div class="container">
             <div class="row">
@@ -399,23 +423,24 @@ Run in the cloud using Amazon Elastic MapReduce (EMR)</p>
                 </div>
             </div>
         </div>
-    </footer>    <!-- jQuery -->
-    <script src="./theme/js/jquery.js"></script>
+    </footer>
+<script src="./theme/js/jquery.min.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="./theme/js/bootstrap.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="./theme/js/bootstrap.min.js"></script>
 
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="./theme/js/classie.js"></script>
-    <script src="./theme/js/cbpAnimatedHeader.js"></script>
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="./theme/js/respond.min.js"></script>
 
-    <!-- Contact Form JavaScript -->
-    <script src="./theme/js/jqBootstrapValidation.js"></script>
-    <script src="./theme/js/contact_me.js"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="./theme/js/agency.js"></script>
+<!-- Plugin JavaScript -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="./theme/js/classie.js"></script>
+<script src="./theme/js/cbpAnimatedHeader.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="./theme/js/agency.js"></script>
+
+
 </body>
-
 </html>

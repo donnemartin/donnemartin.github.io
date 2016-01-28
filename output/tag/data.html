@@ -1,18 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-
-    <meta charset="utf-8">
+    <title>Donne Martin</title>
+    <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Donne Martin</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="../theme/css/bootstrap.min.css" rel="stylesheet">
+
+
+        <meta name="author" content="Donne Martin" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Donne Martin" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Donne Martin"/>
+        <meta property="og:url" content=".."/>
+        <meta property="og:description" content="Donne Martin"/>
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../theme/css/bootstrap.min.css" type="text/css"/>
+
+    <link href="../theme/css/pygments/monokai.css" rel="stylesheet">
+
+
+
+
 
     <!-- Custom CSS -->
     <link href="../theme/css/agency.css" rel="stylesheet">
@@ -32,73 +49,98 @@
         <script src="https://oss.maxcdn.com/libs/respond.../theme/js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-</head>
-<body id="page-top" class="index">
+</head><body id="page-top" class="index">
 
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="..">Donne Martin</a>
-            </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="../#likes">Likes</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="../#portfolio">GitHub</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="../#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="../#contact">Contact</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#page-top">Blog</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+<!-- Banner -->
+<!-- End Banner -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <article>
+                <h2><a href="../under-the-hood-of-saws-a-supercharged-aws-cli.html">Under the Hood of SAWS, A Supercharged AWS CLI</a></h2>
+                <div class="summary"><p>A brief look at some Python open source technologies used in SAWS.</p>
+                    <a class="btn btn-default btn-xs" href="../under-the-hood-of-saws-a-supercharged-aws-cli.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="../python-hadoop-mapreduce-analyzing-aws-s3-bucket-logs-with-mrjob.html">Python Hadoop MapReduce: Analyzing AWS S3 Bucket Logs with mrjob</a></h2>
+                <div class="summary"><p>mrjob lets you write MapReduce jobs in Python 2.5+ and run them on several platforms.</p>
+                    <a class="btn btn-default btn-xs" href="../python-hadoop-mapreduce-analyzing-aws-s3-bucket-logs-with-mrjob.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="../tableau-9-features-initial-impressions-from-beta.html">Tableau 9 Features: Initial Impressions from Beta</a></h2>
+                <div class="summary"><p>With the final beta in the hands of testers, I thought I'd write up a review of my favorite features in Tableau 9.</p>
+                    <a class="btn btn-default btn-xs" href="../tableau-9-features-initial-impressions-from-beta.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="../setting-up-splunk-enterprise-for-aws.html">Setting Up Splunk Enterprise for AWS</a></h2>
+                <div class="summary"><p>I recently hooked up Splunk to AWS to search, monitor, and analyze log files.  Splunk indexes data on read, which then allows it to do super-fast searching and visualization.</p>
+                    <a class="btn btn-default btn-xs" href="../setting-up-splunk-enterprise-for-aws.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="../a-brief-introduction-to-r-unit-testing-with-test_that.html">A Brief Introduction to R Unit Testing with test_that</a></h2>
+                <div class="summary"><p>Testing is a vital part of software development.  I've recently hooked up test_that to my R-Snippets repo.</p>
+                    <a class="btn btn-default btn-xs" href="../a-brief-introduction-to-r-unit-testing-with-test_that.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="../website-redesign-and-jekyll-mirror.html">Website Redesign and Jekyll Mirror</a></h2>
+                <div class="summary"><p>I've just completed overhauling donnemartin.com and it's mirror site powered by Jekyll on GitHub pages.</p>
+                    <a class="btn btn-default btn-xs" href="../website-redesign-and-jekyll-mirror.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="../speeding-up-hadoop-mapreduce-jobs-with-s3distcp.html">Speeding Up Hadoop MapReduce Jobs with S3DistCp</a></h2>
+                <div class="summary"><p>Input file size has a significant impact on the job length, due to the mapper setup time.</p>
+                    <a class="btn btn-default btn-xs" href="../speeding-up-hadoop-mapreduce-jobs-with-s3distcp.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="../r-hands-on-tutorials-with-swirl.html">R Hands-On Tutorials with Swirl</a></h2>
+                <div class="summary"><p>Exploring R with the R package Swirl, which lets you learn right from the R console.</p>
+                    <a class="btn btn-default btn-xs" href="../r-hands-on-tutorials-with-swirl.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="../s3cmd-frequently-used-commands.html">S3cmd: Frequently Used Commands</a></h2>
+                <div class="summary"><p>I’ve found S3cmd to be a great tool for interacting with S3 on AWS.  S3cmd is written in Python, is open source, and is free even for commercial use.</p>
+                    <a class="btn btn-default btn-xs" href="../s3cmd-frequently-used-commands.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="../my-reading-list.html">My Reading List</a></h2>
+                <div class="summary"><p>I've started populating my Reading List.  Updates will trickle in over the coming weeks.</p>
+                    <a class="btn btn-default btn-xs" href="../my-reading-list.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+
+        <ul class="pagination">
+                <li class="prev disabled"><a href="#">&laquo;</a></li>
+                    <li class="active"><a
+                            href="../tag/data.html">1</a></li>
+                    <li class=""><a
+                            href="../tag/data2.html">2</a></li>
+                <li class="next"><a
+                        href="../tag/data2.html">&raquo;</a></li>
+        </ul>
         </div>
-        <!-- /.container-fluid -->
-    </nav>
-    <!-- Carousel
-    ================================================== -->
-    <div id="myCarousel" class="carousel slide">
-      <div class="carousel-inner">
-        <div class="item active">
-          <img src="../images/header-bg-blog.jpg" style="width:100%" class="img-responsive">
-          <div class="container">
-            <div class="carousel-caption">
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-    <!-- /.carousel -->
-
-    <div class="container">
-            <section id="content">
-                <article>
-Data - Donne Martin                        <meta name="author" content="Donne Martin" />
-                        <meta name="keywords" content="Data" />
-                </article>
-            </section>
-
-    </div>
+</div>
     <footer>
         <div class="container">
             <div class="row">
@@ -107,23 +149,24 @@ Data - Donne Martin                        <meta name="author" content="Donne Ma
                 </div>
             </div>
         </div>
-    </footer>    <!-- jQuery -->
-    <script src="../theme/js/jquery.js"></script>
+    </footer>
+<script src="../theme/js/jquery.min.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../theme/js/bootstrap.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../theme/js/bootstrap.min.js"></script>
 
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="../theme/js/classie.js"></script>
-    <script src="../theme/js/cbpAnimatedHeader.js"></script>
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../theme/js/respond.min.js"></script>
 
-    <!-- Contact Form JavaScript -->
-    <script src="../theme/js/jqBootstrapValidation.js"></script>
-    <script src="../theme/js/contact_me.js"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="../theme/js/agency.js"></script>
+<!-- Plugin JavaScript -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="../theme/js/classie.js"></script>
+<script src="../theme/js/cbpAnimatedHeader.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="../theme/js/agency.js"></script>
+
+
 </body>
-
 </html>
