@@ -79,7 +79,7 @@ I recommend taking this approach when first starting with Travis CI, as it strea
   <img src="http://donnemartin.net/wp-content/uploads/2014/10/Screen-Shot-2014-10-03-at-7.48.37-PM.png" class="img-responsive">
 </p>
 
-The Travis CI badge gives visual feedback of the state of the last build.  Adding the Travis CI build results is just one line of code to your README markdown: [![Build Status](https://travis-ci.org/donnemartin/photogallery.svg?branch=master)](https://travis-ci.org/donnemartin/photogallery)
+The Travis CI badge gives visual feedback of the state of the last build.  Adding the Travis CI build results is just one line of code to your README markdown:
 
 <p align="center">
   <img src="http://donnemartin.net/wp-content/uploads/2014/10/Screen-Shot-2014-10-04-at-4.39.06-AM.png" class="img-responsive">
