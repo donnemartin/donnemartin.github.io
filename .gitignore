@@ -58,3 +58,4 @@ dist/
 scratch/
 *pelican.pid
 *srv.pid
+output/
