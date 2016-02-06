@@ -56,5 +56,5 @@ dist/
 */.DS_Store
 
 scratch/
-pelican.pid
-srv.pid
+*pelican.pid
+*srv.pid
