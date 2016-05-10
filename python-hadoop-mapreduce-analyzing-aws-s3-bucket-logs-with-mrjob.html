@@ -153,10 +153,10 @@ Run in the cloud using Amazon Elastic MapReduce (EMR)</p>
 <span class="sd">    Outputs date_time, requester, user_agent, operation, count</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">LOGPATS</span>  <span class="o">=</span> <span class="s1">r&#39;(\S+) (\S+) \[(.*?)\] (\S+) (\S+) &#39;</span> \
-               <span class="s1">r&#39;(\S+) (\S+) (\S+) (&quot;([^&quot;]+)&quot;|-) &#39;</span> \
-               <span class="s1">r&#39;(\S+) (\S+) (\S+) (\S+) (\S+) (\S+) &#39;</span> \
-               <span class="s1">r&#39;(&quot;([^&quot;]+)&quot;|-) (&quot;([^&quot;]+)&quot;|-)&#39;</span>
+    <span class="n">LOGPATS</span>  <span class="o">=</span> <span class="s">r&#39;(\S+) (\S+) \[(.*?)\] (\S+) (\S+) &#39;</span> \
+               <span class="s">r&#39;(\S+) (\S+) (\S+) (&quot;([^&quot;]+)&quot;|-) &#39;</span> \
+               <span class="s">r&#39;(\S+) (\S+) (\S+) (\S+) (\S+) (\S+) &#39;</span> \
+               <span class="s">r&#39;(&quot;([^&quot;]+)&quot;|-) (&quot;([^&quot;]+)&quot;|-)&#39;</span>
     <span class="n">NUM_ENTRIES_PER_LINE</span> <span class="o">=</span> <span class="mi">17</span>
     <span class="n">logpat</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">LOGPATS</span><span class="p">)</span>
 
@@ -178,18 +178,18 @@ Run in the cloud using Amazon Elastic MapReduce (EMR)</p>
      <span class="n">S3_LOG_REFERER</span><span class="p">,</span>
      <span class="n">S3_LOG_USER_AGENT</span><span class="p">)</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">NUM_ENTRIES_PER_LINE</span><span class="p">)</span>
 
-    <span class="n">DELIMITER</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span>
+    <span class="n">DELIMITER</span> <span class="o">=</span> <span class="s">&#39;</span><span class="se">\t</span><span class="s">&#39;</span>
 
-    <span class="c1"># We use RawValueProtocol for input to be format agnostic</span>
-    <span class="c1"># and avoid any type of parsing errors</span>
+    <span class="c"># We use RawValueProtocol for input to be format agnostic</span>
+    <span class="c"># and avoid any type of parsing errors</span>
     <span class="n">INPUT_PROTOCOL</span> <span class="o">=</span> <span class="n">RawValueProtocol</span>
 
-    <span class="c1"># We use RawValueProtocol for output so we can output raw lines</span>
-    <span class="c1"># instead of (k, v) pairs</span>
+    <span class="c"># We use RawValueProtocol for output so we can output raw lines</span>
+    <span class="c"># instead of (k, v) pairs</span>
     <span class="n">OUTPUT_PROTOCOL</span> <span class="o">=</span> <span class="n">RawValueProtocol</span>
 
-    <span class="c1"># Encode the intermediate records using repr() instead of JSON, so the</span>
-    <span class="c1"># record doesn&#39;t get Unicode-encoded</span>
+    <span class="c"># Encode the intermediate records using repr() instead of JSON, so the</span>
+    <span class="c"># record doesn&#39;t get Unicode-encoded</span>
     <span class="n">INTERNAL_PROTOCOL</span> <span class="o">=</span> <span class="n">ReprProtocol</span>
 
     <span class="k">def</span> <span class="nf">clean_date_time_zone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">raw_date_time_zone</span><span class="p">):</span>
@@ -206,19 +206,19 @@ Run in the cloud using Amazon Elastic MapReduce (EMR)</p>
         <span class="n">date_time</span> <span class="o">=</span> <span class="bp">None</span>
         <span class="n">time_zone_parsed</span> <span class="o">=</span> <span class="bp">None</span>
 
-        <span class="c1"># TODO: Probably cleaner to parse this with a regex</span>
-        <span class="n">date_parsed</span> <span class="o">=</span> <span class="n">raw_date_time_zone</span><span class="p">[:</span><span class="n">raw_date_time_zone</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)]</span>
-        <span class="n">time_parsed</span> <span class="o">=</span> <span class="n">raw_date_time_zone</span><span class="p">[</span><span class="n">raw_date_time_zone</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span>
-                                         <span class="n">raw_date_time_zone</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;+&quot;</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
-        <span class="n">time_zone_parsed</span> <span class="o">=</span> <span class="n">raw_date_time_zone</span><span class="p">[</span><span class="n">raw_date_time_zone</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;+&quot;</span><span class="p">):]</span>
+        <span class="c"># TODO: Probably cleaner to parse this with a regex</span>
+        <span class="n">date_parsed</span> <span class="o">=</span> <span class="n">raw_date_time_zone</span><span class="p">[:</span><span class="n">raw_date_time_zone</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;:&quot;</span><span class="p">)]</span>
+        <span class="n">time_parsed</span> <span class="o">=</span> <span class="n">raw_date_time_zone</span><span class="p">[</span><span class="n">raw_date_time_zone</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;:&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span>
+                                         <span class="n">raw_date_time_zone</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;+&quot;</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">time_zone_parsed</span> <span class="o">=</span> <span class="n">raw_date_time_zone</span><span class="p">[</span><span class="n">raw_date_time_zone</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;+&quot;</span><span class="p">):]</span>
 
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">date_struct</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date_parsed</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2">/%b/%Y&quot;</span><span class="p">)</span>
-            <span class="n">converted_date</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">date_struct</span><span class="p">)</span>
-            <span class="n">date_time</span> <span class="o">=</span> <span class="n">converted_date</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">time_parsed</span>
+            <span class="n">date_struct</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date_parsed</span><span class="p">,</span> <span class="s">&quot;</span><span class="si">%d</span><span class="s">/%b/%Y&quot;</span><span class="p">)</span>
+            <span class="n">converted_date</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&quot;%Y-%m-</span><span class="si">%d</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">date_struct</span><span class="p">)</span>
+            <span class="n">date_time</span> <span class="o">=</span> <span class="n">converted_date</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">time_parsed</span>
 
-        <span class="c1"># Throws a ValueError exception if the operation fails that is</span>
-        <span class="c1"># caught by the calling function and is handled appropriately</span>
+        <span class="c"># Throws a ValueError exception if the operation fails that is</span>
+        <span class="c"># caught by the calling function and is handled appropriately</span>
         <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
@@ -240,9 +240,9 @@ Run in the cloud using Amazon Elastic MapReduce (EMR)</p>
                 <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">S3_LOG_DATE_TIME</span><span class="p">:</span>
                     <span class="n">date</span><span class="p">,</span> <span class="n">date_time</span><span class="p">,</span> <span class="n">time_zone_parsed</span> <span class="o">=</span> \
                         <span class="bp">self</span><span class="o">.</span><span class="n">clean_date_time_zone</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
-                    <span class="c1"># Leave the following line of code if</span>
-                    <span class="c1"># you want to aggregate by date</span>
-                    <span class="n">date_time</span> <span class="o">=</span> <span class="n">date</span> <span class="o">+</span> <span class="s2">&quot; 00:00:00&quot;</span>
+                    <span class="c"># Leave the following line of code if</span>
+                    <span class="c"># you want to aggregate by date</span>
+                    <span class="n">date_time</span> <span class="o">=</span> <span class="n">date</span> <span class="o">+</span> <span class="s">&quot; 00:00:00&quot;</span>
                 <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">S3_LOG_REQUESTER_ID</span><span class="p">:</span>
                     <span class="n">requester</span> <span class="o">=</span> <span class="n">group</span>
                 <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">S3_LOG_USER_AGENT</span><span class="p">:</span>
@@ -253,7 +253,7 @@ Run in the cloud using Amazon Elastic MapReduce (EMR)</p>
                     <span class="k">pass</span>
 
         <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-            <span class="k">yield</span> <span class="p">((</span><span class="s2">&quot;Error while parsing line: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="k">yield</span> <span class="p">((</span><span class="s">&quot;Error while parsing line: </span><span class="si">%s</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">yield</span> <span class="p">((</span><span class="n">date_time</span><span class="p">,</span> <span class="n">requester</span><span class="p">,</span> <span class="n">user_agent</span><span class="p">,</span> <span class="n">operation</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
 
@@ -272,7 +272,7 @@ Run in the cloud using Amazon Elastic MapReduce (EMR)</p>
         <span class="p">]</span>
 
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">MrS3LogParser</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
 
@@ -300,15 +300,15 @@ Run in the cloud using Amazon Elastic MapReduce (EMR)</p>
 <span class="k">class</span> <span class="nc">MrTestsUtil</span><span class="p">:</span>
 
     <span class="k">def</span> <span class="nf">run_mr_sandbox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mr_job</span><span class="p">,</span> <span class="n">stdin</span><span class="p">):</span>
-        <span class="c1"># inline runs the job in the same process so small jobs tend to</span>
-        <span class="c1"># run faster and stack traces are simpler</span>
-        <span class="c1"># --no-conf prevents options from local mrjob.conf from polluting</span>
-        <span class="c1"># the testing environment</span>
-        <span class="c1"># &quot;-&quot; reads from standard in</span>
+        <span class="c"># inline runs the job in the same process so small jobs tend to</span>
+        <span class="c"># run faster and stack traces are simpler</span>
+        <span class="c"># --no-conf prevents options from local mrjob.conf from polluting</span>
+        <span class="c"># the testing environment</span>
+        <span class="c"># &quot;-&quot; reads from standard in</span>
         <span class="n">mr_job</span><span class="o">.</span><span class="n">sandbox</span><span class="p">(</span><span class="n">stdin</span><span class="o">=</span><span class="n">stdin</span><span class="p">)</span>
 
-        <span class="c1"># make_runner ensures job cleanup is performed regardless of</span>
-        <span class="c1"># success or failure</span>
+        <span class="c"># make_runner ensures job cleanup is performed regardless of</span>
+        <span class="c"># success or failure</span>
         <span class="k">with</span> <span class="n">mr_job</span><span class="o">.</span><span class="n">make_runner</span><span class="p">()</span> <span class="k">as</span> <span class="n">runner</span><span class="p">:</span>
             <span class="n">runner</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
             <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">runner</span><span class="o">.</span><span class="n">stream_output</span><span class="p">():</span>
@@ -322,46 +322,46 @@ Run in the cloud using Amazon Elastic MapReduce (EMR)</p>
     <span class="n">mr_tests_util</span> <span class="o">=</span> <span class="bp">None</span>
 
     <span class="n">RAW_LOG_LINE_INVALID</span> <span class="o">=</span> \
-        <span class="s1">&#39;00000fe9688b6e57f75bd2b7f7c1610689e8f01000000&#39;</span> \
-        <span class="s1">&#39;00000388225bcc00000 &#39;</span> \
-        <span class="s1">&#39;s3-storage [22/Jul/2013:21:03:27 +0000] &#39;</span> \
-        <span class="s1">&#39;00.111.222.33 &#39;</span> \
+        <span class="s">&#39;00000fe9688b6e57f75bd2b7f7c1610689e8f01000000&#39;</span> \
+        <span class="s">&#39;00000388225bcc00000 &#39;</span> \
+        <span class="s">&#39;s3-storage [22/Jul/2013:21:03:27 +0000] &#39;</span> \
+        <span class="s">&#39;00.111.222.33 &#39;</span> \
 
     <span class="n">RAW_LOG_LINE_VALID</span> <span class="o">=</span> \
-        <span class="s1">&#39;00000fe9688b6e57f75bd2b7f7c1610689e8f01000000&#39;</span> \
-        <span class="s1">&#39;00000388225bcc00000 &#39;</span> \
-        <span class="s1">&#39;s3-storage [22/Jul/2013:21:03:27 +0000] &#39;</span> \
-        <span class="s1">&#39;00.111.222.33 &#39;</span> \
-        <span class="s1">&#39;arn:aws:sts::000005646931:federated-user/user 00000AB825500000 &#39;</span> \
-        <span class="s1">&#39;REST.HEAD.OBJECT user/file.pdf &#39;</span> \
-        <span class="s1">&#39;&quot;HEAD /user/file.pdf?versionId=00000XMHZJp6DjM9x500000&#39;</span> \
-        <span class="s1">&#39;00000SDZk &#39;</span> \
-        <span class="s1">&#39;HTTP/1.1&quot; 200 - - 4000272 18 - &quot;-&quot; &#39;</span> \
-        <span class="s1">&#39;&quot;Boto/2.5.1 (darwin) USER-AGENT/1.0.14.0&quot; &#39;</span> \
-        <span class="s1">&#39;00000XMHZJp6DjM9x5JVEAMo8MG00000&#39;</span>
+        <span class="s">&#39;00000fe9688b6e57f75bd2b7f7c1610689e8f01000000&#39;</span> \
+        <span class="s">&#39;00000388225bcc00000 &#39;</span> \
+        <span class="s">&#39;s3-storage [22/Jul/2013:21:03:27 +0000] &#39;</span> \
+        <span class="s">&#39;00.111.222.33 &#39;</span> \
+        <span class="s">&#39;arn:aws:sts::000005646931:federated-user/user 00000AB825500000 &#39;</span> \
+        <span class="s">&#39;REST.HEAD.OBJECT user/file.pdf &#39;</span> \
+        <span class="s">&#39;&quot;HEAD /user/file.pdf?versionId=00000XMHZJp6DjM9x500000&#39;</span> \
+        <span class="s">&#39;00000SDZk &#39;</span> \
+        <span class="s">&#39;HTTP/1.1&quot; 200 - - 4000272 18 - &quot;-&quot; &#39;</span> \
+        <span class="s">&#39;&quot;Boto/2.5.1 (darwin) USER-AGENT/1.0.14.0&quot; &#39;</span> \
+        <span class="s">&#39;00000XMHZJp6DjM9x5JVEAMo8MG00000&#39;</span>
 
-    <span class="n">DATE_TIME_ZONE_INVALID</span> <span class="o">=</span> <span class="s2">&quot;AB/Jul/2013:21:04:17 +0000&quot;</span>
-    <span class="n">DATE_TIME_ZONE_VALID</span> <span class="o">=</span> <span class="s2">&quot;22/Jul/2013:21:04:17 +0000&quot;</span>
-    <span class="n">DATE_VALID</span> <span class="o">=</span> <span class="s2">&quot;2013-07-22&quot;</span>
-    <span class="n">DATE_TIME_VALID</span> <span class="o">=</span> <span class="s2">&quot;2013-07-22 21:04:17&quot;</span>
-    <span class="n">TIME_ZONE_VALID</span> <span class="o">=</span> <span class="s2">&quot;+0000&quot;</span>
+    <span class="n">DATE_TIME_ZONE_INVALID</span> <span class="o">=</span> <span class="s">&quot;AB/Jul/2013:21:04:17 +0000&quot;</span>
+    <span class="n">DATE_TIME_ZONE_VALID</span> <span class="o">=</span> <span class="s">&quot;22/Jul/2013:21:04:17 +0000&quot;</span>
+    <span class="n">DATE_VALID</span> <span class="o">=</span> <span class="s">&quot;2013-07-22&quot;</span>
+    <span class="n">DATE_TIME_VALID</span> <span class="o">=</span> <span class="s">&quot;2013-07-22 21:04:17&quot;</span>
+    <span class="n">TIME_ZONE_VALID</span> <span class="o">=</span> <span class="s">&quot;+0000&quot;</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">TestMrS3LogParser</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">mr_job</span> <span class="o">=</span> <span class="n">MrS3LogParser</span><span class="p">([</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span> <span class="s1">&#39;inline&#39;</span><span class="p">,</span> <span class="s1">&#39;--no-conf&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mr_job</span> <span class="o">=</span> <span class="n">MrS3LogParser</span><span class="p">([</span><span class="s">&#39;-r&#39;</span><span class="p">,</span> <span class="s">&#39;inline&#39;</span><span class="p">,</span> <span class="s">&#39;--no-conf&#39;</span><span class="p">,</span> <span class="s">&#39;-&#39;</span><span class="p">])</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mr_tests_util</span> <span class="o">=</span> <span class="n">MrTestsUtil</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">test_invalid_log_lines</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">stdin</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">RAW_LOG_LINE_INVALID</span><span class="p">)</span>
 
         <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mr_tests_util</span><span class="o">.</span><span class="n">run_mr_sandbox</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mr_job</span><span class="p">,</span> <span class="n">stdin</span><span class="p">):</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;Error&quot;</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">test_valid_log_lines</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">stdin</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">RAW_LOG_LINE_VALID</span><span class="p">)</span>
 
         <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mr_tests_util</span><span class="o">.</span><span class="n">run_mr_sandbox</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mr_job</span><span class="p">,</span> <span class="n">stdin</span><span class="p">):</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;Error&quot;</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">test_clean_date_time_zone</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">date</span><span class="p">,</span> <span class="n">date_time</span><span class="p">,</span> <span class="n">time_zone_parsed</span> <span class="o">=</span> \
@@ -370,13 +370,13 @@ Run in the cloud using Amazon Elastic MapReduce (EMR)</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">date_time</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">DATE_TIME_VALID</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">time_zone_parsed</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">TIME_ZONE_VALID</span><span class="p">)</span>
 
-        <span class="c1"># Use a lambda to delay the calling of clean_date_time_zone so that</span>
-        <span class="c1"># assertRaises has enough time to handle it properly</span>
+        <span class="c"># Use a lambda to delay the calling of clean_date_time_zone so that</span>
+        <span class="c"># assertRaises has enough time to handle it properly</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span>
             <span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">mr_job</span><span class="o">.</span><span class="n">clean_date_time_zone</span><span class="p">(</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">DATE_TIME_ZONE_INVALID</span><span class="p">))</span>
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
 </pre></div>
 
