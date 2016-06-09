@@ -1,4 +1,4 @@
-Title: SAWS, A Supercharged AWS CLI, Now on GitHub!
+Title: SAWS Now on GitHub!
 Date: 2015-09-20
 Summary: Interactive command line interface that aims to supercharge the AWS CLI with features focusing on improving ease-of-use and increasing productivity. Under the hood, SAWS is powered by the AWS CLI and supports the same commands and command structure.
 Tags: GitHub
