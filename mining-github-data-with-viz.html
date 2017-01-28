@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Donne Martin</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+
+
+        <meta name="author" content="Donne Martin" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Donne Martin" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Donne Martin"/>
+        <meta property="og:url" content="."/>
+        <meta property="og:description" content="Donne Martin"/>
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="./theme/css/bootstrap.min.css" type="text/css"/>
+
+    <link href="./theme/css/pygments/monokai.css" rel="stylesheet">
+
+
+
+
+
+    <!-- Custom CSS -->
+    <link href="./theme/css/agency.css" rel="stylesheet">
+    <link href="./theme/css/custom.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="./theme/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond../theme/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head><body id="page-top" class="index">
+
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color: #000">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href=".">Donne Martin</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./#likes">Likes</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./#portfolio">GitHub</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./archives">Blog</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>    <section id="content" class="section-top-padding">
+        <article class="article-top-padding">
+            <h1>
+                <a href="./mining-github-data-with-viz.html"
+                   rel="bookmark"
+                   title="Permalink to Mining GitHub Data with Viz">
+                    Mining GitHub Data with Viz
+                </a>
+            </h1>
+            <i><time datetime="2017-01-03T00:00:00-05:00"> Tue 03 January 2017</time></i>
+            <div class="entry-content">
+                <div class="panel">
+                <br/>
+                </div>
+                <div class="container">
+                    <br/>
+                    <img class="img-responsive" src="http://i.imgur.com/TxYI9da.png">
+                </div>
+                <hr class="featurette-divider">
+                <style type="text/css">
+    !td, th {
+        padding: 2px;
+    }
+</style>
+
+<h1>Data Wrangling</h1>
+<p>I recently updated Viz with data from GitHub repos created in 2016.  Below are some details of how the raw data is wrangled into visualizations.</p>
+<h2>Data Flow</h2>
+<p><img alt="Imgur" src="http://i.imgur.com/W5hfGVo.png" /></p>
+<p>Mining data directly from GitHub, <code>Viz</code> is powered by the <a href="https://developer.github.com/v3/">GitHub API</a> and leverages the following:</p>
+<ul>
+<li><a href="https://github.com/sigmavirus24/github3.py"><code>github3.py</code></a> to access the GitHub API through Python.</li>
+<li><a href="https://github.com/pydata/pandas"><code>pandas</code></a> in the following <a href="https://github.com/donnemartin/viz/blob/master/githubstats/data_wrangling.ipynb">IPython Notebook</a> for data wrangling.</li>
+<li><a href="https://developers.google.com/maps/?hl=en">Google Maps API</a> through <a href="https://github.com/DenisCarriere/geocoder"><code>geocoder</code></a> for location data.</li>
+<li><a href="https://public.tableau.com/s/">Tableau Public</a> for visualizations.*</li>
+</ul>
+<p>In the future, <a href="https://cloud.google.com/bigquery/">Google BigQuery</a> along with <a href="https://www.githubarchive.org/">GitHub Archive</a> could also supplement the GitHub API.</p>
+<h2>Imports</h2>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+</pre></div>
+
+
+<h2>Prepare Repo Data</h2>
+<p>Load the repos data and drop duplicates:</p>
+<div class="highlight"><pre><span class="n">repos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">&quot;data/2016/repos-dump.csv&quot;</span><span class="p">,</span> <span class="n">quotechar</span><span class="o">=</span><span class="s">&#39;&quot;&#39;</span><span class="p">,</span> <span class="n">skipinitialspace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&#39;Shape before dropping duplicates&#39;</span><span class="p">,</span> <span class="n">repos</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">repos</span> <span class="o">=</span> <span class="n">repos</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s">&#39;full_name&#39;</span><span class="p">,</span> <span class="n">keep</span><span class="o">=</span><span class="s">&#39;last&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&#39;Shape after  dropping duplicates&#39;</span><span class="p">,</span> <span class="n">repos</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">repos</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+
+<div class="highlight"><pre>Shape before dropping duplicates (8043, 5)
+Shape after  dropping duplicates (8040, 5)
+</pre></div>
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>full_name</th>
+      <th>stars</th>
+      <th>forks</th>
+      <th>description</th>
+      <th>language</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>yarnpkg/yarn</td>
+      <td>21060</td>
+      <td>786</td>
+      <td>📦🐈 Fast, reliable, and secure dependency manag...</td>
+      <td>JavaScript</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>facebookincubator/create-react-app</td>
+      <td>17555</td>
+      <td>1821</td>
+      <td>Create React apps with no build configuration.</td>
+      <td>JavaScript</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>zeit/hyper</td>
+      <td>13618</td>
+      <td>907</td>
+      <td>A terminal built on web technologies</td>
+      <td>JavaScript</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ParsePlatform/parse-server</td>
+      <td>12167</td>
+      <td>3319</td>
+      <td>Parse-compatible API server module for Node/Ex...</td>
+      <td>JavaScript</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>juliangarnier/anime</td>
+      <td>10245</td>
+      <td>539</td>
+      <td>Javascript Animation Engine</td>
+      <td>JavaScript</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Separate out the <code>user</code> and <code>repo</code> from <code>full_name</code> into new columns:</p>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">extract_user</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">extract_repo</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">repos</span><span class="p">[</span><span class="s">&#39;user&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">repos</span><span class="p">[</span><span class="s">&#39;full_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="p">[:]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">extract_user</span><span class="p">)</span>
+<span class="n">repos</span><span class="p">[</span><span class="s">&#39;repo&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">repos</span><span class="p">[</span><span class="s">&#39;full_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="p">[:]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">extract_repo</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">repos</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">repos</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+
+<div class="highlight"><pre>(8040, 7)
+</pre></div>
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>full_name</th>
+      <th>stars</th>
+      <th>forks</th>
+      <th>description</th>
+      <th>language</th>
+      <th>user</th>
+      <th>repo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>yarnpkg/yarn</td>
+      <td>21060</td>
+      <td>786</td>
+      <td>📦🐈 Fast, reliable, and secure dependency manag...</td>
+      <td>JavaScript</td>
+      <td>yarnpkg</td>
+      <td>yarn</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>facebookincubator/create-react-app</td>
+      <td>17555</td>
+      <td>1821</td>
+      <td>Create React apps with no build configuration.</td>
+      <td>JavaScript</td>
+      <td>facebookincubator</td>
+      <td>create-react-app</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>zeit/hyper</td>
+      <td>13618</td>
+      <td>907</td>
+      <td>A terminal built on web technologies</td>
+      <td>JavaScript</td>
+      <td>zeit</td>
+      <td>hyper</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ParsePlatform/parse-server</td>
+      <td>12167</td>
+      <td>3319</td>
+      <td>Parse-compatible API server module for Node/Ex...</td>
+      <td>JavaScript</td>
+      <td>ParsePlatform</td>
+      <td>parse-server</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>juliangarnier/anime</td>
+      <td>10245</td>
+      <td>539</td>
+      <td>Javascript Animation Engine</td>
+      <td>JavaScript</td>
+      <td>juliangarnier</td>
+      <td>anime</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Prepare User Data</h2>
+<p>Load the users data and drop duplicates:</p>
+<div class="highlight"><pre><span class="n">users</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">&quot;data/2016/user-geocodes-dump.csv&quot;</span><span class="p">,</span> <span class="n">quotechar</span><span class="o">=</span><span class="s">&#39;&quot;&#39;</span><span class="p">,</span> <span class="n">skipinitialspace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&#39;Shape before dropping duplicates&#39;</span><span class="p">,</span> <span class="n">users</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">users</span> <span class="o">=</span> <span class="n">users</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s">&#39;id&#39;</span><span class="p">,</span> <span class="n">keep</span><span class="o">=</span><span class="s">&#39;last&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&#39;Shape after  dropping duplicates&#39;</span><span class="p">,</span> <span class="n">users</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">users</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+
+<div class="highlight"><pre>Shape before dropping duplicates (5991, 8)
+Shape after  dropping duplicates (5991, 8)
+</pre></div>
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>name</th>
+      <th>type</th>
+      <th>location</th>
+      <th>lat</th>
+      <th>long</th>
+      <th>city</th>
+      <th>country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>symentis</td>
+      <td>symentis GmbH</td>
+      <td>Organization</td>
+      <td>Unterhaching, Munich</td>
+      <td>48.068918</td>
+      <td>11.621253</td>
+      <td>Unterhaching</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>voghDev</td>
+      <td>Olmo Gallegos</td>
+      <td>User</td>
+      <td>Granada</td>
+      <td>37.177336</td>
+      <td>-3.598557</td>
+      <td>Granada</td>
+      <td>Spain</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>wxyyxc1992</td>
+      <td>王下邀月熊(Chevalier)</td>
+      <td>User</td>
+      <td>NanJing</td>
+      <td>32.060255</td>
+      <td>118.796877</td>
+      <td>Nanjing</td>
+      <td>China</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>vermont42</td>
+      <td>Josh Adams</td>
+      <td>User</td>
+      <td>Berkeley, California</td>
+      <td>37.871593</td>
+      <td>-122.272747</td>
+      <td>Berkeley</td>
+      <td>United States</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>mjosaarinen</td>
+      <td>Markku-Juhani O. Saarinen</td>
+      <td>User</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Rename column <code>id</code> to <code>user</code>:</p>
+<div class="highlight"><pre><span class="n">users</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;id&#39;</span><span class="p">:</span> <span class="s">&#39;user&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">users</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>user</th>
+      <th>name</th>
+      <th>type</th>
+      <th>location</th>
+      <th>lat</th>
+      <th>long</th>
+      <th>city</th>
+      <th>country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>symentis</td>
+      <td>symentis GmbH</td>
+      <td>Organization</td>
+      <td>Unterhaching, Munich</td>
+      <td>48.068918</td>
+      <td>11.621253</td>
+      <td>Unterhaching</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>voghDev</td>
+      <td>Olmo Gallegos</td>
+      <td>User</td>
+      <td>Granada</td>
+      <td>37.177336</td>
+      <td>-3.598557</td>
+      <td>Granada</td>
+      <td>Spain</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>wxyyxc1992</td>
+      <td>王下邀月熊(Chevalier)</td>
+      <td>User</td>
+      <td>NanJing</td>
+      <td>32.060255</td>
+      <td>118.796877</td>
+      <td>Nanjing</td>
+      <td>China</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>vermont42</td>
+      <td>Josh Adams</td>
+      <td>User</td>
+      <td>Berkeley, California</td>
+      <td>37.871593</td>
+      <td>-122.272747</td>
+      <td>Berkeley</td>
+      <td>United States</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>mjosaarinen</td>
+      <td>Markku-Juhani O. Saarinen</td>
+      <td>User</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Merge Repo and User Data</h2>
+<p>Left join repos and users:</p>
+<div class="highlight"><pre><span class="n">repos_users</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">repos</span><span class="p">,</span> <span class="n">users</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s">&#39;user&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s">&#39;left&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&#39;Shape repos:&#39;</span><span class="p">,</span> <span class="n">repos</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&#39;Shape users:&#39;</span><span class="p">,</span> <span class="n">users</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&#39;Shape repos_users:&#39;</span><span class="p">,</span> <span class="n">repos_users</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">repos_users</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+
+<div class="highlight"><pre>Shape repos: (8040, 7)
+Shape users: (5991, 8)
+Shape repos_users: (8040, 14)
+</pre></div>
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>full_name</th>
+      <th>stars</th>
+      <th>forks</th>
+      <th>description</th>
+      <th>language</th>
+      <th>user</th>
+      <th>repo</th>
+      <th>name</th>
+      <th>type</th>
+      <th>location</th>
+      <th>lat</th>
+      <th>long</th>
+      <th>city</th>
+      <th>country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>yarnpkg/yarn</td>
+      <td>21060</td>
+      <td>786</td>
+      <td>📦🐈 Fast, reliable, and secure dependency manag...</td>
+      <td>JavaScript</td>
+      <td>yarnpkg</td>
+      <td>yarn</td>
+      <td>Yarn</td>
+      <td>Organization</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>facebookincubator/create-react-app</td>
+      <td>17555</td>
+      <td>1821</td>
+      <td>Create React apps with no build configuration.</td>
+      <td>JavaScript</td>
+      <td>facebookincubator</td>
+      <td>create-react-app</td>
+      <td>Facebook Incubator</td>
+      <td>Organization</td>
+      <td>Menlo Park, California</td>
+      <td>37.452960</td>
+      <td>-122.181725</td>
+      <td>Menlo Park</td>
+      <td>United States</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>zeit/hyper</td>
+      <td>13618</td>
+      <td>907</td>
+      <td>A terminal built on web technologies</td>
+      <td>JavaScript</td>
+      <td>zeit</td>
+      <td>hyper</td>
+      <td>ZEIT</td>
+      <td>Organization</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ParsePlatform/parse-server</td>
+      <td>12167</td>
+      <td>3319</td>
+      <td>Parse-compatible API server module for Node/Ex...</td>
+      <td>JavaScript</td>
+      <td>ParsePlatform</td>
+      <td>parse-server</td>
+      <td>Parse</td>
+      <td>Organization</td>
+      <td>Menlo Park, CA</td>
+      <td>37.452960</td>
+      <td>-122.181725</td>
+      <td>Menlo Park</td>
+      <td>United States</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>juliangarnier/anime</td>
+      <td>10245</td>
+      <td>539</td>
+      <td>Javascript Animation Engine</td>
+      <td>JavaScript</td>
+      <td>juliangarnier</td>
+      <td>anime</td>
+      <td>Julian Garnier</td>
+      <td>User</td>
+      <td>Paris</td>
+      <td>48.856614</td>
+      <td>2.352222</td>
+      <td>Paris</td>
+      <td>France</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Tidy Up Repo and User Data</h2>
+<p>Re-order the columns:</p>
+<div class="highlight"><pre><span class="n">repos_users</span> <span class="o">=</span> <span class="n">repos_users</span><span class="o">.</span><span class="n">reindex_axis</span><span class="p">([</span><span class="s">&#39;full_name&#39;</span><span class="p">,</span>
+                                        <span class="s">&#39;repo&#39;</span><span class="p">,</span>
+                                        <span class="s">&#39;description&#39;</span><span class="p">,</span>
+                                        <span class="s">&#39;stars&#39;</span><span class="p">,</span>
+                                        <span class="s">&#39;forks&#39;</span><span class="p">,</span>
+                                        <span class="s">&#39;language&#39;</span><span class="p">,</span>
+                                        <span class="s">&#39;user&#39;</span><span class="p">,</span>
+                                        <span class="s">&#39;name&#39;</span><span class="p">,</span>
+                                        <span class="s">&#39;type&#39;</span><span class="p">,</span>
+                                        <span class="s">&#39;location&#39;</span><span class="p">,</span>
+                                        <span class="s">&#39;lat&#39;</span><span class="p">,</span>
+                                        <span class="s">&#39;long&#39;</span><span class="p">,</span>
+                                        <span class="s">&#39;city&#39;</span><span class="p">,</span>
+                                        <span class="s">&#39;country&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">repos_users</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">repos_users</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+
+<div class="highlight"><pre>(8040, 14)
+</pre></div>
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>full_name</th>
+      <th>repo</th>
+      <th>description</th>
+      <th>stars</th>
+      <th>forks</th>
+      <th>language</th>
+      <th>user</th>
+      <th>name</th>
+      <th>type</th>
+      <th>location</th>
+      <th>lat</th>
+      <th>long</th>
+      <th>city</th>
+      <th>country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>yarnpkg/yarn</td>
+      <td>yarn</td>
+      <td>📦🐈 Fast, reliable, and secure dependency manag...</td>
+      <td>21060</td>
+      <td>786</td>
+      <td>JavaScript</td>
+      <td>yarnpkg</td>
+      <td>Yarn</td>
+      <td>Organization</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>facebookincubator/create-react-app</td>
+      <td>create-react-app</td>
+      <td>Create React apps with no build configuration.</td>
+      <td>17555</td>
+      <td>1821</td>
+      <td>JavaScript</td>
+      <td>facebookincubator</td>
+      <td>Facebook Incubator</td>
+      <td>Organization</td>
+      <td>Menlo Park, California</td>
+      <td>37.452960</td>
+      <td>-122.181725</td>
+      <td>Menlo Park</td>
+      <td>United States</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>zeit/hyper</td>
+      <td>hyper</td>
+      <td>A terminal built on web technologies</td>
+      <td>13618</td>
+      <td>907</td>
+      <td>JavaScript</td>
+      <td>zeit</td>
+      <td>ZEIT</td>
+      <td>Organization</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ParsePlatform/parse-server</td>
+      <td>parse-server</td>
+      <td>Parse-compatible API server module for Node/Ex...</td>
+      <td>12167</td>
+      <td>3319</td>
+      <td>JavaScript</td>
+      <td>ParsePlatform</td>
+      <td>Parse</td>
+      <td>Organization</td>
+      <td>Menlo Park, CA</td>
+      <td>37.452960</td>
+      <td>-122.181725</td>
+      <td>Menlo Park</td>
+      <td>United States</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>juliangarnier/anime</td>
+      <td>anime</td>
+      <td>Javascript Animation Engine</td>
+      <td>10245</td>
+      <td>539</td>
+      <td>JavaScript</td>
+      <td>juliangarnier</td>
+      <td>Julian Garnier</td>
+      <td>User</td>
+      <td>Paris</td>
+      <td>48.856614</td>
+      <td>2.352222</td>
+      <td>Paris</td>
+      <td>France</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Add Overall Ranks</h2>
+<p>Rank each element based on number of stars:</p>
+<div class="highlight"><pre><span class="n">repos_users</span><span class="p">[</span><span class="s">&#39;rank&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">repos_users</span><span class="p">[</span><span class="s">&#39;stars&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rank</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">repos_users</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">repos_users</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+
+<div class="highlight"><pre>(8040, 15)
+</pre></div>
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>full_name</th>
+      <th>repo</th>
+      <th>description</th>
+      <th>stars</th>
+      <th>forks</th>
+      <th>language</th>
+      <th>user</th>
+      <th>name</th>
+      <th>type</th>
+      <th>location</th>
+      <th>lat</th>
+      <th>long</th>
+      <th>city</th>
+      <th>country</th>
+      <th>rank</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>yarnpkg/yarn</td>
+      <td>yarn</td>
+      <td>📦🐈 Fast, reliable, and secure dependency manag...</td>
+      <td>21060</td>
+      <td>786</td>
+      <td>JavaScript</td>
+      <td>yarnpkg</td>
+      <td>Yarn</td>
+      <td>Organization</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>facebookincubator/create-react-app</td>
+      <td>create-react-app</td>
+      <td>Create React apps with no build configuration.</td>
+      <td>17555</td>
+      <td>1821</td>
+      <td>JavaScript</td>
+      <td>facebookincubator</td>
+      <td>Facebook Incubator</td>
+      <td>Organization</td>
+      <td>Menlo Park, California</td>
+      <td>37.452960</td>
+      <td>-122.181725</td>
+      <td>Menlo Park</td>
+      <td>United States</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>zeit/hyper</td>
+      <td>hyper</td>
+      <td>A terminal built on web technologies</td>
+      <td>13618</td>
+      <td>907</td>
+      <td>JavaScript</td>
+      <td>zeit</td>
+      <td>ZEIT</td>
+      <td>Organization</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ParsePlatform/parse-server</td>
+      <td>parse-server</td>
+      <td>Parse-compatible API server module for Node/Ex...</td>
+      <td>12167</td>
+      <td>3319</td>
+      <td>JavaScript</td>
+      <td>ParsePlatform</td>
+      <td>Parse</td>
+      <td>Organization</td>
+      <td>Menlo Park, CA</td>
+      <td>37.452960</td>
+      <td>-122.181725</td>
+      <td>Menlo Park</td>
+      <td>United States</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>juliangarnier/anime</td>
+      <td>anime</td>
+      <td>Javascript Animation Engine</td>
+      <td>10245</td>
+      <td>539</td>
+      <td>JavaScript</td>
+      <td>juliangarnier</td>
+      <td>Julian Garnier</td>
+      <td>User</td>
+      <td>Paris</td>
+      <td>48.856614</td>
+      <td>2.352222</td>
+      <td>Paris</td>
+      <td>France</td>
+      <td>16</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Verify Results: Users</h2>
+<p>Equivalent <a href="https://github.com/search?utf8=%E2%9C%93&amp;q=created%3A2016-01-01..2016-12-31+stars%3A%3E%3D100+user%3Adonnemartin&amp;type=Repositories&amp;ref=searchresults">GitHub search query</a>: <code>created:2016-01-01..2016-12-31 stars:&gt;=100 user:donnemartin</code></p>
+<p><em>Note: The data might be slightly off, as the search query will take into account data up to when the query was executed.  Data in this notebook was mined on January 1, 2017 to 'freeze' the results for the year 2016.  The longer you run the search from January 1, 2017, the larger the discrepancy.</em></p>
+<div class="highlight"><pre><span class="n">repos_users</span><span class="p">[</span><span class="n">repos_users</span><span class="p">[</span><span class="s">&#39;user&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;donnemartin&#39;</span><span class="p">]</span>
+</pre></div>
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>full_name</th>
+      <th>repo</th>
+      <th>description</th>
+      <th>stars</th>
+      <th>forks</th>
+      <th>language</th>
+      <th>user</th>
+      <th>name</th>
+      <th>type</th>
+      <th>location</th>
+      <th>lat</th>
+      <th>long</th>
+      <th>city</th>
+      <th>country</th>
+      <th>rank</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3692</th>
+      <td>donnemartin/gitsome</td>
+      <td>gitsome</td>
+      <td>A supercharged Git/GitHub command line interfa...</td>
+      <td>4482</td>
+      <td>158</td>
+      <td>Python</td>
+      <td>donnemartin</td>
+      <td>Donne Martin</td>
+      <td>User</td>
+      <td>Washington, D.C.</td>
+      <td>38.907192</td>
+      <td>-77.036871</td>
+      <td>Washington</td>
+      <td>United States</td>
+      <td>89.5</td>
+    </tr>
+    <tr>
+      <th>3890</th>
+      <td>donnemartin/viz</td>
+      <td>viz</td>
+      <td>GitHub's most popular repos, interactively vis...</td>
+      <td>359</td>
+      <td>27</td>
+      <td>Python</td>
+      <td>donnemartin</td>
+      <td>Donne Martin</td>
+      <td>User</td>
+      <td>Washington, D.C.</td>
+      <td>38.907192</td>
+      <td>-77.036871</td>
+      <td>Washington</td>
+      <td>United States</td>
+      <td>2521.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Verify Results: Python Repos</h2>
+<p>Equivalent <a href="https://github.com/search?utf8=%E2%9C%93&amp;q=created%3A2016-01-01..2016-12-31+stars%3A%3E%3D100+language%3Apython&amp;type=Repositories&amp;ref=searchresults">GitHub search query</a>: <code>created:2016-01-01..2016-12-31 stars:&gt;=100 language:python</code></p>
+<p><em>Note: The data might be slightly off, as the search query will take into account data up to when the query was executed.  Data in this notebook was mined on January 1, 2017 to 'freeze' the results for the year 2016.  The longer you run the search from January 1, 2017, the larger the discrepancy.</em></p>
+<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="n">repos_users</span><span class="p">[</span><span class="n">repos_users</span><span class="p">[</span><span class="s">&#39;language&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;Python&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">repos_users</span><span class="p">[</span><span class="n">repos_users</span><span class="p">[</span><span class="s">&#39;language&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;Python&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+
+<div class="highlight"><pre>(866, 15)
+</pre></div>
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>full_name</th>
+      <th>repo</th>
+      <th>description</th>
+      <th>stars</th>
+      <th>forks</th>
+      <th>language</th>
+      <th>user</th>
+      <th>name</th>
+      <th>type</th>
+      <th>location</th>
+      <th>lat</th>
+      <th>long</th>
+      <th>city</th>
+      <th>country</th>
+      <th>rank</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3681</th>
+      <td>tensorflow/models</td>
+      <td>models</td>
+      <td>Models built with TensorFlow</td>
+      <td>10336</td>
+      <td>2707</td>
+      <td>Python</td>
+      <td>tensorflow</td>
+      <td>NaN</td>
+      <td>Organization</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>3682</th>
+      <td>songrotek/Deep-Learning-Papers-Reading-Roadmap</td>
+      <td>Deep-Learning-Papers-Reading-Roadmap</td>
+      <td>Deep Learning papers reading roadmap for anyon...</td>
+      <td>8707</td>
+      <td>1123</td>
+      <td>Python</td>
+      <td>songrotek</td>
+      <td>Flood Sung</td>
+      <td>User</td>
+      <td>China</td>
+      <td>35.861660</td>
+      <td>104.195397</td>
+      <td>NaN</td>
+      <td>China</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <th>3683</th>
+      <td>Rochester-NRT/RocAlphaGo</td>
+      <td>RocAlphaGo</td>
+      <td>An independent, student-led replication of Dee...</td>
+      <td>7597</td>
+      <td>2111</td>
+      <td>Python</td>
+      <td>Rochester-NRT</td>
+      <td>NaN</td>
+      <td>Organization</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>35</td>
+    </tr>
+    <tr>
+      <th>3684</th>
+      <td>alexjc/neural-doodle</td>
+      <td>neural-doodle</td>
+      <td>Turn your two-bit doodles into fine artworks w...</td>
+      <td>7226</td>
+      <td>514</td>
+      <td>Python</td>
+      <td>alexjc</td>
+      <td>Alex J. Champandard</td>
+      <td>User</td>
+      <td>Vienna, Austria</td>
+      <td>48.208174</td>
+      <td>16.373819</td>
+      <td>Vienna</td>
+      <td>Austria</td>
+      <td>38</td>
+    </tr>
+    <tr>
+      <th>3685</th>
+      <td>p-e-w/maybe</td>
+      <td>maybe</td>
+      <td>:open_file_folder: :rabbit2: :tophat: See wha...</td>
+      <td>6078</td>
+      <td>162</td>
+      <td>Python</td>
+      <td>p-e-w</td>
+      <td>Philipp Emanuel Weidmann</td>
+      <td>User</td>
+      <td>Anywhere the Internet is</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>52</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Verify Results: Overall Repos</h2>
+<p>Equivalent <a href="https://github.com/search?utf8=%E2%9C%93&amp;q=created%3A2016-01-01..2016-12-31+stars%3A%3E%3D100&amp;type=Repositories&amp;ref=searchresults">GitHub search query</a>: <code>created:2016-01-01..2016-12-31 stars:&gt;=100</code></p>
+<p><em>Note: The data might be slightly off, as the search query will take into account data up to when the query was executed.  Data in this notebook was mined on January 1, 2017 to 'freeze' the results for the year 2016.  The longer you run the search from January 1, 2017, the larger the discrepancy.</em></p>
+<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="n">repos_users</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">repos_users</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+
+<div class="highlight"><pre>(8040, 15)
+</pre></div>
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>full_name</th>
+      <th>repo</th>
+      <th>description</th>
+      <th>stars</th>
+      <th>forks</th>
+      <th>language</th>
+      <th>user</th>
+      <th>name</th>
+      <th>type</th>
+      <th>location</th>
+      <th>lat</th>
+      <th>long</th>
+      <th>city</th>
+      <th>country</th>
+      <th>rank</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>yarnpkg/yarn</td>
+      <td>yarn</td>
+      <td>📦🐈 Fast, reliable, and secure dependency manag...</td>
+      <td>21060</td>
+      <td>786</td>
+      <td>JavaScript</td>
+      <td>yarnpkg</td>
+      <td>Yarn</td>
+      <td>Organization</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>facebookincubator/create-react-app</td>
+      <td>create-react-app</td>
+      <td>Create React apps with no build configuration.</td>
+      <td>17555</td>
+      <td>1821</td>
+      <td>JavaScript</td>
+      <td>facebookincubator</td>
+      <td>Facebook Incubator</td>
+      <td>Organization</td>
+      <td>Menlo Park, California</td>
+      <td>37.452960</td>
+      <td>-122.181725</td>
+      <td>Menlo Park</td>
+      <td>United States</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>zeit/hyper</td>
+      <td>hyper</td>
+      <td>A terminal built on web technologies</td>
+      <td>13618</td>
+      <td>907</td>
+      <td>JavaScript</td>
+      <td>zeit</td>
+      <td>ZEIT</td>
+      <td>Organization</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ParsePlatform/parse-server</td>
+      <td>parse-server</td>
+      <td>Parse-compatible API server module for Node/Ex...</td>
+      <td>12167</td>
+      <td>3319</td>
+      <td>JavaScript</td>
+      <td>ParsePlatform</td>
+      <td>Parse</td>
+      <td>Organization</td>
+      <td>Menlo Park, CA</td>
+      <td>37.452960</td>
+      <td>-122.181725</td>
+      <td>Menlo Park</td>
+      <td>United States</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>juliangarnier/anime</td>
+      <td>anime</td>
+      <td>Javascript Animation Engine</td>
+      <td>10245</td>
+      <td>539</td>
+      <td>JavaScript</td>
+      <td>juliangarnier</td>
+      <td>Julian Garnier</td>
+      <td>User</td>
+      <td>Paris</td>
+      <td>48.856614</td>
+      <td>2.352222</td>
+      <td>Paris</td>
+      <td>France</td>
+      <td>16</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Output Results</h2>
+<p>Write out the results to csv to visualize in Tableau:</p>
+<div class="highlight"><pre><span class="n">users</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s">&#39;data/2016/users.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">repos_users</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s">&#39;data/2016/repos-users-geocodes.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">repos_users</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s">&#39;data/2016/repos-users.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span class="n">repos_rank</span> <span class="o">=</span> <span class="n">repos_users</span><span class="o">.</span><span class="n">reindex_axis</span><span class="p">([</span><span class="s">&#39;full_name&#39;</span><span class="p">,</span> <span class="s">&#39;rank&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">repos_rank</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s">&#39;data/2016/repos-ranks.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</pre></div>
+            </div>
+            <hr class="featurette-divider">
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+    </div>
+</div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-left">
+                    <span class="copyright">Copyright &copy; Donne Martin 2016</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="./theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="./theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="./theme/js/respond.min.js"></script>
+
+
+<!-- Plugin JavaScript -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="./theme/js/classie.js"></script>
+<script src="./theme/js/cbpAnimatedHeader.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="./theme/js/agency.js"></script>
+
+<!-- Google Analytics Universal -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54747412-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics Universal Code -->
+</body>
+</html>
