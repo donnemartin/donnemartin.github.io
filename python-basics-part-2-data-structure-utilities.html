@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Donne Martin</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+
+
+        <meta name="author" content="Donne Martin" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Donne Martin" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Donne Martin"/>
+        <meta property="og:url" content="."/>
+        <meta property="og:description" content="Donne Martin"/>
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="./theme/css/bootstrap.min.css" type="text/css"/>
+
+    <link href="./theme/css/pygments/monokai.css" rel="stylesheet">
+
+
+
+
+
+    <!-- Custom CSS -->
+    <link href="./theme/css/agency.css" rel="stylesheet">
+    <link href="./theme/css/custom.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="./theme/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond../theme/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head><body id="page-top" class="index">
+
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color: #000">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href=".">Donne Martin</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./#likes">Likes</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./#portfolio">GitHub</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./archives">Blog</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="http://donnemartin.com/viz/">Viz</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>    <section id="content" class="section-top-padding">
+        <article class="article-top-padding">
+            <h1>
+                <a href="./python-basics-part-2-data-structure-utilities.html"
+                   rel="bookmark"
+                   title="Permalink to Python Basics Part 2: Data Structure Utilities">
+                    Python Basics Part 2: Data Structure Utilities
+                </a>
+            </h1>
+            <i><time datetime="2016-09-25T00:00:00-04:00"> Sun 25 September 2016</time></i>
+            <div class="entry-content">
+                <div class="panel">
+                <br/>
+                </div>
+                <div class="container">
+                    <br/>
+                    <img class="img-responsive" src="http://i.imgur.com/CLt4zpV.png">
+                </div>
+                <hr class="featurette-divider">
+                <h1>Data Structure Utilities</h1>
+<ul>
+<li>slice</li>
+<li>range and xrange</li>
+<li>bisect</li>
+<li>sort</li>
+<li>sorted</li>
+<li>reversed</li>
+<li>enumerate</li>
+<li>zip</li>
+<li>list comprehensions</li>
+</ul>
+<h2>slice</h2>
+<p>Slice selects a section of list types (arrays, tuples, NumPy arrays) with its arguments [start:end]: start is included, end is not.  The number of elements in the result is stop - end.</p>
+<p align="center">
+    <img src="http://www.nltk.org/images/string-slicing.png" alt="" class="img-responsive"/></a>
+</p>
+
+<p>Image source: http://www.nltk.org/images/string-slicing.png</p>
+<p>Slice 4 elements starting at index 6 and ending at index 9:</p>
+<div class="highlight"><pre><span class="n">seq</span> <span class="o">=</span> <span class="s">&#39;Monty Python&#39;</span>
+<span class="n">seq</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+
+
+<p><code>'Pyth'</code></p>
+<p>Omit start to default to start of the sequence:</p>
+<div class="highlight"><pre><span class="n">seq</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+
+
+<p><code>'Monty'</code></p>
+<p>Omit end to default to end of the sequence:</p>
+<div class="highlight"><pre><span class="n">seq</span><span class="p">[</span><span class="mi">6</span><span class="p">:]</span>
+</pre></div>
+
+
+<p><code>'Python'</code></p>
+<p>Negative indices slice relative to the end:</p>
+<div class="highlight"><pre><span class="n">seq</span><span class="p">[</span><span class="o">-</span><span class="mi">12</span><span class="p">:</span><span class="o">-</span><span class="mi">7</span><span class="p">]</span>
+</pre></div>
+
+
+<p><code>'Monty'</code></p>
+<p>Slice can also take a step [start:end:step].</p>
+<p>Get every other element:</p>
+<div class="highlight"><pre><span class="n">seq</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+
+<p><code>'MnyPto'</code></p>
+<p>Passing -1 for the step reverses the list or tuple:</p>
+<div class="highlight"><pre><span class="n">seq</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+
+<p><code>'nohtyP ytnoM'</code></p>
+<p>You can assign elements to a slice (note the slice range does not have to equal number of elements to assign):</p>
+<div class="highlight"><pre><span class="n">seq</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span>
+<span class="n">seq</span><span class="p">[</span><span class="mi">5</span><span class="p">:]</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;H&#39;</span><span class="p">,</span> <span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;l&#39;</span><span class="p">,</span> <span class="s">&#39;l&#39;</span><span class="p">]</span>
+<span class="n">seq</span>
+</pre></div>
+
+
+<p><code>[1, 1, 2, 3, 5, 'H', 'a', 'l', 'l']</code></p>
+<p>Compare the output of assigning into a slice (above) versus the output of assigning into an index (below):</p>
+<div class="highlight"><pre><span class="n">seq</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span>
+<span class="n">seq</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;H&#39;</span><span class="p">,</span> <span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;l&#39;</span><span class="p">,</span> <span class="s">&#39;l&#39;</span><span class="p">]</span>
+<span class="n">seq</span>
+</pre></div>
+
+
+<p><code>[1, 1, 2, 3, 5, ['H', 'a', 'l', 'l'], 13]</code></p>
+<h2>range and xrange</h2>
+<p>Generate a list of evenly spaced integers with range or xrange.  Note: range in Python 3 returns a generator and xrange is not available.</p>
+<p>Generate 10 integers:</p>
+<div class="highlight"><pre><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+
+<p><code>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</code></p>
+<p>Range can take start, stop, and step arguments:</p>
+<div class="highlight"><pre><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+
+<p><code>[0, 3, 6, 9, 12, 15, 18]</code></p>
+<p>It is very common to iterate through sequences by index with range:</p>
+<div class="highlight"><pre><span class="n">seq</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">seq</span><span class="p">)):</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="n">seq</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+</pre></div>
+
+
+<p><code>1</code></p>
+<p><code>2</code></p>
+<p><code>3</code></p>
+<p>For longer ranges, xrange is recommended and is available in Python 3 as range.  It returns an iterator that generates integers one by one rather than all at once and storing them in a large list.</p>
+<div class="highlight"><pre><span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">100000</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">sum</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
+</pre></div>
+
+
+<p><code>50000</code></p>
+<h2>bisect</h2>
+<p>The bisect module does not check whether the list is sorted, as this check would be expensive O(n).  Using bisect on an unsorted list will not result in an error but could lead to incorrect results.</p>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">bisect</span>
+</pre></div>
+
+
+<p>Find the location where an element should be inserted to keep the list sorted:</p>
+<div class="highlight"><pre><span class="n">seq</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span>
+<span class="n">bisect</span><span class="o">.</span><span class="n">bisect</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+</pre></div>
+
+
+<p><code>5</code></p>
+<p>Insert an element into a location to keep the list sorted:</p>
+<div class="highlight"><pre><span class="n">bisect</span><span class="o">.</span><span class="n">insort</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">seq</span>
+</pre></div>
+
+
+<p><code>[1, 2, 2, 3, 5, 8, 13]</code></p>
+<h2>sort</h2>
+<p>Sort in-place O(n log n)</p>
+<div class="highlight"><pre><span class="n">seq</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">seq</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="n">seq</span>
+</pre></div>
+
+
+<p><code>[1, 3, 5, 6, 7, 9]</code></p>
+<p>Sort by the secondary key of str length:</p>
+<div class="highlight"><pre><span class="n">seq</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;the&#39;</span><span class="p">,</span> <span class="s">&#39;quick&#39;</span><span class="p">,</span> <span class="s">&#39;brown&#39;</span><span class="p">,</span> <span class="s">&#39;fox&#39;</span><span class="p">,</span> <span class="s">&#39;jumps&#39;</span><span class="p">,</span> <span class="s">&#39;over&#39;</span><span class="p">]</span>
+<span class="n">seq</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">)</span>
+<span class="n">seq</span>
+</pre></div>
+
+
+<p><code>['the', 'fox', 'over', 'quick', 'brown', 'jumps']</code></p>
+<h2>sorted</h2>
+<p>Return a new sorted list from the elements of a sequence O(n log n):</p>
+<div class="highlight"><pre><span class="nb">sorted</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+</pre></div>
+
+
+<p><code>[1, 2, 5, 7, 8, 9]</code></p>
+<div class="highlight"><pre><span class="nb">sorted</span><span class="p">(</span><span class="s">&#39;foo bar baz&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p><code>[' ', ' ', 'a', 'a', 'b', 'b', 'f', 'o', 'o', 'r', 'z']</code></p>
+<p>It's common to get a sorted list of unique elements by combining sorted and set:</p>
+<div class="highlight"><pre><span class="n">seq</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">seq</span><span class="p">))</span>
+</pre></div>
+
+
+<p><code>[1, 2, 5, 7, 8, 9, (1, 2), (4, 2)]</code></p>
+<h2>reversed</h2>
+<p>Iterate over the sequence elements in reverse order:</p>
+<div class="highlight"><pre><span class="nb">list</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">seq</span><span class="p">))</span>
+</pre></div>
+
+
+<p><code>[(1, 2), (1, 2), (4, 2), 1, 5, 2, 9, 9, 7, 8, 1, 5, 2]</code></p>
+<h2>enumerate</h2>
+<p>Get the index of a collection and the value:</p>
+<div class="highlight"><pre><span class="n">strings</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;foo&#39;</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">,</span> <span class="s">&#39;baz&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">string</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">strings</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
+</pre></div>
+
+
+<p><code>(0, 'foo')</code></p>
+<p><code>(1, 'bar')</code></p>
+<p><code>(2, 'baz')</code></p>
+<h2>zip</h2>
+<p>Pair up the elements of sequences to create a list of tuples:</p>
+<div class="highlight"><pre><span class="n">seq_1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">seq_2</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;foo&#39;</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">,</span> <span class="s">&#39;baz&#39;</span><span class="p">]</span>
+<span class="nb">zip</span><span class="p">(</span><span class="n">seq_1</span><span class="p">,</span> <span class="n">seq_2</span><span class="p">)</span>
+</pre></div>
+
+
+<p><code>[(1, 'foo'), (2, 'bar'), (3, 'baz')]</code></p>
+<p>Zip takes an arbitrary number of sequences.  The number of elements it produces is determined by the shortest sequence:</p>
+<div class="highlight"><pre><span class="n">seq_3</span> <span class="o">=</span> <span class="p">[</span><span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">]</span>
+<span class="nb">zip</span><span class="p">(</span><span class="n">seq_1</span><span class="p">,</span> <span class="n">seq_2</span><span class="p">,</span> <span class="n">seq_3</span><span class="p">)</span>
+</pre></div>
+
+
+<p><code>[(1, 'foo', True), (2, 'bar', False)]</code></p>
+<p>It is common to use zip for simultaneously iterating over multiple sequences combined with enumerate:</p>
+<div class="highlight"><pre><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">seq_1</span><span class="p">,</span> <span class="n">seq_2</span><span class="p">)):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;</span><span class="si">%d</span><span class="s">: </span><span class="si">%s</span><span class="s">, </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+</pre></div>
+
+
+<p><code>0: 1, foo</code></p>
+<p><code>1: 2, bar</code></p>
+<p><code>2: 3, baz</code></p>
+<p>Zip can unzip a zipped sequence, which you can think of as converting a list of rows into a list of columns:</p>
+<div class="highlight"><pre><span class="n">numbers</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="s">&#39;one&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s">&#39;two&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s">&#39;three&#39;</span><span class="p">)]</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">numbers</span><span class="p">)</span>
+<span class="n">a</span>
+</pre></div>
+
+
+<p><code>(1, 2, 3)</code></p>
+<div class="highlight"><pre><span class="n">b</span>
+</pre></div>
+
+
+<p><code>('one', 'two', 'three')</code></p>
+<h2>List Comprehensions</h2>
+<p>List comprehensions concisely form a new list by filtering the elements of a sequence and transforming the elements passing the filter.  List comprehensions take the form:</p>
+<div class="highlight"><pre><span class="p">[</span><span class="n">expr</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">collection</span> <span class="k">if</span> <span class="n">condition</span><span class="p">]</span>
+</pre></div>
+
+
+<p>Which is equivalent to the following for loop:</p>
+<div class="highlight"><pre><span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">collection</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">condition</span><span class="p">:</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Convert to upper case all strings that start with a 'b':</p>
+<div class="highlight"><pre><span class="n">strings</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;foo&#39;</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">,</span> <span class="s">&#39;baz&#39;</span><span class="p">,</span> <span class="s">&#39;f&#39;</span><span class="p">,</span> <span class="s">&#39;fo&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;ba&#39;</span><span class="p">]</span>
+<span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">strings</span> <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;b&#39;</span><span class="p">]</span>
+</pre></div>
+
+
+<p><code>['BAR', 'BAZ', 'B', 'BA']</code></p>
+<p>List comprehensions can be nested:</p>
+<div class="highlight"><pre><span class="n">list_of_tuples</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">)]</span>
+<span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">tup</span> <span class="ow">in</span> <span class="n">list_of_tuples</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">tup</span><span class="p">]</span>
+</pre></div>
+
+
+<p><code>[1, 2, 3, 4, 5, 6, 7, 8, 9]</code></p>
+<h2>Dict Comprehension</h2>
+<p>A dict comprehension is similar to a list comprehension but returns a dict.</p>
+<p>Create a mapping of strings and their locations in the list for strings that start with a 'b':</p>
+<div class="highlight"><pre><span class="p">{</span><span class="n">index</span> <span class="p">:</span> <span class="n">val</span> <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">strings</span><span class="p">)</span> <span class="k">if</span> <span class="n">val</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;b&#39;</span><span class="p">}</span>
+</pre></div>
+
+
+<p><code>{1: 'bar', 2: 'baz', 5: 'b', 6: 'ba'}</code></p>
+<h2>Set Comprehension</h2>
+<p>A set comprehension is similar to a list comprehension but returns a set.</p>
+<p>Get the unique lengths of strings that start with a 'b':</p>
+<div class="highlight"><pre><span class="p">{</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">strings</span> <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;b&#39;</span><span class="p">}</span>
+</pre></div>
+
+
+<p><code>{1, 2, 3}</code></p>
+            </div>
+            <hr class="featurette-divider">
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+    </div>
+</div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-left">
+                    <span class="copyright">Copyright &copy; Donne Martin 2016</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="./theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="./theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="./theme/js/respond.min.js"></script>
+
+
+<!-- Plugin JavaScript -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="./theme/js/classie.js"></script>
+<script src="./theme/js/cbpAnimatedHeader.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="./theme/js/agency.js"></script>
+
+<!-- Google Analytics Universal -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54747412-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics Universal Code -->
+</body>
+</html>
