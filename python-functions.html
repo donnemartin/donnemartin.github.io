@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Donne Martin</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+
+
+        <meta name="author" content="Donne Martin" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Donne Martin" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Donne Martin"/>
+        <meta property="og:url" content="."/>
+        <meta property="og:description" content="Donne Martin"/>
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="./theme/css/bootstrap.min.css" type="text/css"/>
+
+    <link href="./theme/css/pygments/monokai.css" rel="stylesheet">
+
+
+
+
+
+    <!-- Custom CSS -->
+    <link href="./theme/css/agency.css" rel="stylesheet">
+    <link href="./theme/css/custom.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="./theme/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond../theme/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head><body id="page-top" class="index">
+
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color: #000">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href=".">Donne Martin</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./#likes">Likes</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./#portfolio">GitHub</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./archives">Blog</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="http://donnemartin.com/viz/">Viz</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>    <section id="content" class="section-top-padding">
+        <article class="article-top-padding">
+            <h1>
+                <a href="./python-functions.html"
+                   rel="bookmark"
+                   title="Permalink to Python Functions">
+                    Python Functions
+                </a>
+            </h1>
+            <i><time datetime="2016-11-06T00:00:00-04:00"> Sun 06 November 2016</time></i>
+            <div class="entry-content">
+                <div class="panel">
+                <br/>
+                </div>
+                <div class="container">
+                    <br/>
+                    <img class="img-responsive" src="http://i.imgur.com/CLt4zpV.png">
+                </div>
+                <hr class="featurette-divider">
+                <h1>Functions</h1>
+<ul>
+<li>Functions as Objects</li>
+<li>Lambda Functions</li>
+<li>Closures</li>
+<li>*args, **kwargs</li>
+<li>Currying</li>
+<li>Generators</li>
+<li>Generator Expressions</li>
+<li>itertools</li>
+</ul>
+<h2>Functions as Objects</h2>
+<p>Python treats functions as objects which can simplify data cleaning.  The following contains a transform utility class with two functions to clean strings:</p>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="k">class</span> <span class="nc">TransformUtil</span><span class="p">:</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">remove_punctuation</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Removes !, #, and ?.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">&#39;[!#?]&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">clean_strings</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">strings</span><span class="p">,</span> <span class="n">ops</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;General purpose method to clean strings.</span>
+
+<span class="sd">        Pass in a sequence of strings and the operations to perform.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">strings</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">function</span> <span class="ow">in</span> <span class="n">ops</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+
+
+<p>Below are nose tests that exercises the utility functions:</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">nose.tools</span> <span class="kn">import</span> <span class="n">assert_equal</span>
+<span class="kn">from</span> <span class="nn">..transform_util</span> <span class="kn">import</span> <span class="n">TransformUtil</span>
+
+<span class="k">class</span> <span class="nc">TestTransformUtil</span><span class="p">():</span>
+
+    <span class="n">states</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39; Alabama &#39;</span><span class="p">,</span> <span class="s">&#39;Georgia!&#39;</span><span class="p">,</span> <span class="s">&#39;Georgia&#39;</span><span class="p">,</span> <span class="s">&#39;georgia&#39;</span><span class="p">,</span> \
+          <span class="s">&#39;FlOrIda&#39;</span><span class="p">,</span> <span class="s">&#39;south carolina##&#39;</span><span class="p">,</span> <span class="s">&#39;West virginia?&#39;</span><span class="p">]</span>
+
+    <span class="n">expected_output</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Alabama&#39;</span><span class="p">,</span>
+                       <span class="s">&#39;Georgia&#39;</span><span class="p">,</span>
+                       <span class="s">&#39;Georgia&#39;</span><span class="p">,</span>
+                       <span class="s">&#39;Georgia&#39;</span><span class="p">,</span>
+                       <span class="s">&#39;Florida&#39;</span><span class="p">,</span>
+                       <span class="s">&#39;South Carolina&#39;</span><span class="p">,</span>
+                       <span class="s">&#39;West Virginia&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">test_remove_punctuation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">assert_equal</span><span class="p">(</span><span class="n">TransformUtil</span><span class="o">.</span><span class="n">remove_punctuation</span><span class="p">(</span><span class="s">&#39;!#?&#39;</span><span class="p">),</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_map_remove_punctuation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c"># Map applies a function to a collection</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">TransformUtil</span><span class="o">.</span><span class="n">remove_punctuation</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">states</span><span class="p">)</span>
+        <span class="n">assert_equal</span><span class="p">(</span><span class="s">&#39;!#?&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">output</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_clean_strings</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">clean_ops</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="o">.</span><span class="n">strip</span><span class="p">,</span> <span class="n">TransformUtil</span><span class="o">.</span><span class="n">remove_punctuation</span><span class="p">,</span> <span class="nb">str</span><span class="o">.</span><span class="n">title</span><span class="p">]</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="n">TransformUtil</span><span class="o">.</span><span class="n">clean_strings</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">states</span><span class="p">,</span> <span class="n">clean_ops</span><span class="p">)</span>
+        <span class="n">assert_equal</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">expected_output</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Execute the nose tests in verbose mode:</p>
+<div class="highlight"><pre><span class="n">nosetests</span> <span class="n">tests</span><span class="o">/</span><span class="n">test_transform_util</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">v</span>
+</pre></div>
+
+
+<div class="highlight"><pre>core.tests.test_transform_util.TestTransformUtil.test_clean_strings ... ok
+core.tests.test_transform_util.TestTransformUtil.test_map_remove_punctuation ... ok
+core.tests.test_transform_util.TestTransformUtil.test_remove_punctuation ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+OK
+</pre></div>
+
+
+<h2>Lambda Functions</h2>
+<p>Lambda functions are anonymous functions and are convenient for data analysis, as data transformation functions take functions as arguments.</p>
+<p>Sort a sequence of strings by the number of letters:</p>
+<div class="highlight"><pre><span class="n">strings</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;foo&#39;</span><span class="p">,</span> <span class="s">&#39;bar,&#39;</span><span class="p">,</span> <span class="s">&#39;baz&#39;</span><span class="p">,</span> <span class="s">&#39;f&#39;</span><span class="p">,</span> <span class="s">&#39;fo&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;ba&#39;</span><span class="p">]</span>
+<span class="n">strings</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
+<span class="n">strings</span>
+</pre></div>
+
+
+<p><code>['f', 'b', 'fo', 'ba', 'foo', 'baz', 'bar,']</code></p>
+<h2>Closures</h2>
+<p>Closures are dynamically-genearated functions returned by another function.  The returned function has access to the variables in the local namespace where it was created.</p>
+<p>Closures are often used to implement decorators.  Decorators are useful to transparently wrap something with additional functionality:</p>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">my_decorator</span><span class="p">(</span><span class="n">fun</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">myfun</span><span class="p">(</span><span class="o">*</span><span class="n">params</span><span class="p">,</span> <span class="o">**</span><span class="n">kwparams</span><span class="p">):</span>
+        <span class="n">do_something</span><span class="p">()</span>
+        <span class="n">fun</span><span class="p">(</span><span class="o">*</span><span class="n">params</span><span class="p">,</span> <span class="o">**</span><span class="n">kwparams</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">myfun</span>
+</pre></div>
+
+
+<p>Each time the following closure() is called, it generates the same output:</p>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">make_closure</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">closure</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;Secret value is: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">closure</span>
+
+<span class="n">closure</span> <span class="o">=</span> <span class="n">make_closure</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">closure</span><span class="p">()</span>
+</pre></div>
+
+
+<p><code>Secret value is: 7</code></p>
+<p>Keep track of arguments passed:</p>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">make_watcher</span><span class="p">():</span>
+    <span class="n">dict_seen</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">def</span> <span class="nf">watcher</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">dict_seen</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">dict_seen</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="k">return</span> <span class="bp">False</span>
+
+    <span class="k">return</span> <span class="n">watcher</span>
+
+<span class="n">watcher</span> <span class="o">=</span> <span class="n">make_watcher</span><span class="p">()</span>
+<span class="n">seq</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span>
+<span class="p">[</span><span class="n">watcher</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">seq</span><span class="p">]</span>
+</pre></div>
+
+
+<p><code>[False, True, False, False, False, False, False, True, True, True]</code></p>
+<h2>*args, **kwargs</h2>
+<p>*args and **kwargs are useful when you don't know how many arguments might be passed to your function or when you want to handle named arguments that you have not defined in advance.</p>
+<p>Print arguments and call the input function on *args:</p>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">arg</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;arg: </span><span class="si">%s</span><span class="s">&#39;</span><span class="p">,</span> <span class="n">arg</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;args: </span><span class="si">%s</span><span class="s">&#39;</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;kwargs: </span><span class="si">%s</span><span class="s">&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;func result: </span><span class="si">%s</span><span class="s">&#39;</span><span class="p">,</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">))</span>
+
+<span class="n">foo</span><span class="p">(</span><span class="nb">sum</span><span class="p">,</span> <span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+
+<p><code>('arg: %s', 'foo')</code></p>
+<p><code>('args: %s', (1, 2, 3, 4, 5))</code></p>
+<p><code>('kwargs: %s', {})</code></p>
+<p><code>('func result: %s', 15)</code></p>
+<h2>Currying</h2>
+<p>Currying means to derive new functions from existing ones by partial argument appilcation.  Currying is used in pandas to create specialized functions for transforming time series data.</p>
+<p>The argument y in add_numbers is curried:</p>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">add_numbers</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+
+<span class="n">add_seven</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="n">add_numbers</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">add_seven</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+
+<p><code>10</code></p>
+<p>The built-in functools can simplify currying with partial:</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
+<span class="n">add_five</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">add_numbers</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">add_five</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+
+<p><code>7</code></p>
+<h2>Generators</h2>
+<p>A generator is a simple way to construct a new iterable object.  Generators return a sequence lazily.  When you call the generator, no code is immediately executed until you request elements from the generator.</p>
+<p>Find all the unique ways to make change for $1:</p>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">squares</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>
+
+<span class="c"># No code is executed</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="n">squares</span><span class="p">()</span>
+
+<span class="c"># Generator returns values lazily</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">squares</span><span class="p">():</span>
+    <span class="k">print</span> <span class="n">x</span>
+</pre></div>
+
+
+<p><code>1</code></p>
+<p><code>4</code></p>
+<p><code>9</code></p>
+<p><code>16</code></p>
+<p><code>25</code></p>
+<h2>Generator Expressions</h2>
+<p>A generator expression is analogous to a comprehension.  A list comprehension is enclosed by [], a generator expression is enclosed by ():</p>
+<div class="highlight"><pre><span class="n">gen</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">gen</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">x</span>
+</pre></div>
+
+
+<p><code>1</code></p>
+<p><code>4</code></p>
+<p><code>9</code></p>
+<p><code>16</code></p>
+<p><code>25</code></p>
+<h2>itertools</h2>
+<p>The library itertools has a collection of generators useful for data analysis.</p>
+<p>Function groupby takes a sequence and a key function, grouping consecutive elements in the sequence by the input function's return value (the key).  groupby returns the function's return value (the key) and a generator.</p>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">itertools</span>
+<span class="n">first_letter</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">strings</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;foo&#39;</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">,</span> <span class="s">&#39;baz&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">letter</span><span class="p">,</span> <span class="n">gen_names</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">strings</span><span class="p">,</span> <span class="n">first_letter</span><span class="p">):</span>
+    <span class="k">print</span> <span class="n">letter</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">gen_names</span><span class="p">)</span>
+</pre></div>
+
+
+<p><code>f ['foo']</code></p>
+<p><code>b ['bar', 'baz']</code></p>
+<p>itertools contains many other useful functions:</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>imap</td>
+<td>Generator version of map</td>
+</tr>
+<tr>
+<td>ifilter</td>
+<td>Generator version of filter</td>
+</tr>
+<tr>
+<td>combinations</td>
+<td>Generates a sequence of all possible k-tuples of elements in the iterable, ignoring order</td>
+</tr>
+<tr>
+<td>permutations</td>
+<td>Generates a sequence of all possible k-tuples of elements in the iterable, respecting order</td>
+</tr>
+<tr>
+<td>groupby</td>
+<td>Generates (key, sub-iterator) for each unique key</td>
+</tr>
+</tbody>
+</table>
+            </div>
+            <hr class="featurette-divider">
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+    </div>
+</div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-left">
+                    <span class="copyright">Copyright &copy; Donne Martin 2016</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="./theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="./theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="./theme/js/respond.min.js"></script>
+
+
+<!-- Plugin JavaScript -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="./theme/js/classie.js"></script>
+<script src="./theme/js/cbpAnimatedHeader.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="./theme/js/agency.js"></script>
+
+<!-- Google Analytics Universal -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54747412-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics Universal Code -->
+</body>
+</html>

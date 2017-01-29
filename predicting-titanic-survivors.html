@@ -1,0 +1,1980 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Donne Martin</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+
+
+        <meta name="author" content="Donne Martin" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Donne Martin" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Donne Martin"/>
+        <meta property="og:url" content="."/>
+        <meta property="og:description" content="Donne Martin"/>
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="./theme/css/bootstrap.min.css" type="text/css"/>
+
+    <link href="./theme/css/pygments/monokai.css" rel="stylesheet">
+
+
+
+
+
+    <!-- Custom CSS -->
+    <link href="./theme/css/agency.css" rel="stylesheet">
+    <link href="./theme/css/custom.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="./theme/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond../theme/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head><body id="page-top" class="index">
+
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color: #000">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href=".">Donne Martin</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./#likes">Likes</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./#portfolio">GitHub</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./archives">Blog</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="http://donnemartin.com/viz/">Viz</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>    <section id="content" class="section-top-padding">
+        <article class="article-top-padding">
+            <h1>
+                <a href="./predicting-titanic-survivors.html"
+                   rel="bookmark"
+                   title="Permalink to Predicting Titanic Survivors">
+                    Predicting Titanic Survivors
+                </a>
+            </h1>
+            <i><time datetime="2016-07-02T00:00:00-04:00"> Sat 02 July 2016</time></i>
+            <div class="entry-content">
+                <div class="panel">
+                <br/>
+                </div>
+                <div class="container">
+                    <br/>
+                    <img class="img-responsive" src="http://i.imgur.com/yjHEORq.png">
+                </div>
+                <hr class="featurette-divider">
+                <h1>Kaggle Machine Learning Competition: Predicting Titanic Survivors</h1>
+<ul>
+<li>Competition Site</li>
+<li>Description</li>
+<li>Evaluation</li>
+<li>Data Set</li>
+<li>Setup Imports and Variables</li>
+<li>Explore the Data</li>
+<li>Feature: Passenger Classes</li>
+<li>Feature: Sex</li>
+<li>Feature: Embarked</li>
+<li>Feature: Age</li>
+<li>Feature: Family Size</li>
+<li>Final Data Preparation for Machine Learning</li>
+<li>Data Wrangling Summary</li>
+<li>Random Forest: Training</li>
+<li>Random Forest: Predicting</li>
+<li>Random Forest: Prepare for Kaggle Submission</li>
+<li>Support Vector Machine: Training</li>
+<li>Support Vector Machine: Predicting</li>
+</ul>
+<h2>Competition Site</h2>
+<p>Description, Evaluation, and Data Set taken from the <a href="https://www.kaggle.com/c/titanic-gettingStarted">competition site</a>.</p>
+<h2>Description</h2>
+<p align="center">
+    <img src="http://upload.wikimedia.org/wikipedia/commons/6/6e/St%C3%B6wer_Titanic.jpg" alt="" class="img-responsive"/></a>
+</p>
+
+<p>The sinking of the RMS Titanic is one of the most infamous shipwrecks in history.  On April 15, 1912, during her maiden voyage, the Titanic sank after colliding with an iceberg, killing 1502 out of 2224 passengers and crew. This sensational tragedy shocked the international community and led to better safety regulations for ships.</p>
+<p>One of the reasons that the shipwreck led to such loss of life was that there were not enough lifeboats for the passengers and crew. Although there was some element of luck involved in surviving the sinking, some groups of people were more likely to survive than others, such as women, children, and the upper-class.</p>
+<p>In this challenge, we ask you to complete the analysis of what sorts of people were likely to survive. In particular, we ask you to apply the tools of machine learning to predict which passengers survived the tragedy.</p>
+<h2>Evaluation</h2>
+<p>The historical data has been split into two groups, a 'training set' and a 'test set'.  For the training set, we provide the outcome ( 'ground truth' ) for each passenger.  You will use this set to build your model to generate predictions for the test set.</p>
+<p>For each passenger in the test set, you must predict whether or not they survived the sinking ( 0 for deceased, 1 for survived ).  Your score is the percentage of passengers you correctly predict.</p>
+<p>The Kaggle leaderboard has a public and private component.  50% of your predictions for the test set have been randomly assigned to the public leaderboard ( the same 50% for all users ).  Your score on this public portion is what will appear on the leaderboard.  At the end of the contest, we will reveal your score on the private 50% of the data, which will determine the final winner.  This method prevents users from 'overfitting' to the leaderboard.</p>
+<h2>Data Set</h2>
+<table>
+<thead>
+<tr>
+<th>File Name</th>
+<th>Available Formats</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>train</td>
+<td>.csv (59.76 kb)</td>
+</tr>
+<tr>
+<td>gendermodel</td>
+<td>.csv (3.18 kb)</td>
+</tr>
+<tr>
+<td>genderclassmodel</td>
+<td>.csv (3.18 kb)</td>
+</tr>
+<tr>
+<td>test</td>
+<td>.csv (27.96 kb)</td>
+</tr>
+<tr>
+<td>gendermodel</td>
+<td>.py (3.58 kb)</td>
+</tr>
+<tr>
+<td>genderclassmodel</td>
+<td>.py (5.63 kb)</td>
+</tr>
+<tr>
+<td>myfirstforest</td>
+<td>.py (3.99 kb)</td>
+</tr>
+</tbody>
+</table>
+<pre>
+VARIABLE DESCRIPTIONS:
+survival        Survival
+                (0 = No; 1 = Yes)
+pclass          Passenger Class
+                (1 = 1st; 2 = 2nd; 3 = 3rd)
+name            Name
+sex             Sex
+age             Age
+sibsp           Number of Siblings/Spouses Aboard
+parch           Number of Parents/Children Aboard
+ticket          Ticket Number
+fare            Passenger Fare
+cabin           Cabin
+embarked        Port of Embarkation
+                (C = Cherbourg; Q = Queenstown; S = Southampton)
+
+SPECIAL NOTES:
+Pclass is a proxy for socio-economic status (SES)
+ 1st ~ Upper; 2nd ~ Middle; 3rd ~ Lower
+
+Age is in Years; Fractional if Age less than One (1)
+ If the Age is Estimated, it is in the form xx.5
+
+With respect to the family relation variables (i.e. sibsp and parch)
+some relations were ignored.  The following are the definitions used
+for sibsp and parch.
+
+Sibling:  Brother, Sister, Stepbrother, or Stepsister of Passenger Aboard Titanic
+Spouse:   Husband or Wife of Passenger Aboard Titanic (Mistresses and Fiances Ignored)
+Parent:   Mother or Father of Passenger Aboard Titanic
+Child:    Son, Daughter, Stepson, or Stepdaughter of Passenger Aboard Titanic
+
+Other family relatives excluded from this study include cousins,
+nephews/nieces, aunts/uncles, and in-laws.  Some children travelled
+only with a nanny, therefore parch=0 for them.  As well, some
+travelled with very close friends or neighbors in a village, however,
+the definitions do not support such relations.
+</pre>
+
+<h2>Setup Imports and Variables</h2>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pylab</span> <span class="kn">as</span> <span class="nn">plt</span>
+
+<span class="c"># Set the global default size of matplotlib figures</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s">&#39;figure&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c"># Size of matplotlib figures that contain subplots</span>
+<span class="n">fizsize_with_subplots</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="c"># Size of matplotlib histogram bins</span>
+<span class="n">bin_size</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+
+
+<h2>Explore the Data</h2>
+<p>Read the data:</p>
+<div class="highlight"><pre><span class="n">df_train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">&#39;../data/titanic/train.csv&#39;</span><span class="p">)</span>
+<span class="n">df_train</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PassengerId</th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td> 1</td>
+      <td> 0</td>
+      <td> 3</td>
+      <td>                           Braund, Mr. Owen Harris</td>
+      <td>   male</td>
+      <td> 22</td>
+      <td> 1</td>
+      <td> 0</td>
+      <td>        A/5 21171</td>
+      <td>  7.2500</td>
+      <td>  NaN</td>
+      <td> S</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td> 2</td>
+      <td> 1</td>
+      <td> 1</td>
+      <td> Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
+      <td> female</td>
+      <td> 38</td>
+      <td> 1</td>
+      <td> 0</td>
+      <td>         PC 17599</td>
+      <td> 71.2833</td>
+      <td>  C85</td>
+      <td> C</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td> 3</td>
+      <td> 1</td>
+      <td> 3</td>
+      <td>                            Heikkinen, Miss. Laina</td>
+      <td> female</td>
+      <td> 26</td>
+      <td> 0</td>
+      <td> 0</td>
+      <td> STON/O2. 3101282</td>
+      <td>  7.9250</td>
+      <td>  NaN</td>
+      <td> S</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td> 4</td>
+      <td> 1</td>
+      <td> 1</td>
+      <td>      Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
+      <td> female</td>
+      <td> 35</td>
+      <td> 1</td>
+      <td> 0</td>
+      <td>           113803</td>
+      <td> 53.1000</td>
+      <td> C123</td>
+      <td> S</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td> 5</td>
+      <td> 0</td>
+      <td> 3</td>
+      <td>                          Allen, Mr. William Henry</td>
+      <td>   male</td>
+      <td> 35</td>
+      <td> 0</td>
+      <td> 0</td>
+      <td>           373450</td>
+      <td>  8.0500</td>
+      <td>  NaN</td>
+      <td> S</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="highlight"><pre><span class="n">df_train</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+
+
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PassengerId</th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>886</th>
+      <td> 887</td>
+      <td> 0</td>
+      <td> 2</td>
+      <td>                    Montvila, Rev. Juozas</td>
+      <td>   male</td>
+      <td> 27</td>
+      <td> 0</td>
+      <td> 0</td>
+      <td>     211536</td>
+      <td> 13.00</td>
+      <td>  NaN</td>
+      <td> S</td>
+    </tr>
+    <tr>
+      <th>887</th>
+      <td> 888</td>
+      <td> 1</td>
+      <td> 1</td>
+      <td>             Graham, Miss. Margaret Edith</td>
+      <td> female</td>
+      <td> 19</td>
+      <td> 0</td>
+      <td> 0</td>
+      <td>     112053</td>
+      <td> 30.00</td>
+      <td>  B42</td>
+      <td> S</td>
+    </tr>
+    <tr>
+      <th>888</th>
+      <td> 889</td>
+      <td> 0</td>
+      <td> 3</td>
+      <td> Johnston, Miss. Catherine Helen "Carrie"</td>
+      <td> female</td>
+      <td>NaN</td>
+      <td> 1</td>
+      <td> 2</td>
+      <td> W./C. 6607</td>
+      <td> 23.45</td>
+      <td>  NaN</td>
+      <td> S</td>
+    </tr>
+    <tr>
+      <th>889</th>
+      <td> 890</td>
+      <td> 1</td>
+      <td> 1</td>
+      <td>                    Behr, Mr. Karl Howell</td>
+      <td>   male</td>
+      <td> 26</td>
+      <td> 0</td>
+      <td> 0</td>
+      <td>     111369</td>
+      <td> 30.00</td>
+      <td> C148</td>
+      <td> C</td>
+    </tr>
+    <tr>
+      <th>890</th>
+      <td> 891</td>
+      <td> 0</td>
+      <td> 3</td>
+      <td>                      Dooley, Mr. Patrick</td>
+      <td>   male</td>
+      <td> 32</td>
+      <td> 0</td>
+      <td> 0</td>
+      <td>     370376</td>
+      <td>  7.75</td>
+      <td>  NaN</td>
+      <td> Q</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>View the data types of each column:</p>
+<div class="highlight"><pre><span class="n">df_train</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+
+
+<div class="highlight"><pre>PassengerId      int64
+Survived         int64
+Pclass           int64
+Name            object
+Sex             object
+Age            float64
+SibSp            int64
+Parch            int64
+Ticket          object
+Fare           float64
+Cabin           object
+Embarked        object
+dtype: object
+</pre></div>
+
+
+<p>Type 'object' is a string for pandas, which poses problems with machine learning algorithms.  If we want to use these as features, we'll need to convert these to number representations.</p>
+<p>Get some basic information on the DataFrame:</p>
+<div class="highlight"><pre><span class="n">df_train</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+
+
+<div class="highlight"><pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 891 entries, 0 to 890
+Data columns (total 12 columns):
+PassengerId    891 non-null int64
+Survived       891 non-null int64
+Pclass         891 non-null int64
+Name           891 non-null object
+Sex            891 non-null object
+Age            714 non-null float64
+SibSp          891 non-null int64
+Parch          891 non-null int64
+Ticket         891 non-null object
+Fare           891 non-null float64
+Cabin          204 non-null object
+Embarked       889 non-null object
+dtypes: float64(2), int64(5), object(5)
+</pre></div>
+
+
+<p>Age, Cabin, and Embarked are missing values.  Cabin has too many missing values, whereas we might be able to infer values for Age and Embarked.</p>
+<p>Generate various descriptive statistics on the DataFrame:</p>
+<div class="highlight"><pre><span class="n">df_train</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+
+
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PassengerId</th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Fare</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td> 891.000000</td>
+      <td> 891.000000</td>
+      <td> 891.000000</td>
+      <td> 714.000000</td>
+      <td> 891.000000</td>
+      <td> 891.000000</td>
+      <td> 891.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td> 446.000000</td>
+      <td>   0.383838</td>
+      <td>   2.308642</td>
+      <td>  29.699118</td>
+      <td>   0.523008</td>
+      <td>   0.381594</td>
+      <td>  32.204208</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td> 257.353842</td>
+      <td>   0.486592</td>
+      <td>   0.836071</td>
+      <td>  14.526497</td>
+      <td>   1.102743</td>
+      <td>   0.806057</td>
+      <td>  49.693429</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>   1.000000</td>
+      <td>   0.000000</td>
+      <td>   1.000000</td>
+      <td>   0.420000</td>
+      <td>   0.000000</td>
+      <td>   0.000000</td>
+      <td>   0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td> 223.500000</td>
+      <td>   0.000000</td>
+      <td>   2.000000</td>
+      <td>  20.125000</td>
+      <td>   0.000000</td>
+      <td>   0.000000</td>
+      <td>   7.910400</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td> 446.000000</td>
+      <td>   0.000000</td>
+      <td>   3.000000</td>
+      <td>  28.000000</td>
+      <td>   0.000000</td>
+      <td>   0.000000</td>
+      <td>  14.454200</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td> 668.500000</td>
+      <td>   1.000000</td>
+      <td>   3.000000</td>
+      <td>  38.000000</td>
+      <td>   1.000000</td>
+      <td>   0.000000</td>
+      <td>  31.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td> 891.000000</td>
+      <td>   1.000000</td>
+      <td>   3.000000</td>
+      <td>  80.000000</td>
+      <td>   8.000000</td>
+      <td>   6.000000</td>
+      <td> 512.329200</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Now that we have a general idea of the data set contents, we can dive deeper into each column.  We'll be doing exploratory data analysis and cleaning data to setup 'features' we'll be using in our machine learning algorithms.</p>
+<p>Plot a few features to get a better idea of each:</p>
+<div class="highlight"><pre><span class="c"># Set up a grid of plots</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">fizsize_with_subplots</span><span class="p">)</span>
+<span class="n">fig_dims</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c"># Plot death and survival counts</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot2grid</span><span class="p">(</span><span class="n">fig_dims</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Survived&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">&#39;bar&#39;</span><span class="p">,</span>
+                                         <span class="n">title</span><span class="o">=</span><span class="s">&#39;Death and Survival Counts&#39;</span><span class="p">)</span>
+
+<span class="c"># Plot Pclass counts</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot2grid</span><span class="p">(</span><span class="n">fig_dims</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Pclass&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">&#39;bar&#39;</span><span class="p">,</span>
+                                       <span class="n">title</span><span class="o">=</span><span class="s">&#39;Passenger Class Counts&#39;</span><span class="p">)</span>
+
+<span class="c"># Plot Sex counts</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot2grid</span><span class="p">(</span><span class="n">fig_dims</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">&#39;bar&#39;</span><span class="p">,</span>
+                                    <span class="n">title</span><span class="o">=</span><span class="s">&#39;Gender Counts&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c"># Plot Embarked counts</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot2grid</span><span class="p">(</span><span class="n">fig_dims</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Embarked&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">&#39;bar&#39;</span><span class="p">,</span>
+                                         <span class="n">title</span><span class="o">=</span><span class="s">&#39;Ports of Embarkation Counts&#39;</span><span class="p">)</span>
+
+<span class="c"># Plot the Age histogram</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot2grid</span><span class="p">(</span><span class="n">fig_dims</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;Age Histogram&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre>&lt;matplotlib.text.Text at 0x10af2a5d0&gt;
+</pre></div>
+
+
+<p align="center">
+    <img src="images/posts/titanic/output_28_1.png" alt="" class="img-responsive"/></a>
+</p>
+
+<p>Next we'll explore various features to view their impact on survival rates.</p>
+<h2>Feature: Passenger Classes</h2>
+<p>From our exploratory data analysis in the previous section, we see there are three passenger classes: First, Second, and Third class.  We'll determine which proportion of passengers survived based on their passenger class.</p>
+<p>Generate a cross tab of Pclass and Survived:</p>
+<div class="highlight"><pre><span class="n">pclass_xt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Pclass&#39;</span><span class="p">],</span> <span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Survived&#39;</span><span class="p">])</span>
+<span class="n">pclass_xt</span>
+</pre></div>
+
+
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Survived</th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+    <tr>
+      <th>Pclass</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>  80</td>
+      <td> 136</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>  97</td>
+      <td>  87</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td> 372</td>
+      <td> 119</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Plot the cross tab:</p>
+<div class="highlight"><pre><span class="c"># Normalize the cross tab to sum to 1:</span>
+<span class="n">pclass_xt_pct</span> <span class="o">=</span> <span class="n">pclass_xt</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="n">pclass_xt</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">pclass_xt_pct</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">&#39;bar&#39;</span><span class="p">,</span>
+                   <span class="n">stacked</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                   <span class="n">title</span><span class="o">=</span><span class="s">&#39;Survival Rate by Passenger Classes&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Passenger Class&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Survival Rate&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre>&lt;matplotlib.text.Text at 0x10a9eda10&gt;
+</pre></div>
+
+
+<p align="center">
+    <img src="images/posts/titanic/output_35_1.png" alt="" class="img-responsive"/></a>
+</p>
+
+<p>We can see that passenger class seems to have a significant impact on whether a passenger survived.  Those in First Class the highest chance for survival.</p>
+<h2>Feature: Sex</h2>
+<p>Gender might have also played a role in determining a passenger's survival rate.  We'll need to map Sex from a string to a number to prepare it for machine learning algorithms.</p>
+<p>Generate a mapping of Sex from a string to a number representation:</p>
+<div class="highlight"><pre><span class="n">sexes</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="n">genders_mapping</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">sexes</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sexes</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)))</span>
+<span class="n">genders_mapping</span>
+</pre></div>
+
+
+<div class="highlight"><pre>{&#39;female&#39;: 0, &#39;male&#39;: 1}
+</pre></div>
+
+
+<p>Transform Sex from a string to a number representation:</p>
+<div class="highlight"><pre><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Sex_Val&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">genders_mapping</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">df_train</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PassengerId</th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
+      <th>Sex_Val</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td> 1</td>
+      <td> 0</td>
+      <td> 3</td>
+      <td>                           Braund, Mr. Owen Harris</td>
+      <td>   male</td>
+      <td> 22</td>
+      <td> 1</td>
+      <td> 0</td>
+      <td>        A/5 21171</td>
+      <td>  7.2500</td>
+      <td>  NaN</td>
+      <td> S</td>
+      <td> 1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td> 2</td>
+      <td> 1</td>
+      <td> 1</td>
+      <td> Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
+      <td> female</td>
+      <td> 38</td>
+      <td> 1</td>
+      <td> 0</td>
+      <td>         PC 17599</td>
+      <td> 71.2833</td>
+      <td>  C85</td>
+      <td> C</td>
+      <td> 0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td> 3</td>
+      <td> 1</td>
+      <td> 3</td>
+      <td>                            Heikkinen, Miss. Laina</td>
+      <td> female</td>
+      <td> 26</td>
+      <td> 0</td>
+      <td> 0</td>
+      <td> STON/O2. 3101282</td>
+      <td>  7.9250</td>
+      <td>  NaN</td>
+      <td> S</td>
+      <td> 0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td> 4</td>
+      <td> 1</td>
+      <td> 1</td>
+      <td>      Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
+      <td> female</td>
+      <td> 35</td>
+      <td> 1</td>
+      <td> 0</td>
+      <td>           113803</td>
+      <td> 53.1000</td>
+      <td> C123</td>
+      <td> S</td>
+      <td> 0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td> 5</td>
+      <td> 0</td>
+      <td> 3</td>
+      <td>                          Allen, Mr. William Henry</td>
+      <td>   male</td>
+      <td> 35</td>
+      <td> 0</td>
+      <td> 0</td>
+      <td>           373450</td>
+      <td>  8.0500</td>
+      <td>  NaN</td>
+      <td> S</td>
+      <td> 1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Plot a normalized cross tab for Sex_Val and Survived:</p>
+<div class="highlight"><pre><span class="n">sex_val_xt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Sex_Val&#39;</span><span class="p">],</span> <span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Survived&#39;</span><span class="p">])</span>
+<span class="n">sex_val_xt_pct</span> <span class="o">=</span> <span class="n">sex_val_xt</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="n">sex_val_xt</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">sex_val_xt_pct</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">&#39;bar&#39;</span><span class="p">,</span> <span class="n">stacked</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s">&#39;Survival Rate by Gender&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x10a9ddd50&gt;
+</pre></div>
+
+
+<p align="center">
+    <img src="images/posts/titanic/output_44_1.png" alt="" class="img-responsive"/></a>
+</p>
+
+<p>The majority of females survived, whereas the majority of males did not.</p>
+<p>Next we'll determine whether we can gain any insights on survival rate by looking at both Sex and Pclass.</p>
+<p>Count males and females in each Pclass:</p>
+<div class="highlight"><pre><span class="c"># Get the unique values of Pclass:</span>
+<span class="n">passenger_classes</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Pclass&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+
+<span class="k">for</span> <span class="n">p_class</span> <span class="ow">in</span> <span class="n">passenger_classes</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;M: &#39;</span><span class="p">,</span> <span class="n">p_class</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_train</span><span class="p">[(</span><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Sex&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;male&#39;</span><span class="p">)</span> <span class="o">&amp;</span>
+                             <span class="p">(</span><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Pclass&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">p_class</span><span class="p">)])</span>
+    <span class="k">print</span> <span class="s">&#39;F: &#39;</span><span class="p">,</span> <span class="n">p_class</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_train</span><span class="p">[(</span><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Sex&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;female&#39;</span><span class="p">)</span> <span class="o">&amp;</span>
+                             <span class="p">(</span><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Pclass&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">p_class</span><span class="p">)])</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span class="n">M</span><span class="o">:</span>  <span class="mi">1</span> <span class="mi">122</span>
+<span class="n">F</span><span class="o">:</span>  <span class="mi">1</span> <span class="mi">94</span>
+<span class="n">M</span><span class="o">:</span>  <span class="mi">2</span> <span class="mi">108</span>
+<span class="n">F</span><span class="o">:</span>  <span class="mi">2</span> <span class="mi">76</span>
+<span class="n">M</span><span class="o">:</span>  <span class="mi">3</span> <span class="mi">347</span>
+<span class="n">F</span><span class="o">:</span>  <span class="mi">3</span> <span class="mi">144</span>
+</pre></div>
+
+
+<p>Plot survival rate by Sex and Pclass:</p>
+<div class="highlight"><pre><span class="c"># Plot survival rate by Sex</span>
+<span class="n">females_df</span> <span class="o">=</span> <span class="n">df_train</span><span class="p">[</span><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Sex&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;female&#39;</span><span class="p">]</span>
+<span class="n">females_xt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">females_df</span><span class="p">[</span><span class="s">&#39;Pclass&#39;</span><span class="p">],</span> <span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Survived&#39;</span><span class="p">])</span>
+<span class="n">females_xt_pct</span> <span class="o">=</span> <span class="n">females_xt</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="n">females_xt</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">females_xt_pct</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">&#39;bar&#39;</span><span class="p">,</span>
+                    <span class="n">stacked</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                    <span class="n">title</span><span class="o">=</span><span class="s">&#39;Female Survival Rate by Passenger Class&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Passenger Class&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Survival Rate&#39;</span><span class="p">)</span>
+
+<span class="c"># Plot survival rate by Pclass</span>
+<span class="n">males_df</span> <span class="o">=</span> <span class="n">df_train</span><span class="p">[</span><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Sex&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;male&#39;</span><span class="p">]</span>
+<span class="n">males_xt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">males_df</span><span class="p">[</span><span class="s">&#39;Pclass&#39;</span><span class="p">],</span> <span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Survived&#39;</span><span class="p">])</span>
+<span class="n">males_xt_pct</span> <span class="o">=</span> <span class="n">males_xt</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="n">males_xt</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">males_xt_pct</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">&#39;bar&#39;</span><span class="p">,</span>
+                  <span class="n">stacked</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                  <span class="n">title</span><span class="o">=</span><span class="s">&#39;Male Survival Rate by Passenger Class&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Passenger Class&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Survival Rate&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre>&lt;matplotlib.text.Text at 0x10b610e50&gt;
+</pre></div>
+
+
+<p align="center">
+    <img src="images/posts/titanic/output_50_1.png" alt="" class="img-responsive"/></a>
+</p>
+
+<p align="center">
+    <img src="images/posts/titanic/output_50_2.png" alt="" class="img-responsive"/></a>
+</p>
+
+<p>The vast majority of females in First and Second class survived.  Males in First class had the highest chance for survival.</p>
+<h2>Feature: Embarked</h2>
+<p>The Embarked column might be an important feature but it is missing a couple data points which might pose a problem for machine learning algorithms:</p>
+<div class="highlight"><pre><span class="n">df_train</span><span class="p">[</span><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Embarked&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+</pre></div>
+
+
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PassengerId</th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
+      <th>Sex_Val</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>61 </th>
+      <td>  62</td>
+      <td> 1</td>
+      <td> 1</td>
+      <td>                       Icard, Miss. Amelie</td>
+      <td> female</td>
+      <td> 38</td>
+      <td> 0</td>
+      <td> 0</td>
+      <td> 113572</td>
+      <td> 80</td>
+      <td> B28</td>
+      <td> NaN</td>
+      <td> 0</td>
+    </tr>
+    <tr>
+      <th>829</th>
+      <td> 830</td>
+      <td> 1</td>
+      <td> 1</td>
+      <td> Stone, Mrs. George Nelson (Martha Evelyn)</td>
+      <td> female</td>
+      <td> 62</td>
+      <td> 0</td>
+      <td> 0</td>
+      <td> 113572</td>
+      <td> 80</td>
+      <td> B28</td>
+      <td> NaN</td>
+      <td> 0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Prepare to map Embarked from a string to a number representation:</p>
+<div class="highlight"><pre><span class="c"># Get the unique values of Embarked</span>
+<span class="n">embarked_locs</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Embarked&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+
+<span class="n">embarked_locs_mapping</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">embarked_locs</span><span class="p">,</span>
+                                 <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">embarked_locs</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)))</span>
+<span class="n">embarked_locs_mapping</span>
+</pre></div>
+
+
+<div class="highlight"><pre>{nan: 0, &#39;C&#39;: 1, &#39;Q&#39;: 2, &#39;S&#39;: 3}
+</pre></div>
+
+
+<p>Transform Embarked from a string to a number representation to prepare it for machine learning algorithms:</p>
+<div class="highlight"><pre><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Embarked_Val&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Embarked&#39;</span><span class="p">]</span> \
+                               <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">embarked_locs_mapping</span><span class="p">)</span> \
+                               <span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">df_train</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PassengerId</th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
+      <th>Sex_Val</th>
+      <th>Embarked_Val</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td> 1</td>
+      <td> 0</td>
+      <td> 3</td>
+      <td>                           Braund, Mr. Owen Harris</td>
+      <td>   male</td>
+      <td> 22</td>
+      <td> 1</td>
+      <td> 0</td>
+      <td>        A/5 21171</td>
+      <td>  7.2500</td>
+      <td>  NaN</td>
+      <td> S</td>
+      <td> 1</td>
+      <td> 3</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td> 2</td>
+      <td> 1</td>
+      <td> 1</td>
+      <td> Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
+      <td> female</td>
+      <td> 38</td>
+      <td> 1</td>
+      <td> 0</td>
+      <td>         PC 17599</td>
+      <td> 71.2833</td>
+      <td>  C85</td>
+      <td> C</td>
+      <td> 0</td>
+      <td> 1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td> 3</td>
+      <td> 1</td>
+      <td> 3</td>
+      <td>                            Heikkinen, Miss. Laina</td>
+      <td> female</td>
+      <td> 26</td>
+      <td> 0</td>
+      <td> 0</td>
+      <td> STON/O2. 3101282</td>
+      <td>  7.9250</td>
+      <td>  NaN</td>
+      <td> S</td>
+      <td> 0</td>
+      <td> 3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td> 4</td>
+      <td> 1</td>
+      <td> 1</td>
+      <td>      Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
+      <td> female</td>
+      <td> 35</td>
+      <td> 1</td>
+      <td> 0</td>
+      <td>           113803</td>
+      <td> 53.1000</td>
+      <td> C123</td>
+      <td> S</td>
+      <td> 0</td>
+      <td> 3</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td> 5</td>
+      <td> 0</td>
+      <td> 3</td>
+      <td>                          Allen, Mr. William Henry</td>
+      <td>   male</td>
+      <td> 35</td>
+      <td> 0</td>
+      <td> 0</td>
+      <td>           373450</td>
+      <td>  8.0500</td>
+      <td>  NaN</td>
+      <td> S</td>
+      <td> 1</td>
+      <td> 3</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Plot the histogram for Embarked_Val:</p>
+<div class="highlight"><pre><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Embarked_Val&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">embarked_locs</span><span class="p">),</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;Port of Embarkation Histogram&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Port of Embarkation&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Count&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+
+<p align="center">
+    <img src="images/posts/titanic/output_60_0.png" alt="" class="img-responsive"/></a>
+</p>
+
+<p>Since the vast majority of passengers embarked in 'S': 3, we assign the missing values in Embarked to 'S':</p>
+<div class="highlight"><pre><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_train</span><span class="p">[</span><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Embarked&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+    <span class="n">df_train</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s">&#39;Embarked_Val&#39;</span> <span class="p">:</span>
+                   <span class="p">{</span> <span class="n">embarked_locs_mapping</span><span class="p">[</span><span class="n">nan</span><span class="p">]</span> <span class="p">:</span> <span class="n">embarked_locs_mapping</span><span class="p">[</span><span class="s">&#39;S&#39;</span><span class="p">]</span>
+                   <span class="p">}</span>
+               <span class="p">},</span>
+               <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Verify we do not have any more NaNs for Embarked_Val:</p>
+<div class="highlight"><pre><span class="n">embarked_locs</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Embarked_Val&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="n">embarked_locs</span>
+</pre></div>
+
+
+<div class="highlight"><pre>array([1, 2, 3])
+</pre></div>
+
+
+<p>Plot a normalized cross tab for Embarked_Val and Survived:</p>
+<div class="highlight"><pre><span class="n">embarked_val_xt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Embarked_Val&#39;</span><span class="p">],</span> <span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Survived&#39;</span><span class="p">])</span>
+<span class="n">embarked_val_xt_pct</span> <span class="o">=</span> \
+    <span class="n">embarked_val_xt</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="n">embarked_val_xt</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">embarked_val_xt_pct</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">&#39;bar&#39;</span><span class="p">,</span> <span class="n">stacked</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;Survival Rate by Port of Embarkation&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Port of Embarkation&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Survival Rate&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre>&lt;matplotlib.text.Text at 0x10b7e28d0&gt;
+</pre></div>
+
+
+<p align="center">
+    <img src="images/posts/titanic/output_66_1.png" alt="" class="img-responsive"/></a>
+</p>
+
+<p>It appears those that embarked in location 'C': 1 had the highest rate of survival.  We'll dig in some more to see why this might be the case.  Below we plot a graphs to determine gender and passenger class makeup for each port:</p>
+<div class="highlight"><pre><span class="c"># Set up a grid of plots</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">fizsize_with_subplots</span><span class="p">)</span>
+
+<span class="n">rows</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">col_names</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;Sex_Val&#39;</span><span class="p">,</span> <span class="s">&#39;Pclass&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">portIdx</span> <span class="ow">in</span> <span class="n">embarked_locs</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">colIdx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">col_names</span><span class="p">)):</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">subplot2grid</span><span class="p">((</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">),</span> <span class="p">(</span><span class="n">colIdx</span><span class="p">,</span> <span class="n">portIdx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="n">df_train</span><span class="p">[</span><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Embarked_Val&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">portIdx</span><span class="p">][</span><span class="n">col_names</span><span class="p">[</span><span class="n">colIdx</span><span class="p">]]</span> \
+            <span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">&#39;bar&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p align="center">
+    <img src="images/posts/titanic/output_68_0.png" alt="" class="img-responsive"/></a>
+</p>
+
+<p>Leaving Embarked as integers implies ordering in the values, which does not exist.  Another way to represent Embarked without ordering is to create dummy variables:</p>
+<div class="highlight"><pre><span class="n">df_train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_train</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Embarked_Val&#39;</span><span class="p">],</span> <span class="n">prefix</span><span class="o">=</span><span class="s">&#39;Embarked_Val&#39;</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+
+<h2>Feature: Age</h2>
+<p>The Age column seems like an important feature--unfortunately it is missing many values.  We'll need to fill in the missing values like we did with Embarked.</p>
+<p>Filter to view missing Age values:</p>
+<div class="highlight"><pre><span class="n">df_train</span><span class="p">[</span><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()][[</span><span class="s">&#39;Sex&#39;</span><span class="p">,</span> <span class="s">&#39;Pclass&#39;</span><span class="p">,</span> <span class="s">&#39;Age&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Sex</th>
+      <th>Pclass</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>5 </th>
+      <td>   male</td>
+      <td> 3</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>   male</td>
+      <td> 2</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td> female</td>
+      <td> 3</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>   male</td>
+      <td> 3</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td> female</td>
+      <td> 3</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Determine the Age typical for each passenger class by Sex_Val.  We'll use the median instead of the mean because the Age histogram seems to be right skewed.</p>
+<div class="highlight"><pre><span class="c"># To keep Age in tact, make a copy of it called AgeFill</span>
+<span class="c"># that we will use to fill in the missing ages:</span>
+<span class="n">df_train</span><span class="p">[</span><span class="s">&#39;AgeFill&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Age&#39;</span><span class="p">]</span>
+
+<span class="c"># Populate AgeFill</span>
+<span class="n">df_train</span><span class="p">[</span><span class="s">&#39;AgeFill&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_train</span><span class="p">[</span><span class="s">&#39;AgeFill&#39;</span><span class="p">]</span> \
+                        <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Sex_Val&#39;</span><span class="p">],</span> <span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Pclass&#39;</span><span class="p">]])</span> \
+                        <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">median</span><span class="p">()))</span>
+</pre></div>
+
+
+<p>Ensure AgeFill does not contain any missing values:</p>
+<div class="highlight"><pre><span class="nb">len</span><span class="p">(</span><span class="n">df_train</span><span class="p">[</span><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;AgeFill&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()])</span>
+</pre></div>
+
+
+<div class="highlight"><pre>0
+</pre></div>
+
+
+<p>Plot a normalized cross tab for AgeFill and Survived:</p>
+<div class="highlight"><pre><span class="c"># Set up a grid of plots</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">fizsize_with_subplots</span><span class="p">)</span>
+
+<span class="c"># Histogram of AgeFill segmented by Survived</span>
+<span class="n">df1</span> <span class="o">=</span> <span class="n">df_train</span><span class="p">[</span><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Survived&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">][</span><span class="s">&#39;Age&#39;</span><span class="p">]</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">df_train</span><span class="p">[</span><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Survived&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">][</span><span class="s">&#39;Age&#39;</span><span class="p">]</span>
+<span class="n">max_age</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;AgeFill&#39;</span><span class="p">])</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">([</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">],</span>
+             <span class="n">bins</span><span class="o">=</span><span class="n">max_age</span> <span class="o">/</span> <span class="n">bin_size</span><span class="p">,</span>
+             <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_age</span><span class="p">),</span>
+             <span class="n">stacked</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">((</span><span class="s">&#39;Died&#39;</span><span class="p">,</span> <span class="s">&#39;Survived&#39;</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="s">&#39;best&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;Survivors by Age Groups Histogram&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">&#39;Age&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&#39;Count&#39;</span><span class="p">)</span>
+
+<span class="c"># Scatter plot Survived and AgeFill</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Survived&#39;</span><span class="p">],</span> <span class="n">df_train</span><span class="p">[</span><span class="s">&#39;AgeFill&#39;</span><span class="p">])</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;Survivors by Age Plot&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">&#39;Survived&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">&#39;Age&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre>&lt;matplotlib.text.Text at 0x10c4125d0&gt;
+</pre></div>
+
+
+<p align="center">
+    <img src="images/posts/titanic/output_80_1.png" alt="" class="img-responsive"/></a>
+</p>
+
+<p>Unfortunately, the graphs above do not seem to clearly show any insights.  We'll keep digging further.</p>
+<p>Plot AgeFill density by Pclass:</p>
+<div class="highlight"><pre><span class="k">for</span> <span class="n">pclass</span> <span class="ow">in</span> <span class="n">passenger_classes</span><span class="p">:</span>
+    <span class="n">df_train</span><span class="o">.</span><span class="n">AgeFill</span><span class="p">[</span><span class="n">df_train</span><span class="o">.</span><span class="n">Pclass</span> <span class="o">==</span> <span class="n">pclass</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">&#39;kde&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;Age Density Plot by Passenger Class&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Age&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">((</span><span class="s">&#39;1st Class&#39;</span><span class="p">,</span> <span class="s">&#39;2nd Class&#39;</span><span class="p">,</span> <span class="s">&#39;3rd Class&#39;</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="s">&#39;best&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre>&lt;matplotlib.legend.Legend at 0x10be093d0&gt;
+</pre></div>
+
+
+<p align="center">
+    <img src="images/posts/titanic/output_83_1.png" alt="" class="img-responsive"/></a>
+</p>
+
+<p>When looking at AgeFill density by Pclass, we see the first class passengers were generally older then second class passengers, which in turn were older than third class passengers.  We've determined that first class passengers had a higher survival rate than second class passengers, which in turn had a higher survival rate than third class passengers.</p>
+<div class="highlight"><pre><span class="c"># Set up a grid of plots</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">fizsize_with_subplots</span><span class="p">)</span>
+<span class="n">fig_dims</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c"># Plot the AgeFill histogram for Survivors</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot2grid</span><span class="p">(</span><span class="n">fig_dims</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">survived_df</span> <span class="o">=</span> <span class="n">df_train</span><span class="p">[</span><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Survived&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">survived_df</span><span class="p">[</span><span class="s">&#39;AgeFill&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="n">max_age</span> <span class="o">/</span> <span class="n">bin_size</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_age</span><span class="p">))</span>
+
+<span class="c"># Plot the AgeFill histogram for Females</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot2grid</span><span class="p">(</span><span class="n">fig_dims</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">females_df</span> <span class="o">=</span> <span class="n">df_train</span><span class="p">[(</span><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Sex_Val&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Survived&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)]</span>
+<span class="n">females_df</span><span class="p">[</span><span class="s">&#39;AgeFill&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="n">max_age</span> <span class="o">/</span> <span class="n">bin_size</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_age</span><span class="p">))</span>
+
+<span class="c"># Plot the AgeFill histogram for first class passengers</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot2grid</span><span class="p">(</span><span class="n">fig_dims</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">class1_df</span> <span class="o">=</span> <span class="n">df_train</span><span class="p">[(</span><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Pclass&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Survived&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)]</span>
+<span class="n">class1_df</span><span class="p">[</span><span class="s">&#39;AgeFill&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="n">max_age</span> <span class="o">/</span> <span class="n">bin_size</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_age</span><span class="p">))</span>
+</pre></div>
+
+
+<div class="highlight"><pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x10d6c22d0&gt;
+</pre></div>
+
+
+<p align="center">
+    <img src="images/posts/titanic/output_85_1.png" alt="" class="img-responsive"/></a>
+</p>
+
+<p>In the first graph, we see that most survivors come from the 20's to 30's age ranges and might be explained by the following two graphs.  The second graph shows most females are within their 20's.  The third graph shows most first class passengers are within their 30's.</p>
+<h2>Feature: Family Size</h2>
+<p>Feature enginering involves creating new features or modifying existing features which might be advantageous to a machine learning algorithm.</p>
+<p>Define a new feature FamilySize that is the sum of Parch (number of parents or children on board) and SibSp (number of siblings or spouses):</p>
+<div class="highlight"><pre><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;FamilySize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_train</span><span class="p">[</span><span class="s">&#39;SibSp&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Parch&#39;</span><span class="p">]</span>
+<span class="n">df_train</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PassengerId</th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
+      <th>Sex_Val</th>
+      <th>Embarked_Val</th>
+      <th>Embarked_Val_1</th>
+      <th>Embarked_Val_2</th>
+      <th>Embarked_Val_3</th>
+      <th>AgeFill</th>
+      <th>FamilySize</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td> 1</td>
+      <td> 0</td>
+      <td> 3</td>
+      <td>                           Braund, Mr. Owen Harris</td>
+      <td>   male</td>
+      <td> 22</td>
+      <td> 1</td>
+      <td> 0</td>
+      <td>        A/5 21171</td>
+      <td>  7.2500</td>
+      <td>  NaN</td>
+      <td> S</td>
+      <td> 1</td>
+      <td> 3</td>
+      <td> 0</td>
+      <td> 0</td>
+      <td> 1</td>
+      <td> 22</td>
+      <td> 1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td> 2</td>
+      <td> 1</td>
+      <td> 1</td>
+      <td> Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
+      <td> female</td>
+      <td> 38</td>
+      <td> 1</td>
+      <td> 0</td>
+      <td>         PC 17599</td>
+      <td> 71.2833</td>
+      <td>  C85</td>
+      <td> C</td>
+      <td> 0</td>
+      <td> 1</td>
+      <td> 1</td>
+      <td> 0</td>
+      <td> 0</td>
+      <td> 38</td>
+      <td> 1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td> 3</td>
+      <td> 1</td>
+      <td> 3</td>
+      <td>                            Heikkinen, Miss. Laina</td>
+      <td> female</td>
+      <td> 26</td>
+      <td> 0</td>
+      <td> 0</td>
+      <td> STON/O2. 3101282</td>
+      <td>  7.9250</td>
+      <td>  NaN</td>
+      <td> S</td>
+      <td> 0</td>
+      <td> 3</td>
+      <td> 0</td>
+      <td> 0</td>
+      <td> 1</td>
+      <td> 26</td>
+      <td> 0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td> 4</td>
+      <td> 1</td>
+      <td> 1</td>
+      <td>      Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
+      <td> female</td>
+      <td> 35</td>
+      <td> 1</td>
+      <td> 0</td>
+      <td>           113803</td>
+      <td> 53.1000</td>
+      <td> C123</td>
+      <td> S</td>
+      <td> 0</td>
+      <td> 3</td>
+      <td> 0</td>
+      <td> 0</td>
+      <td> 1</td>
+      <td> 35</td>
+      <td> 1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td> 5</td>
+      <td> 0</td>
+      <td> 3</td>
+      <td>                          Allen, Mr. William Henry</td>
+      <td>   male</td>
+      <td> 35</td>
+      <td> 0</td>
+      <td> 0</td>
+      <td>           373450</td>
+      <td>  8.0500</td>
+      <td>  NaN</td>
+      <td> S</td>
+      <td> 1</td>
+      <td> 3</td>
+      <td> 0</td>
+      <td> 0</td>
+      <td> 1</td>
+      <td> 35</td>
+      <td> 0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Plot a histogram of FamilySize:</p>
+<div class="highlight"><pre><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;FamilySize&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;Family Size Histogram&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre>&lt;matplotlib.text.Text at 0x10db78590&gt;
+</pre></div>
+
+
+<p align="center">
+    <img src="images/posts/titanic/output_91_1.png" alt="" class="img-responsive"/></a>
+</p>
+
+<p>Plot a histogram of AgeFill segmented by Survived:</p>
+<div class="highlight"><pre><span class="c"># Get the unique values of Embarked and its maximum</span>
+<span class="n">family_sizes</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;FamilySize&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="n">family_size_max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">family_sizes</span><span class="p">)</span>
+
+<span class="n">df1</span> <span class="o">=</span> <span class="n">df_train</span><span class="p">[</span><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Survived&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">][</span><span class="s">&#39;FamilySize&#39;</span><span class="p">]</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">df_train</span><span class="p">[</span><span class="n">df_train</span><span class="p">[</span><span class="s">&#39;Survived&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">][</span><span class="s">&#39;FamilySize&#39;</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">([</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">],</span>
+         <span class="n">bins</span><span class="o">=</span><span class="n">family_size_max</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+         <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">family_size_max</span><span class="p">),</span>
+         <span class="n">stacked</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">((</span><span class="s">&#39;Died&#39;</span><span class="p">,</span> <span class="s">&#39;Survived&#39;</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="s">&#39;best&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;Survivors by Family Size&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre>&lt;matplotlib.text.Text at 0x10dd85bd0&gt;
+</pre></div>
+
+
+<p align="center">
+    <img src="images/posts/titanic/output_93_1.png" alt="" class="img-responsive"/></a>
+</p>
+
+<p>Based on the histograms, it is not immediately obvious what impact FamilySize has on survival.  The machine learning algorithms might benefit from this feature.</p>
+<p>Additional features we might want to engineer might be related to the Name column, for example honorrary or pedestrian titles might give clues and better predictive power for a male's survival.</p>
+<h2>Final Data Preparation for Machine Learning</h2>
+<p>Many machine learning algorithms do not work on strings and they usually require the data to be in an array, not a DataFrame.</p>
+<p>Show only the columns of type 'object' (strings):</p>
+<div class="highlight"><pre><span class="n">df_train</span><span class="o">.</span><span class="n">dtypes</span><span class="p">[</span><span class="n">df_train</span><span class="o">.</span><span class="n">dtypes</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">==</span> <span class="s">&#39;object&#39;</span><span class="p">)]</span>
+</pre></div>
+
+
+<div class="highlight"><pre>Name        object
+Sex         object
+Ticket      object
+Cabin       object
+Embarked    object
+dtype: object
+</pre></div>
+
+
+<p>Drop the columns we won't use:</p>
+<div class="highlight"><pre><span class="n">df_train</span> <span class="o">=</span> <span class="n">df_train</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s">&#39;Name&#39;</span><span class="p">,</span> <span class="s">&#39;Sex&#39;</span><span class="p">,</span> <span class="s">&#39;Ticket&#39;</span><span class="p">,</span> <span class="s">&#39;Cabin&#39;</span><span class="p">,</span> <span class="s">&#39;Embarked&#39;</span><span class="p">],</span>
+                         <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Drop the following columns:
+<em> The Age column since we will be using the AgeFill column instead.
+</em> The SibSp and Parch columns since we will be using FamilySize instead.
+<em> The PassengerId column since it won't be used as a feature.
+</em> The Embarked_Val as we decided to use dummy variables instead.</p>
+<div class="highlight"><pre><span class="n">df_train</span> <span class="o">=</span> <span class="n">df_train</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s">&#39;Age&#39;</span><span class="p">,</span> <span class="s">&#39;SibSp&#39;</span><span class="p">,</span> <span class="s">&#39;Parch&#39;</span><span class="p">,</span> <span class="s">&#39;PassengerId&#39;</span><span class="p">,</span> <span class="s">&#39;Embarked_Val&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df_train</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+
+
+<div class="highlight"><pre>Survived            int64
+Pclass              int64
+Fare              float64
+Sex_Val             int64
+Embarked_Val_1    float64
+Embarked_Val_2    float64
+Embarked_Val_3    float64
+AgeFill           float64
+FamilySize          int64
+dtype: object
+</pre></div>
+
+
+<p>Convert the DataFrame to a numpy array:</p>
+<div class="highlight"><pre><span class="n">train_data</span> <span class="o">=</span> <span class="n">df_train</span><span class="o">.</span><span class="n">values</span>
+<span class="n">train_data</span>
+</pre></div>
+
+
+<div class="highlight"><pre>array([[  0.    ,   3.    ,   7.25  , ...,   1.    ,  22.    ,   1.    ],
+       [  1.    ,   1.    ,  71.2833, ...,   0.    ,  38.    ,   1.    ],
+       [  1.    ,   3.    ,   7.925 , ...,   1.    ,  26.    ,   0.    ],
+       ...,
+       [  0.    ,   3.    ,  23.45  , ...,   1.    ,  21.5   ,   3.    ],
+       [  1.    ,   1.    ,  30.    , ...,   0.    ,  26.    ,   0.    ],
+       [  0.    ,   3.    ,   7.75  , ...,   0.    ,  32.    ,   0.    ]])
+</pre></div>
+
+
+<h2>Data Wrangling Summary</h2>
+<p>Below is a summary of the data wrangling we performed on our training data set.  We encapsulate this in a function since we'll need to do the same operations to our test set later.</p>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">clean_data</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">drop_passenger_id</span><span class="p">):</span>
+
+    <span class="c"># Get the unique values of Sex</span>
+    <span class="n">sexes</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+
+    <span class="c"># Generate a mapping of Sex from a string to a number representation</span>
+    <span class="n">genders_mapping</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">sexes</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sexes</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)))</span>
+
+    <span class="c"># Transform Sex from a string to a number representation</span>
+    <span class="n">df</span><span class="p">[</span><span class="s">&#39;Sex_Val&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">genders_mapping</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+    <span class="c"># Get the unique values of Embarked</span>
+    <span class="n">embarked_locs</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s">&#39;Embarked&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+
+    <span class="c"># Generate a mapping of Embarked from a string to a number representation</span>
+    <span class="n">embarked_locs_mapping</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">embarked_locs</span><span class="p">,</span>
+                                     <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">embarked_locs</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)))</span>
+
+    <span class="c"># Transform Embarked from a string to dummy variables</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s">&#39;Embarked&#39;</span><span class="p">],</span> <span class="n">prefix</span><span class="o">=</span><span class="s">&#39;Embarked_Val&#39;</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c"># Fill in missing values of Embarked</span>
+    <span class="c"># Since the vast majority of passengers embarked in &#39;S&#39;: 3,</span>
+    <span class="c"># we assign the missing values in Embarked to &#39;S&#39;:</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">&#39;Embarked&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s">&#39;Embarked_Val&#39;</span> <span class="p">:</span>
+                       <span class="p">{</span> <span class="n">embarked_locs_mapping</span><span class="p">[</span><span class="n">nan</span><span class="p">]</span> <span class="p">:</span> <span class="n">embarked_locs_mapping</span><span class="p">[</span><span class="s">&#39;S&#39;</span><span class="p">]</span>
+                       <span class="p">}</span>
+                   <span class="p">},</span>
+                   <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="c"># Fill in missing values of Fare with the average Fare</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">&#39;Fare&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="n">avg_fare</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">&#39;Fare&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span> <span class="bp">None</span><span class="p">:</span> <span class="n">avg_fare</span> <span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="c"># To keep Age in tact, make a copy of it called AgeFill</span>
+    <span class="c"># that we will use to fill in the missing ages:</span>
+    <span class="n">df</span><span class="p">[</span><span class="s">&#39;AgeFill&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">&#39;Age&#39;</span><span class="p">]</span>
+
+    <span class="c"># Determine the Age typical for each passenger class by Sex_Val.</span>
+    <span class="c"># We&#39;ll use the median instead of the mean because the Age</span>
+    <span class="c"># histogram seems to be right skewed.</span>
+    <span class="n">df</span><span class="p">[</span><span class="s">&#39;AgeFill&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">&#39;AgeFill&#39;</span><span class="p">]</span> \
+                        <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">df</span><span class="p">[</span><span class="s">&#39;Sex_Val&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s">&#39;Pclass&#39;</span><span class="p">]])</span> \
+                        <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">median</span><span class="p">()))</span>
+
+    <span class="c"># Define a new feature FamilySize that is the sum of</span>
+    <span class="c"># Parch (number of parents or children on board) and</span>
+    <span class="c"># SibSp (number of siblings or spouses):</span>
+    <span class="n">df</span><span class="p">[</span><span class="s">&#39;FamilySize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">&#39;SibSp&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s">&#39;Parch&#39;</span><span class="p">]</span>
+
+    <span class="c"># Drop the columns we won&#39;t use:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s">&#39;Name&#39;</span><span class="p">,</span> <span class="s">&#39;Sex&#39;</span><span class="p">,</span> <span class="s">&#39;Ticket&#39;</span><span class="p">,</span> <span class="s">&#39;Cabin&#39;</span><span class="p">,</span> <span class="s">&#39;Embarked&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c"># Drop the Age column since we will be using the AgeFill column instead.</span>
+    <span class="c"># Drop the SibSp and Parch columns since we will be using FamilySize.</span>
+    <span class="c"># Drop the PassengerId column since it won&#39;t be used as a feature.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s">&#39;Age&#39;</span><span class="p">,</span> <span class="s">&#39;SibSp&#39;</span><span class="p">,</span> <span class="s">&#39;Parch&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">drop_passenger_id</span><span class="p">:</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s">&#39;PassengerId&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">df</span>
+</pre></div>
+
+
+<h2>Random Forest: Training</h2>
+<p>Create the random forest object:</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+
+<span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Fit the training data and create the decision trees:</p>
+<div class="highlight"><pre><span class="c"># Training data features, skip the first column &#39;Survived&#39;</span>
+<span class="n">train_features</span> <span class="o">=</span> <span class="n">train_data</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:]</span>
+
+<span class="c"># &#39;Survived&#39; column values</span>
+<span class="n">train_target</span> <span class="o">=</span> <span class="n">train_data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="c"># Fit the model to our training data</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_features</span><span class="p">,</span> <span class="n">train_target</span><span class="p">)</span>
+<span class="n">score</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">train_features</span><span class="p">,</span> <span class="n">train_target</span><span class="p">)</span>
+<span class="s">&quot;Mean accuracy of Random Forest: {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre>&#39;Mean accuracy of Random Forest: 0.980920314254&#39;
+</pre></div>
+
+
+<h2>Random Forest: Predicting</h2>
+<p>Read the test data:</p>
+<div class="highlight"><pre><span class="n">df_test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">&#39;../data/titanic/test.csv&#39;</span><span class="p">)</span>
+<span class="n">df_test</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PassengerId</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td> 892</td>
+      <td> 3</td>
+      <td>                             Kelly, Mr. James</td>
+      <td>   male</td>
+      <td> 34.5</td>
+      <td> 0</td>
+      <td> 0</td>
+      <td>  330911</td>
+      <td>  7.8292</td>
+      <td> NaN</td>
+      <td> Q</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td> 893</td>
+      <td> 3</td>
+      <td>             Wilkes, Mrs. James (Ellen Needs)</td>
+      <td> female</td>
+      <td> 47.0</td>
+      <td> 1</td>
+      <td> 0</td>
+      <td>  363272</td>
+      <td>  7.0000</td>
+      <td> NaN</td>
+      <td> S</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td> 894</td>
+      <td> 2</td>
+      <td>                    Myles, Mr. Thomas Francis</td>
+      <td>   male</td>
+      <td> 62.0</td>
+      <td> 0</td>
+      <td> 0</td>
+      <td>  240276</td>
+      <td>  9.6875</td>
+      <td> NaN</td>
+      <td> Q</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td> 895</td>
+      <td> 3</td>
+      <td>                             Wirz, Mr. Albert</td>
+      <td>   male</td>
+      <td> 27.0</td>
+      <td> 0</td>
+      <td> 0</td>
+      <td>  315154</td>
+      <td>  8.6625</td>
+      <td> NaN</td>
+      <td> S</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td> 896</td>
+      <td> 3</td>
+      <td> Hirvonen, Mrs. Alexander (Helga E Lindqvist)</td>
+      <td> female</td>
+      <td> 22.0</td>
+      <td> 1</td>
+      <td> 1</td>
+      <td> 3101298</td>
+      <td> 12.2875</td>
+      <td> NaN</td>
+      <td> S</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Note the test data does not contain the column 'Survived', we'll use our trained model to predict these values.</p>
+<div class="highlight"><pre><span class="c"># Data wrangle the test set and convert it to a numpy array</span>
+<span class="n">df_test</span> <span class="o">=</span> <span class="n">clean_data</span><span class="p">(</span><span class="n">df_test</span><span class="p">,</span> <span class="n">drop_passenger_id</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">test_data</span> <span class="o">=</span> <span class="n">df_test</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+
+
+<p>Take the decision trees and run it on the test data:</p>
+<div class="highlight"><pre><span class="c"># Get the test data features, skipping the first column &#39;PassengerId&#39;</span>
+<span class="n">test_x</span> <span class="o">=</span> <span class="n">test_data</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:]</span>
+
+<span class="c"># Predict the Survival values for the test data</span>
+<span class="n">test_y</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_x</span><span class="p">)</span>
+</pre></div>
+
+
+<h2>Random Forest: Prepare for Kaggle Submission</h2>
+<p>Create a DataFrame by combining the index from the test data with the output of predictions, then write the results to the output:</p>
+<div class="highlight"><pre><span class="n">df_test</span><span class="p">[</span><span class="s">&#39;Survived&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_y</span>
+<span class="n">df_test</span><span class="p">[[</span><span class="s">&#39;PassengerId&#39;</span><span class="p">,</span> <span class="s">&#39;Survived&#39;</span><span class="p">]]</span> \
+    <span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s">&#39;../data/titanic/results-rf.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</pre></div>
+
+
+<h2>Evaluate Model Accuracy</h2>
+<p>Submitting to Kaggle will give you an accuracy score.  It would be helpful to get an idea of accuracy without submitting to Kaggle.</p>
+<p>We'll split our training data, 80% will go to "train" and 20% will go to "test":</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">metrics</span>
+<span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="c"># Split 80-20 train vs test data</span>
+<span class="n">train_x</span><span class="p">,</span> <span class="n">test_x</span><span class="p">,</span> <span class="n">train_y</span><span class="p">,</span> <span class="n">test_y</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">train_features</span><span class="p">,</span>
+                                                    <span class="n">train_target</span><span class="p">,</span>
+                                                    <span class="n">test_size</span><span class="o">=</span><span class="mf">0.20</span><span class="p">,</span>
+                                                    <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">train_features</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">train_target</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">train_x</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">train_y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">test_x</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">test_y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre>((891, 8), (891,))
+((712, 8), (712,))
+((179, 8), (179,))
+</pre></div>
+
+
+<p>Use the new training data to fit the model, predict, and get the accuracy score:</p>
+<div class="highlight"><pre><span class="n">clf</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_x</span><span class="p">,</span> <span class="n">train_y</span><span class="p">)</span>
+<span class="n">predict_y</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_x</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Accuracy = </span><span class="si">%.2f</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">test_y</span><span class="p">,</span> <span class="n">predict_y</span><span class="p">)))</span>
+</pre></div>
+
+
+<div class="highlight"><pre>Accuracy = 0.83
+</pre></div>
+
+
+<p>View the Confusion Matrix:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>condition True</th>
+<th>condition false</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>prediction true</td>
+<td>True Positive</td>
+<td>False positive</td>
+</tr>
+<tr>
+<td>Prediction False</td>
+<td>False Negative</td>
+<td>True Negative</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">&#39;../data/confusion_matrix.png&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
+</pre></div>
+
+
+<p align="center">
+    <img src="images/posts/titanic/output_128_0.png" alt="" class="img-responsive"/></a>
+</p>
+
+<p>Get the model score and confusion matrix:</p>
+<div class="highlight"><pre><span class="n">model_score</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">test_x</span><span class="p">,</span> <span class="n">test_y</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Model Score </span><span class="si">%.2f</span><span class="s"> </span><span class="se">\n</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">model_score</span><span class="p">))</span>
+
+<span class="n">confusion_matrix</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">test_y</span><span class="p">,</span> <span class="n">predict_y</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Confusion Matrix &quot;</span><span class="p">,</span> <span class="n">confusion_matrix</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;          Predicted&quot;</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;         |  0  |  1  |&quot;</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;         |-----|-----|&quot;</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;       0 | </span><span class="si">%3d</span><span class="s"> | </span><span class="si">%3d</span><span class="s"> |&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">confusion_matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                                   <span class="n">confusion_matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Actual   |-----|-----|&quot;</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;       1 | </span><span class="si">%3d</span><span class="s"> | </span><span class="si">%3d</span><span class="s"> |&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">confusion_matrix</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                                   <span class="n">confusion_matrix</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;         |-----|-----|&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre>Model Score 0.83
+
+(&#39;Confusion Matrix &#39;, array([[98, 12],
+       [19, 50]]))
+          Predicted
+         |  0  |  1  |
+         |-----|-----|
+       0 |  98 |  12 |
+Actual   |-----|-----|
+       1 |  19 |  50 |
+         |-----|-----|
+</pre></div>
+
+
+<p>Display the classification report:</p>
+<p align="center">
+    <img src="images/posts/titanic/output_150.png" alt="" class="img-responsive"/></a>
+</p>
+
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span>
+<span class="k">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">test_y</span><span class="p">,</span>
+                            <span class="n">predict_y</span><span class="p">,</span>
+                            <span class="n">target_names</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;Not Survived&#39;</span><span class="p">,</span> <span class="s">&#39;Survived&#39;</span><span class="p">]))</span>
+</pre></div>
+
+
+<div class="highlight"><pre>              precision    recall  f1-score   support
+
+Not Survived       0.84      0.89      0.86       110
+    Survived       0.81      0.72      0.76        69
+
+ avg / total       0.83      0.83      0.82       179
+</pre></div>
+            </div>
+            <hr class="featurette-divider">
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+    </div>
+</div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-left">
+                    <span class="copyright">Copyright &copy; Donne Martin 2016</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="./theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="./theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="./theme/js/respond.min.js"></script>
+
+
+<!-- Plugin JavaScript -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="./theme/js/classie.js"></script>
+<script src="./theme/js/cbpAnimatedHeader.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="./theme/js/agency.js"></script>
+
+<!-- Google Analytics Universal -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54747412-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics Universal Code -->
+</body>
+</html>
