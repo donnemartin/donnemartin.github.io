@@ -1,7 +1,7 @@
 Title: Data Wrangling GitHub Stats with Viz
 Date: 2017-01-14
-Summary: Data flow and data wrangling of GitHub's most popular repos.
-Tags: GitHub
+Summary: Data flow and data wrangling for GitHub's most popular repos.
+Tags: GitHub, Data
 CoverImage: http://i.imgur.com/0PJXWKn.png
 Thumbnail: http://i.imgur.com/IDclUIv.png
 
