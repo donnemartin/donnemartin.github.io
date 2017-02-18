@@ -1,6 +1,6 @@
-Title: Python Basics Part 1: Data Structures
+Title: Python for Data Part 1: Data Structures
 Date: 2016-09-24
-Summary: Tuples, lists, dicts, and sets.
+Summary: Tuples, lists, dicts, and sets, with a focus on usage for data analysis.
 Tags: Python
 CoverImage: http://i.imgur.com/CLt4zpV.png
 Thumbnail: http://i.imgur.com/0MvP2Ft.png

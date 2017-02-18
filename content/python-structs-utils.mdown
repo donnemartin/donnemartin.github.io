@@ -1,6 +1,6 @@
-Title: Python Basics Part 2: Data Structure Utilities
+Title: Python for Data Part 2: Data Structure Utils
 Date: 2016-09-25
-Summary: Slice, range, xrange, bisect, sort, sorted, reversed, enumerate, zip, and list comprehensions.
+Summary: Slice, range, xrange, bisect, sort, sorted, reversed, enumerate, zip, and list comprehensions, with a focus on usage for data analysis.
 Tags: Python
 CoverImage: http://i.imgur.com/CLt4zpV.png
 Thumbnail: http://i.imgur.com/0MvP2Ft.png
