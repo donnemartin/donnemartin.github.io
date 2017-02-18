@@ -1,6 +1,6 @@
 Title: Predicting Titanic Survivors
 Date: 2016-07-02
-Summary: Predict survivors through data cleaning, exploratory data analysis, and machine learning.
+Summary: Predict survivors through exploratory data analysis, data cleaning, and machine learning.
 Tags: Data
 CoverImage: http://i.imgur.com/yjHEORq.png
 Thumbnail: http://i.imgur.com/Gv8zmQX.jpg
