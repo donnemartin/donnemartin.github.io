@@ -7,7 +7,7 @@ Thumbnail: http://i.imgur.com/tDp2YBW.jpg
 
 I've published Haxor-News: Browse Hacker News like a haxor on [GitHub](https://github.com/donnemartin/haxor-news).
 
-![Imgur](http://i.imgur.com/C4mkc3L.gif)
+<a href="https://camo.githubusercontent.com/c5e300d1d214725a0cbe41053c343c179bf3ff7c/687474703a2f2f692e696d6775722e636f6d2f43346d6b63334c2e676966" target="_blank"><img src="https://camo.githubusercontent.com/c5e300d1d214725a0cbe41053c343c179bf3ff7c/687474703a2f2f692e696d6775722e636f6d2f43346d6b63334c2e676966" alt="Imgur" data-canonical-src="http://i.imgur.com/C4mkc3L.gif" style="max-width:100%;"></a>
 
 haxor-news
 =================
