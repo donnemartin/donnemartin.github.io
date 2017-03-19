@@ -8,7 +8,7 @@ Thumbnail: http://i.imgur.com/3sp7uaC.png
 I've published Gitsome: A supercharged Git/shell autocompleter with GitHub integration on [GitHub](https://github.com/donnemartin/gitsome).
 
 <p align="center">
-  <img src="http://i.imgur.com/0SXZ90y.gif">
+  <a href="https://camo.githubusercontent.com/1bec4ebcc1fc365145a16a843a8784efc2101fcc/687474703a2f2f692e696d6775722e636f6d2f3053585a3930792e676966" target="_blank"><img src="https://camo.githubusercontent.com/1bec4ebcc1fc365145a16a843a8784efc2101fcc/687474703a2f2f692e696d6775722e636f6d2f3053585a3930792e676966" data-canonical-src="http://i.imgur.com/0SXZ90y.gif" style="max-width:100%;"></a>
 </p>
 
 gitsome
