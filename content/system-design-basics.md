@@ -1,8 +1,8 @@
 Title: System Design Intro
 Date: 2018-05-27
 Summary: Performance vs scalability, latency vs throughput, availability vs consistency
-CoverImage: http://i.imgur.com/CQBiPUA.png
-Thumbnail: http://i.imgur.com/Ph95rQG.png
+CoverImage: http://i.imgur.com/6SbxQah.png
+Thumbnail: http://i.imgur.com/oCWLuMC.png
 
 ## Performance vs scalability
 
