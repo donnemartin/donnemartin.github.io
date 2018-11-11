@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Donne Martin</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+
+
+        <meta name="author" content="Donne Martin" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Donne Martin" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Donne Martin"/>
+        <meta property="og:url" content="."/>
+        <meta property="og:description" content="Donne Martin"/>
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="./theme/css/bootstrap.min.css" type="text/css"/>
+
+    <link href="./theme/css/pygments/monokai.css" rel="stylesheet">
+
+
+
+
+
+    <!-- Custom CSS -->
+    <link href="./theme/css/agency.css" rel="stylesheet">
+    <link href="./theme/css/custom.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="./theme/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond../theme/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head><body id="page-top" class="index">
+
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color: #000">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href=".">Donne Martin</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./#likes">Likes</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./#portfolio">GitHub</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="./archives">Blog</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="http://donnemartin.com/viz/">Viz</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>    <section id="content" class="section-top-padding">
+        <article class="article-top-padding">
+            <h1>
+                <a href="./system-design-primer-intro.html"
+                   rel="bookmark"
+                   title="Permalink to System Design Primer: Intro">
+                    System Design Primer: Intro
+                </a>
+            </h1>
+            <i><time datetime="2018-05-27T00:00:00-04:00"> Sun 27 May 2018</time></i>
+            <div class="entry-content">
+                <div class="panel">
+                <br/>
+                </div>
+                <div class="container">
+                    <br/>
+                    <img class="img-responsive" src="http://i.imgur.com/6SbxQah.png">
+                </div>
+                <hr class="featurette-divider">
+                <h2>Performance vs scalability</h2>
+<p>A service is <strong>scalable</strong> if it results in increased <strong>performance</strong> in a manner proportional to resources added. Generally, increasing performance means serving more units of work, but it can also be to handle larger units of work, such as when datasets grow.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup></p>
+<p>Another way to look at performance vs scalability:</p>
+<ul>
+<li>If you have a <strong>performance</strong> problem, your system is slow for a single user.</li>
+<li>If you have a <strong>scalability</strong> problem, your system is fast for a single user but slow under heavy load.</li>
+</ul>
+<h3>Source(s) and further reading</h3>
+<ul>
+<li><a href="http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html">A word on scalability</a></li>
+<li><a href="http://www.slideshare.net/jboner/scalability-availability-stability-patterns/">Scalability, availability, stability, patterns</a></li>
+</ul>
+<h2>Latency vs throughput</h2>
+<p><strong>Latency</strong> is the time to perform some action or to produce some result.</p>
+<p><strong>Throughput</strong> is the number of such actions or results per unit of time.</p>
+<p>Generally, you should aim for <strong>maximal throughput</strong> with <strong>acceptable latency</strong>.</p>
+<h3>Source(s) and further reading</h3>
+<ul>
+<li><a href="https://community.cadence.com/cadence_blogs_8/b/sd/archive/2010/09/13/understanding-latency-vs-throughput">Understanding latency vs throughput</a></li>
+</ul>
+<h2>Availability vs consistency</h2>
+<h3>CAP theorem</h3>
+<p align="center">
+  <img src="http://i.imgur.com/bgLMI2u.png">
+  <br/>
+  <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Source: CAP theorem revisited</a></i>
+</p>
+
+<p>In a distributed computer system, you can only support two of the following guarantees:</p>
+<ul>
+<li><strong>Consistency</strong> - Every read receives the most recent write or an error</li>
+<li><strong>Availability</strong> - Every request receives a response, without guarantee that it contains the most recent version of the information</li>
+<li><strong>Partition Tolerance</strong> - The system continues to operate despite arbitrary partitioning due to network failures</li>
+</ul>
+<p><em>Networks aren't reliable, so you'll need to support partition tolerance.  You'll need to make a software tradeoff between consistency and availability.</em></p>
+<h4>CP - consistency and partition tolerance</h4>
+<p>Waiting for a response from the partitioned node might result in a timeout error.  CP is a good choice if your business needs require atomic reads and writes.</p>
+<h4>AP - availability and partition tolerance</h4>
+<p>Responses return the most recent version of the data available on the a node, which might not be the latest.  Writes might take some time to propagate when the partition is resolved.</p>
+<p>AP is a good choice if the business needs allow for <a href="#eventual-consistency">eventual consistency</a> or when the system needs to continue working despite external errors.</p>
+<h3>Source(s) and further reading</h3>
+<ul>
+<li><a href="http://robertgreiner.com/2014/08/cap-theorem-revisited/">CAP theorem revisited</a></li>
+<li><a href="http://ksat.me/a-plain-english-introduction-to-cap-theorem/">A plain english introduction to CAP theorem</a></li>
+<li><a href="https://github.com/henryr/cap-faq">CAP FAQ</a></li>
+</ul>
+<h2>Consistency patterns</h2>
+<p>With multiple copies of the same data, we are faced with options on how to synchronize them so clients have a consistent view of the data.  Recall the definition of consistency from the <a href="#cap-theorem">CAP theorem</a> - Every read receives the most recent write or an error.</p>
+<h3>Weak consistency</h3>
+<p>After a write, reads may or may not see it.  A best effort approach is taken.</p>
+<p>This approach is seen in systems such as memcached.  Weak consistency works well in real time use cases such as VoIP, video chat, and realtime multiplayer games.  For example, if you are on a phone call and lose reception for a few seconds, when you regain connection you do not hear what was spoken during connection loss.</p>
+<h3>Eventual consistency</h3>
+<p>After a write, reads will eventually see it (typically within milliseconds).  Data is replicated asynchronously.</p>
+<p>This approach is seen in systems such as DNS and email.  Eventual consistency works well in highly available systems.</p>
+<h3>Strong consistency</h3>
+<p>After a write, reads will see it.  Data is replicated synchronously.</p>
+<p>This approach is seen in file systems and RDBMSes.  Strong consistency works well in systems that need transactions.</p>
+<h3>Source(s) and further reading</h3>
+<ul>
+<li><a href="http://snarfed.org/transactions_across_datacenters_io.html">Transactions across data centers</a></li>
+</ul>
+<h2>Availability patterns</h2>
+<p>There are two main patterns to support high availability: <strong>fail-over</strong> and <strong>replication</strong>.</p>
+<h3>Fail-over</h3>
+<h4>Active-passive</h4>
+<p>With active-passive fail-over, heartbeats are sent between the active and the passive server on standby.  If the heartbeat is interrupted, the passive server takes over the active's IP address and resumes service.</p>
+<p>The length of downtime is determined by whether the passive server is already running in 'hot' standby or whether it needs to start up from 'cold' standby.  Only the active server handles traffic.</p>
+<p>Active-passive failover can also be referred to as master-slave failover.</p>
+<h4>Active-active</h4>
+<p>In active-active, both servers are managing traffic, spreading the load between them.</p>
+<p>If the servers are public-facing, the DNS would need to know about the public IPs of both servers.  If the servers are internal-facing, application logic would need to know about both servers.</p>
+<p>Active-active failover can also be referred to as master-master failover.</p>
+<h3>Disadvantage(s): failover</h3>
+<ul>
+<li>Fail-over adds more hardware and additional complexity.</li>
+<li>There is a potential for loss of data if the active system fails before any newly written data can be replicated to the passive.</li>
+</ul>
+<h3>Replication</h3>
+<h4>Master-slave and master-master</h4>
+<p>This topic is further discussed in the <a href="#database">Database</a> section:</p>
+<ul>
+<li><a href="#master-slave-replication">Master-slave replication</a></li>
+<li><a href="#master-master-replication">Master-master replication</a></li>
+</ul>
+            </div>
+            <hr class="featurette-divider">
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+    </div>
+</div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-left">
+                    <span class="copyright">Copyright &copy; Donne Martin 2014-Present</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="./theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="./theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="./theme/js/respond.min.js"></script>
+
+
+<!-- Plugin JavaScript -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="./theme/js/classie.js"></script>
+<script src="./theme/js/cbpAnimatedHeader.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="./theme/js/agency.js"></script>
+
+<!-- Google Analytics Universal -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54747412-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics Universal Code -->
+</body>
+</html>
