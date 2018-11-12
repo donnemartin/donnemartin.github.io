@@ -1,5 +1,6 @@
 Title: System Design Primer: Intro
 Date: 2018-05-27
+Status: draft
 Summary: Performance vs scalability, latency vs throughput, availability vs consistency
 CoverImage: http://i.imgur.com/6SbxQah.png
 Thumbnail: http://i.imgur.com/oCWLuMC.png
