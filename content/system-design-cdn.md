@@ -39,3 +39,9 @@ Sites with heavy traffic work well with pull CDNs, as traffic is spread out more
 * CDN costs could be significant depending on traffic, although this should be weighed with additional costs you would incur not using a CDN.
 * Content might be stale if it is updated before the TTL expires it.
 * CDNs require changing URLs for static content to point to the CDN.
+
+### Source(s) and further reading
+
+* [Globally distributed content delivery](https://figshare.com/articles/Globally_distributed_content_delivery/6605972)
+* [The differences between push and pull CDNs](http://www.travelblogadvice.com/technical/the-differences-between-push-and-pull-cdns/)
+* [Wikipedia](https://en.wikipedia.org/wiki/Content_delivery_network)
