@@ -119,89 +119,43 @@
                     <img class="img-responsive" src="http://i.imgur.com/6SbxQah.png">
                 </div>
                 <hr class="featurette-divider">
-                <h2>Performance vs scalability</h2>
-<p>A service is <strong>scalable</strong> if it results in increased <strong>performance</strong> in a manner proportional to resources added. Generally, increasing performance means serving more units of work, but it can also be to handle larger units of work, such as when datasets grow.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup></p>
-<p>Another way to look at performance vs scalability:</p>
-<ul>
-<li>If you have a <strong>performance</strong> problem, your system is slow for a single user.</li>
-<li>If you have a <strong>scalability</strong> problem, your system is fast for a single user but slow under heavy load.</li>
-</ul>
-<h3>Source(s) and further reading</h3>
-<ul>
-<li><a href="http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html">A word on scalability</a></li>
-<li><a href="http://www.slideshare.net/jboner/scalability-availability-stability-patterns/">Scalability, availability, stability, patterns</a></li>
-</ul>
-<h2>Latency vs throughput</h2>
-<p><strong>Latency</strong> is the time to perform some action or to produce some result.</p>
-<p><strong>Throughput</strong> is the number of such actions or results per unit of time.</p>
-<p>Generally, you should aim for <strong>maximal throughput</strong> with <strong>acceptable latency</strong>.</p>
-<h3>Source(s) and further reading</h3>
-<ul>
-<li><a href="https://community.cadence.com/cadence_blogs_8/b/sd/archive/2010/09/13/understanding-latency-vs-throughput">Understanding latency vs throughput</a></li>
-</ul>
-<h2>Availability vs consistency</h2>
-<h3>CAP theorem</h3>
+                <h2>Domain name system</h2>
 <p align="center">
-  <img src="http://i.imgur.com/bgLMI2u.png">
+  <img src="http://i.imgur.com/IOyLj4i.jpg">
   <br/>
-  <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Source: CAP theorem revisited</a></i>
+  <i><a href=http://www.slideshare.net/srikrupa5/dns-security-presentation-issa>Source: DNS security presentation</a></i>
 </p>
 
-<p>In a distributed computer system, you can only support two of the following guarantees:</p>
+<p>A Domain Name System (DNS) translates a domain name such as www.example.com to an IP address.</p>
+<p>DNS is hierarchical, with a few authoritative servers at the top level.  Your router or ISP provides information about which DNS server(s) to contact when doing a lookup.  Lower level DNS servers cache mappings, which could become stale due to DNS propagation delays.  DNS results can also be cached by your browser or OS for a certain period of time, determined by the <a href="https://en.wikipedia.org/wiki/Time_to_live">time to live (TTL)</a>.</p>
 <ul>
-<li><strong>Consistency</strong> - Every read receives the most recent write or an error</li>
-<li><strong>Availability</strong> - Every request receives a response, without guarantee that it contains the most recent version of the information</li>
-<li><strong>Partition Tolerance</strong> - The system continues to operate despite arbitrary partitioning due to network failures</li>
+<li><strong>NS record (name server)</strong> - Specifies the DNS servers for your domain/subdomain.</li>
+<li><strong>MX record (mail exchange)</strong> - Specifies the mail servers for accepting messages.</li>
+<li><strong>A record (address)</strong> - Points a name to an IP address.</li>
+<li><strong>CNAME (canonical)</strong> - Points a name to another name or <code>CNAME</code> (example.com to www.example.com) or to an <code>A</code> record.</li>
 </ul>
-<p><em>Networks aren't reliable, so you'll need to support partition tolerance.  You'll need to make a software tradeoff between consistency and availability.</em></p>
-<h4>CP - consistency and partition tolerance</h4>
-<p>Waiting for a response from the partitioned node might result in a timeout error.  CP is a good choice if your business needs require atomic reads and writes.</p>
-<h4>AP - availability and partition tolerance</h4>
-<p>Responses return the most recent version of the data available on the a node, which might not be the latest.  Writes might take some time to propagate when the partition is resolved.</p>
-<p>AP is a good choice if the business needs allow for <a href="#eventual-consistency">eventual consistency</a> or when the system needs to continue working despite external errors.</p>
+<p>Services such as <a href="https://www.cloudflare.com/dns/">CloudFlare</a> and <a href="https://aws.amazon.com/route53/">Route 53</a> provide managed DNS services.  Some DNS services can route traffic through various methods:</p>
+<ul>
+<li><a href="http://g33kinfo.com/info/archives/2657">Weighted round robin</a><ul>
+<li>Prevent traffic from going to servers under maintenance</li>
+<li>Balance between varying cluster sizes</li>
+<li>A/B testing</li>
+</ul>
+</li>
+<li>Latency-based</li>
+<li>Geolocation-based</li>
+</ul>
+<h3>Disadvantage(s): DNS</h3>
+<ul>
+<li>Accessing a DNS server introduces a slight delay, although mitigated by caching described above.</li>
+<li>DNS server management could be complex and is generally managed by <a href="http://superuser.com/questions/472695/who-controls-the-dns-servers/472729">governments, ISPs, and large companies</a>.</li>
+<li>DNS services have recently come under <a href="http://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/">DDoS attack</a>, preventing users from accessing websites such as Twitter without knowing Twitter's IP address(es).</li>
+</ul>
 <h3>Source(s) and further reading</h3>
 <ul>
-<li><a href="http://robertgreiner.com/2014/08/cap-theorem-revisited/">CAP theorem revisited</a></li>
-<li><a href="http://ksat.me/a-plain-english-introduction-to-cap-theorem/">A plain english introduction to CAP theorem</a></li>
-<li><a href="https://github.com/henryr/cap-faq">CAP FAQ</a></li>
-</ul>
-<h2>Consistency patterns</h2>
-<p>With multiple copies of the same data, we are faced with options on how to synchronize them so clients have a consistent view of the data.  Recall the definition of consistency from the <a href="#cap-theorem">CAP theorem</a> - Every read receives the most recent write or an error.</p>
-<h3>Weak consistency</h3>
-<p>After a write, reads may or may not see it.  A best effort approach is taken.</p>
-<p>This approach is seen in systems such as memcached.  Weak consistency works well in real time use cases such as VoIP, video chat, and realtime multiplayer games.  For example, if you are on a phone call and lose reception for a few seconds, when you regain connection you do not hear what was spoken during connection loss.</p>
-<h3>Eventual consistency</h3>
-<p>After a write, reads will eventually see it (typically within milliseconds).  Data is replicated asynchronously.</p>
-<p>This approach is seen in systems such as DNS and email.  Eventual consistency works well in highly available systems.</p>
-<h3>Strong consistency</h3>
-<p>After a write, reads will see it.  Data is replicated synchronously.</p>
-<p>This approach is seen in file systems and RDBMSes.  Strong consistency works well in systems that need transactions.</p>
-<h3>Source(s) and further reading</h3>
-<ul>
-<li><a href="http://snarfed.org/transactions_across_datacenters_io.html">Transactions across data centers</a></li>
-</ul>
-<h2>Availability patterns</h2>
-<p>There are two main patterns to support high availability: <strong>fail-over</strong> and <strong>replication</strong>.</p>
-<h3>Fail-over</h3>
-<h4>Active-passive</h4>
-<p>With active-passive fail-over, heartbeats are sent between the active and the passive server on standby.  If the heartbeat is interrupted, the passive server takes over the active's IP address and resumes service.</p>
-<p>The length of downtime is determined by whether the passive server is already running in 'hot' standby or whether it needs to start up from 'cold' standby.  Only the active server handles traffic.</p>
-<p>Active-passive failover can also be referred to as master-slave failover.</p>
-<h4>Active-active</h4>
-<p>In active-active, both servers are managing traffic, spreading the load between them.</p>
-<p>If the servers are public-facing, the DNS would need to know about the public IPs of both servers.  If the servers are internal-facing, application logic would need to know about both servers.</p>
-<p>Active-active failover can also be referred to as master-master failover.</p>
-<h3>Disadvantage(s): failover</h3>
-<ul>
-<li>Fail-over adds more hardware and additional complexity.</li>
-<li>There is a potential for loss of data if the active system fails before any newly written data can be replicated to the passive.</li>
-</ul>
-<h3>Replication</h3>
-<h4>Master-slave and master-master</h4>
-<p>This topic is further discussed in the <a href="#database">Database</a> section:</p>
-<ul>
-<li><a href="#master-slave-replication">Master-slave replication</a></li>
-<li><a href="#master-master-replication">Master-master replication</a></li>
+<li><a href="https://technet.microsoft.com/en-us/library/dd197427(v=ws.10).aspx">DNS architecture</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Domain_Name_System">Wikipedia</a></li>
+<li><a href="https://support.dnsimple.com/categories/dns/">DNS articles</a></li>
 </ul>
             </div>
             <hr class="featurette-divider">
