@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Donne Martin</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+
+
+        <meta name="author" content="Donne Martin" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Donne Martin" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Donne Martin"/>
+        <meta property="og:url" content=".."/>
+        <meta property="og:description" content="Donne Martin"/>
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../theme/css/bootstrap.min.css" type="text/css"/>
+
+    <link href="../theme/css/pygments/monokai.css" rel="stylesheet">
+
+
+
+
+
+    <!-- Custom CSS -->
+    <link href="../theme/css/agency.css" rel="stylesheet">
+    <link href="../theme/css/custom.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../theme/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.../theme/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head><body id="page-top" class="index">
+
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color: #000">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="..">Donne Martin</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="../#likes">Likes</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="../#portfolio">GitHub</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="../#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="../#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="../archives">Blog</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="http://donnemartin.com/viz/">Viz</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>    <section id="content" class="section-top-padding">
+        <article class="article-top-padding">
+            <h1>
+                <a href="../drafts/system-design-primer-load-balancer.html"
+                   rel="bookmark"
+                   title="Permalink to System Design Primer: Load Balancer">
+                    System Design Primer: Load Balancer
+                </a>
+            </h1>
+            <i><time datetime="2019-01-01T00:00:00-05:00"> Tue 01 January 2019</time></i>
+            <div class="entry-content">
+                <div class="panel">
+                <br/>
+                </div>
+                <div class="container">
+                    <br/>
+                    <img class="img-responsive" src="http://i.imgur.com/6SbxQah.png">
+                </div>
+                <hr class="featurette-divider">
+                <p align="center">
+  <img src="http://i.imgur.com/h81n9iK.png">
+  <br/>
+  <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
+</p>
+
+<p>Load balancers distribute incoming client requests to computing resources such as application servers and databases.  In each case, the load balancer returns the response from the computing resource to the appropriate client.  Load balancers are effective at:</p>
+<ul>
+<li>Preventing requests from going to unhealthy servers</li>
+<li>Preventing overloading resources</li>
+<li>Helping eliminate single points of failure</li>
+</ul>
+<p>Load balancers can be implemented with hardware (expensive) or with software such as HAProxy.</p>
+<p>Additional benefits include:</p>
+<ul>
+<li><strong>SSL termination</strong> - Decrypt incoming requests and encrypt server responses so backend servers do not have to perform these potentially expensive operations<ul>
+<li>Removes the need to install <a href="https://en.wikipedia.org/wiki/X.509">X.509 certificates</a> on each server</li>
+</ul>
+</li>
+<li><strong>Session persistence</strong> - Issue cookies and route a specific client's requests to same instance if the web apps do not keep track of sessions</li>
+</ul>
+<p>To protect against failures, it's common to set up multiple load balancers, either in <a href="#active-passive">active-passive</a> or <a href="#active-active">active-active</a> mode.</p>
+<p>Load balancers can route traffic based on various metrics, including:</p>
+<ul>
+<li>Random</li>
+<li>Least loaded</li>
+<li>Session/cookies</li>
+<li><a href="http://g33kinfo.com/info/archives/2657">Round robin or weighted round robin</a></li>
+<li><a href="#layer-4-load-balancing">Layer 4</a></li>
+<li><a href="#layer-7-load-balancing">Layer 7</a></li>
+</ul>
+<h3>Layer 4 load balancing</h3>
+<p>Layer 4 load balancers look at info at the <a href="#communication">transport layer</a> to decide how to distribute requests.  Generally, this involves the source, destination IP addresses, and ports in the header, but not the contents of the packet.  Layer 4 load balancers forward network packets to and from the upstream server, performing <a href="https://www.nginx.com/resources/glossary/layer-4-load-balancing/">Network Address Translation (NAT)</a>.</p>
+<h3>Layer 7 load balancing</h3>
+<p>Layer 7 load balancers look at the <a href="#communication">application layer</a> to decide how to distribute requests.  This can involve contents of the header, message, and cookies.  Layer 7 load balancers terminates network traffic, reads the message, makes a load-balancing decision, then opens a connection to the selected server.  For example, a layer 7 load balancer can direct video traffic to servers that host videos while directing more sensitive user billing traffic to security-hardened servers.</p>
+<p>At the cost of flexibility, layer 4 load balancing requires less time and computing resources than Layer 7, although the performance impact can be minimal on modern commodity hardware.</p>
+<h3>Horizontal scaling</h3>
+<p>Load balancers can also help with horizontal scaling, improving performance and availability.  Scaling out using commodity machines is more cost efficient and results in higher availability than scaling up a single server on more expensive hardware, called <strong>Vertical Scaling</strong>.  It is also easier to hire for talent working on commodity hardware than it is for specialized enterprise systems.</p>
+<h4>Disadvantage(s): horizontal scaling</h4>
+<ul>
+<li>Scaling horizontally introduces complexity and involves cloning servers<ul>
+<li>Servers should be stateless: they should not contain any user-related data like sessions or profile pictures</li>
+<li>Sessions can be stored in a centralized data store such as a <a href="#database">database</a> (SQL, NoSQL) or a persistent <a href="#cache">cache</a> (Redis, Memcached)</li>
+</ul>
+</li>
+<li>Downstream servers such as caches and databases need to handle more simultaneous connections as upstream servers scale out</li>
+</ul>
+<h3>Disadvantage(s): load balancer</h3>
+<ul>
+<li>The load balancer can become a performance bottleneck if it does not have enough resources or if it is not configured properly.</li>
+<li>Introducing a load balancer to help eliminate single points of failure results in increased complexity.</li>
+<li>A single load balancer is a single point of failure, configuring multiple load balancers further increases complexity.</li>
+</ul>
+<h3>Source(s) and further reading</h3>
+<ul>
+<li><a href="https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/">NGINX architecture</a></li>
+<li><a href="http://www.haproxy.org/download/1.2/doc/architecture.txt">HAProxy architecture guide</a></li>
+<li><a href="http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones">Scalability</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Load_balancing_(computing)">Wikipedia</a></li>
+<li><a href="https://www.nginx.com/resources/glossary/layer-4-load-balancing/">Layer 4 load balancing</a></li>
+<li><a href="https://www.nginx.com/resources/glossary/layer-7-load-balancing/">Layer 7 load balancing</a></li>
+<li><a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">ELB listener config</a></li>
+</ul>
+            </div>
+            <hr class="featurette-divider">
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+    </div>
+</div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-left">
+                    <span class="copyright">Copyright &copy; Donne Martin 2014-Present</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../theme/js/respond.min.js"></script>
+
+
+<!-- Plugin JavaScript -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="../theme/js/classie.js"></script>
+<script src="../theme/js/cbpAnimatedHeader.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="../theme/js/agency.js"></script>
+
+<!-- Google Analytics Universal -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54747412-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics Universal Code -->
+</body>
+</html>
