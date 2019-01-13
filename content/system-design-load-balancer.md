@@ -56,3 +56,9 @@ Load balancers can also help with horizontal scaling, improving performance and 
     * Servers should be stateless: they should not contain any user-related data like sessions or profile pictures
     * Sessions can be stored in a centralized data store such as a [database](#database) (SQL, NoSQL) or a persistent [cache](#cache) (Redis, Memcached)
 * Downstream servers such as caches and databases need to handle more simultaneous connections as upstream servers scale out
+
+### Disadvantage(s): load balancer
+
+* The load balancer can become a performance bottleneck if it does not have enough resources or if it is not configured properly.
+* Introducing a load balancer to help eliminate single points of failure results in increased complexity.
+* A single load balancer is a single point of failure, configuring multiple load balancers further increases complexity.
