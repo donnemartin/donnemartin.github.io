@@ -62,3 +62,13 @@ Load balancers can also help with horizontal scaling, improving performance and 
 * The load balancer can become a performance bottleneck if it does not have enough resources or if it is not configured properly.
 * Introducing a load balancer to help eliminate single points of failure results in increased complexity.
 * A single load balancer is a single point of failure, configuring multiple load balancers further increases complexity.
+
+### Source(s) and further reading
+
+* [NGINX architecture](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
+* [HAProxy architecture guide](http://www.haproxy.org/download/1.2/doc/architecture.txt)
+* [Scalability](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
+* [Wikipedia](https://en.wikipedia.org/wiki/Load_balancing_(computing))
+* [Layer 4 load balancing](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
+* [Layer 7 load balancing](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
+* [ELB listener config](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html)
