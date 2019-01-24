@@ -40,3 +40,10 @@ Additional benefits include:
 
 * Introducing a reverse proxy results in increased complexity.
 * A single reverse proxy is a single point of failure, configuring multiple reverse proxies (ie a [failover](https://en.wikipedia.org/wiki/Failover)) further increases complexity.
+
+### Source(s) and further reading
+
+* [Reverse proxy vs load balancer](https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/)
+* [NGINX architecture](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
+* [HAProxy architecture guide](http://www.haproxy.org/download/1.2/doc/architecture.txt)
+* [Wikipedia](https://en.wikipedia.org/wiki/Reverse_proxy)
