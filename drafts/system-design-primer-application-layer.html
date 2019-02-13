@@ -133,6 +133,19 @@
 <p>Pinterest, for example, could have the following microservices: user profile, follower, feed, search, photo upload, etc.</p>
 <h3>Service Discovery</h3>
 <p>Systems such as <a href="https://www.consul.io/docs/index.html">Consul</a>, <a href="https://coreos.com/etcd/docs/latest">Etcd</a>, and <a href="http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper">Zookeeper</a> can help services find each other by keeping track of registered names, addresses, and ports.  <a href="https://www.consul.io/intro/getting-started/checks.html">Health checks</a> help verify service integrity and are often done using an <a href="#hypertext-transfer-protocol-http">HTTP</a> endpoint.  Both Consul and Etcd have a built in <a href="#key-value-store">key-value store</a> that can be useful for storing config values and other shared data.</p>
+<h3>Disadvantage(s): application layer</h3>
+<ul>
+<li>Adding an application layer with loosely coupled services requires a different approach from an architectural, operations, and process viewpoint (vs a monolithic system).</li>
+<li>Microservices can add complexity in terms of deployments and operations.</li>
+</ul>
+<h3>Source(s) and further reading</h3>
+<ul>
+<li><a href="http://lethain.com/introduction-to-architecting-systems-for-scale">Intro to architecting systems for scale</a></li>
+<li><a href="http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview">Crack the system design interview</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Service-oriented_architecture">Service oriented architecture</a></li>
+<li><a href="http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper">Introduction to Zookeeper</a></li>
+<li><a href="https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/">Here's what you need to know about building microservices</a></li>
+</ul>
             </div>
             <hr class="featurette-divider">
             <!-- /.entry-content -->
