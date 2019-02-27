@@ -31,3 +31,11 @@ Systems such as [Consul](https://www.consul.io/docs/index.html), [Etcd](https://
 
 * Adding an application layer with loosely coupled services requires a different approach from an architectural, operations, and process viewpoint (vs a monolithic system).
 * Microservices can add complexity in terms of deployments and operations.
+
+### Source(s) and further reading
+
+* [Intro to architecting systems for scale](http://lethain.com/introduction-to-architecting-systems-for-scale)
+* [Crack the system design interview](http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview)
+* [Service oriented architecture](https://en.wikipedia.org/wiki/Service-oriented_architecture)
+* [Introduction to Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)
+* [Here's what you need to know about building microservices](https://cloudncode.wordpress.com/2016/07/22/msa-getting-started/)
