@@ -35,3 +35,8 @@ The master serves reads and writes, replicating writes to one or more slaves, wh
   <br/>
   <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
 </p>
+
+##### Disadvantage(s): master-slave replication
+
+* Additional logic is needed to promote a slave to a master.
+* See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** master-slave and master-master.
