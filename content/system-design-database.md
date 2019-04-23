@@ -40,3 +40,13 @@ The master serves reads and writes, replicating writes to one or more slaves, wh
 
 * Additional logic is needed to promote a slave to a master.
 * See [Disadvantage(s): replication](#disadvantages-replication) for points related to **both** master-slave and master-master.
+
+#### Master-master replication
+
+Both masters serve reads and writes and coordinate with each other on writes.  If either master goes down, the system can continue to operate with both reads and writes.
+
+<p align="center">
+  <img src="http://i.imgur.com/krAHLGg.png">
+  <br/>
+  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+</p>
