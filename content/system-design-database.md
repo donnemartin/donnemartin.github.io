@@ -65,3 +65,8 @@ Both masters serve reads and writes and coordinate with each other on writes.  I
 * The more read slaves, the more you have to replicate, which leads to greater replication lag.
 * On some systems, writing to the master can spawn multiple threads to write in parallel, whereas read replicas only support writing sequentially with a single thread.
 * Replication adds more hardware and additional complexity.
+
+##### Source(s) and further reading: replication
+
+* [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
+* [Multi-master replication](https://en.wikipedia.org/wiki/Multi-master_replication)
