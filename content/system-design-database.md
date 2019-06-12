@@ -87,3 +87,7 @@ Federation (or functional partitioning) splits up databases by function.  For ex
 * You'll need to update your application logic to determine which database to read and write.
 * Joining data from two databases is more complex with a [server link](http://stackoverflow.com/questions/5145637/querying-data-by-joining-two-tables-in-two-database-on-different-servers).
 * Federation adds more hardware and additional complexity.
+
+##### Source(s) and further reading: federation
+
+* [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=w95murBkYmU)
