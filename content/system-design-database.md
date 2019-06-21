@@ -113,3 +113,9 @@ Common ways to shard a table of users is either through the user's last name ini
     * Rebalancing adds additional complexity.  A sharding function based on [consistent hashing](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html) can reduce the amount of transferred data.
 * Joining data from multiple shards is more complex.
 * Sharding adds more hardware and additional complexity.
+
+##### Source(s) and further reading: sharding
+
+* [The coming of the shard](http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html)
+* [Shard database architecture](https://en.wikipedia.org/wiki/Shard_(database_architecture))
+* [Consistent hashing](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html)
