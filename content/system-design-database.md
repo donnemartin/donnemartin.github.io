@@ -168,3 +168,7 @@ Benchmarking and profiling might point you to the following optimizations.
 * Placing an index can keep the data in memory, requiring more space.
 * Writes could also be slower since the index also needs to be updated.
 * When loading large amounts of data, it might be faster to disable indices, load the data, then rebuild the indices.
+
+##### Avoid expensive joins
+
+* [Denormalize](#denormalization) where performance demands it.
