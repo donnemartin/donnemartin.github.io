@@ -172,3 +172,7 @@ Benchmarking and profiling might point you to the following optimizations.
 ##### Avoid expensive joins
 
 * [Denormalize](#denormalization) where performance demands it.
+
+##### Partition tables
+
+* Break up a table by putting hot spots in a separate table to help keep it in memory.
