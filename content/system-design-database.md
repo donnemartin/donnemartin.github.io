@@ -228,3 +228,10 @@ Based on the underlying implementation, documents are organized by collections, 
 Some document stores like [MongoDB](https://www.mongodb.com/mongodb-architecture) and [CouchDB](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/) also provide a SQL-like language to perform complex queries.  [DynamoDB](http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf) supports both key-values and documents.
 
 Document stores provide high flexibility and are often used for working with occasionally changing data.
+
+##### Source(s) and further reading: document store
+
+* [Document-oriented database](https://en.wikipedia.org/wiki/Document-oriented_database)
+* [MongoDB architecture](https://www.mongodb.com/mongodb-architecture)
+* [CouchDB architecture](https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/)
+* [Elasticsearch architecture](https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up)
