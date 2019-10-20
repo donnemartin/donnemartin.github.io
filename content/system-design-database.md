@@ -323,3 +323,8 @@ Sample data well-suited for NoSQL:
 * Temporary data, such as a shopping cart
 * Frequently accessed ('hot') tables
 * Metadata/lookup tables
+
+##### Source(s) and further reading: SQL or NoSQL
+
+* [Scaling up to your first 10 million users](https://www.youtube.com/watch?v=w95murBkYmU)
+* [SQL vs NoSQL differences](https://www.sitepoint.com/sql-vs-nosql-differences/)
