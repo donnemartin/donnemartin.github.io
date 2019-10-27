@@ -344,3 +344,7 @@ Databases often benefit from a uniform distribution of reads and writes across i
 ### Client caching
 
 Caches can be located on the client side (OS or browser), [server side](#reverse-proxy-web-server), or in a distinct cache layer.
+
+### CDN caching
+
+[CDNs](#content-delivery-network) are considered a type of cache.
