@@ -348,3 +348,7 @@ Caches can be located on the client side (OS or browser), [server side](#reverse
 ### CDN caching
 
 [CDNs](#content-delivery-network) are considered a type of cache.
+
+### Web server caching
+
+[Reverse proxies](#reverse-proxy-web-server) and caches such as [Varnish](https://www.varnish-cache.org/) can serve static and dynamic content directly.  Web servers can also cache requests, returning responses without having to contact application servers.
