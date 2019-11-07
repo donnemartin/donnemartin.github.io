@@ -374,3 +374,10 @@ There are multiple levels you can cache that fall into two general categories: *
 * Fully-rendered HTML
 
 Generally, you should try to avoid file-based caching, as it makes cloning and auto-scaling more difficult.
+
+### Caching at the database query level
+
+Whenever you query the database, hash the query as a key and store the result to the cache.  This approach suffers from expiration issues:
+
+* Hard to delete a cached result with complex queries
+* If one piece of data changes such as a table cell, you need to delete all cached queries that might include the changed cell
