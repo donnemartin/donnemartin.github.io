@@ -395,3 +395,7 @@ Suggestions of what to cache:
 * Fully rendered web pages
 * Activity streams
 * User graph data
+
+### When to update the cache
+
+Since you can only store a limited amount of data in cache, you'll need to determine which cache update strategy works best for your use case.
