@@ -1,7 +1,7 @@
-Title: System Design Primer: Application Layer
+Title: System Design Primer: Database
 Date: 2019-01-28
 Status: draft
-Summary: Application layer, microservices, service discovery
+Summary: SQL, replication, federation, sharding, denormalization, NoSQL
 CoverImage: http://i.imgur.com/6SbxQah.png
 Thumbnail: http://i.imgur.com/oCWLuMC.png
 
