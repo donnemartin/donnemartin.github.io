@@ -105,3 +105,9 @@ def get_user(self, user_id):
 [Memcached](https://memcached.org/) is generally used in this manner.
 
 Subsequent reads of data added to cache are fast.  Cache-aside is also referred to as lazy loading.  Only requested data is cached, which avoids filling up the cache with data that isn't requested.
+
+##### Disadvantage(s): cache-aside
+
+* Each cache miss results in three trips, which can cause a noticeable delay.
+* Data can become stale if it is updated in the database.  This issue is mitigated by setting a time-to-live (TTL) which forces an update of the cache entry, or by using write-through.
+* When a node fails, it is replaced by a new, empty node, increasing latency.
