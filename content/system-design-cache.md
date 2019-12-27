@@ -180,3 +180,9 @@ Refresh-ahead can result in reduced latency vs read-through if the cache can acc
 ##### Disadvantage(s): refresh-ahead
 
 * Not accurately predicting which items are likely to be needed in the future can result in reduced performance than without refresh-ahead.
+
+### Disadvantage(s): cache
+
+* Need to maintain consistency between caches and the source of truth such as the database through [cache invalidation](https://en.wikipedia.org/wiki/Cache_algorithms).
+* Cache invalidation is a difficult problem, there is additional complexity associated with when to update the cache.
+* Need to make application changes such as adding Redis or memcached.
