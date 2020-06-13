@@ -23,3 +23,7 @@ Power           Exact Value         Approx Value        Bytes
 32                  4,294,967,296                        4 GB
 40              1,099,511,627,776   1 trillion           1 TB
 ```
+
+#### Source(s) and further reading
+
+* [Powers of two](https://en.wikipedia.org/wiki/Power_of_two)
