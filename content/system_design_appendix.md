@@ -64,3 +64,7 @@ Handy metrics based on numbers above:
 * Read sequentially from main memory at 4 GB/s
 * 6-7 world-wide round trips per second
 * 2,000 round trips per second within a data center
+
+#### Latency numbers visualized
+
+![](https://camo.githubusercontent.com/77f72259e1eb58596b564d1ad823af1853bc60a3/687474703a2f2f692e696d6775722e636f6d2f6b307431652e706e67)
