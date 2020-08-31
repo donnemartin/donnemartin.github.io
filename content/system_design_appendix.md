@@ -68,3 +68,10 @@ Handy metrics based on numbers above:
 #### Latency numbers visualized
 
 ![](https://camo.githubusercontent.com/77f72259e1eb58596b564d1ad823af1853bc60a3/687474703a2f2f692e696d6775722e636f6d2f6b307431652e706e67)
+
+#### Source(s) and further reading
+
+* [Latency numbers every programmer should know - 1](https://gist.github.com/jboner/2841832)
+* [Latency numbers every programmer should know - 2](https://gist.github.com/hellerbarde/2843375)
+* [Designs, lessons, and advice from building large distributed systems](http://www.cs.cornell.edu/projects/ladis2009/talks/dean-keynote-ladis2009.pdf)
+* [Software Engineering Advice from Building Large-Scale Distributed Systems](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/stanford-295-talk.pdf)
