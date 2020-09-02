@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Donne Martin</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+
+
+        <meta name="author" content="Donne Martin" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Donne Martin" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Donne Martin"/>
+        <meta property="og:url" content=".."/>
+        <meta property="og:description" content="Donne Martin"/>
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../theme/css/bootstrap.min.css" type="text/css"/>
+
+    <link href="../theme/css/pygments/monokai.css" rel="stylesheet">
+
+
+
+
+
+    <!-- Custom CSS -->
+    <link href="../theme/css/agency.css" rel="stylesheet">
+    <link href="../theme/css/custom.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../theme/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.../theme/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head><body id="page-top" class="index">
+
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color: #000">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="..">Donne Martin</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="../#likes">Likes</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="../#portfolio">GitHub</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="../#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="../#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="../archives">Blog</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="http://donnemartin.com/viz/">Viz</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>    <section id="content" class="section-top-padding">
+        <article class="article-top-padding">
+            <h1>
+                <a href="../drafts/system-design-primer-appendix.html"
+                   rel="bookmark"
+                   title="Permalink to System Design Primer: Appendix">
+                    System Design Primer: Appendix
+                </a>
+            </h1>
+            <i><time datetime="2020-05-27T00:00:00-04:00"> Wed 27 May 2020</time></i>
+            <div class="entry-content">
+                <div class="panel">
+                <br/>
+                </div>
+                <div class="container">
+                    <br/>
+                    <img class="img-responsive" src="http://i.imgur.com/6SbxQah.png">
+                </div>
+                <hr class="featurette-divider">
+                <h2>Appendix</h2>
+<p>You'll sometimes be asked to do 'back-of-the-envelope' estimates.  For example, you might need to determine how long it will take to generate 100 image thumbnails from disk or how much memory a data structure will take.  The <strong>Powers of two table</strong> and <strong>Latency numbers every programmer should know</strong> are handy references.</p>
+<h3>Powers of two table</h3>
+<div class="highlight"><pre>Power           Exact Value         Approx Value        Bytes
+---------------------------------------------------------------
+7                             128
+8                             256
+10                           1024   1 thousand           1 KB
+16                         65,536                       64 KB
+20                      1,048,576   1 million            1 MB
+30                  1,073,741,824   1 billion            1 GB
+32                  4,294,967,296                        4 GB
+40              1,099,511,627,776   1 trillion           1 TB
+</pre></div>
+
+
+<h4>Source(s) and further reading</h4>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Power_of_two">Powers of two</a></li>
+</ul>
+<h3>Latency numbers every programmer should know</h3>
+<div class="highlight"><pre><span class="gh">Latency Comparison Numbers</span>
+<span class="gh">--------------------------</span>
+L1 cache reference                           0.5 ns
+Branch mispredict                            5   ns
+L2 cache reference                           7   ns                      14x L1 cache
+Mutex lock/unlock                           25   ns
+Main memory reference                      100   ns                      20x L2 cache, 200x L1 cache
+Compress 1K bytes with Zippy            10,000   ns       10 us
+Send 1 KB bytes over 1 Gbps network     10,000   ns       10 us
+Read 4 KB randomly from SSD*           150,000   ns      150 us          ~1GB/sec SSD
+Read 1 MB sequentially from memory     250,000   ns      250 us
+Round trip within same datacenter      500,000   ns      500 us
+Read 1 MB sequentially from SSD*     1,000,000   ns    1,000 us    1 ms  ~1GB/sec SSD, 4X memory
+Disk seek                           10,000,000   ns   10,000 us   10 ms  20x datacenter roundtrip
+Read 1 MB sequentially from 1 Gbps  10,000,000   ns   10,000 us   10 ms  40x memory, 10X SSD
+Read 1 MB sequentially from disk    30,000,000   ns   30,000 us   30 ms 120x memory, 30X SSD
+Send packet CA-&gt;Netherlands-&gt;CA    150,000,000   ns  150,000 us  150 ms
+
+<span class="gh">Notes</span>
+<span class="gh">-----</span>
+1 ns = 10^-9 seconds
+1 us = 10^-6 seconds = 1,000 ns
+1 ms = 10^-3 seconds = 1,000 us = 1,000,000 ns
+</pre></div>
+
+
+<p>Handy metrics based on numbers above:</p>
+<ul>
+<li>Read sequentially from disk at 30 MB/s</li>
+<li>Read sequentially from 1 Gbps Ethernet at 100 MB/s</li>
+<li>Read sequentially from SSD at 1 GB/s</li>
+<li>Read sequentially from main memory at 4 GB/s</li>
+<li>6-7 world-wide round trips per second</li>
+<li>2,000 round trips per second within a data center</li>
+</ul>
+<h4>Latency numbers visualized</h4>
+<p><img alt="" src="https://camo.githubusercontent.com/77f72259e1eb58596b564d1ad823af1853bc60a3/687474703a2f2f692e696d6775722e636f6d2f6b307431652e706e67" /></p>
+<h4>Source(s) and further reading</h4>
+<ul>
+<li><a href="https://gist.github.com/jboner/2841832">Latency numbers every programmer should know - 1</a></li>
+<li><a href="https://gist.github.com/hellerbarde/2843375">Latency numbers every programmer should know - 2</a></li>
+<li><a href="http://www.cs.cornell.edu/projects/ladis2009/talks/dean-keynote-ladis2009.pdf">Designs, lessons, and advice from building large distributed systems</a></li>
+<li><a href="https://static.googleusercontent.com/media/research.google.com/en//people/jeff/stanford-295-talk.pdf">Software Engineering Advice from Building Large-Scale Distributed Systems</a></li>
+</ul>
+<h3>Additional system design interview questions</h3>
+<blockquote>
+<p>Common system design interview questions, with links to resources on how to solve each.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Reference(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Design a file sync service like Dropbox</td>
+<td><a href="https://www.youtube.com/watch?v=PE4gwstWhmc">youtube.com</a></td>
+</tr>
+<tr>
+<td>Design a search engine like Google</td>
+<td><a href="http://queue.acm.org/detail.cfm?id=988407">queue.acm.org</a><br/><a href="http://programmers.stackexchange.com/questions/38324/interview-question-how-would-you-implement-google-search">stackexchange.com</a><br/><a href="http://www.ardendertat.com/2012/01/11/implementing-search-engines/">ardendertat.com</a><br/><a href="http://infolab.stanford.edu/~backrub/google.html">stanford.edu</a></td>
+</tr>
+<tr>
+<td>Design a scalable web crawler like Google</td>
+<td><a href="https://www.quora.com/How-can-I-build-a-web-crawler-from-scratch">quora.com</a></td>
+</tr>
+<tr>
+<td>Design Google docs</td>
+<td><a href="https://code.google.com/p/google-mobwrite/">code.google.com</a><br/><a href="https://neil.fraser.name/writing/sync/">neil.fraser.name</a></td>
+</tr>
+<tr>
+<td>Design a key-value store like Redis</td>
+<td><a href="http://www.slideshare.net/dvirsky/introduction-to-redis">slideshare.net</a></td>
+</tr>
+<tr>
+<td>Design a cache system like Memcached</td>
+<td><a href="http://www.slideshare.net/oemebamo/introduction-to-memcached">slideshare.net</a></td>
+</tr>
+<tr>
+<td>Design a recommendation system like Amazon's</td>
+<td><a href="https://web.archive.org/web/20170406065247/http://tech.hulu.com/blog/2011/09/19/recommendation-system.html">hulu.com</a><br/><a href="http://ijcai13.org/files/tutorial_slides/td3.pdf">ijcai13.org</a></td>
+</tr>
+<tr>
+<td>Design a tinyurl system like Bitly</td>
+<td><a href="http://n00tc0d3r.blogspot.com/">n00tc0d3r.blogspot.com</a></td>
+</tr>
+<tr>
+<td>Design a chat app like WhatsApp</td>
+<td><a href="http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html">highscalability.com</a></td>
+</tr>
+<tr>
+<td>Design a picture sharing system like Instagram</td>
+<td><a href="http://highscalability.com/flickr-architecture">highscalability.com</a><br/><a href="http://highscalability.com/blog/2011/12/6/instagram-architecture-14-million-users-terabytes-of-photos.html">highscalability.com</a></td>
+</tr>
+<tr>
+<td>Design the Facebook news feed function</td>
+<td><a href="http://www.quora.com/What-are-best-practices-for-building-something-like-a-News-Feed">quora.com</a><br/><a href="http://www.quora.com/Activity-Streams/What-are-the-scaling-issues-to-keep-in-mind-while-developing-a-social-network-feed">quora.com</a><br/><a href="http://www.slideshare.net/danmckinley/etsy-activity-feeds-architecture">slideshare.net</a></td>
+</tr>
+<tr>
+<td>Design the Facebook timeline function</td>
+<td><a href="https://www.facebook.com/note.php?note_id=10150468255628920">facebook.com</a><br/><a href="http://highscalability.com/blog/2012/1/23/facebook-timeline-brought-to-you-by-the-power-of-denormaliza.html">highscalability.com</a></td>
+</tr>
+<tr>
+<td>Design the Facebook chat function</td>
+<td><a href="http://www.erlang-factory.com/upload/presentations/31/EugeneLetuchy-ErlangatFacebook.pdf">erlang-factory.com</a><br/><a href="https://www.facebook.com/note.php?note_id=14218138919&amp;id=9445547199&amp;index=0">facebook.com</a></td>
+</tr>
+<tr>
+<td>Design a graph search function like Facebook's</td>
+<td><a href="https://www.facebook.com/notes/facebook-engineering/under-the-hood-building-out-the-infrastructure-for-graph-search/10151347573598920">facebook.com</a><br/><a href="https://www.facebook.com/notes/facebook-engineering/under-the-hood-indexing-and-ranking-in-graph-search/10151361720763920">facebook.com</a><br/><a href="https://www.facebook.com/notes/facebook-engineering/under-the-hood-the-natural-language-interface-of-graph-search/10151432733048920">facebook.com</a></td>
+</tr>
+<tr>
+<td>Design a content delivery network like CloudFlare</td>
+<td><a href="https://figshare.com/articles/Globally_distributed_content_delivery/6605972">figshare.com</a></td>
+</tr>
+<tr>
+<td>Design a trending topic system like Twitter's</td>
+<td><a href="http://www.michael-noll.com/blog/2013/01/18/implementing-real-time-trending-topics-in-storm/">michael-noll.com</a><br/><a href="http://snikolov.wordpress.com/2012/11/14/early-detection-of-twitter-trends/">snikolov .wordpress.com</a></td>
+</tr>
+<tr>
+<td>Design a random ID generation system</td>
+<td><a href="https://blog.twitter.com/2010/announcing-snowflake">blog.twitter.com</a><br/><a href="https://github.com/twitter/snowflake/">github.com</a></td>
+</tr>
+<tr>
+<td>Return the top k requests during a time interval</td>
+<td><a href="https://www.cs.ucsb.edu/sites/cs.ucsb.edu/files/docs/reports/2005-23.pdf">cs.ucsb.edu</a><br/><a href="http://davis.wpi.edu/xmdv/docs/EDBT11-diyang.pdf">wpi.edu</a></td>
+</tr>
+<tr>
+<td>Design a system that serves data from multiple data centers</td>
+<td><a href="http://highscalability.com/blog/2009/8/24/how-google-serves-data-from-multiple-datacenters.html">highscalability.com</a></td>
+</tr>
+<tr>
+<td>Design an online multiplayer card game</td>
+<td><a href="http://www.indieflashblog.com/how-to-create-an-asynchronous-multiplayer-game.html">indieflashblog.com</a><br/><a href="http://buildnewgames.com/real-time-multiplayer/">buildnewgames.com</a></td>
+</tr>
+<tr>
+<td>Design a garbage collection system</td>
+<td><a href="http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/">stuffwithstuff.com</a><br/><a href="http://courses.cs.washington.edu/courses/csep521/07wi/prj/rick.pdf">washington.edu</a></td>
+</tr>
+<tr>
+<td>Design an API rate limiter</td>
+<td><a href="https://stripe.com/blog/rate-limiters">https://stripe.com/blog/</a></td>
+</tr>
+<tr>
+<td>Add a system design question</td>
+<td><a href="#contributing">Contribute</a></td>
+</tr>
+</tbody>
+</table>
+<h3>Real world architectures</h3>
+<blockquote>
+<p>Articles on how real world systems are designed.</p>
+</blockquote>
+<p align="center">
+  <img src="http://i.imgur.com/TcUo2fw.png"/>
+  <br/>
+  <i><a href=https://www.infoq.com/presentations/Twitter-Timeline-Scalability>Source: Twitter timelines at scale</a></i>
+</p>
+
+<p><strong>Don't focus on nitty gritty details for the following articles, instead:</strong></p>
+<ul>
+<li>Identify shared principles, common technologies, and patterns within these articles</li>
+<li>Study what problems are solved by each component, where it works, where it doesn't</li>
+<li>Review the lessons learned</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>System</th>
+<th>Reference(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data processing</td>
+<td><strong>MapReduce</strong> - Distributed data processing from Google</td>
+<td><a href="http://static.googleusercontent.com/media/research.google.com/zh-CN/us/archive/mapreduce-osdi04.pdf">research.google.com</a></td>
+</tr>
+<tr>
+<td>Data processing</td>
+<td><strong>Spark</strong> - Distributed data processing from Databricks</td>
+<td><a href="http://www.slideshare.net/AGrishchenko/apache-spark-architecture">slideshare.net</a></td>
+</tr>
+<tr>
+<td>Data processing</td>
+<td><strong>Storm</strong> - Distributed data processing from Twitter</td>
+<td><a href="http://www.slideshare.net/previa/storm-16094009">slideshare.net</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Data store</td>
+<td><strong>Bigtable</strong> - Distributed column-oriented database from Google</td>
+<td><a href="http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf">harvard.edu</a></td>
+</tr>
+<tr>
+<td>Data store</td>
+<td><strong>HBase</strong> - Open source implementation of Bigtable</td>
+<td><a href="http://www.slideshare.net/alexbaranau/intro-to-hbase">slideshare.net</a></td>
+</tr>
+<tr>
+<td>Data store</td>
+<td><strong>Cassandra</strong> - Distributed column-oriented database from Facebook</td>
+<td><a href="http://www.slideshare.net/planetcassandra/cassandra-introduction-features-30103666">slideshare.net</a></td>
+</tr>
+<tr>
+<td>Data store</td>
+<td><strong>DynamoDB</strong> - Document-oriented database from Amazon</td>
+<td><a href="http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf">harvard.edu</a></td>
+</tr>
+<tr>
+<td>Data store</td>
+<td><strong>MongoDB</strong> - Document-oriented database</td>
+<td><a href="http://www.slideshare.net/mdirolf/introduction-to-mongodb">slideshare.net</a></td>
+</tr>
+<tr>
+<td>Data store</td>
+<td><strong>Spanner</strong> - Globally-distributed database from Google</td>
+<td><a href="http://research.google.com/archive/spanner-osdi2012.pdf">research.google.com</a></td>
+</tr>
+<tr>
+<td>Data store</td>
+<td><strong>Memcached</strong> - Distributed memory caching system</td>
+<td><a href="http://www.slideshare.net/oemebamo/introduction-to-memcached">slideshare.net</a></td>
+</tr>
+<tr>
+<td>Data store</td>
+<td><strong>Redis</strong> - Distributed memory caching system with persistence and value types</td>
+<td><a href="http://www.slideshare.net/dvirsky/introduction-to-redis">slideshare.net</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>File system</td>
+<td><strong>Google File System (GFS)</strong> - Distributed file system</td>
+<td><a href="http://static.googleusercontent.com/media/research.google.com/zh-CN/us/archive/gfs-sosp2003.pdf">research.google.com</a></td>
+</tr>
+<tr>
+<td>File system</td>
+<td><strong>Hadoop File System (HDFS)</strong> - Open source implementation of GFS</td>
+<td><a href="http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html">apache.org</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Misc</td>
+<td><strong>Chubby</strong> - Lock service for loosely-coupled distributed systems from Google</td>
+<td><a href="http://static.googleusercontent.com/external_content/untrusted_dlcp/research.google.com/en/us/archive/chubby-osdi06.pdf">research.google.com</a></td>
+</tr>
+<tr>
+<td>Misc</td>
+<td><strong>Dapper</strong> - Distributed systems tracing infrastructure</td>
+<td><a href="http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36356.pdf">research.google.com</a></td>
+</tr>
+<tr>
+<td>Misc</td>
+<td><strong>Kafka</strong> - Pub/sub message queue from LinkedIn</td>
+<td><a href="http://www.slideshare.net/mumrah/kafka-talk-tri-hug">slideshare.net</a></td>
+</tr>
+<tr>
+<td>Misc</td>
+<td><strong>Zookeeper</strong> - Centralized infrastructure and services enabling synchronization</td>
+<td><a href="http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper">slideshare.net</a></td>
+</tr>
+<tr>
+<td></td>
+<td>Add an architecture</td>
+<td><a href="#contributing">Contribute</a></td>
+</tr>
+</tbody>
+</table>
+<h3>Company architectures</h3>
+<table>
+<thead>
+<tr>
+<th>Company</th>
+<th>Reference(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amazon</td>
+<td><a href="http://highscalability.com/amazon-architecture">Amazon architecture</a></td>
+</tr>
+<tr>
+<td>Cinchcast</td>
+<td><a href="http://highscalability.com/blog/2012/7/16/cinchcast-architecture-producing-1500-hours-of-audio-every-d.html">Producing 1,500 hours of audio every day</a></td>
+</tr>
+<tr>
+<td>DataSift</td>
+<td><a href="http://highscalability.com/blog/2011/11/29/datasift-architecture-realtime-datamining-at-120000-tweets-p.html">Realtime datamining At 120,000 tweets per second</a></td>
+</tr>
+<tr>
+<td>DropBox</td>
+<td><a href="https://www.youtube.com/watch?v=PE4gwstWhmc">How we've scaled Dropbox</a></td>
+</tr>
+<tr>
+<td>ESPN</td>
+<td><a href="http://highscalability.com/blog/2013/11/4/espns-architecture-at-scale-operating-at-100000-duh-nuh-nuhs.html">Operating At 100,000 duh nuh nuhs per second</a></td>
+</tr>
+<tr>
+<td>Google</td>
+<td><a href="http://highscalability.com/google-architecture">Google architecture</a></td>
+</tr>
+<tr>
+<td>Instagram</td>
+<td><a href="http://highscalability.com/blog/2011/12/6/instagram-architecture-14-million-users-terabytes-of-photos.html">14 million users, terabytes of photos</a><br/><a href="http://instagram-engineering.tumblr.com/post/13649370142/what-powers-instagram-hundreds-of-instances">What powers Instagram</a></td>
+</tr>
+<tr>
+<td>Justin.tv</td>
+<td><a href="http://highscalability.com/blog/2010/3/16/justintvs-live-video-broadcasting-architecture.html">Justin.Tv's live video broadcasting architecture</a></td>
+</tr>
+<tr>
+<td>Facebook</td>
+<td><a href="https://cs.uwaterloo.ca/~brecht/courses/854-Emerging-2014/readings/key-value/fb-memcached-nsdi-2013.pdf">Scaling memcached at Facebook</a><br/><a href="https://cs.uwaterloo.ca/~brecht/courses/854-Emerging-2014/readings/data-store/tao-facebook-distributed-datastore-atc-2013.pdf">TAO: Facebook’s distributed data store for the social graph</a><br/><a href="https://www.usenix.org/legacy/event/osdi10/tech/full_papers/Beaver.pdf">Facebook’s photo storage</a><br/><a href="http://highscalability.com/blog/2016/6/27/how-facebook-live-streams-to-800000-simultaneous-viewers.html">How Facebook Live Streams To 800,000 Simultaneous Viewers</a></td>
+</tr>
+<tr>
+<td>Flickr</td>
+<td><a href="http://highscalability.com/flickr-architecture">Flickr architecture</a></td>
+</tr>
+<tr>
+<td>Mailbox</td>
+<td><a href="http://highscalability.com/blog/2013/6/18/scaling-mailbox-from-0-to-one-million-users-in-6-weeks-and-1.html">From 0 to one million users in 6 weeks</a></td>
+</tr>
+<tr>
+<td>Netflix</td>
+<td><a href="http://highscalability.com/blog/2015/11/9/a-360-degree-view-of-the-entire-netflix-stack.html">A 360 Degree View Of The Entire Netflix Stack</a><br/><a href="http://highscalability.com/blog/2017/12/11/netflix-what-happens-when-you-press-play.html">Netflix: What Happens When You Press Play?</a></td>
+</tr>
+<tr>
+<td>Pinterest</td>
+<td><a href="http://highscalability.com/blog/2013/4/15/scaling-pinterest-from-0-to-10s-of-billions-of-page-views-a.html">From 0 To 10s of billions of page views a month</a><br/><a href="http://highscalability.com/blog/2012/5/21/pinterest-architecture-update-18-million-visitors-10x-growth.html">18 million visitors, 10x growth, 12 employees</a></td>
+</tr>
+<tr>
+<td>Playfish</td>
+<td><a href="http://highscalability.com/blog/2010/9/21/playfishs-social-gaming-architecture-50-million-monthly-user.html">50 million monthly users and growing</a></td>
+</tr>
+<tr>
+<td>PlentyOfFish</td>
+<td><a href="http://highscalability.com/plentyoffish-architecture">PlentyOfFish architecture</a></td>
+</tr>
+<tr>
+<td>Salesforce</td>
+<td><a href="http://highscalability.com/blog/2013/9/23/salesforce-architecture-how-they-handle-13-billion-transacti.html">How they handle 1.3 billion transactions a day</a></td>
+</tr>
+<tr>
+<td>Stack Overflow</td>
+<td><a href="http://highscalability.com/blog/2009/8/5/stack-overflow-architecture.html">Stack Overflow architecture</a></td>
+</tr>
+<tr>
+<td>TripAdvisor</td>
+<td><a href="http://highscalability.com/blog/2011/6/27/tripadvisor-architecture-40m-visitors-200m-dynamic-page-view.html">40M visitors, 200M dynamic page views, 30TB data</a></td>
+</tr>
+<tr>
+<td>Tumblr</td>
+<td><a href="http://highscalability.com/blog/2012/2/13/tumblr-architecture-15-billion-page-views-a-month-and-harder.html">15 billion page views a month</a></td>
+</tr>
+<tr>
+<td>Twitter</td>
+<td><a href="http://highscalability.com/scaling-twitter-making-twitter-10000-percent-faster">Making Twitter 10000 percent faster</a><br/><a href="http://highscalability.com/blog/2011/12/19/how-twitter-stores-250-million-tweets-a-day-using-mysql.html">Storing 250 million tweets a day using MySQL</a><br/><a href="http://highscalability.com/blog/2013/7/8/the-architecture-twitter-uses-to-deal-with-150m-active-users.html">150M active users, 300K QPS, a 22 MB/S firehose</a><br/><a href="https://www.infoq.com/presentations/Twitter-Timeline-Scalability">Timelines at scale</a><br/><a href="https://www.youtube.com/watch?v=5cKTP36HVgI">Big and small data at Twitter</a><br/><a href="https://www.youtube.com/watch?v=z8LU0Cj6BOU">Operations at Twitter: scaling beyond 100 million users</a><br/><a href="http://highscalability.com/blog/2016/4/20/how-twitter-handles-3000-images-per-second.html">How Twitter Handles 3,000 Images Per Second</a></td>
+</tr>
+<tr>
+<td>Uber</td>
+<td><a href="http://highscalability.com/blog/2015/9/14/how-uber-scales-their-real-time-market-platform.html">How Uber scales their real-time market platform</a><br/><a href="http://highscalability.com/blog/2016/10/12/lessons-learned-from-scaling-uber-to-2000-engineers-1000-ser.html">Lessons Learned From Scaling Uber To 2000 Engineers, 1000 Services, And 8000 Git Repositories</a></td>
+</tr>
+<tr>
+<td>WhatsApp</td>
+<td><a href="http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html">The WhatsApp architecture Facebook bought for $19 billion</a></td>
+</tr>
+<tr>
+<td>YouTube</td>
+<td><a href="https://www.youtube.com/watch?v=w5WVu624fY8">YouTube scalability</a><br/><a href="http://highscalability.com/youtube-architecture">YouTube architecture</a></td>
+</tr>
+</tbody>
+</table>
+<h3>Company engineering blogs</h3>
+<blockquote>
+<p>Architectures for companies you are interviewing with.</p>
+<p>Questions you encounter might be from the same domain.</p>
+</blockquote>
+<ul>
+<li><a href="http://nerds.airbnb.com/">Airbnb Engineering</a></li>
+<li><a href="https://developer.atlassian.com/blog/">Atlassian Developers</a></li>
+<li><a href="https://aws.amazon.com/blogs/aws/">AWS Blog</a></li>
+<li><a href="http://word.bitly.com/">Bitly Engineering Blog</a></li>
+<li><a href="https://blog.box.com/blog/category/engineering">Box Blogs</a></li>
+<li><a href="http://blog.cloudera.com/">Cloudera Developer Blog</a></li>
+<li><a href="https://tech.dropbox.com/">Dropbox Tech Blog</a></li>
+<li><a href="http://engineering.quora.com/">Engineering at Quora</a></li>
+<li><a href="http://www.ebaytechblog.com/">Ebay Tech Blog</a></li>
+<li><a href="https://blog.evernote.com/tech/">Evernote Tech Blog</a></li>
+<li><a href="http://codeascraft.com/">Etsy Code as Craft</a></li>
+<li><a href="https://www.facebook.com/Engineering">Facebook Engineering</a></li>
+<li><a href="http://code.flickr.net/">Flickr Code</a></li>
+<li><a href="http://engineering.foursquare.com/">Foursquare Engineering Blog</a></li>
+<li><a href="http://githubengineering.com/">GitHub Engineering Blog</a></li>
+<li><a href="http://googleresearch.blogspot.com/">Google Research Blog</a></li>
+<li><a href="https://engineering.groupon.com/">Groupon Engineering Blog</a></li>
+<li><a href="https://engineering.heroku.com/">Heroku Engineering Blog</a></li>
+<li><a href="http://product.hubspot.com/blog/topic/engineering">Hubspot Engineering Blog</a></li>
+<li><a href="http://highscalability.com/">High Scalability</a></li>
+<li><a href="http://instagram-engineering.tumblr.com/">Instagram Engineering</a></li>
+<li><a href="https://software.intel.com/en-us/blogs/">Intel Software Blog</a></li>
+<li><a href="https://blogs.janestreet.com/category/ocaml/">Jane Street Tech Blog</a></li>
+<li><a href="http://engineering.linkedin.com/blog">LinkedIn Engineering</a></li>
+<li><a href="https://engineering.microsoft.com/">Microsoft Engineering</a></li>
+<li><a href="https://blogs.msdn.microsoft.com/pythonengineering/">Microsoft Python Engineering</a></li>
+<li><a href="http://techblog.netflix.com/">Netflix Tech Blog</a></li>
+<li><a href="https://devblog.paypal.com/category/engineering/">Paypal Developer Blog</a></li>
+<li><a href="https://medium.com/@Pinterest_Engineering">Pinterest Engineering Blog</a></li>
+<li><a href="https://engineering.quora.com/">Quora Engineering</a></li>
+<li><a href="http://www.redditblog.com/">Reddit Blog</a></li>
+<li><a href="https://developer.salesforce.com/blogs/engineering/">Salesforce Engineering Blog</a></li>
+<li><a href="https://slack.engineering/">Slack Engineering Blog</a></li>
+<li><a href="https://labs.spotify.com/">Spotify Labs</a></li>
+<li><a href="http://www.twilio.com/engineering">Twilio Engineering Blog</a></li>
+<li><a href="https://blog.twitter.com/engineering/">Twitter Engineering</a></li>
+<li><a href="http://eng.uber.com/">Uber Engineering Blog</a></li>
+<li><a href="http://yahooeng.tumblr.com/">Yahoo Engineering Blog</a></li>
+<li><a href="http://engineeringblog.yelp.com/">Yelp Engineering Blog</a></li>
+<li><a href="https://www.zynga.com/blogs/engineering">Zynga Engineering Blog</a></li>
+</ul>
+<h4>Source(s) and further reading</h4>
+<p>Looking to add a blog?  To avoid duplicating work, consider adding your company blog to the following repo:</p>
+<ul>
+<li><a href="https://github.com/kilimchoi/engineering-blogs">kilimchoi/engineering-blogs</a></li>
+</ul>
+<h2>Under development</h2>
+<p>Interested in adding a section or helping complete one in-progress?  <a href="#contributing">Contribute</a>!</p>
+<ul>
+<li>Distributed computing with MapReduce</li>
+<li>Consistent hashing</li>
+<li>Scatter gather</li>
+<li><a href="#contributing">Contribute</a></li>
+</ul>
+<h2>Credits</h2>
+<p>Credits and sources are provided throughout this repo.</p>
+<p>Special thanks to:</p>
+<ul>
+<li><a href="http://www.hiredintech.com/system-design/the-system-design-process/">Hired in tech</a></li>
+<li><a href="https://www.amazon.com/dp/0984782850/">Cracking the coding interview</a></li>
+<li><a href="http://highscalability.com/">High scalability</a></li>
+<li><a href="https://github.com/checkcheckzz/system-design-interview">checkcheckzz/system-design-interview</a></li>
+<li><a href="https://github.com/shashank88/system_design">shashank88/system_design</a></li>
+<li><a href="https://github.com/mmcgrana/services-engineering">mmcgrana/services-engineering</a></li>
+<li><a href="https://gist.github.com/vasanthk/485d1c25737e8e72759f">System design cheat sheet</a></li>
+<li><a href="http://dancres.github.io/Pages/">A distributed systems reading list</a></li>
+<li><a href="http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview">Cracking the system design interview</a></li>
+</ul>
+<h2>Contact info</h2>
+<p>Feel free to contact me to discuss any issues, questions, or comments.</p>
+<p>My contact info can be found on my <a href="https://github.com/donnemartin">GitHub page</a>.</p>
+<h2>License</h2>
+<p><em>I am providing code and resources in this repository to you under an open source license.  Because this is my personal repository, the license you receive to my code and resources is from me and not my employer (Facebook).</em></p>
+<div class="highlight"><pre>Copyright 2017 Donne Martin
+
+Creative Commons Attribution 4.0 International License (CC BY 4.0)
+
+http://creativecommons.org/licenses/by/4.0/
+</pre></div>
+            </div>
+            <hr class="featurette-divider">
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+    </div>
+</div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-left">
+                    <span class="copyright">Copyright &copy; Donne Martin 2014-Present</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../theme/js/respond.min.js"></script>
+
+
+<!-- Plugin JavaScript -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="../theme/js/classie.js"></script>
+<script src="../theme/js/cbpAnimatedHeader.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="../theme/js/agency.js"></script>
+
+<!-- Google Analytics Universal -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54747412-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics Universal Code -->
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Donne Martin</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+
+
+        <meta name="author" content="Donne Martin" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Donne Martin" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Donne Martin"/>
+        <meta property="og:url" content=".."/>
+        <meta property="og:description" content="Donne Martin"/>
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../theme/css/bootstrap.min.css" type="text/css"/>
+
+    <link href="../theme/css/pygments/monokai.css" rel="stylesheet">
+
+
+
+
+
+    <!-- Custom CSS -->
+    <link href="../theme/css/agency.css" rel="stylesheet">
+    <link href="../theme/css/custom.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../theme/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.../theme/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head><body id="page-top" class="index">
+
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color: #000">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="..">Donne Martin</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="../#likes">Likes</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="../#portfolio">GitHub</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="../#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="../#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="../archives">Blog</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="http://donnemartin.com/viz/">Viz</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>    <section id="content" class="section-top-padding">
+        <article class="article-top-padding">
+            <h1>
+                <a href="../drafts/system-design-primer-communication.html"
+                   rel="bookmark"
+                   title="Permalink to System Design Primer: Communication">
+                    System Design Primer: Communication
+                </a>
+            </h1>
+            <i><time datetime="2020-02-04T00:00:00-05:00"> Tue 04 February 2020</time></i>
+            <div class="entry-content">
+                <div class="panel">
+                <br/>
+                </div>
+                <div class="container">
+                    <br/>
+                    <img class="img-responsive" src="http://i.imgur.com/6SbxQah.png">
+                </div>
+                <hr class="featurette-divider">
+                <h2>Communication</h2>
+<p align="center">
+  <img src="http://i.imgur.com/5KeocQs.jpg"/>
+  <br/>
+  <i><a href=http://www.escotal.com/osilayer.html>Source: OSI 7 layer model</a></i>
+</p>
+
+<h3>Hypertext transfer protocol (HTTP)</h3>
+<p>HTTP is a method for encoding and transporting data between a client and a server.  It is a request/response protocol: clients issue requests and servers issue responses with relevant content and completion status info about the request.  HTTP is self-contained, allowing requests and responses to flow through many intermediate routers and servers that perform load balancing, caching, encryption, and compression.</p>
+<p>A basic HTTP request consists of a verb (method) and a resource (endpoint).  Below are common HTTP verbs:</p>
+<table>
+<thead>
+<tr>
+<th>Verb</th>
+<th>Description</th>
+<th>Idempotent*</th>
+<th>Safe</th>
+<th>Cacheable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Reads a resource</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Creates a resource or trigger a process that handles data</td>
+<td>No</td>
+<td>No</td>
+<td>Yes if response contains freshness info</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Creates or replace a resource</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td>Partially updates a resource</td>
+<td>No</td>
+<td>No</td>
+<td>Yes if response contains freshness info</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Deletes a resource</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>*Can be called many times without different outcomes.</p>
+<p>HTTP is an application layer protocol relying on lower-level protocols such as <strong>TCP</strong> and <strong>UDP</strong>.</p>
+<h4>Source(s) and further reading: HTTP</h4>
+<ul>
+<li><a href="https://www.nginx.com/resources/glossary/http/">What is HTTP?</a></li>
+<li><a href="https://www.quora.com/What-is-the-difference-between-HTTP-protocol-and-TCP-protocol">Difference between HTTP and TCP</a></li>
+<li><a href="https://laracasts.com/discuss/channels/general-discussion/whats-the-differences-between-put-and-patch?page=1">Difference between PUT and PATCH</a></li>
+</ul>
+<h3>Transmission control protocol (TCP)</h3>
+<p align="center">
+  <img src="http://i.imgur.com/JdAsdvG.jpg"/>
+  <br/>
+  <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Source: How to make a multiplayer game</a></i>
+</p>
+
+<p>TCP is a connection-oriented protocol over an <a href="https://en.wikipedia.org/wiki/Internet_Protocol">IP network</a>.  Connection is established and terminated using a <a href="https://en.wikipedia.org/wiki/Handshaking">handshake</a>.  All packets sent are guaranteed to reach the destination in the original order and without corruption through:</p>
+<ul>
+<li>Sequence numbers and <a href="https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Checksum_computation">checksum fields</a> for each packet</li>
+<li><a href="https://en.wikipedia.org/wiki/Acknowledgement_(data_networks)">Acknowledgement</a> packets and automatic retransmission</li>
+</ul>
+<p>If the sender does not receive a correct response, it will resend the packets.  If there are multiple timeouts, the connection is dropped.  TCP also implements <a href="https://en.wikipedia.org/wiki/Flow_control_(data)">flow control</a> and <a href="https://en.wikipedia.org/wiki/Network_congestion#Congestion_control">congestion control</a>.  These guarantees cause delays and generally result in less efficient transmission than UDP.</p>
+<p>To ensure high throughput, web servers can keep a large number of TCP connections open, resulting in high memory usage.  It can be expensive to have a large number of open connections between web server threads and say, a <a href="https://memcached.org/">memcached</a> server.  <a href="https://en.wikipedia.org/wiki/Connection_pool">Connection pooling</a> can help in addition to switching to UDP where applicable.</p>
+<p>TCP is useful for applications that require high reliability but are less time critical.  Some examples include web servers, database info, SMTP, FTP, and SSH.</p>
+<p>Use TCP over UDP when:</p>
+<ul>
+<li>You need all of the data to arrive intact</li>
+<li>You want to automatically make a best estimate use of the network throughput</li>
+</ul>
+<h3>User datagram protocol (UDP)</h3>
+<p align="center">
+  <img src="http://i.imgur.com/yzDrJtA.jpg"/>
+  <br/>
+  <i><a href=http://www.wildbunny.co.uk/blog/2012/10/09/how-to-make-a-multi-player-game-part-1/>Source: How to make a multiplayer game</a></i>
+</p>
+
+<p>UDP is connectionless.  Datagrams (analogous to packets) are guaranteed only at the datagram level.  Datagrams might reach their destination out of order or not at all.  UDP does not support congestion control.  Without the guarantees that TCP support, UDP is generally more efficient.</p>
+<p>UDP can broadcast, sending datagrams to all devices on the subnet.  This is useful with <a href="https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol">DHCP</a> because the client has not yet received an IP address, thus preventing a way for TCP to stream without the IP address.</p>
+<p>UDP is less reliable but works well in real time use cases such as VoIP, video chat, streaming, and realtime multiplayer games.</p>
+<p>Use UDP over TCP when:</p>
+<ul>
+<li>You need the lowest latency</li>
+<li>Late data is worse than loss of data</li>
+<li>You want to implement your own error correction</li>
+</ul>
+<h4>Source(s) and further reading: TCP and UDP</h4>
+<ul>
+<li><a href="http://gafferongames.com/networking-for-game-programmers/udp-vs-tcp/">Networking for game programming</a></li>
+<li><a href="http://www.cyberciti.biz/faq/key-differences-between-tcp-and-udp-protocols/">Key differences between TCP and UDP protocols</a></li>
+<li><a href="http://stackoverflow.com/questions/5970383/difference-between-tcp-and-udp">Difference between TCP and UDP</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Transmission_Control_Protocol">Transmission control protocol</a></li>
+<li><a href="https://en.wikipedia.org/wiki/User_Datagram_Protocol">User datagram protocol</a></li>
+<li><a href="http://www.cs.bu.edu/~jappavoo/jappavoo.github.com/451/papers/memcache-fb.pdf">Scaling memcache at Facebook</a></li>
+</ul>
+<h3>Remote procedure call (RPC)</h3>
+<p align="center">
+  <img src="http://i.imgur.com/iF4Mkb5.png"/>
+  <br/>
+  <i><a href=http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview>Source: Crack the system design interview</a></i>
+</p>
+
+<p>In an RPC, a client causes a procedure to execute on a different address space, usually a remote server.  The procedure is coded as if it were a local procedure call, abstracting away the details of how to communicate with the server from the client program.  Remote calls are usually slower and less reliable than local calls so it is helpful to distinguish RPC calls from local calls.  Popular RPC frameworks include <a href="https://developers.google.com/protocol-buffers/">Protobuf</a>, <a href="https://thrift.apache.org/">Thrift</a>, and <a href="https://avro.apache.org/docs/current/">Avro</a>.</p>
+<p>RPC is a request-response protocol:</p>
+<ul>
+<li><strong>Client program</strong> - Calls the client stub procedure.  The parameters are pushed onto the stack like a local procedure call.</li>
+<li><strong>Client stub procedure</strong> - Marshals (packs) procedure id and arguments into a request message.</li>
+<li><strong>Client communication module</strong> - OS sends the message from the client to the server.</li>
+<li><strong>Server communication module</strong> - OS passes the incoming packets to the server stub procedure.</li>
+<li><strong>Server stub procedure</strong> -  Unmarshalls the results, calls the server procedure matching the procedure id and passes the given arguments.</li>
+<li>The server response repeats the steps above in reverse order.</li>
+</ul>
+<p>Sample RPC calls:</p>
+<div class="highlight"><pre><span class="err">GET /someoperation?data=anId</span>
+
+<span class="err">POST /anotheroperation</span>
+<span class="err">{</span>
+<span class="err">  &quot;data&quot;:&quot;anId&quot;;</span>
+<span class="err">  &quot;anotherdata&quot;: &quot;another value&quot;</span>
+<span class="err">}</span>
+</pre></div>
+
+
+<p>RPC is focused on exposing behaviors.  RPCs are often used for performance reasons with internal communications, as you can hand-craft native calls to better fit your use cases.</p>
+<p>Choose a native library (aka SDK) when:</p>
+<ul>
+<li>You know your target platform.</li>
+<li>You want to control how your "logic" is accessed.</li>
+<li>You want to control how error control happens off your library.</li>
+<li>Performance and end user experience is your primary concern.</li>
+</ul>
+<p>HTTP APIs following <strong>REST</strong> tend to be used more often for public APIs.</p>
+<h4>Disadvantage(s): RPC</h4>
+<ul>
+<li>RPC clients become tightly coupled to the service implementation.</li>
+<li>A new API must be defined for every new operation or use case.</li>
+<li>It can be difficult to debug RPC.</li>
+<li>You might not be able to leverage existing technologies out of the box.  For example, it might require additional effort to ensure <a href="http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/">RPC calls are properly cached</a> on caching servers such as <a href="http://www.squid-cache.org/">Squid</a>.</li>
+</ul>
+<h3>Representational state transfer (REST)</h3>
+<p>REST is an architectural style enforcing a client/server model where the client acts on a set of resources managed by the server.  The server provides a representation of resources and actions that can either manipulate or get a new representation of resources.  All communication must be stateless and cacheable.</p>
+<p>There are four qualities of a RESTful interface:</p>
+<ul>
+<li><strong>Identify resources (URI in HTTP)</strong> - use the same URI regardless of any operation.</li>
+<li><strong>Change with representations (Verbs in HTTP)</strong> - use verbs, headers, and body.</li>
+<li><strong>Self-descriptive error message (status response in HTTP)</strong> - Use status codes, don't reinvent the wheel.</li>
+<li><strong><a href="http://restcookbook.com/Basics/hateoas/">HATEOAS</a> (HTML interface for HTTP)</strong> - your web service should be fully accessible in a browser.</li>
+</ul>
+<p>Sample REST calls:</p>
+<div class="highlight"><pre><span class="err">GET /someresources/anId</span>
+
+<span class="err">PUT /someresources/anId</span>
+<span class="err">{&quot;anotherdata&quot;: &quot;another value&quot;}</span>
+</pre></div>
+
+
+<p>REST is focused on exposing data.  It minimizes the coupling between client/server and is often used for public HTTP APIs.  REST uses a more generic and uniform method of exposing resources through URIs, <a href="https://github.com/for-GET/know-your-http-well/blob/master/headers.md">representation through headers</a>, and actions through verbs such as GET, POST, PUT, DELETE, and PATCH.  Being stateless, REST is great for horizontal scaling and partitioning.</p>
+<h4>Disadvantage(s): REST</h4>
+<ul>
+<li>With REST being focused on exposing data, it might not be a good fit if resources are not naturally organized or accessed in a simple hierarchy.  For example, returning all updated records from the past hour matching a particular set of events is not easily expressed as a path.  With REST, it is likely to be implemented with a combination of URI path, query parameters, and possibly the request body.</li>
+<li>REST typically relies on a few verbs (GET, POST, PUT, DELETE, and PATCH) which sometimes doesn't fit your use case.  For example, moving expired documents to the archive folder might not cleanly fit within these verbs.</li>
+<li>Fetching complicated resources with nested hierarchies requires multiple round trips between the client and server to render single views, e.g. fetching content of a blog entry and the comments on that entry. For mobile applications operating in variable network conditions, these multiple roundtrips are highly undesirable.</li>
+<li>Over time, more fields might be added to an API response and older clients will receive all new data fields, even those that they do not need, as a result, it bloats the payload size and leads to larger latencies.</li>
+</ul>
+<h3>RPC and REST calls comparison</h3>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>RPC</th>
+<th>REST</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Signup</td>
+<td><strong>POST</strong> /signup</td>
+<td><strong>POST</strong> /persons</td>
+</tr>
+<tr>
+<td>Resign</td>
+<td><strong>POST</strong> /resign<br/>{<br/>"personid": "1234"<br/>}</td>
+<td><strong>DELETE</strong> /persons/1234</td>
+</tr>
+<tr>
+<td>Read a person</td>
+<td><strong>GET</strong> /readPerson?personid=1234</td>
+<td><strong>GET</strong> /persons/1234</td>
+</tr>
+<tr>
+<td>Read a person’s items list</td>
+<td><strong>GET</strong> /readUsersItemsList?personid=1234</td>
+<td><strong>GET</strong> /persons/1234/items</td>
+</tr>
+<tr>
+<td>Add an item to a person’s items</td>
+<td><strong>POST</strong> /addItemToUsersItemsList<br/>{<br/>"personid": "1234";<br/>"itemid": "456"<br/>}</td>
+<td><strong>POST</strong> /persons/1234/items<br/>{<br/>"itemid": "456"<br/>}</td>
+</tr>
+<tr>
+<td>Update an item</td>
+<td><strong>POST</strong> /modifyItem<br/>{<br/>"itemid": "456";<br/>"key": "value"<br/>}</td>
+<td><strong>PUT</strong> /items/456<br/>{<br/>"key": "value"<br/>}</td>
+</tr>
+<tr>
+<td>Delete an item</td>
+<td><strong>POST</strong> /removeItem<br/>{<br/>"itemid": "456"<br/>}</td>
+<td><strong>DELETE</strong> /items/456</td>
+</tr>
+</tbody>
+</table>
+<p align="center">
+  <i><a href=https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/>Source: Do you really know why you prefer REST over RPC</a></i>
+</p>
+
+<h4>Source(s) and further reading: REST and RPC</h4>
+<ul>
+<li><a href="https://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/">Do you really know why you prefer REST over RPC</a></li>
+<li><a href="http://programmers.stackexchange.com/a/181186">When are RPC-ish approaches more appropriate than REST?</a></li>
+<li><a href="http://stackoverflow.com/questions/15056878/rest-vs-json-rpc">REST vs JSON-RPC</a></li>
+<li><a href="http://etherealbits.com/2012/12/debunking-the-myths-of-rpc-rest/">Debunking the myths of RPC and REST</a></li>
+<li><a href="https://www.quora.com/What-are-the-drawbacks-of-using-RESTful-APIs">What are the drawbacks of using REST</a></li>
+<li><a href="http://www.puncsky.com/blog/2016-02-13-crack-the-system-design-interview">Crack the system design interview</a></li>
+<li><a href="https://code.facebook.com/posts/1468950976659943/">Thrift</a></li>
+<li><a href="http://arstechnica.com/civis/viewtopic.php?t=1190508">Why REST for internal use and not RPC</a></li>
+</ul>
+            </div>
+            <hr class="featurette-divider">
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+    </div>
+</div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-left">
+                    <span class="copyright">Copyright &copy; Donne Martin 2014-Present</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../theme/js/respond.min.js"></script>
+
+
+<!-- Plugin JavaScript -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="../theme/js/classie.js"></script>
+<script src="../theme/js/cbpAnimatedHeader.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="../theme/js/agency.js"></script>
+
+<!-- Google Analytics Universal -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54747412-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics Universal Code -->
+</body>
+</html>
