@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Donne Martin</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+
+
+        <meta name="author" content="Donne Martin" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Donne Martin" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Donne Martin"/>
+        <meta property="og:url" content=".."/>
+        <meta property="og:description" content="Donne Martin"/>
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../theme/css/bootstrap.min.css" type="text/css"/>
+
+    <link href="../theme/css/pygments/monokai.css" rel="stylesheet">
+
+
+
+
+
+    <!-- Custom CSS -->
+    <link href="../theme/css/agency.css" rel="stylesheet">
+    <link href="../theme/css/custom.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../theme/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.../theme/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head><body id="page-top" class="index">
+
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color: #000">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="..">Donne Martin</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="../#likes">Likes</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="../#portfolio">GitHub</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="../#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="../#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="../archives">Blog</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="http://donnemartin.com/viz/">Viz</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>    <section id="content" class="section-top-padding">
+        <article class="article-top-padding">
+            <h1>
+                <a href="../drafts/system-design-primer-database.html"
+                   rel="bookmark"
+                   title="Permalink to System Design Primer: Database">
+                    System Design Primer: Database
+                </a>
+            </h1>
+            <i><time datetime="2019-01-28T00:00:00-05:00"> Mon 28 January 2019</time></i>
+            <div class="entry-content">
+                <div class="panel">
+                <br/>
+                </div>
+                <div class="container">
+                    <br/>
+                    <img class="img-responsive" src="http://i.imgur.com/6SbxQah.png">
+                </div>
+                <hr class="featurette-divider">
+                <h2>Database</h2>
+<p align="center">
+  <img src="http://i.imgur.com/Xkm5CXz.png">
+  <br/>
+  <i><a href=https://www.youtube.com/watch?v=w95murBkYmU>Source: Scaling up to your first 10 million users</a></i>
+</p>
+
+<h3>Relational database management system (RDBMS)</h3>
+<p>A relational database like SQL is a collection of data items organized in tables.</p>
+<p><strong>ACID</strong> is a set of properties of relational database <a href="https://en.wikipedia.org/wiki/Database_transaction">transactions</a>.</p>
+<ul>
+<li><strong>Atomicity</strong> - Each transaction is all or nothing</li>
+<li><strong>Consistency</strong> - Any transaction will bring the database from one valid state to another</li>
+<li><strong>Isolation</strong> - Executing transactions concurrently has the same results as if the transactions were executed serially</li>
+<li><strong>Durability</strong> - Once a transaction has been committed, it will remain so</li>
+</ul>
+<p>There are many techniques to scale a relational database: <strong>master-slave replication</strong>, <strong>master-master replication</strong>, <strong>federation</strong>, <strong>sharding</strong>, <strong>denormalization</strong>, and <strong>SQL tuning</strong>.</p>
+<h4>Master-slave replication</h4>
+<p>The master serves reads and writes, replicating writes to one or more slaves, which serve only reads.  Slaves can also replicate to additional slaves in a tree-like fashion.  If the master goes offline, the system can continue to operate in read-only mode until a slave is promoted to a master or a new master is provisioned.</p>
+<p align="center">
+  <img src="http://i.imgur.com/C9ioGtn.png">
+  <br/>
+  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+</p>
+
+<h5>Disadvantage(s): master-slave replication</h5>
+<ul>
+<li>Additional logic is needed to promote a slave to a master.</li>
+<li>See <a href="#disadvantages-replication">Disadvantage(s): replication</a> for points related to <strong>both</strong> master-slave and master-master.</li>
+</ul>
+<h4>Master-master replication</h4>
+<p>Both masters serve reads and writes and coordinate with each other on writes.  If either master goes down, the system can continue to operate with both reads and writes.</p>
+<p align="center">
+  <img src="http://i.imgur.com/krAHLGg.png">
+  <br/>
+  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+</p>
+
+<h5>Disadvantage(s): master-master replication</h5>
+<ul>
+<li>You'll need a load balancer or you'll need to make changes to your application logic to determine where to write.</li>
+<li>Most master-master systems are either loosely consistent (violating ACID) or have increased write latency due to synchronization.</li>
+<li>Conflict resolution comes more into play as more write nodes are added and as latency increases.</li>
+<li>See <a href="#disadvantages-replication">Disadvantage(s): replication</a> for points related to <strong>both</strong> master-slave and master-master.</li>
+</ul>
+<h5>Disadvantage(s): replication</h5>
+<ul>
+<li>There is a potential for loss of data if the master fails before any newly written data can be replicated to other nodes.</li>
+<li>Writes are replayed to the read replicas.  If there are a lot of writes, the read replicas can get bogged down with replaying writes and can't do as many reads.</li>
+<li>The more read slaves, the more you have to replicate, which leads to greater replication lag.</li>
+<li>On some systems, writing to the master can spawn multiple threads to write in parallel, whereas read replicas only support writing sequentially with a single thread.</li>
+<li>Replication adds more hardware and additional complexity.</li>
+</ul>
+<h5>Source(s) and further reading: replication</h5>
+<ul>
+<li><a href="http://www.slideshare.net/jboner/scalability-availability-stability-patterns/">Scalability, availability, stability, patterns</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Multi-master_replication">Multi-master replication</a></li>
+</ul>
+<h4>Federation</h4>
+<p align="center">
+  <img src="http://i.imgur.com/U3qV33e.png">
+  <br/>
+  <i><a href=https://www.youtube.com/watch?v=w95murBkYmU>Source: Scaling up to your first 10 million users</a></i>
+</p>
+
+<p>Federation (or functional partitioning) splits up databases by function.  For example, instead of a single, monolithic database, you could have three databases: <strong>forums</strong>, <strong>users</strong>, and <strong>products</strong>, resulting in less read and write traffic to each database and therefore less replication lag.  Smaller databases result in more data that can fit in memory, which in turn results in more cache hits due to improved cache locality.  With no single central master serializing writes you can write in parallel, increasing throughput.</p>
+<h5>Disadvantage(s): federation</h5>
+<ul>
+<li>Federation is not effective if your schema requires huge functions or tables.</li>
+<li>You'll need to update your application logic to determine which database to read and write.</li>
+<li>Joining data from two databases is more complex with a <a href="http://stackoverflow.com/questions/5145637/querying-data-by-joining-two-tables-in-two-database-on-different-servers">server link</a>.</li>
+<li>Federation adds more hardware and additional complexity.</li>
+</ul>
+<h5>Source(s) and further reading: federation</h5>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=w95murBkYmU">Scaling up to your first 10 million users</a></li>
+</ul>
+<h4>Sharding</h4>
+<p align="center">
+  <img src="http://i.imgur.com/wU8x5Id.png">
+  <br/>
+  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+</p>
+
+<p>Sharding distributes data across different databases such that each database can only manage a subset of the data.  Taking a users database as an example, as the number of users increases, more shards are added to the cluster.</p>
+<p>Similar to the advantages of <a href="#federation">federation</a>, sharding results in less read and write traffic, less replication, and more cache hits.  Index size is also reduced, which generally improves performance with faster queries.  If one shard goes down, the other shards are still operational, although you'll want to add some form of replication to avoid data loss.  Like federation, there is no single central master serializing writes, allowing you to write in parallel with increased throughput.</p>
+<p>Common ways to shard a table of users is either through the user's last name initial or the user's geographic location.</p>
+<h5>Disadvantage(s): sharding</h5>
+<ul>
+<li>You'll need to update your application logic to work with shards, which could result in complex SQL queries.</li>
+<li>Data distribution can become lopsided in a shard.  For example, a set of power users on a shard could result in increased load to that shard compared to others.<ul>
+<li>Rebalancing adds additional complexity.  A sharding function based on <a href="http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html">consistent hashing</a> can reduce the amount of transferred data.</li>
+</ul>
+</li>
+<li>Joining data from multiple shards is more complex.</li>
+<li>Sharding adds more hardware and additional complexity.</li>
+</ul>
+<h5>Source(s) and further reading: sharding</h5>
+<ul>
+<li><a href="http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html">The coming of the shard</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Shard_(database_architecture)">Shard database architecture</a></li>
+<li><a href="http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html">Consistent hashing</a></li>
+</ul>
+<h4>Denormalization</h4>
+<p>Denormalization attempts to improve read performance at the expense of some write performance.  Redundant copies of the data are written in multiple tables to avoid expensive joins.  Some RDBMS such as <a href="https://en.wikipedia.org/wiki/PostgreSQL">PostgreSQL</a> and Oracle support <a href="https://en.wikipedia.org/wiki/Materialized_view">materialized views</a> which handle the work of storing redundant information and keeping redundant copies consistent.</p>
+<p>Once data becomes distributed with techniques such as <a href="#federation">federation</a> and <a href="#sharding">sharding</a>, managing joins across data centers further increases complexity.  Denormalization might circumvent the need for such complex joins.</p>
+<p>In most systems, reads can heavily outnumber writes 100:1 or even 1000:1.  A read resulting in a complex database join can be very expensive, spending a significant amount of time on disk operations.</p>
+<h5>Disadvantage(s): denormalization</h5>
+<ul>
+<li>Data is duplicated.</li>
+<li>Constraints can help redundant copies of information stay in sync, which increases complexity of the database design.</li>
+<li>A denormalized database under heavy write load might perform worse than its normalized counterpart.</li>
+</ul>
+<h6>Source(s) and further reading: denormalization</h6>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Denormalization">Denormalization</a></li>
+</ul>
+<h4>SQL tuning</h4>
+<p>SQL tuning is a broad topic and many <a href="https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&amp;field-keywords=sql+tuning">books</a> have been written as reference.</p>
+<p>It's important to <strong>benchmark</strong> and <strong>profile</strong> to simulate and uncover bottlenecks.</p>
+<ul>
+<li><strong>Benchmark</strong> - Simulate high-load situations with tools such as <a href="http://httpd.apache.org/docs/2.2/programs/ab.html">ab</a>.</li>
+<li><strong>Profile</strong> - Enable tools such as the <a href="http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html">slow query log</a> to help track performance issues.</li>
+</ul>
+<p>Benchmarking and profiling might point you to the following optimizations.</p>
+<h5>Tighten up the schema</h5>
+<ul>
+<li>MySQL dumps to disk in contiguous blocks for fast access.</li>
+<li>Use <code>CHAR</code> instead of <code>VARCHAR</code> for fixed-length fields.<ul>
+<li><code>CHAR</code> effectively allows for fast, random access, whereas with <code>VARCHAR</code>, you must find the end of a string before moving onto the next one.</li>
+</ul>
+</li>
+<li>Use <code>TEXT</code> for large blocks of text such as blog posts.  <code>TEXT</code> also allows for boolean searches.  Using a <code>TEXT</code> field results in storing a pointer on disk that is used to locate the text block.</li>
+<li>Use <code>INT</code> for larger numbers up to 2^32 or 4 billion.</li>
+<li>Use <code>DECIMAL</code> for currency to avoid floating point representation errors.</li>
+<li>Avoid storing large <code>BLOBS</code>, store the location of where to get the object instead.</li>
+<li><code>VARCHAR(255)</code> is the largest number of characters that can be counted in an 8 bit number, often maximizing the use of a byte in some RDBMS.</li>
+<li>Set the <code>NOT NULL</code> constraint where applicable to <a href="http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search">improve search performance</a>.</li>
+</ul>
+<h5>Use good indices</h5>
+<ul>
+<li>Columns that you are querying (<code>SELECT</code>, <code>GROUP BY</code>, <code>ORDER BY</code>, <code>JOIN</code>) could be faster with indices.</li>
+<li>Indices are usually represented as self-balancing <a href="https://en.wikipedia.org/wiki/B-tree">B-tree</a> that keeps data sorted and allows searches, sequential access, insertions, and deletions in logarithmic time.</li>
+<li>Placing an index can keep the data in memory, requiring more space.</li>
+<li>Writes could also be slower since the index also needs to be updated.</li>
+<li>When loading large amounts of data, it might be faster to disable indices, load the data, then rebuild the indices.</li>
+</ul>
+<h5>Avoid expensive joins</h5>
+<ul>
+<li><a href="#denormalization">Denormalize</a> where performance demands it.</li>
+</ul>
+<h5>Partition tables</h5>
+<ul>
+<li>Break up a table by putting hot spots in a separate table to help keep it in memory.</li>
+</ul>
+<h5>Tune the query cache</h5>
+<ul>
+<li>In some cases, the <a href="https://dev.mysql.com/doc/refman/5.7/en/query-cache.html">query cache</a> could lead to <a href="https://www.percona.com/blog/2016/10/12/mysql-5-7-performance-tuning-immediately-after-installation/">performance issues</a>.</li>
+</ul>
+<h5>Source(s) and further reading: SQL tuning</h5>
+<ul>
+<li><a href="http://aiddroid.com/10-tips-optimizing-mysql-queries-dont-suck/">Tips for optimizing MySQL queries</a></li>
+<li><a href="http://stackoverflow.com/questions/1217466/is-there-a-good-reason-i-see-varchar255-used-so-often-as-opposed-to-another-l">Is there a good reason i see VARCHAR(255) used so often?</a></li>
+<li><a href="http://stackoverflow.com/questions/1017239/how-do-null-values-affect-performance-in-a-database-search">How do null values affect performance?</a></li>
+<li><a href="http://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html">Slow query log</a></li>
+</ul>
+<h3>NoSQL</h3>
+<p>NoSQL is a collection of data items represented in a <strong>key-value store</strong>, <strong>document store</strong>, <strong>wide column store</strong>, or a <strong>graph database</strong>.  Data is denormalized, and joins are generally done in the application code.  Most NoSQL stores lack true ACID transactions and favor <a href="#eventual-consistency">eventual consistency</a>.</p>
+<p><strong>BASE</strong> is often used to describe the properties of NoSQL databases.  In comparison with the <a href="#cap-theorem">CAP Theorem</a>, BASE chooses availability over consistency.</p>
+<ul>
+<li><strong>Basically available</strong> - the system guarantees availability.</li>
+<li><strong>Soft state</strong> - the state of the system may change over time, even without input.</li>
+<li><strong>Eventual consistency</strong> - the system will become consistent over a period of time, given that the system doesn't receive input during that period.</li>
+</ul>
+<p>In addition to choosing between <a href="#sql-or-nosql">SQL or NoSQL</a>, it is helpful to understand which type of NoSQL database best fits your use case(s).  We'll review <strong>key-value stores</strong>, <strong>document stores</strong>, <strong>wide column stores</strong>, and <strong>graph databases</strong> in the next section.</p>
+<h4>Key-value store</h4>
+<blockquote>
+<p>Abstraction: hash table</p>
+</blockquote>
+<p>A key-value store generally allows for O(1) reads and writes and is often backed by memory or SSD.  Data stores can maintain keys in <a href="https://en.wikipedia.org/wiki/Lexicographical_order">lexicographic order</a>, allowing efficient retrieval of key ranges.  Key-value stores can allow for storing of metadata with a value.</p>
+<p>Key-value stores provide high performance and are often used for simple data models or for rapidly-changing data, such as an in-memory cache layer.  Since they offer only a limited set of operations, complexity is shifted to the application layer if additional operations are needed.</p>
+<p>A key-value store is the basis for more complex systems such as a document store, and in some cases, a graph database.</p>
+<h5>Source(s) and further reading: key-value store</h5>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Key-value_database">Key-value database</a></li>
+<li><a href="http://stackoverflow.com/questions/4056093/what-are-the-disadvantages-of-using-a-key-value-table-over-nullable-columns-or">Disadvantages of key-value stores</a></li>
+<li><a href="http://qnimate.com/overview-of-redis-architecture/">Redis architecture</a></li>
+<li><a href="https://www.adayinthelifeof.nl/2011/02/06/memcache-internals/">Memcached architecture</a></li>
+</ul>
+<h4>Document store</h4>
+<blockquote>
+<p>Abstraction: key-value store with documents stored as values</p>
+</blockquote>
+<p>A document store is centered around documents (XML, JSON, binary, etc), where a document stores all information for a given object.  Document stores provide APIs or a query language to query based on the internal structure of the document itself.  <em>Note, many key-value stores include features for working with a value's metadata, blurring the lines between these two storage types.</em></p>
+<p>Based on the underlying implementation, documents are organized by collections, tags, metadata, or directories.  Although documents can be organized or grouped together, documents may have fields that are completely different from each other.</p>
+<p>Some document stores like <a href="https://www.mongodb.com/mongodb-architecture">MongoDB</a> and <a href="https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/">CouchDB</a> also provide a SQL-like language to perform complex queries.  <a href="http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf">DynamoDB</a> supports both key-values and documents.</p>
+<p>Document stores provide high flexibility and are often used for working with occasionally changing data.</p>
+<h5>Source(s) and further reading: document store</h5>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Document-oriented_database">Document-oriented database</a></li>
+<li><a href="https://www.mongodb.com/mongodb-architecture">MongoDB architecture</a></li>
+<li><a href="https://blog.couchdb.org/2016/08/01/couchdb-2-0-architecture/">CouchDB architecture</a></li>
+<li><a href="https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up">Elasticsearch architecture</a></li>
+</ul>
+<h4>Wide column store</h4>
+<p align="center">
+  <img src="http://i.imgur.com/n16iOGk.png">
+  <br/>
+  <i><a href=http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html>Source: SQL & NoSQL, a brief history</a></i>
+</p>
+
+<blockquote>
+<p>Abstraction: nested map <code>ColumnFamily&lt;RowKey, Columns&lt;ColKey, Value, Timestamp&gt;&gt;</code></p>
+</blockquote>
+<p>A wide column store's basic unit of data is a column (name/value pair).  A column can be grouped in column families (analogous to a SQL table).  Super column families further group column families.  You can access each column independently with a row key, and columns with the same row key form a row.  Each value contains a timestamp for versioning and for conflict resolution.</p>
+<p>Google introduced <a href="http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf">Bigtable</a> as the first wide column store, which influenced the open-source <a href="https://www.mapr.com/blog/in-depth-look-hbase-architecture">HBase</a> often-used in the Hadoop ecosystem, and <a href="http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html">Cassandra</a> from Facebook.  Stores such as BigTable, HBase, and Cassandra maintain keys in lexicographic order, allowing efficient retrieval of selective key ranges.</p>
+<p>Wide column stores offer high availability and high scalability.  They are often used for very large data sets.</p>
+<h5>Source(s) and further reading: wide column store</h5>
+<ul>
+<li><a href="http://blog.grio.com/2015/11/sql-nosql-a-brief-history.html">SQL &amp; NoSQL, a brief history</a></li>
+<li><a href="http://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf">Bigtable architecture</a></li>
+<li><a href="https://www.mapr.com/blog/in-depth-look-hbase-architecture">HBase architecture</a></li>
+<li><a href="http://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html">Cassandra architecture</a></li>
+</ul>
+<h4>Graph database</h4>
+<p align="center">
+  <img src="http://i.imgur.com/fNcl65g.png">
+  <br/>
+  <i><a href=https://en.wikipedia.org/wiki/File:GraphDatabase_PropertyGraph.png>Source: Graph database</a></i>
+</p>
+
+<blockquote>
+<p>Abstraction: graph</p>
+</blockquote>
+<p>In a graph database, each node is a record and each arc is a relationship between two nodes.  Graph databases are optimized to represent complex relationships with many foreign keys or many-to-many relationships.</p>
+<p>Graphs databases offer high performance for data models with complex relationships, such as a social network.  They are relatively new and are not yet widely-used; it might be more difficult to find development tools and resources.  Many graphs can only be accessed with <a href="#representational-state-transfer-rest">REST APIs</a>.</p>
+<h5>Source(s) and further reading: Graph database</h5>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Graph_database">Graph database</a></li>
+<li><a href="https://neo4j.com/">Neo4j</a></li>
+<li><a href="https://blog.twitter.com/2010/introducing-flockdb">FlockDB</a></li>
+</ul>
+<h4>Source(s) and further reading: NoSQL</h4>
+<ul>
+<li><a href="http://stackoverflow.com/questions/3342497/explanation-of-base-terminology">Explanation of base terminology</a></li>
+<li><a href="https://medium.com/baqend-blog/nosql-databases-a-survey-and-decision-guidance-ea7823a822d#.wskogqenq">NoSQL databases a survey and decision guidance</a></li>
+<li><a href="http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database">Scalability</a></li>
+<li><a href="https://www.youtube.com/watch?v=qI_g07C_Q5I">Introduction to NoSQL</a></li>
+<li><a href="http://horicky.blogspot.com/2009/11/nosql-patterns.html">NoSQL patterns</a></li>
+</ul>
+<h3>SQL or NoSQL</h3>
+<p align="center">
+  <img src="http://i.imgur.com/wXGqG5f.png"/>
+  <br/>
+  <i><a href=https://www.infoq.com/articles/Transition-RDBMS-NoSQL/>Source: Transitioning from RDBMS to NoSQL</a></i>
+</p>
+
+<p>Reasons for <strong>SQL</strong>:</p>
+<ul>
+<li>Structured data</li>
+<li>Strict schema</li>
+<li>Relational data</li>
+<li>Need for complex joins</li>
+<li>Transactions</li>
+<li>Clear patterns for scaling</li>
+<li>More established: developers, community, code, tools, etc</li>
+<li>Lookups by index are very fast</li>
+</ul>
+<p>Reasons for <strong>NoSQL</strong>:</p>
+<ul>
+<li>Semi-structured data</li>
+<li>Dynamic or flexible schema</li>
+<li>Non-relational data</li>
+<li>No need for complex joins</li>
+<li>Store many TB (or PB) of data</li>
+<li>Very data intensive workload</li>
+<li>Very high throughput for IOPS</li>
+</ul>
+<p>Sample data well-suited for NoSQL:</p>
+<ul>
+<li>Rapid ingest of clickstream and log data</li>
+<li>Leaderboard or scoring data</li>
+<li>Temporary data, such as a shopping cart</li>
+<li>Frequently accessed ('hot') tables</li>
+<li>Metadata/lookup tables</li>
+</ul>
+<h5>Source(s) and further reading: SQL or NoSQL</h5>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=w95murBkYmU">Scaling up to your first 10 million users</a></li>
+<li><a href="https://www.sitepoint.com/sql-vs-nosql-differences/">SQL vs NoSQL differences</a></li>
+</ul>
+            </div>
+            <hr class="featurette-divider">
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+    </div>
+</div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-left">
+                    <span class="copyright">Copyright &copy; Donne Martin 2014-Present</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../theme/js/respond.min.js"></script>
+
+
+<!-- Plugin JavaScript -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="../theme/js/classie.js"></script>
+<script src="../theme/js/cbpAnimatedHeader.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="../theme/js/agency.js"></script>
+
+<!-- Google Analytics Universal -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54747412-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics Universal Code -->
+</body>
+</html>

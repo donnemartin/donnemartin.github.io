@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Donne Martin</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+
+
+        <meta name="author" content="Donne Martin" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Donne Martin" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Donne Martin"/>
+        <meta property="og:url" content=".."/>
+        <meta property="og:description" content="Donne Martin"/>
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../theme/css/bootstrap.min.css" type="text/css"/>
+
+    <link href="../theme/css/pygments/monokai.css" rel="stylesheet">
+
+
+
+
+
+    <!-- Custom CSS -->
+    <link href="../theme/css/agency.css" rel="stylesheet">
+    <link href="../theme/css/custom.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../theme/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.../theme/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head><body id="page-top" class="index">
+
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color: #000">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="..">Donne Martin</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="../#likes">Likes</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="../#portfolio">GitHub</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="../#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="../#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="../archives">Blog</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="http://donnemartin.com/viz/">Viz</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>    <section id="content" class="section-top-padding">
+        <article class="article-top-padding">
+            <h1>
+                <a href="../drafts/system-design-primer-cache.html"
+                   rel="bookmark"
+                   title="Permalink to System Design Primer: Cache">
+                    System Design Primer: Cache
+                </a>
+            </h1>
+            <i><time datetime="2019-11-20T00:00:00-05:00"> Wed 20 November 2019</time></i>
+            <div class="entry-content">
+                <div class="panel">
+                <br/>
+                </div>
+                <div class="container">
+                    <br/>
+                    <img class="img-responsive" src="http://i.imgur.com/6SbxQah.png">
+                </div>
+                <hr class="featurette-divider">
+                <h2>Cache</h2>
+<p align="center">
+  <img src="http://i.imgur.com/Q6z24La.png"/>
+  <br/>
+  <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
+</p>
+
+<p>Caching improves page load times and can reduce the load on your servers and databases.  In this model, the dispatcher will first lookup if the request has been made before and try to find the previous result to return, in order to save the actual execution.</p>
+<p>Databases often benefit from a uniform distribution of reads and writes across its partitions.  Popular items can skew the distribution, causing bottlenecks.  Putting a cache in front of a database can help absorb uneven loads and spikes in traffic.</p>
+<h3>Client caching</h3>
+<p>Caches can be located on the client side (OS or browser), <a href="#reverse-proxy-web-server">server side</a>, or in a distinct cache layer.</p>
+<h3>CDN caching</h3>
+<p><a href="#content-delivery-network">CDNs</a> are considered a type of cache.</p>
+<h3>Web server caching</h3>
+<p><a href="#reverse-proxy-web-server">Reverse proxies</a> and caches such as <a href="https://www.varnish-cache.org/">Varnish</a> can serve static and dynamic content directly.  Web servers can also cache requests, returning responses without having to contact application servers.</p>
+<h3>Database caching</h3>
+<p>Your database usually includes some level of caching in a default configuration, optimized for a generic use case.  Tweaking these settings for specific usage patterns can further boost performance.</p>
+<h3>Application caching</h3>
+<p>In-memory caches such as Memcached and Redis are key-value stores between your application and your data storage.  Since the data is held in RAM, it is much faster than typical databases where data is stored on disk.  RAM is more limited than disk, so <a href="https://en.wikipedia.org/wiki/Cache_algorithms">cache invalidation</a> algorithms such as <a href="https://en.wikipedia.org/wiki/Cache_algorithms#Least_Recently_Used">least recently used (LRU)</a> can help invalidate 'cold' entries and keep 'hot' data in RAM.</p>
+<p>Redis has the following additional features:</p>
+<ul>
+<li>Persistence option</li>
+<li>Built-in data structures such as sorted sets and lists</li>
+</ul>
+<p>There are multiple levels you can cache that fall into two general categories: <strong>database queries</strong> and <strong>objects</strong>:</p>
+<ul>
+<li>Row level</li>
+<li>Query-level</li>
+<li>Fully-formed serializable objects</li>
+<li>Fully-rendered HTML</li>
+</ul>
+<p>Generally, you should try to avoid file-based caching, as it makes cloning and auto-scaling more difficult.</p>
+<h3>Caching at the database query level</h3>
+<p>Whenever you query the database, hash the query as a key and store the result to the cache.  This approach suffers from expiration issues:</p>
+<ul>
+<li>Hard to delete a cached result with complex queries</li>
+<li>If one piece of data changes such as a table cell, you need to delete all cached queries that might include the changed cell</li>
+</ul>
+<h3>Caching at the object level</h3>
+<p>See your data as an object, similar to what you do with your application code.  Have your application assemble the dataset from the database into a class instance or a data structure(s):</p>
+<ul>
+<li>Remove the object from cache if its underlying data has changed</li>
+<li>Allows for asynchronous processing: workers assemble objects by consuming the latest cached object</li>
+</ul>
+<p>Suggestions of what to cache:</p>
+<ul>
+<li>User sessions</li>
+<li>Fully rendered web pages</li>
+<li>Activity streams</li>
+<li>User graph data</li>
+</ul>
+<h3>When to update the cache</h3>
+<p>Since you can only store a limited amount of data in cache, you'll need to determine which cache update strategy works best for your use case.</p>
+<h4>Cache-aside</h4>
+<p align="center">
+  <img src="http://i.imgur.com/ONjORqk.png"/>
+  <br/>
+  <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
+</p>
+
+<p>The application is responsible for reading and writing from storage.  The cache does not interact with storage directly.  The application does the following:</p>
+<ul>
+<li>Look for entry in cache, resulting in a cache miss</li>
+<li>Load entry from the database</li>
+<li>Add entry to cache</li>
+<li>Return entry</li>
+</ul>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">get_user</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">):</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">cache</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;user.{0}&quot;</span><span class="p">,</span> <span class="n">user_id</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">user</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">user</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">&quot;SELECT * FROM users WHERE user_id = {0}&quot;</span><span class="p">,</span> <span class="n">user_id</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">user</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="s">&quot;user.{0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>
+            <span class="n">cache</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">user</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">user</span>
+</pre></div>
+
+
+<p><a href="https://memcached.org/">Memcached</a> is generally used in this manner.</p>
+<p>Subsequent reads of data added to cache are fast.  Cache-aside is also referred to as lazy loading.  Only requested data is cached, which avoids filling up the cache with data that isn't requested.</p>
+<h5>Disadvantage(s): cache-aside</h5>
+<ul>
+<li>Each cache miss results in three trips, which can cause a noticeable delay.</li>
+<li>Data can become stale if it is updated in the database.  This issue is mitigated by setting a time-to-live (TTL) which forces an update of the cache entry, or by using write-through.</li>
+<li>When a node fails, it is replaced by a new, empty node, increasing latency.</li>
+</ul>
+<h4>Write-through</h4>
+<p align="center">
+  <img src="http://i.imgur.com/0vBc0hN.png"/>
+  <br/>
+  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+</p>
+
+<p>The application uses the cache as the main data store, reading and writing data to it, while the cache is responsible for reading and writing to the database:</p>
+<ul>
+<li>Application adds/updates entry in cache</li>
+<li>Cache synchronously writes entry to data store</li>
+<li>Return</li>
+</ul>
+<p>Application code:</p>
+<div class="highlight"><pre><span class="n">set_user</span><span class="p">(</span><span class="mi">12345</span><span class="p">,</span> <span class="p">{</span><span class="s">&quot;foo&quot;</span><span class="p">:</span><span class="s">&quot;bar&quot;</span><span class="p">})</span>
+</pre></div>
+
+
+<p>Cache code:</p>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">set_user</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s">&quot;UPDATE Users WHERE id = {0}&quot;</span><span class="p">,</span> <span class="n">user_id</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
+    <span class="n">cache</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">user</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Write-through is a slow overall operation due to the write operation, but subsequent reads of just written data are fast.  Users are generally more tolerant of latency when updating data than reading data.  Data in the cache is not stale.</p>
+<h5>Disadvantage(s): write through</h5>
+<ul>
+<li>When a new node is created due to failure or scaling, the new node will not cache entries until the entry is updated in the database.  Cache-aside in conjunction with write through can mitigate this issue.</li>
+<li>Most data written might never be read, which can be minimized with a TTL.</li>
+</ul>
+<h4>Write-behind (write-back)</h4>
+<p align="center">
+  <img src="http://i.imgur.com/rgSrvjG.png"/>
+  <br/>
+  <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+</p>
+
+<p>In write-behind, the application does the following:</p>
+<ul>
+<li>Add/update entry in cache</li>
+<li>Asynchronously write entry to the data store, improving write performance</li>
+</ul>
+<h5>Disadvantage(s): write-behind</h5>
+<ul>
+<li>There could be data loss if the cache goes down prior to its contents hitting the data store.</li>
+<li>It is more complex to implement write-behind than it is to implement cache-aside or write-through.</li>
+</ul>
+<h4>Refresh-ahead</h4>
+<p align="center">
+  <img src="http://i.imgur.com/kxtjqgE.png"/>
+  <br/>
+  <i><a href=http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast>Source: From cache to in-memory data grid</a></i>
+</p>
+
+<p>You can configure the cache to automatically refresh any recently accessed cache entry prior to its expiration.</p>
+<p>Refresh-ahead can result in reduced latency vs read-through if the cache can accurately predict which items are likely to be needed in the future.</p>
+<h5>Disadvantage(s): refresh-ahead</h5>
+<ul>
+<li>Not accurately predicting which items are likely to be needed in the future can result in reduced performance than without refresh-ahead.</li>
+</ul>
+<h3>Disadvantage(s): cache</h3>
+<ul>
+<li>Need to maintain consistency between caches and the source of truth such as the database through <a href="https://en.wikipedia.org/wiki/Cache_algorithms">cache invalidation</a>.</li>
+<li>Cache invalidation is a difficult problem, there is additional complexity associated with when to update the cache.</li>
+<li>Need to make application changes such as adding Redis or memcached.</li>
+</ul>
+<h3>Source(s) and further reading</h3>
+<ul>
+<li><a href="http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast">From cache to in-memory data grid</a></li>
+<li><a href="http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html">Scalable system design patterns</a></li>
+<li><a href="http://lethain.com/introduction-to-architecting-systems-for-scale/">Introduction to architecting systems for scale</a></li>
+<li><a href="http://www.slideshare.net/jboner/scalability-availability-stability-patterns/">Scalability, availability, stability, patterns</a></li>
+<li><a href="http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache">Scalability</a></li>
+<li><a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Strategies.html">AWS ElastiCache strategies</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Cache_(computing)">Wikipedia</a></li>
+</ul>
+            </div>
+            <hr class="featurette-divider">
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+    </div>
+</div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-left">
+                    <span class="copyright">Copyright &copy; Donne Martin 2014-Present</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../theme/js/respond.min.js"></script>
+
+
+<!-- Plugin JavaScript -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="../theme/js/classie.js"></script>
+<script src="../theme/js/cbpAnimatedHeader.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="../theme/js/agency.js"></script>
+
+<!-- Google Analytics Universal -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54747412-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics Universal Code -->
+</body>
+</html>
