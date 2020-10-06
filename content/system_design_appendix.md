@@ -220,3 +220,9 @@ Handy metrics based on numbers above:
 * [Yahoo Engineering Blog](http://yahooeng.tumblr.com/)
 * [Yelp Engineering Blog](http://engineeringblog.yelp.com/)
 * [Zynga Engineering Blog](https://www.zynga.com/blogs/engineering)
+
+#### Source(s) and further reading
+
+Looking to add a blog?  To avoid duplicating work, consider adding your company blog to the following repo:
+
+* [kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs)
