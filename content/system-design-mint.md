@@ -51,3 +51,27 @@ Without an interviewer to address clarifying questions, we'll define some use ca
 * 500 million read requests per month
 * 10:1 write to read ratio
     * Write-heavy, users make transactions daily, but few visit the site daily
+
+#### Calculate usage
+
+**Clarify with your interviewer if you should run back-of-the-envelope usage calculations.**
+
+* Size per transaction:
+    * `user_id` - 8 bytes
+    * `created_at` - 5 bytes
+    * `seller` - 32 bytes
+    * `amount` - 5 bytes
+    * Total: ~50 bytes
+* 250 GB of new transaction content per month
+    * 50 bytes per transaction * 5 billion transactions per month
+    * 9 TB of new transaction content in 3 years
+    * Assume most are new transactions instead of updates to existing ones
+* 2,000 transactions per second on average
+* 200 read requests per second on average
+
+Handy conversion guide:
+
+* 2.5 million seconds per month
+* 1 request per second = 2.5 million requests per month
+* 40 requests per second = 100 million requests per month
+* 400 requests per second = 1 billion requests per month
