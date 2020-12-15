@@ -123,3 +123,55 @@ $ curl -X POST --data '{ "user_id": "foo", "account_url": "bar", \
 For internal communications, we could use [Remote Procedure Calls](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc).
 
 Next, the service extracts transactions from the account.
+
+### Use case: Service extracts transactions from the account
+
+We'll want to extract information from an account in these cases:
+
+* The user first links the account
+* The user manually refreshes the account
+* Automatically each day for users who have been active in the past 30 days
+
+Data flow:
+
+* The **Client** sends a request to the **Web Server**
+* The **Web Server** forwards the request to the **Accounts API** server
+* The **Accounts API** server places a job on a **Queue** such as [Amazon SQS](https://aws.amazon.com/sqs/) or [RabbitMQ](https://www.rabbitmq.com/)
+    * Extracting transactions could take awhile, we'd probably want to do this [asynchronously with a queue](https://github.com/donnemartin/system-design-primer#asynchronism), although this introduces additional complexity
+* The **Transaction Extraction Service** does the following:
+    * Pulls from the **Queue** and extracts transactions for the given account from the financial institution, storing the results as raw log files in the **Object Store**
+    * Uses the **Category Service** to categorize each transaction
+    * Uses the **Budget Service** to calculate aggregate monthly spending by category
+        * The **Budget Service** uses the **Notification Service** to let users know if they are nearing or have exceeded their budget
+    * Updates the **SQL Database** `transactions` table with categorized transactions
+    * Updates the **SQL Database** `monthly_spending` table with aggregate monthly spending by category
+    * Notifies the user the transactions have completed through the **Notification Service**:
+        * Uses a **Queue** (not pictured) to asynchronously send out notifications
+
+The `transactions` table could have the following structure:
+
+```
+id int NOT NULL AUTO_INCREMENT
+created_at datetime NOT NULL
+seller varchar(32) NOT NULL
+amount decimal NOT NULL
+user_id int NOT NULL
+PRIMARY KEY(id)
+FOREIGN KEY(user_id) REFERENCES users(id)
+```
+
+We'll create an [index](https://github.com/donnemartin/system-design-primer#use-good-indices) on `id`, `user_id `, and `created_at`.
+
+The `monthly_spending` table could have the following structure:
+
+```
+id int NOT NULL AUTO_INCREMENT
+month_year date NOT NULL
+category varchar(32)
+amount decimal NOT NULL
+user_id int NOT NULL
+PRIMARY KEY(id)
+FOREIGN KEY(user_id) REFERENCES users(id)
+```
+
+We'll create an [index](https://github.com/donnemartin/system-design-primer#use-good-indices) on `id` and `user_id `.
