@@ -175,3 +175,55 @@ FOREIGN KEY(user_id) REFERENCES users(id)
 ```
 
 We'll create an [index](https://github.com/donnemartin/system-design-primer#use-good-indices) on `id` and `user_id `.
+
+#### Category service
+
+For the **Category Service**, we can seed a seller-to-category dictionary with the most popular sellers.  If we estimate 50,000 sellers and estimate each entry to take less than 255 bytes, the dictionary would only take about 12 MB of memory.
+
+**Clarify with your interviewer how much code you are expected to write**.
+
+```python
+class DefaultCategories(Enum):
+
+    HOUSING = 0
+    FOOD = 1
+    GAS = 2
+    SHOPPING = 3
+    ...
+
+seller_category_map = {}
+seller_category_map['Exxon'] = DefaultCategories.GAS
+seller_category_map['Target'] = DefaultCategories.SHOPPING
+...
+```
+
+For sellers not initially seeded in the map, we could use a crowdsourcing effort by evaluating the manual category overrides our users provide.  We could use a heap to quickly lookup the top manual override per seller in O(1) time.
+
+```python
+class Categorizer(object):
+
+    def __init__(self, seller_category_map, seller_category_crowd_overrides_map):
+        self.seller_category_map = seller_category_map
+        self.seller_category_crowd_overrides_map = \
+            seller_category_crowd_overrides_map
+
+    def categorize(self, transaction):
+        if transaction.seller in self.seller_category_map:
+            return self.seller_category_map[transaction.seller]
+        elif transaction.seller in self.seller_category_crowd_overrides_map:
+            self.seller_category_map[transaction.seller] = \
+                self.seller_category_crowd_overrides_map[transaction.seller].peek_min()
+            return self.seller_category_map[transaction.seller]
+        return None
+```
+
+Transaction implementation:
+
+```python
+class Transaction(object):
+
+    def __init__(self, created_at, seller, amount):
+        self.created_at = created_at
+        self.seller = seller
+        self.amount = amount
+```
