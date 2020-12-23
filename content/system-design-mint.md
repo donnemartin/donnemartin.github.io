@@ -251,3 +251,74 @@ class Budget(object):
     def override_category_budget(self, category, amount):
         self.categories_to_budget_map[category] = amount
 ```
+
+For the **Budget Service**, we can potentially run SQL queries on the `transactions` table to generate the `monthly_spending` aggregate table.  The `monthly_spending` table would likely have much fewer rows than the total 5 billion transactions, since users typically have many transactions per month.
+
+As an alternative, we can run **MapReduce** jobs on the raw transaction files to:
+
+* Categorize each transaction
+* Generate aggregate monthly spending by category
+
+Running analyses on the transaction files could significantly reduce the load on the database.
+
+We could call the **Budget Service** to re-run the analysis if the user updates a category.
+
+**Clarify with your interviewer how much code you are expected to write**.
+
+Sample log file format, tab delimited:
+
+```
+user_id   timestamp   seller  amount
+```
+
+**MapReduce** implementation:
+
+```python
+class SpendingByCategory(MRJob):
+
+    def __init__(self, categorizer):
+        self.categorizer = categorizer
+        self.current_year_month = calc_current_year_month()
+        ...
+
+    def calc_current_year_month(self):
+        """Return the current year and month."""
+        ...
+
+    def extract_year_month(self, timestamp):
+        """Return the year and month portions of the timestamp."""
+        ...
+
+    def handle_budget_notifications(self, key, total):
+        """Call notification API if nearing or exceeded budget."""
+        ...
+
+    def mapper(self, _, line):
+        """Parse each log line, extract and transform relevant lines.
+
+        Argument line will be of the form:
+
+        user_id   timestamp   seller  amount
+
+        Using the categorizer to convert seller to category,
+        emit key value pairs of the form:
+
+        (user_id, 2016-01, shopping), 25
+        (user_id, 2016-01, shopping), 100
+        (user_id, 2016-01, gas), 50
+        """
+        user_id, timestamp, seller, amount = line.split('\t')
+        category = self.categorizer.categorize(seller)
+        period = self.extract_year_month(timestamp)
+        if period == self.current_year_month:
+            yield (user_id, period, category), amount
+
+    def reducer(self, key, value):
+        """Sum values for each key.
+
+        (user_id, 2016-01, shopping), 125
+        (user_id, 2016-01, gas), 50
+        """
+        total = sum(values)
+        yield key, sum(values)
+```
