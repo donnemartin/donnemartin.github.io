@@ -322,3 +322,64 @@ class SpendingByCategory(MRJob):
         total = sum(values)
         yield key, sum(values)
 ```
+
+## Step 4: Scale the design
+
+> Identify and address bottlenecks, given the constraints.
+
+![Imgur](http://i.imgur.com/V5q57vU.png)
+
+**Important: Do not simply jump right into the final design from the initial design!**
+
+State you would 1) **Benchmark/Load Test**, 2) **Profile** for bottlenecks 3) address bottlenecks while evaluating alternatives and trade-offs, and 4) repeat.  See [Design a system that scales to millions of users on AWS](../scaling_aws/README.md) as a sample on how to iteratively scale the initial design.
+
+It's important to discuss what bottlenecks you might encounter with the initial design and how you might address each of them.  For example, what issues are addressed by adding a **Load Balancer** with multiple **Web Servers**?  **CDN**?  **Master-Slave Replicas**?  What are the alternatives and **Trade-Offs** for each?
+
+We'll introduce some components to complete the design and to address scalability issues.  Internal load balancers are not shown to reduce clutter.
+
+*To avoid repeating discussions*, refer to the following [system design topics](https://github.com/donnemartin/system-design-primer#index-of-system-design-topics) for main talking points, tradeoffs, and alternatives:
+
+* [DNS](https://github.com/donnemartin/system-design-primer#domain-name-system)
+* [CDN](https://github.com/donnemartin/system-design-primer#content-delivery-network)
+* [Load balancer](https://github.com/donnemartin/system-design-primer#load-balancer)
+* [Horizontal scaling](https://github.com/donnemartin/system-design-primer#horizontal-scaling)
+* [Web server (reverse proxy)](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
+* [API server (application layer)](https://github.com/donnemartin/system-design-primer#application-layer)
+* [Cache](https://github.com/donnemartin/system-design-primer#cache)
+* [Relational database management system (RDBMS)](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms)
+* [SQL write master-slave failover](https://github.com/donnemartin/system-design-primer#fail-over)
+* [Master-slave replication](https://github.com/donnemartin/system-design-primer#master-slave-replication)
+* [Asynchronism](https://github.com/donnemartin/system-design-primer#asynchronism)
+* [Consistency patterns](https://github.com/donnemartin/system-design-primer#consistency-patterns)
+* [Availability patterns](https://github.com/donnemartin/system-design-primer#availability-patterns)
+
+We'll add an additional use case: **User** accesses summaries and transactions.
+
+User sessions, aggregate stats by category, and recent transactions could be placed in a **Memory Cache** such as Redis or Memcached.
+
+* The **Client** sends a read request to the **Web Server**
+* The **Web Server** forwards the request to the **Read API** server
+    * Static content can be served from the **Object Store** such as S3, which is cached on the **CDN**
+* The **Read API** server does the following:
+    * Checks the **Memory Cache** for the content
+        * If the url is in the **Memory Cache**, returns the cached contents
+        * Else
+            * If the url is in the **SQL Database**, fetches the contents
+                * Updates the **Memory Cache** with the contents
+
+Refer to [When to update the cache](https://github.com/donnemartin/system-design-primer#when-to-update-the-cache) for tradeoffs and alternatives.  The approach above describes [cache-aside](https://github.com/donnemartin/system-design-primer#cache-aside).
+
+Instead of keeping the `monthly_spending` aggregate table in the **SQL Database**, we could create a separate **Analytics Database** using a data warehousing solution such as Amazon Redshift or Google BigQuery.
+
+We might only want to store a month of `transactions` data in the database, while storing the rest in a data warehouse or in an **Object Store**.  An **Object Store** such as Amazon S3 can comfortably handle the constraint of 250 GB of new content per month.
+
+To address the 200 *average* read requests per second (higher at peak), traffic for popular content should be handled by the **Memory Cache** instead of the database.  The **Memory Cache** is also useful for handling the unevenly distributed traffic and traffic spikes.  The **SQL Read Replicas** should be able to handle the cache misses, as long as the replicas are not bogged down with replicating writes.
+
+2,000 *average* transaction writes per second (higher at peak) might be tough for a single **SQL Write Master-Slave**.  We might need to employ additional SQL scaling patterns:
+
+* [Federation](https://github.com/donnemartin/system-design-primer#federation)
+* [Sharding](https://github.com/donnemartin/system-design-primer#sharding)
+* [Denormalization](https://github.com/donnemartin/system-design-primer#denormalization)
+* [SQL Tuning](https://github.com/donnemartin/system-design-primer#sql-tuning)
+
+We should also consider moving some data to a **NoSQL Database**.
