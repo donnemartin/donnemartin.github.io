@@ -430,3 +430,7 @@ We should also consider moving some data to a **NoSQL Database**.
 ### Security
 
 Refer to the [security section](https://github.com/donnemartin/system-design-primer#security).
+
+### Latency numbers
+
+See [Latency numbers every programmer should know](https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know).
