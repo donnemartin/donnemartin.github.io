@@ -26,3 +26,12 @@ Without an interviewer to address clarifying questions, we'll define some use ca
     * Monthly visit stats
 * **Service** deletes expired pastes
 * **Service** has high availability
+
+#### Out of scope
+
+* **User** registers for an account
+    * **User** verifies email
+* **User** logs into a registered account
+    * **User** edits the document
+* **User** can set visibility
+* **User** can set the shortlink
