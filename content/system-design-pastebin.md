@@ -35,3 +35,16 @@ Without an interviewer to address clarifying questions, we'll define some use ca
     * **User** edits the document
 * **User** can set visibility
 * **User** can set the shortlink
+
+### Constraints and assumptions
+
+#### State assumptions
+
+* Traffic is not evenly distributed
+* Following a short link should be fast
+* Pastes are text only
+* Page view analytics do not need to be realtime
+* 10 million users
+* 10 million paste writes per month
+* 100 million paste reads per month
+* 10:1 read to write ratio
