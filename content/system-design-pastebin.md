@@ -48,3 +48,29 @@ Without an interviewer to address clarifying questions, we'll define some use ca
 * 10 million paste writes per month
 * 100 million paste reads per month
 * 10:1 read to write ratio
+
+#### Calculate usage
+
+**Clarify with your interviewer if you should run back-of-the-envelope usage calculations.**
+
+* Size per paste
+    * 1 KB content per paste
+    * `shortlink` - 7 bytes
+    * `expiration_length_in_minutes` - 4 bytes
+    * `created_at` - 5 bytes
+    * `paste_path` - 255 bytes
+    * total = ~1.27 KB
+* 12.7 GB of new paste content per month
+    * 1.27 KB per paste * 10 million pastes per month
+    * ~450 GB of new paste content in 3 years
+    * 360 million shortlinks in 3 years
+    * Assume most are new pastes instead of updates to existing ones
+* 4 paste writes per second on average
+* 40 read requests per second on average
+
+Handy conversion guide:
+
+* 2.5 million seconds per month
+* 1 request per second = 2.5 million requests per month
+* 40 requests per second = 100 million requests per month
+* 400 requests per second = 1 billion requests per month
