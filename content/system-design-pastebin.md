@@ -80,3 +80,28 @@ Handy conversion guide:
 > Outline a high level design with all important components.
 
 ![Imgur](http://i.imgur.com/BKsBnmG.png)
+
+## Step 3: Design core components
+
+> Dive into details for each core component.
+
+### Use case: User enters a block of text and gets a randomly generated link
+
+We could use a [relational database](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms) as a large hash table, mapping the generated url to a file server and path containing the paste file.
+
+Instead of managing a file server, we could use a managed **Object Store** such as Amazon S3 or a [NoSQL document store](https://github.com/donnemartin/system-design-primer#document-store).
+
+An alternative to a relational database acting as a large hash table, we could use a [NoSQL key-value store](https://github.com/donnemartin/system-design-primer#key-value-store).  We should discuss the [tradeoffs between choosing SQL or NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql).  The following discussion uses the relational database approach.
+
+* The **Client** sends a create paste request to the **Web Server**, running as a [reverse proxy](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
+* The **Web Server** forwards the request to the **Write API** server
+* The **Write API** server does the following:
+    * Generates a unique url
+        * Checks if the url is unique by looking at the **SQL Database** for a duplicate
+        * If the url is not unique, it generates another url
+        * If we supported a custom url, we could use the user-supplied (also check for a duplicate)
+    * Saves to the **SQL Database** `pastes` table
+    * Saves the paste data to the **Object Store**
+    * Returns the url
+
+**Clarify with your interviewer how much code you are expected to write**.
