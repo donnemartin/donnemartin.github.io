@@ -105,3 +105,15 @@ An alternative to a relational database acting as a large hash table, we could u
     * Returns the url
 
 **Clarify with your interviewer how much code you are expected to write**.
+
+The `pastes` table could have the following structure:
+
+```
+shortlink char(7) NOT NULL
+expiration_length_in_minutes int NOT NULL
+created_at datetime NOT NULL
+paste_path varchar(255) NOT NULL
+PRIMARY KEY(shortlink)
+```
+
+Setting the primary key to be based on the `shortlink` column creates an [index](https://github.com/donnemartin/system-design-primer#use-good-indices) that the database uses to enforce uniqueness. We'll create an additional index on `created_at` to speed up lookups (log-time instead of scanning the entire table) and to keep the data in memory.  Reading 1 MB sequentially from memory takes about 250 microseconds, while reading from SSD takes 4x and from disk takes 80x longer.<sup><a href=https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know>1</a></sup>
