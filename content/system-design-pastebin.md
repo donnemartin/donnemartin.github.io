@@ -117,3 +117,31 @@ PRIMARY KEY(shortlink)
 ```
 
 Setting the primary key to be based on the `shortlink` column creates an [index](https://github.com/donnemartin/system-design-primer#use-good-indices) that the database uses to enforce uniqueness. We'll create an additional index on `created_at` to speed up lookups (log-time instead of scanning the entire table) and to keep the data in memory.  Reading 1 MB sequentially from memory takes about 250 microseconds, while reading from SSD takes 4x and from disk takes 80x longer.<sup><a href=https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know>1</a></sup>
+
+To generate the unique url, we could:
+
+* Take the [**MD5**](https://en.wikipedia.org/wiki/MD5) hash of the user's ip_address + timestamp
+    * MD5 is a widely used hashing function that produces a 128-bit hash value
+    * MD5 is uniformly distributed
+    * Alternatively, we could also take the MD5 hash of randomly-generated data
+* [**Base 62**](https://www.kerstner.at/2012/07/shortening-strings-using-base-62-encoding/) encode the MD5 hash
+    * Base 62 encodes to `[a-zA-Z0-9]` which works well for urls, eliminating the need for escaping special characters
+    * There is only one hash result for the original input and Base 62 is deterministic (no randomness involved)
+    * Base 64 is another popular encoding but provides issues for urls because of the additional `+` and `/` characters
+    * The following [Base 62 pseudocode](http://stackoverflow.com/questions/742013/how-to-code-a-url-shortener) runs in O(k) time where k is the number of digits = 7:
+
+```python
+def base_encode(num, base=62):
+    digits = []
+    while num > 0
+      remainder = modulo(num, base)
+      digits.push(remainder)
+      num = divide(num, base)
+    digits = digits.reverse
+```
+
+* Take the first 7 characters of the output, which results in 62^7 possible values and should be sufficient to handle our constraint of 360 million shortlinks in 3 years:
+
+```python
+url = base_encode(md5(ip_address+timestamp))[:URL_LENGTH]
+```
