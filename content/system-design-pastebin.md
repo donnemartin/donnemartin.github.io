@@ -145,3 +145,18 @@ def base_encode(num, base=62):
 ```python
 url = base_encode(md5(ip_address+timestamp))[:URL_LENGTH]
 ```
+
+We'll use a public [**REST API**](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest):
+
+```
+$ curl -X POST --data '{ "expiration_length_in_minutes": "60", \
+    "paste_contents": "Hello World!" }' https://pastebin.com/api/v1/paste
+```
+
+Response:
+
+```
+{
+    "shortlink": "foobar"
+}
+```
