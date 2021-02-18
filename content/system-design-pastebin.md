@@ -162,3 +162,28 @@ Response:
 ```
 
 For internal communications, we could use [Remote Procedure Calls](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc).
+
+### Use case: User enters a paste's url and views the contents
+
+* The **Client** sends a get paste request to the **Web Server**
+* The **Web Server** forwards the request to the **Read API** server
+* The **Read API** server does the following:
+    * Checks the **SQL Database** for the generated url
+        * If the url is in the **SQL Database**, fetch the paste contents from the **Object Store**
+        * Else, return an error message for the user
+
+REST API:
+
+```
+$ curl https://pastebin.com/api/v1/paste?shortlink=foobar
+```
+
+Response:
+
+```
+{
+    "paste_contents": "Hello World"
+    "created_at": "YYYY-MM-DD HH:MM:SS"
+    "expiration_length_in_minutes": "60"
+}
+```
