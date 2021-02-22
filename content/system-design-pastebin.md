@@ -226,3 +226,7 @@ class HitCounts(MRJob):
         """
         yield key, sum(values)
 ```
+
+### Use case: Service deletes expired pastes
+
+To delete expired pastes, we could just scan the **SQL Database** for all entries whose expiration timestamp are older than the current timestamp.  All expired entries would then be deleted (or  marked as expired) from the table.
