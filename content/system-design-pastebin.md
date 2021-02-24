@@ -230,3 +230,9 @@ class HitCounts(MRJob):
 ### Use case: Service deletes expired pastes
 
 To delete expired pastes, we could just scan the **SQL Database** for all entries whose expiration timestamp are older than the current timestamp.  All expired entries would then be deleted (or  marked as expired) from the table.
+
+## Step 4: Scale the design
+
+> Identify and address bottlenecks, given the constraints.
+
+![Imgur](http://i.imgur.com/4edXG0T.png)
