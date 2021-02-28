@@ -236,3 +236,9 @@ To delete expired pastes, we could just scan the **SQL Database** for all entrie
 > Identify and address bottlenecks, given the constraints.
 
 ![Imgur](http://i.imgur.com/4edXG0T.png)
+
+**Important: Do not simply jump right into the final design from the initial design!**
+
+State you would do this iteratively: 1) **Benchmark/Load Test**, 2) **Profile** for bottlenecks 3) address bottlenecks while evaluating alternatives and trade-offs, and 4) repeat.  See [Design a system that scales to millions of users on AWS](../scaling_aws/README.md) as a sample on how to iteratively scale the initial design.
+
+It's important to discuss what bottlenecks you might encounter with the initial design and how you might address each of them.  For example, what issues are addressed by adding a **Load Balancer** with multiple **Web Servers**?  **CDN**?  **Master-Slave Replicas**?  What are the alternatives and **Trade-Offs** for each?
