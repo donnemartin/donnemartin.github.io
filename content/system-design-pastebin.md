@@ -263,3 +263,14 @@ We'll introduce some components to complete the design and to address scalabilit
 The **Analytics Database** could use a data warehousing solution such as Amazon Redshift or Google BigQuery.
 
 An **Object Store** such as Amazon S3 can comfortably handle the constraint of 12.7 GB of new content per month.
+
+To address the 40 *average* read requests per second (higher at peak), traffic for popular content should be handled by the **Memory Cache** instead of the database.  The **Memory Cache** is also useful for handling the unevenly distributed traffic and traffic spikes.  The **SQL Read Replicas** should be able to handle the cache misses, as long as the replicas are not bogged down with replicating writes.
+
+4 *average* paste writes per second (with higher at peak) should be do-able for a single **SQL Write Master-Slave**.  Otherwise, we'll need to employ additional SQL scaling patterns:
+
+* [Federation](https://github.com/donnemartin/system-design-primer#federation)
+* [Sharding](https://github.com/donnemartin/system-design-primer#sharding)
+* [Denormalization](https://github.com/donnemartin/system-design-primer#denormalization)
+* [SQL Tuning](https://github.com/donnemartin/system-design-primer#sql-tuning)
+
+We should also consider moving some data to a **NoSQL Database**.
