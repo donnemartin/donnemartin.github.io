@@ -11,3 +11,14 @@
 > Discuss assumptions.
 
 Without an interviewer to address clarifying questions, we'll define some use cases and constraints.
+
+### Use cases
+
+#### We'll scope the problem to handle only the following use cases
+
+* **User** posts a tweet
+    * **Service** pushes tweets to followers, sending push notifications and emails
+* **User** views the user timeline (activity from the user)
+* **User** views the home timeline (activity from people the user is following)
+* **User** searches keywords
+* **Service** has high availability
