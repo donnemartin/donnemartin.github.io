@@ -22,3 +22,11 @@ Without an interviewer to address clarifying questions, we'll define some use ca
 * **User** views the home timeline (activity from people the user is following)
 * **User** searches keywords
 * **Service** has high availability
+
+#### Out of scope
+
+* **Service** pushes tweets to the Twitter Firehose and other streams
+* **Service** strips out tweets based on users' visibility settings
+    * Hide @reply if the user is not also following the person being replied to
+    * Respect 'hide retweets' setting
+* Analytics
