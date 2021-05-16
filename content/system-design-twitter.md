@@ -30,3 +30,20 @@ Without an interviewer to address clarifying questions, we'll define some use ca
     * Hide @reply if the user is not also following the person being replied to
     * Respect 'hide retweets' setting
 * Analytics
+
+### Constraints and assumptions
+
+#### State assumptions
+
+General
+
+* Traffic is not evenly distributed
+* Posting a tweet should be fast
+    * Fanning out a tweet to all of your followers should be fast, unless you have millions of followers
+* 100 million active users
+* 500 million tweets per day or 15 billion tweets per month
+    * Each tweet averages a fanout of 10 deliveries
+    * 5 billion total tweets delivered on fanout per day
+    * 150 billion tweets delivered on fanout per month
+* 250 billion read requests per month
+* 10 billion searches per month
