@@ -47,3 +47,15 @@ General
     * 150 billion tweets delivered on fanout per month
 * 250 billion read requests per month
 * 10 billion searches per month
+
+Timeline
+
+* Viewing the timeline should be fast
+* Twitter is more read heavy than write heavy
+    * Optimize for fast reads of tweets
+* Ingesting tweets is write heavy
+
+Search
+
+* Searching should be fast
+* Search is read-heavy
