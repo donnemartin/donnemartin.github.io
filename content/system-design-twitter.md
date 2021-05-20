@@ -59,3 +59,25 @@ Search
 
 * Searching should be fast
 * Search is read-heavy
+
+#### Calculate usage
+
+**Clarify with your interviewer if you should run back-of-the-envelope usage calculations.**
+
+* Size per tweet:
+    * `tweet_id` - 8 bytes
+    * `user_id` - 32 bytes
+    * `text` - 140 bytes
+    * `media` - 10 KB average
+    * Total: ~10 KB
+* 150 TB of new tweet content per month
+    * 10 KB per tweet * 500 million tweets per day * 30 days per month
+    * 5.4 PB of new tweet content in 3 years
+* 100 thousand read requests per second
+    * 250 billion read requests per month * (400 requests per second / 1 billion requests per month)
+* 6,000 tweets per second
+    * 15 billion tweets per month * (400 requests per second / 1 billion requests per month)
+* 60 thousand tweets delivered on fanout per second
+    * 150 billion tweets delivered on fanout per month * (400 requests per second / 1 billion requests per month)
+* 4,000 search requests per second
+    * 10 billion searches per month * (400 requests per second / 1 billion requests per month)
