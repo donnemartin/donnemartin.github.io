@@ -94,3 +94,27 @@ Handy conversion guide:
 > Outline a high level design with all important components.
 
 ![Imgur](http://i.imgur.com/48tEA2j.png)
+
+## Step 3: Design core components
+
+> Dive into details for each core component.
+
+### Use case: User posts a tweet
+
+We could store the user's own tweets to populate the user timeline (activity from the user) in a [relational database](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms).  We should discuss the [use cases and tradeoffs between choosing SQL or NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql).
+
+Delivering tweets and building the home timeline (activity from people the user is following) is trickier.  Fanning out tweets to all followers (60 thousand tweets delivered on fanout per second) will overload a traditional [relational database](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms).  We'll probably want to choose a data store with fast writes such as a **NoSQL database** or **Memory Cache**.  Reading 1 MB sequentially from memory takes about 250 microseconds, while reading from SSD takes 4x and from disk takes 80x longer.<sup><a href=https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know>1</a></sup>
+
+We could store media such as photos or videos on an **Object Store**.
+
+* The **Client** posts a tweet to the **Web Server**, running as a [reverse proxy](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
+* The **Web Server** forwards the request to the **Write API** server
+* The **Write API** stores the tweet in the user's timeline on a **SQL database**
+* The **Write API** contacts the **Fan Out Service**, which does the following:
+    * Queries the **User Graph Service** to find the user's followers stored in the **Memory Cache**
+    * Stores the tweet in the *home timeline of the user's followers* in a **Memory Cache**
+        * O(n) operation:  1,000 followers = 1,000 lookups and inserts
+    * Stores the tweet in the **Search Index Service** to enable fast searching
+    * Stores media in the **Object Store**
+    * Uses the **Notification Service** to send out push notifications to followers:
+        * Uses a **Queue** (not pictured) to asynchronously send out notifications
