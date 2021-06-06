@@ -118,3 +118,15 @@ We could store media such as photos or videos on an **Object Store**.
     * Stores media in the **Object Store**
     * Uses the **Notification Service** to send out push notifications to followers:
         * Uses a **Queue** (not pictured) to asynchronously send out notifications
+
+**Clarify with your interviewer how much code you are expected to write**.
+
+If our **Memory Cache** is Redis, we could use a native Redis list with the following structure:
+
+```
+           tweet n+2                   tweet n+1                   tweet n
+| 8 bytes   8 bytes  1 byte | 8 bytes   8 bytes  1 byte | 8 bytes   8 bytes  1 byte |
+| tweet_id  user_id  meta   | tweet_id  user_id  meta   | tweet_id  user_id  meta   |
+```
+
+The new tweet would be placed in the **Memory Cache**, which populates the user's home timeline (activity from people the user is following).
