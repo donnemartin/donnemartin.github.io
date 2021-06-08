@@ -130,3 +130,25 @@ If our **Memory Cache** is Redis, we could use a native Redis list with the foll
 ```
 
 The new tweet would be placed in the **Memory Cache**, which populates the user's home timeline (activity from people the user is following).
+
+We'll use a public [**REST API**](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest):
+
+```
+$ curl -X POST --data '{ "user_id": "123", "auth_token": "ABC123", \
+    "status": "hello world!", "media_ids": "ABC987" }' \
+    https://twitter.com/api/v1/tweet
+```
+
+Response:
+
+```
+{
+    "created_at": "Wed Sep 05 00:37:15 +0000 2012",
+    "status": "hello world!",
+    "tweet_id": "987",
+    "user_id": "123",
+    ...
+}
+```
+
+For internal communications, we could use [Remote Procedure Calls](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc).
