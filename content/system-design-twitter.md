@@ -152,3 +152,12 @@ Response:
 ```
 
 For internal communications, we could use [Remote Procedure Calls](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc).
+
+### Use case: User views the home timeline
+
+* The **Client** posts a home timeline request to the **Web Server**
+* The **Web Server** forwards the request to the **Read API** server
+* The **Read API** server contacts the **Timeline Service**, which does the following:
+    * Gets the timeline data stored in the **Memory Cache**, containing tweet ids and user ids - O(1)
+    * Queries the **Tweet Info Service** with a [multiget](http://redis.io/commands/mget) to obtain additional info about the tweet ids - O(n)
+    * Queries the **User Info Service** with a multiget to obtain additional info about the user ids - O(n)
