@@ -161,3 +161,29 @@ For internal communications, we could use [Remote Procedure Calls](https://githu
     * Gets the timeline data stored in the **Memory Cache**, containing tweet ids and user ids - O(1)
     * Queries the **Tweet Info Service** with a [multiget](http://redis.io/commands/mget) to obtain additional info about the tweet ids - O(n)
     * Queries the **User Info Service** with a multiget to obtain additional info about the user ids - O(n)
+
+REST API:
+
+```
+$ curl https://twitter.com/api/v1/home_timeline?user_id=123
+```
+
+Response:
+
+```
+{
+    "user_id": "456",
+    "tweet_id": "123",
+    "status": "foo"
+},
+{
+    "user_id": "789",
+    "tweet_id": "456",
+    "status": "bar"
+},
+{
+    "user_id": "789",
+    "tweet_id": "579",
+    "status": "baz"
+},
+```
