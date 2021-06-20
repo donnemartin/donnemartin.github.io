@@ -187,3 +187,10 @@ Response:
     "status": "baz"
 },
 ```
+### Use case: User views the user timeline
+
+* The **Client** posts a user timeline request to the **Web Server**
+* The **Web Server** forwards the request to the **Read API** server
+* The **Read API** retrieves the user timeline from the **SQL Database**
+
+The REST API would be similar to the home timeline, except all tweets would come from the user as opposed to the people the user is following.
