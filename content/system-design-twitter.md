@@ -194,3 +194,26 @@ Response:
 * The **Read API** retrieves the user timeline from the **SQL Database**
 
 The REST API would be similar to the home timeline, except all tweets would come from the user as opposed to the people the user is following.
+
+### Use case: User searches keywords
+
+* The **Client** sends a search request to the **Web Server**
+* The **Web Server** forwards the request to the **Search API** server
+* The **Search API** contacts the **Search Service**, which does the following:
+    * Parses/tokenizes the input query, determining what needs to be searched
+        * Removes markup
+        * Breaks up the text into terms
+        * Fixes typos
+        * Normalizes capitalization
+        * Converts the query to use boolean operations
+    * Queries the **Search Cluster** (ie [Lucene](https://lucene.apache.org/)) for the results:
+        * [Scatter gathers](https://github.com/donnemartin/system-design-primer#under-development) each server in the cluster to determine if there are any results for the query
+        * Merges, ranks, sorts, and returns the results
+
+REST API:
+
+```
+$ curl https://twitter.com/api/v1/search?query=hello+world
+```
+
+The response would be similar to that of the home timeline, except for tweets matching the given query.
