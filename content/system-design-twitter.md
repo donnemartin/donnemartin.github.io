@@ -217,3 +217,15 @@ $ curl https://twitter.com/api/v1/search?query=hello+world
 ```
 
 The response would be similar to that of the home timeline, except for tweets matching the given query.
+
+## Step 4: Scale the design
+
+> Identify and address bottlenecks, given the constraints.
+
+![Imgur](http://i.imgur.com/jrUBAF7.png)
+
+**Important: Do not simply jump right into the final design from the initial design!**
+
+State you would 1) **Benchmark/Load Test**, 2) **Profile** for bottlenecks 3) address bottlenecks while evaluating alternatives and trade-offs, and 4) repeat.  See [Design a system that scales to millions of users on AWS](../scaling_aws/README.md) as a sample on how to iteratively scale the initial design.
+
+It's important to discuss what bottlenecks you might encounter with the initial design and how you might address each of them.  For example, what issues are addressed by adding a **Load Balancer** with multiple **Web Servers**?  **CDN**?  **Master-Slave Replicas**?  What are the alternatives and **Trade-Offs** for each?
