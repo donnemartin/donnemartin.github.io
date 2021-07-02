@@ -229,3 +229,20 @@ The response would be similar to that of the home timeline, except for tweets ma
 State you would 1) **Benchmark/Load Test**, 2) **Profile** for bottlenecks 3) address bottlenecks while evaluating alternatives and trade-offs, and 4) repeat.  See [Design a system that scales to millions of users on AWS](../scaling_aws/README.md) as a sample on how to iteratively scale the initial design.
 
 It's important to discuss what bottlenecks you might encounter with the initial design and how you might address each of them.  For example, what issues are addressed by adding a **Load Balancer** with multiple **Web Servers**?  **CDN**?  **Master-Slave Replicas**?  What are the alternatives and **Trade-Offs** for each?
+
+We'll introduce some components to complete the design and to address scalability issues.  Internal load balancers are not shown to reduce clutter.
+
+*To avoid repeating discussions*, refer to the following [system design topics](https://github.com/donnemartin/system-design-primer#index-of-system-design-topics) for main talking points, tradeoffs, and alternatives:
+
+* [DNS](https://github.com/donnemartin/system-design-primer#domain-name-system)
+* [CDN](https://github.com/donnemartin/system-design-primer#content-delivery-network)
+* [Load balancer](https://github.com/donnemartin/system-design-primer#load-balancer)
+* [Horizontal scaling](https://github.com/donnemartin/system-design-primer#horizontal-scaling)
+* [Web server (reverse proxy)](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
+* [API server (application layer)](https://github.com/donnemartin/system-design-primer#application-layer)
+* [Cache](https://github.com/donnemartin/system-design-primer#cache)
+* [Relational database management system (RDBMS)](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms)
+* [SQL write master-slave failover](https://github.com/donnemartin/system-design-primer#fail-over)
+* [Master-slave replication](https://github.com/donnemartin/system-design-primer#master-slave-replication)
+* [Consistency patterns](https://github.com/donnemartin/system-design-primer#consistency-patterns)
+* [Availability patterns](https://github.com/donnemartin/system-design-primer#availability-patterns)
