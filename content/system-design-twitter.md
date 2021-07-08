@@ -250,3 +250,14 @@ We'll introduce some components to complete the design and to address scalabilit
 The **Fanout Service** is a potential bottleneck.  Twitter users with millions of followers could take several minutes to have their tweets go through the fanout process.  This could lead to race conditions with @replies to the tweet, which we could mitigate by re-ordering the tweets at serve time.
 
 We could also avoid fanning out tweets from highly-followed users.  Instead, we could search to find tweets for highly-followed users, merge the search results with the user's home timeline results, then re-order the tweets at serve time.
+
+Additional optimizations include:
+
+* Keep only several hundred tweets for each home timeline in the **Memory Cache**
+* Keep only active users' home timeline info in the **Memory Cache**
+    * If a user was not previously active in the past 30 days, we could rebuild the timeline from the **SQL Database**
+        * Query the **User Graph Service** to determine who the user is following
+        * Get the tweets from the **SQL Database** and add them to the **Memory Cache**
+* Store only a month of tweets in the **Tweet Info Service**
+* Store only active users in the **User Info Service**
+* The **Search Cluster** would likely need to keep the tweets in memory to keep latency low
