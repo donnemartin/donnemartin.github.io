@@ -261,3 +261,16 @@ Additional optimizations include:
 * Store only a month of tweets in the **Tweet Info Service**
 * Store only active users in the **User Info Service**
 * The **Search Cluster** would likely need to keep the tweets in memory to keep latency low
+
+We'll also want to address the bottleneck with the **SQL Database**.
+
+Although the **Memory Cache** should reduce the load on the database, it is unlikely the **SQL Read Replicas** alone would be enough to handle the cache misses.  We'll probably need to employ additional SQL scaling patterns.
+
+The high volume of writes would overwhelm a single **SQL Write Master-Slave**, also pointing to a need for additional scaling techniques.
+
+* [Federation](https://github.com/donnemartin/system-design-primer#federation)
+* [Sharding](https://github.com/donnemartin/system-design-primer#sharding)
+* [Denormalization](https://github.com/donnemartin/system-design-primer#denormalization)
+* [SQL Tuning](https://github.com/donnemartin/system-design-primer#sql-tuning)
+
+We should also consider moving some data to a **NoSQL Database**.
