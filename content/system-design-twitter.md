@@ -286,3 +286,20 @@ We should also consider moving some data to a **NoSQL Database**.
 * [Wide column store](https://github.com/donnemartin/system-design-primer#wide-column-store)
 * [Graph database](https://github.com/donnemartin/system-design-primer#graph-database)
 * [SQL vs NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql)
+
+### Caching
+
+* Where to cache
+    * [Client caching](https://github.com/donnemartin/system-design-primer#client-caching)
+    * [CDN caching](https://github.com/donnemartin/system-design-primer#cdn-caching)
+    * [Web server caching](https://github.com/donnemartin/system-design-primer#web-server-caching)
+    * [Database caching](https://github.com/donnemartin/system-design-primer#database-caching)
+    * [Application caching](https://github.com/donnemartin/system-design-primer#application-caching)
+* What to cache
+    * [Caching at the database query level](https://github.com/donnemartin/system-design-primer#caching-at-the-database-query-level)
+    * [Caching at the object level](https://github.com/donnemartin/system-design-primer#caching-at-the-object-level)
+* When to update the cache
+    * [Cache-aside](https://github.com/donnemartin/system-design-primer#cache-aside)
+    * [Write-through](https://github.com/donnemartin/system-design-primer#write-through)
+    * [Write-behind (write-back)](https://github.com/donnemartin/system-design-primer#write-behind-write-back)
+    * [Refresh ahead](https://github.com/donnemartin/system-design-primer#refresh-ahead)
