@@ -21,3 +21,9 @@ Without an interviewer to address clarifying questions, we'll define some use ca
 * **User** inputs a search term and sees a list of relevant pages with titles and snippets  the crawler generated
     * Only sketch high level components and interactions for this use case, no need to go into depth
 * **Service** has high availability
+
+#### Out of scope
+
+* Search analytics
+* Personalized search results
+* Page rank
