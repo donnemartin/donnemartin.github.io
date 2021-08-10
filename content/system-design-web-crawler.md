@@ -27,3 +27,23 @@ Without an interviewer to address clarifying questions, we'll define some use ca
 * Search analytics
 * Personalized search results
 * Page rank
+
+### Constraints and assumptions
+
+#### State assumptions
+
+* Traffic is not evenly distributed
+    * Some searches are very popular, while others are only executed once
+* Support only anonymous users
+* Generating search results should be fast
+* The web crawler should not get stuck in an infinite loop
+    * We get stuck in an infinite loop if the graph contains a cycle
+* 1 billion links to crawl
+    * Pages need to be crawled regularly to ensure freshness
+    * Average refresh rate of about once per week, more frequent for popular sites
+        * 4 billion links crawled each month
+    * Average stored size per web page: 500 KB
+        * For simplicity, count changes the same as new pages
+* 100 billion searches per month
+
+Exercise the use of more traditional systems - don't use existing systems such as [solr](http://lucene.apache.org/solr/) or [nutch](http://nutch.apache.org/).
