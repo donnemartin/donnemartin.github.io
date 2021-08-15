@@ -47,3 +47,20 @@ Without an interviewer to address clarifying questions, we'll define some use ca
 * 100 billion searches per month
 
 Exercise the use of more traditional systems - don't use existing systems such as [solr](http://lucene.apache.org/solr/) or [nutch](http://nutch.apache.org/).
+
+#### Calculate usage
+
+**Clarify with your interviewer if you should run back-of-the-envelope usage calculations.**
+
+* 2 PB of stored page content per month
+    * 500 KB per page * 4 billion links crawled per month
+    * 72 PB of stored page content in 3 years
+* 1,600 write requests per second
+* 40,000 search requests per second
+
+Handy conversion guide:
+
+* 2.5 million seconds per month
+* 1 request per second = 2.5 million requests per month
+* 40 requests per second = 100 million requests per month
+* 400 requests per second = 1 billion requests per month
