@@ -132,3 +132,14 @@ class PagesDataStore(object):
         ...
 ```
 
+`Page` is an abstraction within the **Crawler Service** that encapsulates a page, its contents, child urls, and signature:
+
+```python
+class Page(object):
+
+    def __init__(self, url, contents, child_urls, signature):
+        self.url = url
+        self.contents = contents
+        self.child_urls = child_urls
+        self.signature = signature
+```
