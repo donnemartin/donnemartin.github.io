@@ -143,3 +143,35 @@ class Page(object):
         self.child_urls = child_urls
         self.signature = signature
 ```
+
+`Crawler` is the main class within **Crawler Service**, composed of `Page` and `PagesDataStore`.
+
+```python
+class Crawler(object):
+
+    def __init__(self, data_store, reverse_index_queue, doc_index_queue):
+        self.data_store = data_store
+        self.reverse_index_queue = reverse_index_queue
+        self.doc_index_queue = doc_index_queue
+
+    def create_signature(self, page):
+        """Create signature based on url and contents."""
+        ...
+
+    def crawl_page(self, page):
+        for url in page.child_urls:
+            self.data_store.add_link_to_crawl(url)
+        page.signature = self.create_signature(page)
+        self.data_store.remove_link_to_crawl(page.url)
+        self.data_store.insert_crawled_link(page.url, page.signature)
+
+    def crawl(self):
+        while True:
+            page = self.data_store.extract_max_priority_page()
+            if page is None:
+                break
+            if self.data_store.crawled_similar(page.signature):
+                self.data_store.reduce_priority_link_to_crawl(page.url)
+            else:
+                self.crawl_page(page)
+```
