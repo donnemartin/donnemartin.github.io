@@ -175,3 +175,26 @@ class Crawler(object):
             else:
                 self.crawl_page(page)
 ```
+
+### Handling duplicates
+
+We need to be careful the web crawler doesn't get stuck in an infinite loop, which happens when the graph contains a cycle.
+
+**Clarify with your interviewer how much code you are expected to write**.
+
+We'll want to remove duplicate urls:
+
+* For smaller lists we could use something like `sort | unique`
+* With 1 billion links to crawl, we could use **MapReduce** to output only entries that have a frequency of 1
+
+```python
+class RemoveDuplicateUrls(MRJob):
+
+    def mapper(self, _, line):
+        yield line, 1
+
+    def reducer(self, key, values):
+        total = sum(values)
+        if total == 1:
+            yield key, total
+```
