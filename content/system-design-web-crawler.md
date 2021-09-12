@@ -198,3 +198,5 @@ class RemoveDuplicateUrls(MRJob):
         if total == 1:
             yield key, total
 ```
+
+Detecting duplicate content is more complex.  We could generate a signature based on the contents of the page and compare those two signatures for similarity.  Some potential algorithms are [Jaccard index](https://en.wikipedia.org/wiki/Jaccard_index) and [cosine similarity](https://en.wikipedia.org/wiki/Cosine_similarity).
