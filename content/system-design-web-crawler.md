@@ -208,3 +208,46 @@ Pages need to be crawled regularly to ensure freshness.  Crawl results could hav
 Although we won't dive into details on analytics, we could do some data mining to determine the mean time before a particular page is updated, and use that statistic to determine how often to re-crawl the page.
 
 We might also choose to support a `Robots.txt` file that gives webmasters control of crawl frequency.
+
+### Use case: User inputs a search term and sees a list of relevant pages with titles and snippets
+
+* The **Client** sends a request to the **Web Server**, running as a [reverse proxy](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
+* The **Web Server** forwards the request to the **Query API** server
+* The **Query API** server does the following:
+    * Parses the query
+        * Removes markup
+        * Breaks up the text into terms
+        * Fixes typos
+        * Normalizes capitalization
+        * Converts the query to use boolean operations
+    * Uses the **Reverse Index Service** to find documents matching the query
+        * The **Reverse Index Service** ranks the matching results and returns the top ones
+    * Uses the **Document Service** to return titles and snippets
+
+We'll use a public [**REST API**](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest):
+
+```
+$ curl https://search.com/api/v1/search?query=hello+world
+```
+
+Response:
+
+```
+{
+    "title": "foo's title",
+    "snippet": "foo's snippet",
+    "link": "https://foo.com",
+},
+{
+    "title": "bar's title",
+    "snippet": "bar's snippet",
+    "link": "https://bar.com",
+},
+{
+    "title": "baz's title",
+    "snippet": "baz's snippet",
+    "link": "https://baz.com",
+},
+```
+
+For internal communications, we could use [Remote Procedure Calls](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc).
