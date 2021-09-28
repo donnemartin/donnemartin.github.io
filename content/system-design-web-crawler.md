@@ -287,3 +287,15 @@ Below are a few other optimizations to the **Crawling Service**:
 * The **Crawler Service** can improve performance and reduce memory usage by keeping many open connections at a time, referred to as [connection pooling](https://en.wikipedia.org/wiki/Connection_pool)
     * Switching to [UDP](https://github.com/donnemartin/system-design-primer#user-datagram-protocol-udp) could also boost performance
 * Web crawling is bandwidth intensive, ensure there is enough bandwidth to sustain high throughput
+
+## Additional talking points
+
+> Additional topics to dive into, depending on the problem scope and time remaining.
+
+### SQL scaling patterns
+
+* [Read replicas](https://github.com/donnemartin/system-design-primer#master-slave-replication)
+* [Federation](https://github.com/donnemartin/system-design-primer#federation)
+* [Sharding](https://github.com/donnemartin/system-design-primer#sharding)
+* [Denormalization](https://github.com/donnemartin/system-design-primer#denormalization)
+* [SQL Tuning](https://github.com/donnemartin/system-design-primer#sql-tuning)
