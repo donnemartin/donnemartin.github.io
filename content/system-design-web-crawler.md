@@ -331,3 +331,10 @@ Below are a few other optimizations to the **Crawling Service**:
 * [Task queues](https://github.com/donnemartin/system-design-primer#task-queues)
 * [Back pressure](https://github.com/donnemartin/system-design-primer#back-pressure)
 * [Microservices](https://github.com/donnemartin/system-design-primer#microservices)
+
+### Communications
+
+* Discuss tradeoffs:
+    * External communication with clients - [HTTP APIs following REST](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest)
+    * Internal communications - [RPC](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc)
+* [Service discovery](https://github.com/donnemartin/system-design-primer#service-discovery)
