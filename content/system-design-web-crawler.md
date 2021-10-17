@@ -338,3 +338,7 @@ Below are a few other optimizations to the **Crawling Service**:
     * External communication with clients - [HTTP APIs following REST](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest)
     * Internal communications - [RPC](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc)
 * [Service discovery](https://github.com/donnemartin/system-design-primer#service-discovery)
+
+### Security
+
+Refer to the [security section](https://github.com/donnemartin/system-design-primer#security).
