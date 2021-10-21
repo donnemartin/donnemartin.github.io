@@ -342,3 +342,7 @@ Below are a few other optimizations to the **Crawling Service**:
 ### Security
 
 Refer to the [security section](https://github.com/donnemartin/system-design-primer#security).
+
+### Latency numbers
+
+See [Latency numbers every programmer should know](https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know).
