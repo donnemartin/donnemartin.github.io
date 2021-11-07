@@ -17,3 +17,8 @@ Without an interviewer to address clarifying questions, we'll define some use ca
 * **Service** calculates the past week's most popular products by category
 * **User** views the past week's most popular products by category
 * **Service** has high availability
+
+#### Out of scope
+
+* The general e-commerce site
+    * Design components only for calculating sales rank
