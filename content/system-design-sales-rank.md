@@ -22,3 +22,19 @@ Without an interviewer to address clarifying questions, we'll define some use ca
 
 * The general e-commerce site
     * Design components only for calculating sales rank
+
+### Constraints and assumptions
+
+#### State assumptions
+
+* Traffic is not evenly distributed
+* Items can be in multiple categories
+* Items cannot change categories
+* There are no subcategories ie `foo/bar/baz`
+* Results must be updated hourly
+    * More popular products might need to be updated more frequently
+* 10 million products
+* 1000 categories
+* 1 billion transactions per month
+* 100 billion read requests per month
+* 100:1 read to write ratio
