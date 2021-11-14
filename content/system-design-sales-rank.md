@@ -38,3 +38,23 @@ Without an interviewer to address clarifying questions, we'll define some use ca
 * 1 billion transactions per month
 * 100 billion read requests per month
 * 100:1 read to write ratio
+
+#### Calculate usage
+
+**Clarify with your interviewer if you should run back-of-the-envelope usage calculations.**
+
+* Size per transaction:
+    * `created_at` - 5 bytes
+    * `product_id` - 8 bytes
+    * `category_id` - 4 bytes
+    * `seller_id` - 8 bytes
+    * `buyer_id` - 8 bytes
+    * `quantity` - 4 bytes
+    * `total_price` - 5 bytes
+    * Total: ~40 bytes
+* 40 GB of new transaction content per month
+    * 40 bytes per transaction * 1 billion transactions per month
+    * 1.44 TB of new transaction content in 3 years
+    * Assume most are new transactions instead of updates to existing ones
+* 400 transactions per second on average
+* 40,000 read requests per second on average
