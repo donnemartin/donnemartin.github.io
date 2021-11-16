@@ -58,3 +58,10 @@ Without an interviewer to address clarifying questions, we'll define some use ca
     * Assume most are new transactions instead of updates to existing ones
 * 400 transactions per second on average
 * 40,000 read requests per second on average
+
+Handy conversion guide:
+
+* 2.5 million seconds per month
+* 1 request per second = 2.5 million requests per month
+* 40 requests per second = 100 million requests per month
+* 400 requests per second = 1 billion requests per month
