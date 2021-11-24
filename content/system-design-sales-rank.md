@@ -71,3 +71,26 @@ Handy conversion guide:
 > Outline a high level design with all important components.
 
 ![Imgur](http://i.imgur.com/vwMa1Qu.png)
+
+## Step 3: Design core components
+
+> Dive into details for each core component.
+
+### Use case: Service calculates the past week's most popular products by category
+
+We could store the raw **Sales API** server log files on a managed **Object Store** such as Amazon S3, rather than managing our own distributed file system.
+
+**Clarify with your interviewer how much code you are expected to write**.
+
+We'll assume this is a sample log entry, tab delimited:
+
+```
+timestamp   product_id  category_id    qty     total_price   seller_id    buyer_id
+t1          product1    category1      2       20.00         1            1
+t2          product1    category2      2       20.00         2            2
+t2          product1    category2      1       10.00         2            3
+t3          product2    category1      3        7.00         3            4
+t4          product3    category2      7        2.00         4            5
+t5          product4    category1      1        5.00         5            6
+...
+```
