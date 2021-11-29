@@ -173,3 +173,13 @@ class SalesRanker(MRJob):
                     reducer=self.reducer_identity),
         ]
 ```
+
+The result would be the following sorted list, which we could insert into the `sales_rank` table:
+
+```
+(category1, 1), product4
+(category1, 2), product1
+(category1, 3), product2
+(category2, 3), product1
+(category2, 7), product3
+```
