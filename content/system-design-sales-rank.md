@@ -183,3 +183,15 @@ The result would be the following sorted list, which we could insert into the `s
 (category2, 3), product1
 (category2, 7), product3
 ```
+
+The `sales_rank` table could have the following structure:
+
+```
+id int NOT NULL AUTO_INCREMENT
+category_id int NOT NULL
+total_sold int NOT NULL
+product_id int NOT NULL
+PRIMARY KEY(id)
+FOREIGN KEY(category_id) REFERENCES Categories(id)
+FOREIGN KEY(product_id) REFERENCES Products(id)
+```
