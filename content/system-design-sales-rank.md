@@ -197,3 +197,40 @@ FOREIGN KEY(product_id) REFERENCES Products(id)
 ```
 
 We'll create an [index](https://github.com/donnemartin/system-design-primer#use-good-indices) on `id `, `category_id`, and `product_id` to speed up lookups (log-time instead of scanning the entire table) and to keep the data in memory.  Reading 1 MB sequentially from memory takes about 250 microseconds, while reading from SSD takes 4x and from disk takes 80x longer.<sup><a href=https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know>1</a></sup>
+
+### Use case: User views the past week's most popular products by category
+
+* The **Client** sends a request to the **Web Server**, running as a [reverse proxy](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
+* The **Web Server** forwards the request to the **Read API** server
+* The **Read API** server reads from the **SQL Database** `sales_rank` table
+
+We'll use a public [**REST API**](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest):
+
+```
+$ curl https://amazon.com/api/v1/popular?category_id=1234
+```
+
+Response:
+
+```
+{
+    "id": "100",
+    "category_id": "1234",
+    "total_sold": "100000",
+    "product_id": "50",
+},
+{
+    "id": "53",
+    "category_id": "1234",
+    "total_sold": "90000",
+    "product_id": "200",
+},
+{
+    "id": "75",
+    "category_id": "1234",
+    "total_sold": "80000",
+    "product_id": "3",
+},
+```
+
+For internal communications, we could use [Remote Procedure Calls](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc).
