@@ -234,3 +234,9 @@ Response:
 ```
 
 For internal communications, we could use [Remote Procedure Calls](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc).
+
+## Step 4: Scale the design
+
+> Identify and address bottlenecks, given the constraints.
+
+![Imgur](http://i.imgur.com/MzExP06.png)
