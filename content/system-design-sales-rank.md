@@ -263,3 +263,7 @@ We'll introduce some components to complete the design and to address scalabilit
 * [Master-slave replication](https://github.com/donnemartin/system-design-primer#master-slave-replication)
 * [Consistency patterns](https://github.com/donnemartin/system-design-primer#consistency-patterns)
 * [Availability patterns](https://github.com/donnemartin/system-design-primer#availability-patterns)
+
+The **Analytics Database** could use a data warehousing solution such as Amazon Redshift or Google BigQuery.
+
+We might only want to store a limited time period of data in the database, while storing the rest in a data warehouse or in an **Object Store**.  An **Object Store** such as Amazon S3 can comfortably handle the constraint of 40 GB of new content per month.
