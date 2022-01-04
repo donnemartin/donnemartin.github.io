@@ -280,3 +280,15 @@ SQL scaling patterns include:
 * [SQL Tuning](https://github.com/donnemartin/system-design-primer#sql-tuning)
 
 We should also consider moving some data to a **NoSQL Database**.
+
+## Additional talking points
+
+> Additional topics to dive into, depending on the problem scope and time remaining.
+
+#### NoSQL
+
+* [Key-value store](https://github.com/donnemartin/system-design-primer#key-value-store)
+* [Document store](https://github.com/donnemartin/system-design-primer#document-store)
+* [Wide column store](https://github.com/donnemartin/system-design-primer#wide-column-store)
+* [Graph database](https://github.com/donnemartin/system-design-primer#graph-database)
+* [SQL vs NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql)
