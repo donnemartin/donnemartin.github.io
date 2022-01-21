@@ -331,3 +331,8 @@ Refer to the [security section](https://github.com/donnemartin/system-design-pri
 ### Latency numbers
 
 See [Latency numbers every programmer should know](https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know).
+
+### Ongoing
+
+* Continue benchmarking and monitoring your system to address bottlenecks as they come up
+* Scaling is an iterative process
