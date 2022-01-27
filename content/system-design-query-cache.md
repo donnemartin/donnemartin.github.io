@@ -17,3 +17,18 @@ Without an interviewer to address clarifying questions, we'll define some use ca
 * **User** sends a search request resulting in a cache hit
 * **User** sends a search request resulting in a cache miss
 * **Service** has high availability
+
+### Constraints and assumptions
+
+#### State assumptions
+
+* Traffic is not evenly distributed
+    * Popular queries should almost always be in the cache
+    * Need to determine how to expire/refresh
+* Serving from cache requires fast lookups
+* Low latency between machines
+* Limited memory in cache
+    * Need to determine what to keep/remove
+    * Need to cache millions of queries
+* 10 million users
+* 10 billion queries per month
