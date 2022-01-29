@@ -32,3 +32,17 @@ Without an interviewer to address clarifying questions, we'll define some use ca
     * Need to cache millions of queries
 * 10 million users
 * 10 billion queries per month
+
+#### Calculate usage
+
+**Clarify with your interviewer if you should run back-of-the-envelope usage calculations.**
+
+* Cache stores ordered list of key: query, value: results
+    * `query` - 50 bytes
+    * `title` - 20 bytes
+    * `snippet` - 200 bytes
+    * Total: 270 bytes
+* 2.7 TB of cache data per month if all 10 billion queries are unique and all are stored
+    * 270 bytes per search * 10 billion searches per month
+    * Assumptions state limited memory, need to determine how to expire contents
+* 4,000 requests per second
