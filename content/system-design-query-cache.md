@@ -46,3 +46,10 @@ Without an interviewer to address clarifying questions, we'll define some use ca
     * 270 bytes per search * 10 billion searches per month
     * Assumptions state limited memory, need to determine how to expire contents
 * 4,000 requests per second
+
+Handy conversion guide:
+
+* 2.5 million seconds per month
+* 1 request per second = 2.5 million requests per month
+* 40 requests per second = 100 million requests per month
+* 400 requests per second = 1 billion requests per month
