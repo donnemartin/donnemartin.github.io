@@ -59,3 +59,13 @@ Handy conversion guide:
 > Outline a high level design with all important components.
 
 ![Imgur](http://i.imgur.com/KqZ3dSx.png)
+
+## Step 3: Design core components
+
+> Dive into details for each core component.
+
+### Use case: User sends a request resulting in a cache hit
+
+Popular queries can be served from a **Memory Cache** such as Redis or Memcached to reduce read latency and to avoid overloading the **Reverse Index Service** and **Document Service**.  Reading 1 MB sequentially from memory takes about 250 microseconds, while reading from SSD takes 4x and from disk takes 80x longer.<sup><a href=https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know>1</a></sup>
+
+Since the cache has limited capacity, we'll use a least recently used (LRU) approach to expire older entries.
