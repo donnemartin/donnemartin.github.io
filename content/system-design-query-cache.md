@@ -69,3 +69,22 @@ Handy conversion guide:
 Popular queries can be served from a **Memory Cache** such as Redis or Memcached to reduce read latency and to avoid overloading the **Reverse Index Service** and **Document Service**.  Reading 1 MB sequentially from memory takes about 250 microseconds, while reading from SSD takes 4x and from disk takes 80x longer.<sup><a href=https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know>1</a></sup>
 
 Since the cache has limited capacity, we'll use a least recently used (LRU) approach to expire older entries.
+
+* The **Client** sends a request to the **Web Server**, running as a [reverse proxy](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
+* The **Web Server** forwards the request to the **Query API** server
+* The **Query API** server does the following:
+    * Parses the query
+        * Removes markup
+        * Breaks up the text into terms
+        * Fixes typos
+        * Normalizes capitalization
+        * Converts the query to use boolean operations
+    * Checks the **Memory Cache** for the content matching the query
+        * If there's a hit in the **Memory Cache**, the **Memory Cache** does the following:
+            * Updates the cached entry's position to the front of the LRU list
+            * Returns the cached contents
+        * Else, the **Query API** does the following:
+            * Uses the **Reverse Index Service** to find documents matching the query
+                * The **Reverse Index Service** ranks the matching results and returns the top ones
+            * Uses the **Document Service** to return titles and snippets
+            * Updates the **Memory Cache** with the contents, placing the entry at the front of the LRU list
