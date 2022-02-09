@@ -88,3 +88,33 @@ Since the cache has limited capacity, we'll use a least recently used (LRU) appr
                 * The **Reverse Index Service** ranks the matching results and returns the top ones
             * Uses the **Document Service** to return titles and snippets
             * Updates the **Memory Cache** with the contents, placing the entry at the front of the LRU list
+
+#### Cache implementation
+
+The cache can use a doubly-linked list: new items will be added to the head while items to expire will be removed from the tail.  We'll use a hash table for fast lookups to each linked list node.
+
+**Clarify with your interviewer how much code you are expected to write**.
+
+**Query API Server** implementation:
+
+```python
+class QueryApi(object):
+
+    def __init__(self, memory_cache, reverse_index_service):
+        self.memory_cache = memory_cache
+        self.reverse_index_service = reverse_index_service
+
+    def parse_query(self, query):
+        """Remove markup, break text into terms, deal with typos,
+        normalize capitalization, convert to use boolean operations.
+        """
+        ...
+
+    def process_query(self, query):
+        query = self.parse_query(query)
+        results = self.memory_cache.get(query)
+        if results is None:
+            results = self.reverse_index_service.process_search(query)
+            self.memory_cache.set(query, results)
+        return results
+```
