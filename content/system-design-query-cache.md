@@ -118,3 +118,13 @@ class QueryApi(object):
             self.memory_cache.set(query, results)
         return results
 ```
+
+**Node** implementation:
+
+```python
+class Node(object):
+
+    def __init__(self, query, results):
+        self.query = query
+        self.results = results
+```
