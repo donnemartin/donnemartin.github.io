@@ -128,3 +128,22 @@ class Node(object):
         self.query = query
         self.results = results
 ```
+
+**LinkedList** implementation:
+
+```python
+class LinkedList(object):
+
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
+    def move_to_front(self, node):
+        ...
+
+    def append_to_front(self, node):
+        ...
+
+    def remove_from_tail(self):
+        ...
+```
