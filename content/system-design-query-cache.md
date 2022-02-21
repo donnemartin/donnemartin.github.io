@@ -207,3 +207,9 @@ The cache should be updated when:
 The most straightforward way to handle these cases is to simply set a max time that a cached entry can stay in the cache before it is updated, usually referred to as time to live (TTL).
 
 Refer to [When to update the cache](https://github.com/donnemartin/system-design-primer#when-to-update-the-cache) for tradeoffs and alternatives.  The approach above describes [cache-aside](https://github.com/donnemartin/system-design-primer#cache-aside).
+
+## Step 4: Scale the design
+
+> Identify and address bottlenecks, given the constraints.
+
+![Imgur](http://i.imgur.com/4j99mhe.png)
