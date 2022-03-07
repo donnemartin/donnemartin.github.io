@@ -277,3 +277,10 @@ To handle the heavy request load and the large amount of memory needed, we'll sc
     * [Write-through](https://github.com/donnemartin/system-design-primer#write-through)
     * [Write-behind (write-back)](https://github.com/donnemartin/system-design-primer#write-behind-write-back)
     * [Refresh ahead](https://github.com/donnemartin/system-design-primer#refresh-ahead)
+
+### Asynchronism and microservices
+
+* [Message queues](https://github.com/donnemartin/system-design-primer#message-queues)
+* [Task queues](https://github.com/donnemartin/system-design-primer#task-queues)
+* [Back pressure](https://github.com/donnemartin/system-design-primer#back-pressure)
+* [Microservices](https://github.com/donnemartin/system-design-primer#microservices)
