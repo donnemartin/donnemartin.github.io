@@ -284,3 +284,10 @@ To handle the heavy request load and the large amount of memory needed, we'll sc
 * [Task queues](https://github.com/donnemartin/system-design-primer#task-queues)
 * [Back pressure](https://github.com/donnemartin/system-design-primer#back-pressure)
 * [Microservices](https://github.com/donnemartin/system-design-primer#microservices)
+
+### Communications
+
+* Discuss tradeoffs:
+    * External communication with clients - [HTTP APIs following REST](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest)
+    * Internal communications - [RPC](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc)
+* [Service discovery](https://github.com/donnemartin/system-design-primer#service-discovery)
