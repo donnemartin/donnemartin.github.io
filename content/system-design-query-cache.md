@@ -291,3 +291,7 @@ To handle the heavy request load and the large amount of memory needed, we'll sc
     * External communication with clients - [HTTP APIs following REST](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest)
     * Internal communications - [RPC](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc)
 * [Service discovery](https://github.com/donnemartin/system-design-primer#service-discovery)
+
+### Security
+
+Refer to the [security section](https://github.com/donnemartin/system-design-primer#security).
