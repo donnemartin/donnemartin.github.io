@@ -295,3 +295,7 @@ To handle the heavy request load and the large amount of memory needed, we'll sc
 ### Security
 
 Refer to the [security section](https://github.com/donnemartin/system-design-primer#security).
+
+### Latency numbers
+
+See [Latency numbers every programmer should know](https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know).
