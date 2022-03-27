@@ -16,3 +16,17 @@ Without an interviewer to address clarifying questions, we'll define some use ca
 
 * **User** searches for someone and sees the shortest path to the searched person
 * **Service** has high availability
+
+### Constraints and assumptions
+
+#### State assumptions
+
+* Traffic is not evenly distributed
+    * Some searches are more popular than others, while others are only executed once
+* Graph data won't fit on a single machine
+* Graph edges are unweighted
+* 100 million users
+* 50 friends per user average
+* 1 billion friend searches per month
+
+Exercise the use of more traditional systems - don't use graph-specific solutions such as [GraphQL](http://graphql.org/) or a graph database like [Neo4j](https://neo4j.com/)
