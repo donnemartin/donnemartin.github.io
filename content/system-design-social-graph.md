@@ -30,3 +30,18 @@ Without an interviewer to address clarifying questions, we'll define some use ca
 * 1 billion friend searches per month
 
 Exercise the use of more traditional systems - don't use graph-specific solutions such as [GraphQL](http://graphql.org/) or a graph database like [Neo4j](https://neo4j.com/)
+
+#### Calculate usage
+
+**Clarify with your interviewer if you should run back-of-the-envelope usage calculations.**
+
+* 5 billion friend relationships
+    * 100 million users * 50 friends per user average
+* 400 search requests per second
+
+Handy conversion guide:
+
+* 2.5 million seconds per month
+* 1 request per second = 2.5 million requests per month
+* 40 requests per second = 100 million requests per month
+* 400 requests per second = 1 billion requests per month
