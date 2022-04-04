@@ -51,3 +51,50 @@ Handy conversion guide:
 > Outline a high level design with all important components.
 
 ![Imgur](http://i.imgur.com/wxXyq2J.png)
+
+## Step 3: Design core components
+
+> Dive into details for each core component.
+
+### Use case: User searches for someone and sees the shortest path to the searched person
+
+**Clarify with your interviewer how much code you are expected to write**.
+
+Without the constraint of millions of users (vertices) and billions of friend relationships (edges), we could solve this unweighted shortest path task with a general BFS approach:
+
+```python
+class Graph(Graph):
+
+    def shortest_path(self, source, dest):
+        if source is None or dest is None:
+            return None
+        if source is dest:
+            return [source.key]
+        prev_node_keys = self._shortest_path(source, dest)
+        if prev_node_keys is None:
+            return None
+        else:
+            path_ids = [dest.key]
+            prev_node_key = prev_node_keys[dest.key]
+            while prev_node_key is not None:
+                path_ids.append(prev_node_key)
+                prev_node_key = prev_node_keys[prev_node_key]
+            return path_ids[::-1]
+
+    def _shortest_path(self, source, dest):
+        queue = deque()
+        queue.append(source)
+        prev_node_keys = {source.key: None}
+        source.visit_state = State.visited
+        while queue:
+            node = queue.popleft()
+            if node is dest:
+                return prev_node_keys
+            prev_node = node
+            for adj_node in node.adj_nodes.values():
+                if adj_node.visit_state == State.unvisited:
+                    queue.append(adj_node)
+                    prev_node_keys[adj_node.key] = prev_node.key
+                    adj_node.visit_state = State.visited
+        return None
+```
