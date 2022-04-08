@@ -112,3 +112,20 @@ We won't be able to fit all users on the same machine, we'll need to [shard](htt
         * The **User Graph Service** will *again* need to communicate with the **Lookup Service** to determine which **Person Server** stores the`adjacent_node` matching the given id (potential for optimization)
 
 **Clarify with your interviewer how much code you should be writing**.
+
+**Note**: Error handling is excluded below for simplicity.  Ask if you should code proper error handing.
+
+**Lookup Service** implementation:
+
+```python
+class LookupService(object):
+
+    def __init__(self):
+        self.lookup = self._init_lookup()  # key: person_id, value: person_server
+
+    def _init_lookup(self):
+        ...
+
+    def lookup_person_server(self, person_id):
+        return self.lookup[person_id]
+```
