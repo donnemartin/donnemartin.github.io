@@ -129,3 +129,22 @@ class LookupService(object):
     def lookup_person_server(self, person_id):
         return self.lookup[person_id]
 ```
+
+**Person Server** implementation:
+
+```python
+class PersonServer(object):
+
+    def __init__(self):
+        self.people = {}  # key: person_id, value: person
+
+    def add_person(self, person):
+        ...
+
+    def people(self, ids):
+        results = []
+        for id in ids:
+            if id in self.people:
+                results.append(self.people[id])
+        return results
+```
