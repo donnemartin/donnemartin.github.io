@@ -148,3 +148,14 @@ class PersonServer(object):
                 results.append(self.people[id])
         return results
 ```
+
+**Person** implementation:
+
+```python
+class Person(object):
+
+    def __init__(self, id, name, friend_ids):
+        self.id = id
+        self.name = name
+        self.friend_ids = friend_ids
+```
