@@ -217,3 +217,9 @@ class UserGraphService(object):
                     visited_ids.add(friend_id)
         return None
 ```
+
+We'll use a public [**REST API**](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest):
+
+```
+$ curl https://social.com/api/v1/friend_search?person_id=1234
+```
