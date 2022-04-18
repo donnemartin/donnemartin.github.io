@@ -223,3 +223,23 @@ We'll use a public [**REST API**](https://github.com/donnemartin/system-design-p
 ```
 $ curl https://social.com/api/v1/friend_search?person_id=1234
 ```
+
+Response:
+
+```
+{
+    "person_id": "100",
+    "name": "foo",
+    "link": "https://social.com/foo",
+},
+{
+    "person_id": "53",
+    "name": "bar",
+    "link": "https://social.com/bar",
+},
+{
+    "person_id": "1234",
+    "name": "baz",
+    "link": "https://social.com/baz",
+},
+```
