@@ -243,3 +243,5 @@ Response:
     "link": "https://social.com/baz",
 },
 ```
+
+For internal communications, we could use [Remote Procedure Calls](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc).
