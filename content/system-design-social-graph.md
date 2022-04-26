@@ -251,3 +251,7 @@ For internal communications, we could use [Remote Procedure Calls](https://githu
 > Identify and address bottlenecks, given the constraints.
 
 ![Imgur](http://i.imgur.com/cdCv5g7.png)
+
+**Important: Do not simply jump right into the final design from the initial design!**
+
+State you would 1) **Benchmark/Load Test**, 2) **Profile** for bottlenecks 3) address bottlenecks while evaluating alternatives and trade-offs, and 4) repeat.  See [Design a system that scales to millions of users on AWS](../scaling_aws/README.md) as a sample on how to iteratively scale the initial design.
