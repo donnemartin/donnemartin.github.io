@@ -272,3 +272,14 @@ We'll introduce some components to complete the design and to address scalabilit
 * [Availability patterns](https://github.com/donnemartin/system-design-primer#availability-patterns)
 
 To address the constraint of 400 *average* read requests per second (higher at peak), person data can be served from a **Memory Cache** such as Redis or Memcached to reduce response times and to reduce traffic to downstream services.  This could be especially useful for people who do multiple searches in succession and for people who are well-connected.  Reading 1 MB sequentially from memory takes about 250 microseconds, while reading from SSD takes 4x and from disk takes 80x longer.<sup><a href=https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know>1</a></sup>
+
+Below are further optimizations:
+
+* Store complete or partial BFS traversals to speed up subsequent lookups in the **Memory Cache**
+* Batch compute offline then store complete or partial BFS traversals to speed up subsequent lookups in a **NoSQL Database**
+* Reduce machine jumps by batching together friend lookups hosted on the same **Person Server**
+    * [Shard](https://github.com/donnemartin/system-design-primer#sharding) **Person Servers** by location to further improve this, as friends generally live closer to each other
+* Do two BFS searches at the same time, one starting from the source, and one from the destination, then merge the two paths
+* Start the BFS search from people with large numbers of friends, as they are more likely to reduce the number of [degrees of separation](https://en.wikipedia.org/wiki/Six_degrees_of_separation) between the current user and the search target
+* Set a limit based on time or number of hops before asking the user if they want to continue searching, as searching could take a considerable amount of time in some cases
+* Use a **Graph Database** such as [Neo4j](https://neo4j.com/) or a graph-specific query language such as [GraphQL](http://graphql.org/) (if there were no constraint preventing the use of **Graph Databases**)
