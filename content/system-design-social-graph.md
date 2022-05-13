@@ -312,3 +312,6 @@ Below are further optimizations:
     * [Web server caching](https://github.com/donnemartin/system-design-primer#web-server-caching)
     * [Database caching](https://github.com/donnemartin/system-design-primer#database-caching)
     * [Application caching](https://github.com/donnemartin/system-design-primer#application-caching)
+* What to cache
+    * [Caching at the database query level](https://github.com/donnemartin/system-design-primer#caching-at-the-database-query-level)
+    * [Caching at the object level](https://github.com/donnemartin/system-design-primer#caching-at-the-object-level)
