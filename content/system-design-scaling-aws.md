@@ -41,3 +41,14 @@ Unless you have a background in AWS or are applying for a position that requires
     * 100 billion reads per month
     * 100:1 read to write ratio
     * 1 KB content per write
+
+#### Calculate usage
+
+**Clarify with your interviewer if you should run back-of-the-envelope usage calculations.**
+
+* 1 TB of new content per month
+    * 1 KB per write * 1 billion writes per month
+    * 36 TB of new content in 3 years
+    * Assume most writes are from new content instead of updates to existing ones
+* 400 writes per second on average
+* 40,000 reads per second on average
