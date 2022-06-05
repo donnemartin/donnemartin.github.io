@@ -52,3 +52,10 @@ Unless you have a background in AWS or are applying for a position that requires
     * Assume most writes are from new content instead of updates to existing ones
 * 400 writes per second on average
 * 40,000 reads per second on average
+
+Handy conversion guide:
+
+* 2.5 million seconds per month
+* 1 request per second = 2.5 million requests per month
+* 40 requests per second = 100 million requests per month
+* 400 requests per second = 1 billion requests per month
