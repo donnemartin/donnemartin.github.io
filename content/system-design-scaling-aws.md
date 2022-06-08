@@ -59,3 +59,9 @@ Handy conversion guide:
 * 1 request per second = 2.5 million requests per month
 * 40 requests per second = 100 million requests per month
 * 400 requests per second = 1 billion requests per month
+
+## Step 2: Create a high level design
+
+> Outline a high level design with all important components.
+
+![Imgur](http://i.imgur.com/B8LDKD7.png)
