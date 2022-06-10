@@ -65,3 +65,16 @@ Handy conversion guide:
 > Outline a high level design with all important components.
 
 ![Imgur](http://i.imgur.com/B8LDKD7.png)
+
+## Step 3: Design core components
+
+> Dive into details for each core component.
+
+### Use case: User makes a read or write request
+
+#### Goals
+
+* With only 1-2 users, you only need a basic setup
+    * Single box for simplicity
+    * Vertical scaling when needed
+    * Monitor to determine bottlenecks
