@@ -78,3 +78,22 @@ Handy conversion guide:
     * Single box for simplicity
     * Vertical scaling when needed
     * Monitor to determine bottlenecks
+
+#### Start with a single box
+
+* **Web server** on EC2
+    * Storage for user data
+    * [**MySQL Database**](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms)
+
+Use **Vertical Scaling**:
+
+* Simply choose a bigger box
+* Keep an eye on metrics to determine how to scale up
+    * Use basic monitoring to determine bottlenecks: CPU, memory, IO, network, etc
+    * CloudWatch, top, nagios, statsd, graphite, etc
+* Scaling vertically can get very expensive
+* No redundancy/failover
+
+*Trade-offs, alternatives, and additional details:*
+
+* The alternative to **Vertical Scaling** is [**Horizontal scaling**](https://github.com/donnemartin/system-design-primer#horizontal-scaling)
