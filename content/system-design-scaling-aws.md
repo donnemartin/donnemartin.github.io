@@ -97,3 +97,12 @@ Use **Vertical Scaling**:
 *Trade-offs, alternatives, and additional details:*
 
 * The alternative to **Vertical Scaling** is [**Horizontal scaling**](https://github.com/donnemartin/system-design-primer#horizontal-scaling)
+
+#### Start with SQL, consider NoSQL
+
+The constraints assume there is a need for relational data.  We can start off using a **MySQL Database** on the single box.
+
+*Trade-offs, alternatives, and additional details:*
+
+* See the [Relational database management system (RDBMS)](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms) section
+* Discuss reasons to use [SQL or NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql)
