@@ -106,3 +106,8 @@ The constraints assume there is a need for relational data.  We can start off us
 
 * See the [Relational database management system (RDBMS)](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms) section
 * Discuss reasons to use [SQL or NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql)
+
+#### Assign a public static IP
+
+* Elastic IPs provide a public endpoint whose IP doesn't change on reboot
+* Helps with failover, just point the domain to a new IP
