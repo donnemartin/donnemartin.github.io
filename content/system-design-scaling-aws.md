@@ -111,3 +111,11 @@ The constraints assume there is a need for relational data.  We can start off us
 
 * Elastic IPs provide a public endpoint whose IP doesn't change on reboot
 * Helps with failover, just point the domain to a new IP
+
+#### Use a DNS
+
+Add a **DNS** such as Route 53 to map the domain to the instance's public IP.
+
+*Trade-offs, alternatives, and additional details:*
+
+* See the [Domain name system](https://github.com/donnemartin/system-design-primer#domain-name-system) section
