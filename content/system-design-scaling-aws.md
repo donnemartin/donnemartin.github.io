@@ -119,3 +119,16 @@ Add a **DNS** such as Route 53 to map the domain to the instance's public IP.
 *Trade-offs, alternatives, and additional details:*
 
 * See the [Domain name system](https://github.com/donnemartin/system-design-primer#domain-name-system) section
+
+#### Secure the web server
+
+* Open up only necessary ports
+    * Allow the web server to respond to incoming requests from:
+        * 80 for HTTP
+        * 443 for HTTPS
+        * 22 for SSH to only whitelisted IPs
+    * Prevent the web server from initiating outbound connections
+
+*Trade-offs, alternatives, and additional details:*
+
+* See the [Security](https://github.com/donnemartin/system-design-primer#security) section
