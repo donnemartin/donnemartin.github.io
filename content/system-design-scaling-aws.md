@@ -132,3 +132,11 @@ Add a **DNS** such as Route 53 to map the domain to the instance's public IP.
 *Trade-offs, alternatives, and additional details:*
 
 * See the [Security](https://github.com/donnemartin/system-design-primer#security) section
+
+## Step 4: Scale the design
+
+> Identify and address bottlenecks, given the constraints.
+
+### Users+
+
+![Imgur](http://i.imgur.com/rrfjMXB.png)
