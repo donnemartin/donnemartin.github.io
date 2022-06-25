@@ -140,3 +140,9 @@ Add a **DNS** such as Route 53 to map the domain to the instance's public IP.
 ### Users+
 
 ![Imgur](http://i.imgur.com/rrfjMXB.png)
+
+#### Assumptions
+
+Our user count is starting to pick up and the load is increasing on our single box.  Our **Benchmarks/Load Tests** and **Profiling** are pointing to the **MySQL Database** taking up more and more memory and CPU resources, while the user content is filling up disk space.
+
+We've been able to address these issues with **Vertical Scaling** so far.  Unfortunately, this has become quite expensive and it doesn't allow for independent scaling of the **MySQL Database** and **Web Server**.
