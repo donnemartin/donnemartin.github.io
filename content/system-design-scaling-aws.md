@@ -146,3 +146,13 @@ Add a **DNS** such as Route 53 to map the domain to the instance's public IP.
 Our user count is starting to pick up and the load is increasing on our single box.  Our **Benchmarks/Load Tests** and **Profiling** are pointing to the **MySQL Database** taking up more and more memory and CPU resources, while the user content is filling up disk space.
 
 We've been able to address these issues with **Vertical Scaling** so far.  Unfortunately, this has become quite expensive and it doesn't allow for independent scaling of the **MySQL Database** and **Web Server**.
+
+#### Goals
+
+* Lighten load on the single box and allow for independent scaling
+    * Store static content separately in an **Object Store**
+    * Move the **MySQL Database** to a separate box
+* Disadvantages
+    * These changes would increase complexity and would require changes to the **Web Server** to point to the **Object Store** and the **MySQL Database**
+    * Additional security measures must be taken to secure the new components
+    * AWS costs could also increase, but should be weighed with the costs of managing similar systems on your own
