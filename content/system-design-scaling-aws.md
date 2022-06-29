@@ -156,3 +156,15 @@ We've been able to address these issues with **Vertical Scaling** so far.  Unfor
     * These changes would increase complexity and would require changes to the **Web Server** to point to the **Object Store** and the **MySQL Database**
     * Additional security measures must be taken to secure the new components
     * AWS costs could also increase, but should be weighed with the costs of managing similar systems on your own
+
+#### Store static content separately
+
+* Consider using a managed **Object Store** like S3 to store static content
+    * Highly scalable and reliable
+    * Server side encryption
+* Move static content to S3
+    * User files
+    * JS
+    * CSS
+    * Images
+    * Videos
