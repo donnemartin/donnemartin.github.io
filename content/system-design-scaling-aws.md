@@ -168,3 +168,10 @@ We've been able to address these issues with **Vertical Scaling** so far.  Unfor
     * CSS
     * Images
     * Videos
+
+#### Move the MySQL database to a separate box
+
+* Consider using a service like RDS to manage the **MySQL Database**
+    * Simple to administer, scale
+    * Multiple availability zones
+    * Encryption at rest
