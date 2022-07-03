@@ -175,3 +175,16 @@ We've been able to address these issues with **Vertical Scaling** so far.  Unfor
     * Simple to administer, scale
     * Multiple availability zones
     * Encryption at rest
+
+#### Secure the system
+
+* Encrypt data in transit and at rest
+* Use a Virtual Private Cloud
+    * Create a public subnet for the single **Web Server** so it can send and receive traffic from the internet
+    * Create a private subnet for everything else, preventing outside access
+    * Only open ports from whitelisted IPs for each component
+* These same patterns should be implemented for new components in the remainder of the exercise
+
+*Trade-offs, alternatives, and additional details:*
+
+* See the [Security](https://github.com/donnemartin/system-design-primer#security) section
