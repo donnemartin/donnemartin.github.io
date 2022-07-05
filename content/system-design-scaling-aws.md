@@ -188,3 +188,7 @@ We've been able to address these issues with **Vertical Scaling** so far.  Unfor
 *Trade-offs, alternatives, and additional details:*
 
 * See the [Security](https://github.com/donnemartin/system-design-primer#security) section
+
+### Users++
+
+![Imgur](http://i.imgur.com/raoFTXM.png)
