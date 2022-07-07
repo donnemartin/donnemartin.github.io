@@ -192,3 +192,7 @@ We've been able to address these issues with **Vertical Scaling** so far.  Unfor
 ### Users++
 
 ![Imgur](http://i.imgur.com/raoFTXM.png)
+
+#### Assumptions
+
+Our **Benchmarks/Load Tests** and **Profiling** show that our single **Web Server** bottlenecks during peak hours, resulting in slow responses and in some cases, downtime.  As the service matures, we'd also like to move towards higher availability and redundancy.
