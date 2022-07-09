@@ -196,3 +196,15 @@ We've been able to address these issues with **Vertical Scaling** so far.  Unfor
 #### Assumptions
 
 Our **Benchmarks/Load Tests** and **Profiling** show that our single **Web Server** bottlenecks during peak hours, resulting in slow responses and in some cases, downtime.  As the service matures, we'd also like to move towards higher availability and redundancy.
+
+#### Goals
+
+* The following goals attempt to address the scaling issues with the **Web Server**
+    * Based on the **Benchmarks/Load Tests** and **Profiling**, you might only need to implement one or two of these techniques
+* Use [**Horizontal Scaling**](https://github.com/donnemartin/system-design-primer#horizontal-scaling) to handle increasing loads and to address single points of failure
+    * Add a [**Load Balancer**](https://github.com/donnemartin/system-design-primer#load-balancer) such as Amazon's ELB or HAProxy
+        * ELB is highly available
+        * If you are configuring your own **Load Balancer**, setting up multiple servers in [active-active](https://github.com/donnemartin/system-design-primer#active-active) or [active-passive](https://github.com/donnemartin/system-design-primer#active-passive) in multiple availability zones will improve availability
+        * Terminate SSL on the **Load Balancer** to reduce computational load on backend servers and to simplify certificate administration
+    * Use multiple **Web Servers** spread out over multiple availability zones
+    * Use multiple **MySQL** instances in [**Master-Slave Failover**](https://github.com/donnemartin/system-design-primer#master-slave-replication) mode across multiple availability zones to improve redundancy
