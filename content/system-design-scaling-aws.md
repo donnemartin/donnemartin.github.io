@@ -208,3 +208,7 @@ Our **Benchmarks/Load Tests** and **Profiling** show that our single **Web Serve
         * Terminate SSL on the **Load Balancer** to reduce computational load on backend servers and to simplify certificate administration
     * Use multiple **Web Servers** spread out over multiple availability zones
     * Use multiple **MySQL** instances in [**Master-Slave Failover**](https://github.com/donnemartin/system-design-primer#master-slave-replication) mode across multiple availability zones to improve redundancy
+* Separate out the **Web Servers** from the [**Application Servers**](https://github.com/donnemartin/system-design-primer#application-layer)
+    * Scale and configure both layers independently
+    * **Web Servers** can run as a [**Reverse Proxy**](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
+    * For example, you can add **Application Servers** handling **Read APIs** while others handle **Write APIs**
