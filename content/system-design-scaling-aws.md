@@ -212,3 +212,8 @@ Our **Benchmarks/Load Tests** and **Profiling** show that our single **Web Serve
     * Scale and configure both layers independently
     * **Web Servers** can run as a [**Reverse Proxy**](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
     * For example, you can add **Application Servers** handling **Read APIs** while others handle **Write APIs**
+* Move static (and some dynamic) content to a [**Content Delivery Network (CDN)**](https://github.com/donnemartin/system-design-primer#content-delivery-network) such as CloudFront to reduce load and latency
+
+*Trade-offs, alternatives, and additional details:*
+
+* See the linked content above for details
