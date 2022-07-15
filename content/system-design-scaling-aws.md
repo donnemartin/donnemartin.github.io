@@ -217,3 +217,9 @@ Our **Benchmarks/Load Tests** and **Profiling** show that our single **Web Serve
 *Trade-offs, alternatives, and additional details:*
 
 * See the linked content above for details
+
+### Users+++
+
+![Imgur](http://i.imgur.com/OZCxJr0.png)
+
+**Note:** **Internal Load Balancers** not shown to reduce clutter
