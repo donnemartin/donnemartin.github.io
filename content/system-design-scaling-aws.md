@@ -223,3 +223,7 @@ Our **Benchmarks/Load Tests** and **Profiling** show that our single **Web Serve
 ![Imgur](http://i.imgur.com/OZCxJr0.png)
 
 **Note:** **Internal Load Balancers** not shown to reduce clutter
+
+#### Assumptions
+
+Our **Benchmarks/Load Tests** and **Profiling** show that we are read-heavy (100:1 with writes) and our database is suffering from poor performance from the high read requests.
