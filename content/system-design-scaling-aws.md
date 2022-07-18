@@ -227,3 +227,14 @@ Our **Benchmarks/Load Tests** and **Profiling** show that our single **Web Serve
 #### Assumptions
 
 Our **Benchmarks/Load Tests** and **Profiling** show that we are read-heavy (100:1 with writes) and our database is suffering from poor performance from the high read requests.
+
+#### Goals
+
+* The following goals attempt to address the scaling issues with the **MySQL Database**
+    * Based on the **Benchmarks/Load Tests** and **Profiling**, you might only need to implement one or two of these techniques
+* Move the following data to a [**Memory Cache**](https://github.com/donnemartin/system-design-primer#cache) such as Elasticache to reduce load and latency:
+    * Frequently accessed content from **MySQL**
+        * First, try to configure the **MySQL Database** cache to see if that is sufficient to relieve the bottleneck before implementing a **Memory Cache**
+    * Session data from the **Web Servers**
+        * The **Web Servers** become stateless, allowing for **Autoscaling**
+    * Reading 1 MB sequentially from memory takes about 250 microseconds, while reading from SSD takes 4x and from disk takes 80x longer.<sup><a href=https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know>1</a></sup>
