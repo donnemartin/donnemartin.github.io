@@ -240,3 +240,18 @@ Our **Benchmarks/Load Tests** and **Profiling** show that we are read-heavy (100
     * Reading 1 MB sequentially from memory takes about 250 microseconds, while reading from SSD takes 4x and from disk takes 80x longer.<sup><a href=https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know>1</a></sup>
 * Add [**MySQL Read Replicas**](https://github.com/donnemartin/system-design-primer#master-slave-replication) to reduce load on the write master
 * Add more **Web Servers** and **Application Servers** to improve responsiveness
+
+*Trade-offs, alternatives, and additional details:*
+
+* See the linked content above for details
+
+#### Add MySQL read replicas
+
+* In addition to adding and scaling a **Memory Cache**, **MySQL Read Replicas** can also help relieve load on the **MySQL Write Master**
+* Add logic to **Web Server** to separate out writes and reads
+* Add **Load Balancers** in front of **MySQL Read Replicas** (not pictured to reduce clutter)
+* Most services are read-heavy vs write-heavy
+
+*Trade-offs, alternatives, and additional details:*
+
+* See the [Relational database management system (RDBMS)](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms) section
