@@ -255,3 +255,7 @@ Our **Benchmarks/Load Tests** and **Profiling** show that we are read-heavy (100
 *Trade-offs, alternatives, and additional details:*
 
 * See the [Relational database management system (RDBMS)](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms) section
+
+### Users++++
+
+![Imgur](http://i.imgur.com/3X8nmdL.png)
