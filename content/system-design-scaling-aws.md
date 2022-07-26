@@ -259,3 +259,7 @@ Our **Benchmarks/Load Tests** and **Profiling** show that we are read-heavy (100
 ### Users++++
 
 ![Imgur](http://i.imgur.com/3X8nmdL.png)
+
+#### Assumptions
+
+Our **Benchmarks/Load Tests** and **Profiling** show that our traffic spikes during regular business hours in the U.S. and drop significantly when users leave the office.  We think we can cut costs by automatically spinning up and down servers based on actual load.  We're a small shop so we'd like to automate as much of the DevOps as possible for **Autoscaling** and for the general operations.
