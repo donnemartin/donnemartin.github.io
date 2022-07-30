@@ -269,3 +269,5 @@ Our **Benchmarks/Load Tests** and **Profiling** show that our traffic spikes dur
 * Add **Autoscaling** to provision capacity as needed
     * Keep up with traffic spikes
     * Reduce costs by powering down unused instances
+* Automate DevOps
+    * Chef, Puppet, Ansible, etc
