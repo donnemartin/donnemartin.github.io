@@ -271,3 +271,10 @@ Our **Benchmarks/Load Tests** and **Profiling** show that our traffic spikes dur
     * Reduce costs by powering down unused instances
 * Automate DevOps
     * Chef, Puppet, Ansible, etc
+* Continue monitoring metrics to address bottlenecks
+    * **Host level** - Review a single EC2 instance
+    * **Aggregate level** - Review load balancer stats
+    * **Log analysis** - CloudWatch, CloudTrail, Loggly, Splunk, Sumo
+    * **External site performance** - Pingdom or New Relic
+    * **Handle notifications and incidents** - PagerDuty
+    * **Error Reporting** - Sentry
