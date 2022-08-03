@@ -278,3 +278,19 @@ Our **Benchmarks/Load Tests** and **Profiling** show that our traffic spikes dur
     * **External site performance** - Pingdom or New Relic
     * **Handle notifications and incidents** - PagerDuty
     * **Error Reporting** - Sentry
+
+#### Add autoscaling
+
+* Consider a managed service such as AWS **Autoscaling**
+    * Create one group for each **Web Server** and one for each **Application Server** type, place each group in multiple availability zones
+    * Set a min and max number of instances
+    * Trigger to scale up and down through CloudWatch
+        * Simple time of day metric for predictable loads or
+        * Metrics over a time period:
+            * CPU load
+            * Latency
+            * Network traffic
+            * Custom metric
+    * Disadvantages
+        * Autoscaling can introduce complexity
+        * It could take some time before a system appropriately scales up to meet increased demand, or to scale down when demand drops
