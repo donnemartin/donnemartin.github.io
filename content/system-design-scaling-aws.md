@@ -294,3 +294,9 @@ Our **Benchmarks/Load Tests** and **Profiling** show that our traffic spikes dur
     * Disadvantages
         * Autoscaling can introduce complexity
         * It could take some time before a system appropriately scales up to meet increased demand, or to scale down when demand drops
+
+### Users+++++
+
+![Imgur](http://i.imgur.com/jj3A5N8.png)
+
+**Note:** **Autoscaling** groups not shown to reduce clutter
