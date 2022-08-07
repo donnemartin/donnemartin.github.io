@@ -300,3 +300,14 @@ Our **Benchmarks/Load Tests** and **Profiling** show that our traffic spikes dur
 ![Imgur](http://i.imgur.com/jj3A5N8.png)
 
 **Note:** **Autoscaling** groups not shown to reduce clutter
+
+#### Assumptions
+
+As the service continues to grow towards the figures outlined in the constraints, we iteratively run **Benchmarks/Load Tests** and **Profiling** to uncover and address new bottlenecks.
+
+#### Goals
+
+We'll continue to address scaling issues due to the problem's constraints:
+
+* If our **MySQL Database** starts to grow too large, we might consider only storing a limited time period of data in the database, while storing the rest in a data warehouse such as Redshift
+    * A data warehouse such as Redshift can comfortably handle the constraint of 1 TB of new content per month
