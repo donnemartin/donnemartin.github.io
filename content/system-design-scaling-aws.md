@@ -313,3 +313,4 @@ We'll continue to address scaling issues due to the problem's constraints:
     * A data warehouse such as Redshift can comfortably handle the constraint of 1 TB of new content per month
 * With 40,000 average read requests per second, read traffic for popular content can be addressed by scaling the **Memory Cache**, which is also useful for handling the unevenly distributed traffic and traffic spikes
     * The **SQL Read Replicas** might have trouble handling the cache misses, we'll probably need to employ additional SQL scaling patterns
+* 400 average writes per second (with presumably significantly higher peaks) might be tough for a single **SQL Write Master-Slave**, also pointing to a need for additional scaling techniques
