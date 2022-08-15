@@ -321,3 +321,5 @@ SQL scaling patterns include:
 * [Sharding](https://github.com/donnemartin/system-design-primer#sharding)
 * [Denormalization](https://github.com/donnemartin/system-design-primer#denormalization)
 * [SQL Tuning](https://github.com/donnemartin/system-design-primer#sql-tuning)
+
+To further address the high read and write requests, we should also consider moving appropriate data to a [**NoSQL Database**](https://github.com/donnemartin/system-design-primer#nosql) such as DynamoDB.
