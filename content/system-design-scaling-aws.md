@@ -325,3 +325,15 @@ SQL scaling patterns include:
 To further address the high read and write requests, we should also consider moving appropriate data to a [**NoSQL Database**](https://github.com/donnemartin/system-design-primer#nosql) such as DynamoDB.
 
 We can further separate out our [**Application Servers**](https://github.com/donnemartin/system-design-primer#application-layer) to allow for independent scaling.  Batch processes or computations that do not need to be done in real-time can be done [**Asynchronously**](https://github.com/donnemartin/system-design-primer#asynchronism) with **Queues** and **Workers**:
+
+* For example, in a photo service, the photo upload and the thumbnail creation can be separated:
+    * **Client** uploads photo
+    * **Application Server** puts a job in a **Queue** such as SQS
+    * The **Worker Service** on EC2 or Lambda pulls work off the **Queue** then:
+        * Creates a thumbnail
+        * Updates a **Database**
+        * Stores the thumbnail in the **Object Store**
+
+*Trade-offs, alternatives, and additional details:*
+
+* See the linked content above for details
