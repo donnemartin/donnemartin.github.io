@@ -337,3 +337,15 @@ We can further separate out our [**Application Servers**](https://github.com/don
 *Trade-offs, alternatives, and additional details:*
 
 * See the linked content above for details
+
+## Additional talking points
+
+> Additional topics to dive into, depending on the problem scope and time remaining.
+
+### SQL scaling patterns
+
+* [Read replicas](https://github.com/donnemartin/system-design-primer#master-slave-replication)
+* [Federation](https://github.com/donnemartin/system-design-primer#federation)
+* [Sharding](https://github.com/donnemartin/system-design-primer#sharding)
+* [Denormalization](https://github.com/donnemartin/system-design-primer#denormalization)
+* [SQL Tuning](https://github.com/donnemartin/system-design-primer#sql-tuning)
