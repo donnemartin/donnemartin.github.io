@@ -357,3 +357,12 @@ We can further separate out our [**Application Servers**](https://github.com/don
 * [Wide column store](https://github.com/donnemartin/system-design-primer#wide-column-store)
 * [Graph database](https://github.com/donnemartin/system-design-primer#graph-database)
 * [SQL vs NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql)
+
+### Caching
+
+* Where to cache
+    * [Client caching](https://github.com/donnemartin/system-design-primer#client-caching)
+    * [CDN caching](https://github.com/donnemartin/system-design-primer#cdn-caching)
+    * [Web server caching](https://github.com/donnemartin/system-design-primer#web-server-caching)
+    * [Database caching](https://github.com/donnemartin/system-design-primer#database-caching)
+    * [Application caching](https://github.com/donnemartin/system-design-primer#application-caching)
