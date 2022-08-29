@@ -369,3 +369,8 @@ We can further separate out our [**Application Servers**](https://github.com/don
 * What to cache
     * [Caching at the database query level](https://github.com/donnemartin/system-design-primer#caching-at-the-database-query-level)
     * [Caching at the object level](https://github.com/donnemartin/system-design-primer#caching-at-the-object-level)
+* When to update the cache
+    * [Cache-aside](https://github.com/donnemartin/system-design-primer#cache-aside)
+    * [Write-through](https://github.com/donnemartin/system-design-primer#write-through)
+    * [Write-behind (write-back)](https://github.com/donnemartin/system-design-primer#write-behind-write-back)
+    * [Refresh ahead](https://github.com/donnemartin/system-design-primer#refresh-ahead)
