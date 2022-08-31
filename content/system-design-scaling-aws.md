@@ -374,3 +374,10 @@ We can further separate out our [**Application Servers**](https://github.com/don
     * [Write-through](https://github.com/donnemartin/system-design-primer#write-through)
     * [Write-behind (write-back)](https://github.com/donnemartin/system-design-primer#write-behind-write-back)
     * [Refresh ahead](https://github.com/donnemartin/system-design-primer#refresh-ahead)
+
+### Asynchronism and microservices
+
+* [Message queues](https://github.com/donnemartin/system-design-primer#message-queues)
+* [Task queues](https://github.com/donnemartin/system-design-primer#task-queues)
+* [Back pressure](https://github.com/donnemartin/system-design-primer#back-pressure)
+* [Microservices](https://github.com/donnemartin/system-design-primer#microservices)
