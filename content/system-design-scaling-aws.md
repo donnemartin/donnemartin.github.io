@@ -388,3 +388,7 @@ We can further separate out our [**Application Servers**](https://github.com/don
     * External communication with clients - [HTTP APIs following REST](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest)
     * Internal communications - [RPC](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc)
 * [Service discovery](https://github.com/donnemartin/system-design-primer#service-discovery)
+
+### Security
+
+Refer to the [security section](https://github.com/donnemartin/system-design-primer#security).
