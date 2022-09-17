@@ -61,4 +61,13 @@ class Employee(metaclass=ABCMeta):
         call = self.call
         self.call = None
         self.call_center.notify_call_escalated(call)
+
+class Operator(Employee):
+
+    def __init__(self, employee_id, name):
+        super(Operator, self).__init__(employee_id, name, Rank.OPERATOR)
+
+    def escalate_call(self):
+        self.call.level = Rank.SUPERVISOR
+        self._escalate_call()
 ```
