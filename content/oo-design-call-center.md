@@ -69,5 +69,14 @@ class Operator(Employee):
 
     def escalate_call(self):
         self.call.level = Rank.SUPERVISOR
+        self._escalate_call()git
+
+class Supervisor(Employee):
+
+    def __init__(self, employee_id, name):
+        super(Operator, self).__init__(employee_id, name, Rank.SUPERVISOR)
+
+    def escalate_call(self):
+        self.call.level = Rank.DIRECTOR
         self._escalate_call()
 ```
