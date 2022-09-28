@@ -100,4 +100,12 @@ class Call(object):
         self.state = CallState.READY
         self.rank = rank
         self.employee = None
+
+class CallCenter(object):
+
+    def __init__(self, operators, supervisors, directors):
+        self.operators = operators
+        self.supervisors = supervisors
+        self.directors = directors
+        self.queued_calls = deque()
 ```
