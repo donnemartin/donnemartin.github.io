@@ -121,4 +121,11 @@ class CallCenter(object):
             employee = self._dispatch_call(call, self.directors)
         if employee is None:
             self.queued_calls.append(call)
+
+    def _dispatch_call(self, call, employees):
+        for employee in employees:
+            if employee.call is None:
+                employee.take_call(call)
+                return employee
+        return None
 ```
