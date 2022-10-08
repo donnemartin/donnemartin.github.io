@@ -8,3 +8,20 @@
 ** Yes
 * Can we assume inputs are valid or do we have to validate them?
 ** Assume they're valid
+
+## Solution
+
+```
+from abc import ABCMeta, abstractmethod
+from enum import Enum
+import sys
+
+
+class Suit(Enum):
+
+    HEART = 0
+    DIAMOND = 1
+    CLUBS = 2
+    SPADE = 3
+
+```
