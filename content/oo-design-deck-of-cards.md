@@ -40,4 +40,9 @@ class Card(metaclass=ABCMeta):
     @abstractmethod
     def value(self, other):
         pass
+
+class BlackJackCard(Card):
+
+    def __init__(self, value, suit):
+        super(BlackJackCard, self).__init__(value, suit)
 ```
