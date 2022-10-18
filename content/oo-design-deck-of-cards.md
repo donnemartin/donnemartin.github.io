@@ -52,4 +52,13 @@ class BlackJackCard(Card):
     def is_face_card(self):
         """Jack = 11, Queen = 12, King = 13"""
         return 10 < self._value <= 13
+
+    @property
+    def value(self):
+        if self.is_ace() == 1:
+            return 1
+        elif self.is_face_card():
+            return 10
+        else:
+            return self._value
 ```
