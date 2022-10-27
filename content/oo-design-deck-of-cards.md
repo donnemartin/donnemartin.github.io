@@ -82,4 +82,11 @@ class Hand(object):
         for card in self.cards:
             total_value += card.value
         return total_value
+
+class BlackJackHand(Hand):
+
+    BLACKJACK = 21
+
+    def __init__(self, cards):
+        super(BlackJackHand, self).__init__(cards)
 ```
