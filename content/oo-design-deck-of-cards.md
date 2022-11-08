@@ -121,4 +121,6 @@ class Deck(object):
         except IndexError:
             return None
         return card
+
+    def shuffle(self):  # ...
 ```
