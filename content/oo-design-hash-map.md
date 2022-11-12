@@ -12,3 +12,9 @@
 ** Assume they're valid
 * Can we assume this fits memory?
 ** Yes
+
+class Item(object):
+
+    def __init__(self, key, value):
+        self.key = key
+        self.value = value
