@@ -36,4 +36,11 @@ class HashTable(object):
                 item.value = value
                 return
         self.table[hash_index].append(Item(key, value))
+
+    def get(self, key):
+        hash_index = self._hash_function(key)
+        for item in self.table[hash_index]:
+            if item.key == key:
+                return item.value
+        raise KeyError('Key not found')
 ```
