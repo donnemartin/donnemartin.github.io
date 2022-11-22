@@ -43,4 +43,12 @@ class HashTable(object):
             if item.key == key:
                 return item.value
         raise KeyError('Key not found')
+
+    def remove(self, key):
+        hash_index = self._hash_function(key)
+        for index, item in enumerate(self.table[hash_index]):
+            if item.key == key:
+                del self.table[hash_index][index]
+                return
+        raise KeyError('Key not found')
 ```
