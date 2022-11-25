@@ -8,3 +8,12 @@
 ** Assume they're valid
 * Can we assume this fits memory?
 ** Yes
+
+```
+class Node(object):
+
+    def __init__(self, results):
+        self.results = results
+        self.prev = None
+        self.next = None
+```
