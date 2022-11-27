@@ -16,4 +16,14 @@ class Node(object):
         self.results = results
         self.prev = None
         self.next = None
+
+class LinkedList(object):
+
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
+    def move_to_front(self, node):  # ...
+    def append_to_front(self, node):  # ...
+    def remove_from_tail(self):  # ...
 ```
