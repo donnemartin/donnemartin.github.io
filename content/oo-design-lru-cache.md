@@ -26,4 +26,12 @@ class LinkedList(object):
     def move_to_front(self, node):  # ...
     def append_to_front(self, node):  # ...
     def remove_from_tail(self):  # ...
+
+class Cache(object):
+
+    def __init__(self, MAX_SIZE):
+        self.MAX_SIZE = MAX_SIZE
+        self.size = 0
+        self.lookup = {}  # key: query, value: node
+        self.linked_list = LinkedList()
 ```
