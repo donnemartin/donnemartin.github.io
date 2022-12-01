@@ -34,4 +34,15 @@ class Cache(object):
         self.size = 0
         self.lookup = {}  # key: query, value: node
         self.linked_list = LinkedList()
+
+    def get(self, query)
+        """Get the stored query result from the cache.
+
+        Accessing a node updates its position to the front of the LRU list.
+        """
+        node = self.lookup.get(query)
+        if node is None:
+            return None
+        self.linked_list.move_to_front(node)
+        return node.results
 ```
