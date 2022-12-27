@@ -77,4 +77,12 @@ class Message(object):
         self.message_id = message_id
         self.message = message
         self.timestamp = timestamp
+
+class AddRequest(object):
+
+    def __init__(self, from_user_id, to_user_id, request_status, timestamp):
+        self.from_user_id = from_user_id
+        self.to_user_id = to_user_id
+        self.request_status = request_status
+        self.timestamp = timestamp
 ```
