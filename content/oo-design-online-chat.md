@@ -85,4 +85,11 @@ class AddRequest(object):
         self.to_user_id = to_user_id
         self.request_status = request_status
         self.timestamp = timestamp
+
+class RequestStatus(Enum):
+
+    UNREAD = 0
+    READ = 1
+    ACCEPTED = 2
+    REJECTED = 3
 ```
