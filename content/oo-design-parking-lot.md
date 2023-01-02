@@ -12,3 +12,14 @@
 ** Bus can park if we have 5 consecutive "large" spots
 * Does the parking lot have multiple levels?
 ** Yes
+
+```
+from abc import ABCMeta, abstractmethod
+
+
+class VehicleSize(Enum):
+
+    MOTORCYCLE = 0
+    COMPACT = 1
+    LARGE = 2
+```
