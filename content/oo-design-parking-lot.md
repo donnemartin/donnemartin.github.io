@@ -30,4 +30,9 @@ class Vehicle(metaclass=ABCMeta):
         self.license_plate = license_plate
         self.spot_size = spot_size
         self.spots_taken = []
+
+    def clear_spots(self):
+        for spot in self.spots_taken:
+            spot.remove_vehicle(self)
+        self.spots_taken = []
 ```
