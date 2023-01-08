@@ -35,4 +35,7 @@ class Vehicle(metaclass=ABCMeta):
         for spot in self.spots_taken:
             spot.remove_vehicle(self)
         self.spots_taken = []
+
+    def take_spot(self, spot):
+        self.spots_taken.append(spot)
 ```
