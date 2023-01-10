@@ -38,4 +38,9 @@ class Vehicle(metaclass=ABCMeta):
 
     def take_spot(self, spot):
         self.spots_taken.append(spot)
+
+    @abstractmethod
+    def can_fit_in_spot(self, spot):
+        pass
+
 ```
