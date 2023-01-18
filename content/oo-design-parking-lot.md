@@ -66,4 +66,16 @@ class Bus(Vehicle):
 
     def can_fit_in_spot(self, spot):
         return True if spot.size == LARGE else False
+
+class ParkingLot(object):
+
+    def __init__(self, num_levels):
+        self.num_levels = num_levels
+        self.levels = []
+
+    def park_vehicle(self, vehicle):
+        for level in levels:
+            if level.park_vehicle(vehicle):
+                return True
+        return False
 ```
