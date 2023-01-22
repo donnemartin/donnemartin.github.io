@@ -88,4 +88,7 @@ class Level(object):
         self.num_spots = total_spots
         self.available_spots = 0
         self.parking_spots = []
+
+    def spot_freed(self):
+        self.available_spots += 1
 ```
