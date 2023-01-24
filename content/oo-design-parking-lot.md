@@ -91,4 +91,12 @@ class Level(object):
 
     def spot_freed(self):
         self.available_spots += 1
+
+    def park_vehicle(self, vehicle):
+        spot = self._find_available_spot(vehicle)
+        if spot is None:
+            return None
+        else:
+            spot.park_vehicle(vehicle)
+            return spot
 ```
