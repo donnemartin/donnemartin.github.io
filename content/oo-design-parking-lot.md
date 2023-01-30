@@ -108,4 +108,13 @@ class Level(object):
         """Occupy starting at spot.spot_number to vehicle.spot_size."""
         # ...
 
+class ParkingSpot(object):
+
+    def __init__(self, level, row, spot_number, spot_size, vehicle_size):
+        self.level = level
+        self.row = row
+        self.spot_number = spot_number
+        self.spot_size = spot_size
+        self.vehicle_size = vehicle_size
+        self.vehicle = None
 ```
