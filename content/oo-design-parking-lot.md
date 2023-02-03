@@ -120,4 +120,9 @@ class ParkingSpot(object):
 
     def is_available(self):
         return True if self.vehicle is None else False
+
+    def can_fit_vehicle(self, vehicle):
+        if self.vehicle is not None:
+            return False
+        return vehicle.can_fit_in_spot(self)
 ```
