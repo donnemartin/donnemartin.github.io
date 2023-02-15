@@ -22,3 +22,7 @@ class Employee(metaclass=ABCMeta):
         self.call = call
         self.call.employee = self
         self.call.state = CallState.IN_PROGRESS
+
+    def complete_call(self):
+        self.call.state = CallState.COMPLETE
+        self.call_center.notify_call_completed(self.call)
