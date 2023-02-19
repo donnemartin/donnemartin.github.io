@@ -30,3 +30,7 @@ class Employee(metaclass=ABCMeta):
     def complete_call(self):
         self.call.state = CallState.COMPLETE
         self.call_center.notify_call_completed(self.call)
+
+    @abstractmethod
+    def escalate_call(self):
+        pass
