@@ -34,3 +34,9 @@ class Employee(metaclass=ABCMeta):
     @abstractmethod
     def escalate_call(self):
         pass
+
+    def _escalate_call(self):
+        self.call.state = CallState.READY
+        call = self.call
+        self.call = None
+        self.call_center.notify_call_escalated(call)
