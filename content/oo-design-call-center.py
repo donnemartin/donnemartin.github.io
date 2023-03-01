@@ -68,3 +68,9 @@ class Director(Employee):
 
     def escalate_call(self):
         raise NotImplementedError('Directors must be able to handle any call')
+
+class CallState(Enum):
+
+    READY = 0
+    IN_PROGRESS = 1
+    COMPLETE = 2
