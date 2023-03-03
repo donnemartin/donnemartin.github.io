@@ -74,3 +74,10 @@ class CallState(Enum):
     READY = 0
     IN_PROGRESS = 1
     COMPLETE = 2
+
+class Call(object):
+
+    def __init__(self, rank):
+        self.state = CallState.READY
+        self.rank = rank
+        self.employee = None
