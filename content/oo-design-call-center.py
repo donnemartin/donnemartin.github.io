@@ -109,3 +109,6 @@ class CallCenter(object):
                 employee.take_call(call)
                 return employee
         return None
+
+    def notify_call_escalated(self, call):
+        pass
