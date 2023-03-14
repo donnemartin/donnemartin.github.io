@@ -112,3 +112,6 @@ class CallCenter(object):
 
     def notify_call_escalated(self, call):
         pass
+
+    def notify_call_completed(self, call):
+        pass
