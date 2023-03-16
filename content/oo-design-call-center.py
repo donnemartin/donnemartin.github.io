@@ -115,3 +115,6 @@ class CallCenter(object):
 
     def notify_call_completed(self, call):
         pass
+
+    def dispatch_queued_call_to_newly_freed_employee(self, call, employee):
+        pass
