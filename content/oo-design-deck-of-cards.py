@@ -9,3 +9,11 @@ class Suit(Enum):
     DIAMOND = 1
     CLUBS = 2
     SPADE = 3
+
+
+class Card(metaclass=ABCMeta):
+
+    def __init__(self, value, suit):
+        self.value = value
+        self.suit = suit
+        self.is_available = True
