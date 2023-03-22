@@ -17,3 +17,8 @@ class Card(metaclass=ABCMeta):
         self.value = value
         self.suit = suit
         self.is_available = True
+
+    @property
+    @abstractmethod
+    def value(self):
+        pass
