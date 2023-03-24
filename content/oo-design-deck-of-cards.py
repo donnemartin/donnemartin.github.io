@@ -22,3 +22,8 @@ class Card(metaclass=ABCMeta):
     @abstractmethod
     def value(self):
         pass
+
+    @value.setter
+    @abstractmethod
+    def value(self, other):
+        pass
