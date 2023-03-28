@@ -32,3 +32,6 @@ class BlackJackCard(Card):
 
     def __init__(self, value, suit):
         super(BlackJackCard, self).__init__(value, suit)
+
+    def is_ace(self):
+        return True if self._value == 1 else False
