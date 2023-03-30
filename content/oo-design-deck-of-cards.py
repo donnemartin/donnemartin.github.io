@@ -35,3 +35,7 @@ class BlackJackCard(Card):
 
     def is_ace(self):
         return True if self._value == 1 else False
+
+    def is_face_card(self):
+        """Jack = 11, Queen = 12, King = 13"""
+        return True if 10 < self._value <= 13 else False
