@@ -48,3 +48,10 @@ class BlackJackCard(Card):
             return 10
         else:
             return self._value
+
+    @value.setter
+    def value(self, new_value):
+        if 1 <= new_value <= 13:
+            self._value = new_value
+        else:
+            raise ValueError('Invalid card value: {}'.format(new_value))
