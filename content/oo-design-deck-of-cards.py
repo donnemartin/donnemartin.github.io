@@ -55,3 +55,8 @@ class BlackJackCard(Card):
             self._value = new_value
         else:
             raise ValueError('Invalid card value: {}'.format(new_value))
+
+class Hand(object):
+
+    def __init__(self, cards):
+        self.cards = cards
