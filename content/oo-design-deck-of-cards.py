@@ -63,3 +63,9 @@ class Hand(object):
 
     def add_card(self, card):
         self.cards.append(card)
+
+    def score(self):
+        total_value = 0
+        for card in self.cards:
+            total_value += card.value
+        return total_value
