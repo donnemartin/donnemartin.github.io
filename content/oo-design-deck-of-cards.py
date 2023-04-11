@@ -28,6 +28,7 @@ class Card(metaclass=ABCMeta):
     def value(self, other):
         pass
 
+
 class BlackJackCard(Card):
 
     def __init__(self, value, suit):
@@ -56,6 +57,7 @@ class BlackJackCard(Card):
         else:
             raise ValueError('Invalid card value: {}'.format(new_value))
 
+
 class Hand(object):
 
     def __init__(self, cards):
@@ -69,3 +71,11 @@ class Hand(object):
         for card in self.cards:
             total_value += card.value
         return total_value
+
+
+class BlackJackHand(Hand):
+
+    BLACKJACK = 21
+
+    def __init__(self, cards):
+        super(BlackJackHand, self).__init__(cards)
