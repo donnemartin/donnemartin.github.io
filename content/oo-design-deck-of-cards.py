@@ -89,3 +89,7 @@ class BlackJackHand(Hand):
             elif max_under < score <= self.BLACKJACK:
                 max_under = score
         return max_under if max_under != -sys.MAXSIZE else
+
+    def possible_scores(self):
+        """Return a list of possible scores, taking Aces into account."""
+        pass
