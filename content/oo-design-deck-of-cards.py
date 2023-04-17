@@ -93,3 +93,10 @@ class BlackJackHand(Hand):
     def possible_scores(self):
         """Return a list of possible scores, taking Aces into account."""
         pass
+
+
+class Deck(object):
+
+    def __init__(self, cards):
+        self.cards = cards
+        self.deal_index = 0
