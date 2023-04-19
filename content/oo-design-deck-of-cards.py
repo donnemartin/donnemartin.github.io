@@ -100,3 +100,6 @@ class Deck(object):
     def __init__(self, cards):
         self.cards = cards
         self.deal_index = 0
+
+    def remaining_cards(self):
+        return len(self.cards) - self.deal_index
