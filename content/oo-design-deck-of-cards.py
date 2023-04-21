@@ -103,3 +103,12 @@ class Deck(object):
 
     def remaining_cards(self):
         return len(self.cards) - self.deal_index
+
+    def deal_card(self):
+        try:
+            card = self.cards[self.deal_index]
+            card.is_available = False
+            self.deal_index += 1
+        except IndexError:
+            return None
+        return card
