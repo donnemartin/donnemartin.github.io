@@ -9,3 +9,6 @@ class HashTable(object):
     def __init__(self, size):
         self.size = size
         self.table = [[] for _ in range(self.size)]
+
+    def _hash_function(self, key):
+        return key % self.size
