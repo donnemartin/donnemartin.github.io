@@ -13,3 +13,6 @@ class LinkedList(object):
 
     def move_to_front(self, node):
         pass
+
+    def append_to_front(self, node):
+        pass
