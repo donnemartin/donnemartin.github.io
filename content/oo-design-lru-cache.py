@@ -16,3 +16,6 @@ class LinkedList(object):
 
     def append_to_front(self, node):
         pass
+
+    def remove_from_tail(self):
+        pass
