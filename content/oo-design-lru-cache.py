@@ -19,3 +19,12 @@ class LinkedList(object):
 
     def remove_from_tail(self):
         pass
+
+
+class Cache(object):
+
+    def __init__(self, MAX_SIZE):
+        self.MAX_SIZE = MAX_SIZE
+        self.size = 0
+        self.lookup = {}  # key: query, value: node
+        self.linked_list = LinkedList()
