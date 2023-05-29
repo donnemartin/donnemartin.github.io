@@ -9,3 +9,6 @@ class UserService(object):
 
     def add_user(self, user_id, name, pass_hash):
         pass
+
+    def remove_user(self, user_id):
+        pass
