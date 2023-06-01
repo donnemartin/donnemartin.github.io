@@ -12,3 +12,6 @@ class UserService(object):
 
     def remove_user(self, user_id):
         pass
+
+    def add_friend_request(self, from_user_id, to_user_id):
+        pass
