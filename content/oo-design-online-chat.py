@@ -18,3 +18,6 @@ class UserService(object):
 
     def approve_friend_request(self, from_user_id, to_user_id):
         pass
+
+    def reject_friend_request(self, from_user_id, to_user_id):
+        pass
