@@ -34,3 +34,6 @@ class User(object):
         self.group_chats_by_id = {}  # key: chat id, value: GroupChat
         self.received_friend_requests_by_friend_id = {}  # key: friend id, value: AddRequest
         self.sent_friend_requests_by_friend_id = {}  # key: friend id, value: AddRequest
+
+    def message_user(self, friend_id, message):
+        pass
