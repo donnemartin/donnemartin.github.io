@@ -37,3 +37,6 @@ class User(object):
 
     def message_user(self, friend_id, message):
         pass
+
+    def message_group(self, group_id, message):
+        pass
