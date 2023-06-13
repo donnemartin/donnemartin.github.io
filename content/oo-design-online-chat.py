@@ -40,3 +40,6 @@ class User(object):
 
     def message_group(self, group_id, message):
         pass
+
+    def send_friend_request(self, friend_id):
+        pass
