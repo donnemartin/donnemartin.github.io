@@ -43,3 +43,6 @@ class User(object):
 
     def send_friend_request(self, friend_id):
         pass
+
+    def receive_friend_request(self, friend_id):
+        pass
