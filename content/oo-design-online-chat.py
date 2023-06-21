@@ -52,3 +52,11 @@ class User(object):
 
     def reject_friend_request(self, friend_id):
         pass
+
+
+class Chat(metaclass=ABCMeta):
+
+    def __init__(self, chat_id):
+        self.chat_id = chat_id
+        self.users = []
+        self.messages = []
