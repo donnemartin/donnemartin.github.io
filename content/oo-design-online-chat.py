@@ -60,3 +60,11 @@ class Chat(metaclass=ABCMeta):
         self.chat_id = chat_id
         self.users = []
         self.messages = []
+
+
+class PrivateChat(Chat):
+
+    def __init__(self, first_user, second_user):
+        super(PrivateChat, self).__init__()
+        self.users.append(first_user)
+        self.users.append(second_user)
