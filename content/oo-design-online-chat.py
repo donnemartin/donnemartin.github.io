@@ -68,3 +68,9 @@ class PrivateChat(Chat):
         super(PrivateChat, self).__init__()
         self.users.append(first_user)
         self.users.append(second_user)
+
+
+class GroupChat(Chat):
+
+    def add_user(self, user):
+        pass
