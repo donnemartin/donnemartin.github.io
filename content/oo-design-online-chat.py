@@ -74,3 +74,6 @@ class GroupChat(Chat):
 
     def add_user(self, user):
         pass
+
+    def remove_user(self, user):
+        pass
