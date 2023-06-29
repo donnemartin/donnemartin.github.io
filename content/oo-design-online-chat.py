@@ -77,3 +77,11 @@ class GroupChat(Chat):
 
     def remove_user(self, user):
         pass
+
+
+class Message(object):
+
+    def __init__(self, message_id, message, timestamp):
+        self.message_id = message_id
+        self.message = message
+        self.timestamp = timestamp
