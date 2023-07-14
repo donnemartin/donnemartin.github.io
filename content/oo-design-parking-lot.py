@@ -28,3 +28,9 @@ class Vehicle(metaclass=ABCMeta):
     @abstractmethod
     def can_fit_in_spot(self, spot):
         pass
+
+
+class Motorcycle(Vehicle):
+
+    def __init__(self, license_plate):
+        super(Motorcycle, self).__init__(VehicleSize.MOTORCYCLE, license_plate, spot_size=1)
