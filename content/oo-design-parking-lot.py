@@ -43,3 +43,6 @@ class Car(Vehicle):
 
     def __init__(self, license_plate):
         super(Car, self).__init__(VehicleSize.COMPACT, license_plate, spot_size=1)
+
+    def can_fit_in_spot(self, spot):
+        return spot.size in (VehicleSize.LARGE, VehicleSize.COMPACT)
