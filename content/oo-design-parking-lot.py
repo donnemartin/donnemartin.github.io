@@ -62,3 +62,9 @@ class ParkingLot(object):
     def __init__(self, num_levels):
         self.num_levels = num_levels
         self.levels = []  # List of Levels
+
+    def park_vehicle(self, vehicle):
+        for level in self.levels:
+            if level.park_vehicle(vehicle):
+                return True
+        return False
