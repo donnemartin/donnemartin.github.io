@@ -68,3 +68,14 @@ class ParkingLot(object):
             if level.park_vehicle(vehicle):
                 return True
         return False
+
+
+class Level(object):
+
+    SPOTS_PER_ROW = 10
+
+    def __init__(self, floor, total_spots):
+        self.floor = floor
+        self.num_spots = total_spots
+        self.available_spots = 0
+        self.spots = []  # List of ParkingSpots
