@@ -79,3 +79,6 @@ class Level(object):
         self.num_spots = total_spots
         self.available_spots = 0
         self.spots = []  # List of ParkingSpots
+
+    def spot_freed(self):
+        self.available_spots += 1
