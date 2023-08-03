@@ -90,3 +90,7 @@ class Level(object):
         else:
             spot.park_vehicle(vehicle)
             return spot
+
+    def _find_available_spot(self, vehicle):
+        """Find an available spot where vehicle can fit, or return None"""
+        pass
