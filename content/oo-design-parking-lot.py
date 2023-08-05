@@ -94,3 +94,7 @@ class Level(object):
     def _find_available_spot(self, vehicle):
         """Find an available spot where vehicle can fit, or return None"""
         pass
+
+    def _park_starting_at_spot(self, spot, vehicle):
+        """Occupy starting at spot.spot_number to vehicle.spot_size."""
+        pass
