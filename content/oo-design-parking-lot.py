@@ -109,3 +109,6 @@ class ParkingSpot(object):
         self.spot_size = spot_size
         self.vehicle_size = vehicle_size
         self.vehicle = None
+
+    def is_available(self):
+        return True if self.vehicle is None else False
