@@ -120,3 +120,6 @@ class ParkingSpot(object):
 
     def park_vehicle(self, vehicle):
         pass
+
+    def remove_vehicle(self):
+        pass
