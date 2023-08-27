@@ -36,3 +36,10 @@ class HitCounts(MRJob):
         (2016-01, url1), 1
         """
         yield key, sum(values)
+
+    def steps(self):
+        """Run the map and reduce steps."""
+        return [
+            self.mr(mapper=self.mapper,
+                    reducer=self.reducer)
+        ]
