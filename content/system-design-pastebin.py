@@ -43,3 +43,7 @@ class HitCounts(MRJob):
             self.mr(mapper=self.mapper,
                     reducer=self.reducer)
         ]
+
+
+if __name__ == '__main__':
+    HitCounts.run()
