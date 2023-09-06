@@ -20,3 +20,10 @@ class QueryApi(object):
             results = self.reverse_index_cluster.process_search(query)
             self.memory_cache.set(query, results)
         return results
+
+
+class Node(object):
+
+    def __init__(self, query, results):
+        self.query = query
+        self.results = results
