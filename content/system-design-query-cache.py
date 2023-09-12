@@ -37,3 +37,6 @@ class LinkedList(object):
 
     def move_to_front(self, node):
         ...
+
+    def append_to_front(self, node):
+        ...
