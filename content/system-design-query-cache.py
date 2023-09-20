@@ -63,3 +63,18 @@ class Cache(object):
             return None
         self.linked_list.move_to_front(node)
         return node.results
+
+    def set(self, results, query):
+        """Set the result for the given query key in the cache.
+
+        When updating an entry, updates its position to the front of the LRU list.
+        If the entry is new and the cache is at capacity, removes the oldest entry
+        before the new entry is added.
+        """
+        node = self.map[query]
+        if node is not None:
+            # Key exists in cache, update the value
+            node.results = results
+            self.linked_list.move_to_front(node)
+        else:
+            pass
