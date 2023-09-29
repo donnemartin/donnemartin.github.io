@@ -27,3 +27,14 @@ class SalesRanker(MRJob):
         timestamp, product_id, category, quantity = line.split('\t')
         if self.within_past_week(timestamp):
             yield (category, product_id), quantity
+
+    def reducer(self, key, values):
+        """Sum values for each key.
+
+        (foo, p1), 2
+        (bar, p1), 3
+        (foo, p2), 3
+        (bar, p3), 10
+        (foo, p4), 1
+        """
+        yield key, sum(values)
