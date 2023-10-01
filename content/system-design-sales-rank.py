@@ -38,3 +38,6 @@ class SalesRanker(MRJob):
         (foo, p4), 1
         """
         yield key, sum(values)
+
+    def reducer_identity(self, key, value):
+        yield key, value
