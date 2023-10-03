@@ -41,3 +41,12 @@ class SalesRanker(MRJob):
 
     def reducer_identity(self, key, value):
         yield key, value
+
+    def steps(self):
+        """Run the map and reduce steps."""
+        return [
+            self.mr(mapper=self.mapper,
+                    reducer=self.reducer),
+            self.mr(mapper=self.mapper_sort,
+                    reducer=self.reducer_identity),
+        ]
