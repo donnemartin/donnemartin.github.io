@@ -50,3 +50,7 @@ class SalesRanker(MRJob):
             self.mr(mapper=self.mapper_sort,
                     reducer=self.reducer_identity),
         ]
+
+
+if __name__ == '__main__':
+    SalesRanker.run()
