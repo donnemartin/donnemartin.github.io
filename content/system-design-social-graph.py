@@ -37,3 +37,9 @@ class Person(object):
         self.id = id
         self.name = name
         self.friend_ids = []
+
+
+class LookupService(object):
+
+    def __init__(self):
+        self.lookup = {}  # key: person_id, value: person_server
