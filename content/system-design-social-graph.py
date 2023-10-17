@@ -43,3 +43,7 @@ class LookupService(object):
 
     def __init__(self):
         self.lookup = {}  # key: person_id, value: person_server
+
+    def get_person(self, person_id):
+        person_server = self.lookup[person_id]
+        return person_server.people[person_id]
