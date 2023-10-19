@@ -47,3 +47,9 @@ class LookupService(object):
     def get_person(self, person_id):
         person_server = self.lookup[person_id]
         return person_server.people[person_id]
+
+
+class PersonServer(object):
+
+    def __init__(self):
+        self.people = {}  # key: person_id, value: person
