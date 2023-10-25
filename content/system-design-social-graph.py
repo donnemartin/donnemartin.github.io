@@ -68,3 +68,8 @@ class UserGraphService(object):
         self.lookup = lookup
         self.person_ids = person_ids
         self.visited_ids = set()
+
+    def bfs(self, source, dest):
+        # Use self.visited_ids to track visited nodes
+        # Use self.lookup to translate a person_id to a Person
+        pass
