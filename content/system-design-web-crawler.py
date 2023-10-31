@@ -10,3 +10,7 @@ class PagesDataStore(object):
     def add_link_to_crawl(self, url):
         """Add the given link to `links_to_crawl`."""
         pass
+
+    def remove_link_to_crawl(self, url):
+        """Remove the given link from `links_to_crawl`."""
+        pass
