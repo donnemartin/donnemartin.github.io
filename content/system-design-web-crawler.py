@@ -14,3 +14,7 @@ class PagesDataStore(object):
     def remove_link_to_crawl(self, url):
         """Remove the given link from `links_to_crawl`."""
         pass
+
+    def reduce_priority_link_to_crawl(self, url):
+        """Reduce the priority of a link in `links_to_crawl` to avoid cycles."""
+        pass
