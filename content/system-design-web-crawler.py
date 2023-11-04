@@ -18,3 +18,7 @@ class PagesDataStore(object):
     def reduce_priority_link_to_crawl(self, url):
         """Reduce the priority of a link in `links_to_crawl` to avoid cycles."""
         pass
+
+    def extract_max_priority_page(self):
+        """Return the highest priority link in `links_to_crawl`."""
+        pass
