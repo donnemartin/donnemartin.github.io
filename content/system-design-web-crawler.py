@@ -22,3 +22,7 @@ class PagesDataStore(object):
     def extract_max_priority_page(self):
         """Return the highest priority link in `links_to_crawl`."""
         pass
+
+    def insert_crawled_link(self, url, signature):
+        """Add the given link to `crawled_links`."""
+        pass
