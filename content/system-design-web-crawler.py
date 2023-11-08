@@ -26,3 +26,7 @@ class PagesDataStore(object):
     def insert_crawled_link(self, url, signature):
         """Add the given link to `crawled_links`."""
         pass
+
+    def crawled_similar(self, signature):
+        """Determine if we've already crawled a page matching the given signature"""
+        pass
