@@ -30,3 +30,12 @@ class PagesDataStore(object):
     def crawled_similar(self, signature):
         """Determine if we've already crawled a page matching the given signature"""
         pass
+
+
+class Page(object):
+
+    def __init__(self, url, contents, child_urls):
+        self.url = url
+        self.contents = contents
+        self.child_urls = child_urls
+        self.signature = self.create_signature()
