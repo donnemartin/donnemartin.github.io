@@ -39,3 +39,7 @@ class Page(object):
         self.contents = contents
         self.child_urls = child_urls
         self.signature = self.create_signature()
+
+    def create_signature(self):
+        # Create signature based on url and contents
+        pass
