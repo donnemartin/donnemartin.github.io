@@ -43,3 +43,12 @@ class Page(object):
     def create_signature(self):
         # Create signature based on url and contents
         pass
+
+
+class Crawler(object):
+
+    def __init__(self, pages, data_store, reverse_index_queue, doc_index_queue):
+        self.pages = pages
+        self.data_store = data_store
+        self.reverse_index_queue = reverse_index_queue
+        self.doc_index_queue = doc_index_queue
